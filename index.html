@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BossZY's Portfolio — Full-Stack Developer, AI Engineer, Trading Bot Developer. Showcasing 29+ projects across web, mobile, automation, trading, and AI.">
+  <meta name="keywords" content="BossZY, portfolio, developer, full-stack, AI, trading bot, automation, web development">
+  <meta name="author" content="BossZY">
+  <title>BossZY — Portfolio</title>
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://bosszy-portfolio.vercel.app">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bosszy-portfolio.vercel.app">
+  <meta property="og:title" content="BossZY — Portfolio">
+  <meta property="og:description" content="BossZY's Portfolio — Full-Stack Developer, AI Engineer, Trading Bot Developer. Showcasing 29+ projects across web, mobile, automation, trading, and AI.">
+  <meta property="og:image" content="https://bosszy-portfolio.vercel.app/public/og-preview.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bosszy-portfolio.vercel.app">
+  <meta property="twitter:title" content="BossZY — Portfolio">
+  <meta property="twitter:description" content="BossZY's Portfolio — Full-Stack Developer, AI Engineer, Trading Bot Developer. Showcasing 29+ projects across web, mobile, automation, trading, and AI.">
+  <meta property="twitter:image" content="https://bosszy-portfolio.vercel.app/public/og-preview.png">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "BossZY",
+    "url": "https://bosszy-portfolio.vercel.app",
+    "email": "bossboss27.b3@gmail.com",
+    "jobTitle": "Full-Stack Developer & AI Engineer",
+    "sameAs": [
+      "https://github.com/BossZY"
+    ],
+    "knowsAbout": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "Node.js",
+      "Flutter",
+      "Kotlin",
+      "MetaTrader 5",
+      "Express.js",
+      "Automation",
+      "Artificial Intelligence"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ====== PRELOADER ====== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <span class="logo-b">B</span><span class="logo-z">Z</span>
+      </div>
+      <div class="preloader-bar-container">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
+      <p class="preloader-text">Loading BossZY's Portfolio...</p>
+    </div>
+  </div>
+
+  <!-- ====== BACKGROUND BLOBS ====== -->
+  <div class="bg-blobs-container">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+  </div>
+
+  <!-- ====== 3D GLASS SHAPES ====== -->
+  <div class="glass-shapes-container">
+    <div class="glass-shape shape-1" data-speed="0.05"></div>
+    <div class="glass-shape shape-2" data-speed="-0.08"></div>
+    <div class="glass-shape shape-3" data-speed="0.03"></div>
+    <div class="glass-shape shape-4" data-speed="-0.04"></div>
+  </div>
+
+  <!-- ====== LASER TRAIL CURSOR ====== -->
+  <canvas id="cursor-canvas"></canvas>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">Boss<span>ZY</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ====== HERO SECTION ====== -->
+  <section class="hero" id="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-greeting">Welcome to my portfolio</p>
+      <h1 class="hero-name">BossZY</h1>
+      <div class="hero-typing-wrapper">
+        <span class="hero-typing-prefix">I'm a </span>
+        <span class="hero-typing" id="typing-text"></span>
+        <span class="hero-cursor">|</span>
+      </div>
+      <p class="hero-subtitle">สร้างสรรค์ผลงานตั้งแต่ Web App, Mobile App, Trading Bot, AI Agent ไปจนถึง Automation Tools</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <span>🚀</span> View Projects
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <span>💬</span> Contact Me
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT SECTION ====== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">ภาพรวมความสามารถและประสบการณ์</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text fade-in-up">
+          <p>
+            สวัสดีครับ ผม <strong>BossZY</strong> — นักพัฒนาซอฟต์แวร์ที่หลงใหลในการสร้างสรรค์ผลงานหลากหลายรูปแบบ
+            ตั้งแต่ระบบ Web Application ขนาดใหญ่อย่าง POS System และ CRM ไปจนถึง Mobile App, 
+            Trading Bot ที่ทำงานบน MetaTrader 5, AI Agent ที่ใช้ Gemini และ Claude API,
+            รวมถึง Automation Tools และ Browser Extensions ต่างๆ
+          </p>
+          <p>
+            ผมมีความเชี่ยวชาญในการใช้เทคโนโลยีที่หลากหลาย ทั้ง Frontend, Backend, Mobile, AI/ML
+            และ Desktop Application โดยเน้นการสร้างผลงานที่ใช้งานได้จริงและแก้ปัญหาได้อย่างมีประสิทธิภาพ
+          </p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card fade-in-up">
+            <div class="stat-number" data-target="29">0+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-card fade-in-up">
+            <div class="stat-number" data-target="20">0+</div>
+            <div class="stat-label">Technologies</div>
+          </div>
+          <div class="stat-card fade-in-up">
+            <div class="stat-number" data-target="6">0+</div>
+            <div class="stat-label">Categories</div>
+          </div>
+          <div class="stat-card fade-in-up">
+            <div class="stat-number" data-target="5">0+</div>
+            <div class="stat-label">Platforms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SKILLS SECTION ====== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">Tech Stack</h2>
+        <p class="section-subtitle">เทคโนโลยีที่ใช้ในการพัฒนา</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/react_dark.svg" alt="React"></div>
+          <div class="skill-name">React</div>
+          <div class="skill-level">Frontend</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/nextjs_icon_dark.svg" alt="Next.js"></div>
+          <div class="skill-name">Next.js</div>
+          <div class="skill-level">Full-Stack</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/typescript.svg" alt="TypeScript"></div>
+          <div class="skill-name">TypeScript</div>
+          <div class="skill-level">Language</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/python.svg" alt="Python"></div>
+          <div class="skill-name">Python</div>
+          <div class="skill-level">Backend / AI</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/nodejs.svg" alt="Node.js"></div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-level">Backend</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/flutter.svg" alt="Flutter"></div>
+          <div class="skill-name">Flutter</div>
+          <div class="skill-level">Mobile</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/kotlin.svg" alt="Kotlin"></div>
+          <div class="skill-name">Kotlin</div>
+          <div class="skill-level">Android</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/prisma_dark.svg" alt="Prisma"></div>
+          <div class="skill-name">Prisma</div>
+          <div class="skill-level">ORM</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/supabase.svg" alt="Supabase"></div>
+          <div class="skill-name">Supabase</div>
+          <div class="skill-level">BaaS</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/fastapi.svg" alt="FastAPI"></div>
+          <div class="skill-name">FastAPI</div>
+          <div class="skill-level">API</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/openai_dark.svg" alt="AI / ML"></div>
+          <div class="skill-name">AI / ML</div>
+          <div class="skill-level">Gemini / Claude</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="8" width="40" height="28" rx="3" stroke="#4ade80" stroke-width="2.5" fill="none"/>
+              <line x1="4" y1="14" x2="44" y2="14" stroke="#4ade80" stroke-width="1.5" opacity="0.5"/>
+              <polyline points="10,22 18,30 26,20 34,28 42,18" stroke="#4ade80" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="14" y="38" width="20" height="3" rx="1.5" fill="#4ade80" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="skill-name">MetaTrader 5</div>
+          <div class="skill-level">Trading</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.037 1.21a2.128 2.128 0 0 0-2.127 2.128v1.547h4.254V3.338a2.128 2.128 0 0 0-2.127-2.127zm-3.14 3.738v.85h6.28v-.85zm-.85 1.7v2.128h7.98V6.648zm-.85 2.977v2.128H17.71v-2.128zm-.851 2.977v2.127h9.68v-2.127zm-.851 2.978V22.79h11.383V15.58H5.495z" fill="#04D4A4"/>
+            </svg>
+          </div>
+          <div class="skill-name">Puppeteer</div>
+          <div class="skill-level">Automation</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="6" width="36" height="30" rx="3" stroke="#60a5fa" stroke-width="2.5" fill="none"/>
+              <rect x="6" y="6" width="36" height="8" rx="3" fill="#60a5fa" opacity="0.2"/>
+              <circle cx="12" cy="10" r="1.5" fill="#f87171"/>
+              <circle cx="17" cy="10" r="1.5" fill="#fbbf24"/>
+              <circle cx="22" cy="10" r="1.5" fill="#4ade80"/>
+              <rect x="10" y="20" width="12" height="2" rx="1" fill="#60a5fa" opacity="0.6"/>
+              <rect x="10" y="25" width="18" height="2" rx="1" fill="#60a5fa" opacity="0.4"/>
+              <rect x="10" y="30" width="8" height="2" rx="1" fill="#60a5fa" opacity="0.3"/>
+              <rect x="14" y="38" width="20" height="4" rx="2" fill="#60a5fa" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="skill-name">Tkinter</div>
+          <div class="skill-level">Desktop GUI</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon"><img src="https://svgl.app/library/expressjs_dark.svg" alt="Express.js"></div>
+          <div class="skill-name">Express.js</div>
+          <div class="skill-level">Backend</div>
+        </div>
+        <div class="skill-card fade-in-up">
+          <div class="skill-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#5C3EE8" d="M11.8992.8525C8.735.8525 6.17 3.4175 6.17 6.5817c0 2.102 1.1321 3.9398 2.8198 4.9366l1.6412-2.7849c.0411-.0699.0176-.1593-.0495-.2048-.6233-.4227-1.0328-1.137-1.0328-1.947 0-1.298 1.0524-2.3504 2.3505-2.3504 1.2981 0 2.3505 1.0524 2.3505 2.3505 0 .8098-.4095 1.5242-1.0328 1.947-.0671.0454-.0907.1348-.0495.2047l1.6414 2.785c1.6878-.9969 2.8199-2.8346 2.8199-4.9367 0-3.1642-2.5653-5.7292-5.7295-5.7292zm-6.17 10.8366C2.565 11.6891 0 14.2541 0 17.4183c0 3.1642 2.565 5.7292 5.7292 5.7292 3.1798 0 5.8074-2.6995 5.7275-5.8762H8.2313c-.0847 0-.1513.0717-.1519.1564-.0082 1.266-1.0644 2.3411-2.3502 2.3411-1.2981 0-2.3505-1.0524-2.3505-2.3505 0-1.2982 1.0524-2.3505 2.3505-2.3505.34 0 .663.0724.9547.2022.0713.0318.1566.0077.1962-.0595l1.6464-2.7935c-.8273-.4636-1.7815-.7279-2.7973-.7279zm15.4424.7614l-1.6366 2.7878c-.041.07-.0172.1594.05.2048.624.4217 1.0348 1.1354 1.0363 1.9452.0022 1.298-1.0483 2.352-2.3465 2.3542-1.298.0023-2.3523-1.0482-2.3545-2.3462-.0015-.8098.4068-1.5248 1.0294-1.9486.067-.0457.0905-.1353.0492-.2051l-1.6464-2.7818c-1.6859.9998-2.8146 2.8394-2.811 4.9415.0056 3.1641 2.575 5.7248 5.7393 5.7192 3.1641-.0054 5.7246-2.575 5.7192-5.7392-.0037-2.1022-1.139-3.938-2.8284-4.9318z"/>
+            </svg>
+          </div>
+          <div class="skill-name">OpenCV</div>
+          <div class="skill-level">Computer Vision</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS SECTION ====== -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-subtitle">ผลงานทั้งหมด <span id="filter-count">29</span> โปรเจกต์</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs fade-in-up">
+        <button class="filter-btn active" data-filter="all">🔥 All</button>
+        <button class="filter-btn" data-filter="web">🌐 Web Apps</button>
+        <button class="filter-btn" data-filter="mobile">📱 Mobile</button>
+        <button class="filter-btn" data-filter="automation">🤖 Automation</button>
+        <button class="filter-btn" data-filter="trading">📈 Trading</button>
+        <button class="filter-btn" data-filter="ai">🧠 AI & ML</button>
+        <button class="filter-btn" data-filter="academic">🎓 Academic</button>
+      </div>
+
+      <!-- Projects Grid (Rendered by JS) -->
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT SECTION ====== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">ติดต่อฉันได้เลย</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-links">
+          <a href="https://github.com/BossZY" target="_blank" rel="noopener noreferrer" class="contact-link fade-in-up">
+            <span class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </span>
+            <div>
+              <div class="contact-link-label">GitHub</div>
+              <div class="contact-link-value">@BossZY</div>
+            </div>
+          </a>
+          <a href="mailto:bossboss27.b3@gmail.com" class="contact-link fade-in-up">
+            <span class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </span>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">bossboss27.b3@gmail.com</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 BossZY. Built with ❤️ and lots of ☕</p>
+    </div>
+  </footer>
+
+  <!-- ====== PROJECT MODAL ====== -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-content" id="modal-inner">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <!-- ====== CHATBOT ASSISTANT ====== -->
+  <button class="chat-toggle-btn" id="chat-toggle-btn" aria-label="Open BossZY Assistant">
+    <span class="chat-icon-open">💬</span>
+    <span class="chat-icon-close">&times;</span>
+  </button>
+
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div class="chat-header-info">
+        <h4 class="chat-bot-name">BossZY AI Agent</h4>
+        <span class="chat-bot-status"><span class="status-dot"></span> Online Assistant</span>
+      </div>
+      <button class="chat-close-btn" id="chat-close-btn" aria-label="Close chat">&times;</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <!-- Generated by JS -->
+    </div>
+    <div class="chat-quick-replies" id="chat-quick-replies">
+      <!-- Generated by JS -->
+    </div>
+    <form class="chat-input-area" id="chat-input-form">
+      <input type="text" id="chat-input" placeholder="Ask a skill, project or keyword..." autocomplete="off">
+      <button type="submit" class="chat-send-btn" aria-label="Send message">➔</button>
+    </form>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
