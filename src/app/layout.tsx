@@ -13,9 +13,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pakin | Portfolio",
-  description:
-    "Portfolio of Pakin — 2nd-year CS student at KKU. Automation, Web Development, and more.",
+  title: "BossZY | CS @ KKU & Developer Portfolio",
+  description: "พอร์ตโฟลิโอสะสมผลงานของ BossZY (Pakin Meksuwan) รวบรวมโปรเจกต์กว่า 29+ ชิ้น ครอบคลุม Web App, Mobile App, Trading Bot (MT5), AI & ML และระบบ Automation",
+  keywords: ["BossZY", "Pakin Meksuwan", "portfolio", "developer", "full-stack", "AI Engineer", "trading bot", "automation", "Web Developer Thailand"],
+  authors: [{ name: "BossZY" }],
+  creator: "BossZY",
+  openGraph: {
+    title: "BossZY — CS @ KKU & Developer Portfolio",
+    description: "รวบรวมผลงานกว่า 29+ โปรเจกต์ ตั้งแต่ Web App, Mobile App, Trading Bot (MT5), AI & ML ไปจนถึงระบบ Auto-click/Automation",
+    url: "https://portfolio-bosszy27s-projects.vercel.app",
+    siteName: "BossZY Portfolio",
+    images: [
+      {
+        url: "/og-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "BossZY Portfolio Preview",
+      },
+    ],
+    locale: "th_TH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BossZY — CS @ KKU & Developer Portfolio",
+    description: "รวบรวมผลงานกว่า 29+ โปรเจกต์ ตั้งแต่ Web App, Mobile App, Trading Bot, AI & ML ไปจนถึงระบบ Automation",
+    images: ["/og-preview.png"],
+  },
 };
 
 export default function RootLayout({
