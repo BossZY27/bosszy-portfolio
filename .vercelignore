@@ -1,0 +1,21 @@
+# Ignore Next.js files to deploy static site
+node_modules
+.next
+src
+tsconfig.json
+next.config.ts
+next.config.js
+next.config.mjs
+postcss.config.mjs
+eslint.config.mjs
+next-env.d.ts
+package.json
+package-lock.json
+.vercel
+.vercelignore
+.git
+.gitignore
+.claude
+AGENTS.md
+CLAUDE.md
+README.md
