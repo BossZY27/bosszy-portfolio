@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Phakin Meksuwan (BossZY) — Developer Portfolio
 
-## Getting Started
+Welcome to my professional developer portfolio repository! This project showcases my skills, experience, and projects across web development, mobile apps, automated trading bots, AI integration, and desktop automation.
 
-First, run the development server:
+🌐 **Live Website:** [bosszy-portfolio.vercel.app](https://bosszy-portfolio.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👤 About Me
+* **Name:** Phakin Meksuwan (Boss)
+* **Education:** 2nd-year Computer Science student at Khon Kaen University (KKU)
+* **Specialties:** Full-Stack Web Development, Desktop & Process Automation, Algorithmic Trading Bots (MetaTrader 5), and AI Agent Integration (Google Gemini, Claude API).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack & Skills
+* **Languages:** Python, JavaScript, TypeScript, Kotlin, Dart
+* **Frontend:** React, Next.js, Tailwind CSS, HTML5, CSS3, Vanilla JS
+* **Backend:** Node.js, Express.js, FastAPI, REST APIs, WebSockets
+* **Mobile:** Flutter, Native Android (Kotlin)
+* **Databases & Tools:** MongoDB, SQLite, Supabase, Prisma ORM, Git, GitHub, Vercel
+* **Automation:** Puppeteer, Selenium, PyInstaller, win32gui, OpenCV (Computer Vision)
+* **Algorithmic Trading:** MetaTrader 5 (MT5), Expert Advisors (EA), Forex grid strategies
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧠 Featured Projects (29+ Total)
+The live portfolio features a comprehensive list of my work, including:
+1. **BossZY AI Agent:** A local, client-side offline smart chatbot assistant that answers queries instantly and triggers interactive project modals.
+2. **Automated Trading Bot v3:** Multi-pair grid trading EA for MetaTrader 5 with real-time web monitoring dashboards.
+3. **Morse Code Learning Platform:** Interactive web application for translating and practicing Morse Code with real-time audio synthesis.
+4. **Video Tinder:** Desktop application for swipe-based video sorting, smart cutting, and cartoon detection using OpenCV and FFmpeg.
+5. **TeleSales CRM:** Full-stack CRM platform with 3CX VoIP integration, lead management, and custom call logs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📈 SEO & Performance Optimizations
+This portfolio is optimized for search engines and performance:
+* Fully responsive layout optimized for Desktop, Tablet, and Mobile screens.
+* Lightweight vanilla HTML/CSS/JS architecture for 0ms latency and smooth 60fps animations.
+* Custom magnetic canvas particles, mouse spotlight border glow, 3D card tilt, and holographic glitch effects.
+* Preconfigured SEO tags, Open Graph, Twitter Cards metadata, and JSON-LD Structured Data Schema.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to visit the [live site](https://bosszy-portfolio.vercel.app) or check my [GitHub profile](https://github.com/BossZY27) for more projects!
