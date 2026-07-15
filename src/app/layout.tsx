@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "BossZY | CS @ KKU & Developer Portfolio",
-  description: "พอร์ตโฟลิโอสะสมผลงานของ BossZY (Pakin Meksuwan) รวบรวมโปรเจกต์กว่า 29+ ชิ้น ครอบคลุม Web App, Mobile App, Trading Bot (MT5), AI & ML และระบบ Automation",
-  keywords: ["BossZY", "Pakin Meksuwan", "portfolio", "developer", "full-stack", "AI Engineer", "trading bot", "automation", "Web Developer Thailand"],
+  description: "พอร์ตโฟลิโอสะสมผลงานของ BossZY (Phakin Meksuwan) รวบรวมโปรเจกต์กว่า 29+ ชิ้น ครอบคลุม Web App, Mobile App, Trading Bot (MT5), AI & ML และระบบ Automation",
+  keywords: ["BossZY", "Phakin Meksuwan", "portfolio", "developer", "full-stack", "AI Engineer", "trading bot", "automation", "Web Developer Thailand"],
   authors: [{ name: "BossZY" }],
   creator: "BossZY",
   openGraph: {

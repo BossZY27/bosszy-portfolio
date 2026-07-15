@@ -53,7 +53,7 @@ const socialLinks = [
   },
   {
     label: "Email",
-    href: "mailto:pakin.meksuwan@email.com",
+    href: "mailto:phakin.meksuwan@email.com",
     icon: MailIcon,
   },
   {
@@ -80,7 +80,7 @@ export default function Home() {
             <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
               Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
-                Pakin
+                Phakin
               </span>
             </h1>
 
@@ -135,7 +135,7 @@ export default function Home() {
       <footer className="border-t border-white/[0.06] bg-gray-900/40">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 py-12">
           <h2 className="text-xl font-semibold text-gray-100">
-            Pakin Meksuwan{" "}
+            Phakin Meksuwan{" "}
             <span className="text-gray-500 font-normal">(Boss)</span>
           </h2>
 
@@ -160,7 +160,7 @@ export default function Home() {
           </div>
 
           <div className="mt-2 text-xs text-gray-600">
-            &copy; {new Date().getFullYear()} Pakin Meksuwan. Built with
+            &copy; {new Date().getFullYear()} Phakin Meksuwan. Built with
             Next.js &amp; Tailwind CSS.
           </div>
         </div>

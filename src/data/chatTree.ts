@@ -8,7 +8,7 @@ export const chatTree: Record<string, ChatNode> = {
   root: {
     id: "root",
     message:
-      "สวัสดีครับ! ผม Pakin's Assistant 🤖\nเจ้าของ Portfolio นี้เป็นนักศึกษา ปี 2 สาขา Computer Science ม.ขอนแก่น (KKU) ครับ\n\nมีอะไรอยากรู้ เลือกได้เลย!",
+      "สวัสดีครับ! ผม Phakin's Assistant 🤖\nเจ้าของ Portfolio นี้เป็นนักศึกษา ปี 2 สาขา Computer Science ม.ขอนแก่น (KKU) ครับ\n\nมีอะไรอยากรู้ เลือกได้เลย!",
     choices: [
       { label: "🤖 Automation & Bots", nextId: "cat_automation" },
       { label: "🌐 Web Development", nextId: "cat_web" },
@@ -193,9 +193,9 @@ export const chatTree: Record<string, ChatNode> = {
   cat_profile: {
     id: "cat_profile",
     message:
-      "👤 Profile & Skills\nข้อมูลเกี่ยวกับ Pakin และทักษะต่าง ๆ",
+      "👤 Profile & Skills\nข้อมูลเกี่ยวกับ Phakin และทักษะต่าง ๆ",
     choices: [
-      { label: "🎓 เกี่ยวกับ Pakin", nextId: "profile_about" },
+      { label: "🎓 เกี่ยวกับ Phakin", nextId: "profile_about" },
       { label: "💻 Technical Skills", nextId: "profile_skills" },
       { label: "🛠️ Tools & Tech", nextId: "profile_tools" },
       { label: "📞 ติดต่อ / Contact", nextId: "profile_contact" },
@@ -205,7 +205,7 @@ export const chatTree: Record<string, ChatNode> = {
   profile_about: {
     id: "profile_about",
     message:
-      "🎓 เกี่ยวกับ Pakin Meksuwan (Boss)\n\n• นักศึกษาปี 2 สาขา Computer Science\n• มหาวิทยาลัยขอนแก่น (KKU)\n• สนใจด้าน AI-driven Development, Automated Trading และ Creative Writing\n• ชอบสร้าง tools ที่แก้ปัญหาจริง ๆ ตั้งแต่ Bot, Web App ไปจนถึง Browser Extension\n• มีผลงานมากกว่า 10 โปรเจกต์\n• เขียนนิยายบน readAwrite / MEB",
+      "🎓 เกี่ยวกับ Phakin Meksuwan (Boss)\n\n• นักศึกษาปี 2 สาขา Computer Science\n• มหาวิทยาลัยขอนแก่น (KKU)\n• สนใจด้าน AI-driven Development, Automated Trading และ Creative Writing\n• ชอบสร้าง tools ที่แก้ปัญหาจริง ๆ ตั้งแต่ Bot, Web App ไปจนถึง Browser Extension\n• มีผลงานมากกว่า 10 โปรเจกต์\n• เขียนนิยายบน readAwrite / MEB",
     choices: [
       { label: "🔙 กลับหมวด Profile", nextId: "cat_profile" },
       { label: "🏠 กลับเมนูหลัก", nextId: "root" },
@@ -232,10 +232,10 @@ export const chatTree: Record<string, ChatNode> = {
   profile_contact: {
     id: "profile_contact",
     message:
-      "📞 Contact\n\nสนใจร่วมงานหรือมีคำถาม? ติดต่อ Pakin ได้เลยครับ!\n\n• GitHub: BossZY27\n• Email: pakin.meksuwan@email.com\n• Novel: readAwrite / MEB",
+      "📞 Contact\n\nสนใจร่วมงานหรือมีคำถาม? ติดต่อ Phakin ได้เลยครับ!\n\n• GitHub: BossZY27\n• Email: phakin.meksuwan@email.com\n• Novel: readAwrite / MEB",
     choices: [
       { label: "💻 GitHub", nextId: "profile_contact", url: "https://github.com/BossZY27" },
-      { label: "📧 Send Email", nextId: "profile_contact", url: "mailto:pakin.meksuwan@email.com" },
+      { label: "📧 Send Email", nextId: "profile_contact", url: "mailto:phakin.meksuwan@email.com" },
       { label: "🔙 กลับหมวด Profile", nextId: "cat_profile" },
       { label: "🏠 กลับเมนูหลัก", nextId: "root" },
     ],
