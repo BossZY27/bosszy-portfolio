@@ -1100,9 +1100,8 @@ function initChatbot() {
     });
   }
 
-  // Initial greeting
   appendBotMessage(
-    `สวัสดีครับ! ยินดีต้อนรับสู่พื้นที่แสดงผลงานของ BossZY. 🤖<br><br>ผมคือผู้ช่วย AI ส่วนตัว มีคำถามอะไรเกี่ยวกับทักษะการเขียนโค้ด หรือรายชื่อโปรเจกต์ของผมทั้งหมด ถามมาได้เลยครับ! หรือแตะเลือกหัวข้อด่วนที่สนใจด้านล่างนี้ได้ครับ 👇`
+    `ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม (บอส - Phakin Meksuwan) ครับ! 🤖<br><br>ผมเขียนบอทตัวนี้ขึ้นมาเพื่อช่วยค้นหาโปรเจกต์และทักษะของผมโดยอัตโนมัติ คุณอยากดูผลงานด้านไหน เลือกกดปุ่มด้านล่างหรือพิมพ์ถามคีย์เวิร์ดได้เลยครับ!`
   );
   showInitialQuickReplies();
 
@@ -1210,7 +1209,7 @@ function initChatbot() {
     // Greetings
     if (q === 'hello' || q === 'hi' || q === 'hey' || q.includes('สวัสดี') || q.includes('ดีครับ') || q.includes('ดีค่ะ') || q.includes('หวัดดี')) {
       return {
-        text: `สวัสดีครับ! ยินดีต้อนรับครับ พิมพ์คีย์เวิร์ดเกี่ยวกับภาษา (เช่น Python, React, JavaScript), หมวดหมู่ผลงาน (เช่น Web, Mobile, Automation, Trading), หรือเลือกเมนูปุ่มด่วนด้านล่างเพื่อสืบค้นผลงานของผมได้เลยครับ. 😊`,
+        text: `สวัสดีครับ! พิมพ์คำค้นหาภาษาที่อยากดูได้เลย เช่น Python, React, Automation หรือคลิกเลือกปุ่มด้านล่างเพื่อสืบค้นข้อมูลได้เลยครับ 😊`,
         replies: []
       };
     }
@@ -1218,7 +1217,7 @@ function initChatbot() {
     // Contacts
     if (q.includes('contact') || q.includes('ติดต่อ') || q.includes('email') || q.includes('อีเมล') || q.includes('gmail') || q.includes('github')) {
       return {
-        text: `คุณสามารถติดต่อคุณ BossZY ได้ผ่านช่องทางเหล่านี้ครับ:<br><br>📧 **Email:** <a href="mailto:bossboss27.b3@gmail.com" style="color: #06b6d4; text-decoration: underline; font-weight: 500;">bossboss27.b3@gmail.com</a><br>💻 **GitHub:** <a href="https://github.com/BossZY" target="_blank" style="color: #06b6d4; text-decoration: underline; font-weight: 500;">github.com/BossZY</a>`,
+        text: `คุณสามารถติดต่อผมได้ผ่านช่องทางเหล่านี้เลยครับ:<br><br>📧 **Email:** <a href="mailto:bossboss27.b3@gmail.com" style="color: #06b6d4; text-decoration: underline; font-weight: 500;">bossboss27.b3@gmail.com</a><br>💻 **GitHub:** <a href="https://github.com/BossZY27" target="_blank" style="color: #06b6d4; text-decoration: underline; font-weight: 500;">github.com/BossZY27</a>`,
         replies: [
           { label: '🔥 ดูผลงานทั้งหมด', query: 'all_projects' },
           { label: '🤖 แนะนำโปรเจกต์ AI', query: 'ai' }
