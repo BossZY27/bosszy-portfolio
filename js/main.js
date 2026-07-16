@@ -5,6 +5,7 @@ const projects = [
   // --- Web Applications ---
   {
     id: '2getr',
+image: 'public/images/2getr.png',
     name: '2Getr',
     shortDesc: 'แพลตฟอร์ม Social Community สำหรับเชื่อมต่อผู้คน',
     fullDesc: 'Full-stack social/community web application ที่มีระบบ Real-time features, User Authentication, Content Sharing และ Community Management ครบวงจร',
@@ -16,6 +17,7 @@ const projects = [
   },
   {
     id: 'opt-pos',
+image: 'public/images/pos.png',
     name: 'Opt-POS',
     shortDesc: 'ระบบ Point of Sale สำหรับร้านค้าปลีก',
     fullDesc: 'ระบบ POS ที่ออกแบบมาสำหรับธุรกิจร้านค้าปลีก พร้อมระบบจัดการสินค้าคงคลัง การติดตามยอดขาย และรายงานสรุป',
@@ -27,6 +29,7 @@ const projects = [
   },
   {
     id: 'next2-pos',
+image: 'public/images/pos.png',
     name: 'Next2-POS',
     shortDesc: 'ระบบ POS เวอร์ชัน 2 ที่พัฒนาต่อยอด',
     fullDesc: 'POS System เวอร์ชันที่ 2 ที่ปรับปรุงประสิทธิภาพและเพิ่มฟีเจอร์ใหม่จากเวอร์ชันแรก',
@@ -38,6 +41,7 @@ const projects = [
   },
   {
     id: 'opt-loyalty',
+image: 'public/images/pos.png',
     name: 'Opt-Loyalty',
     shortDesc: 'ระบบ CRM จัดการ Loyalty Program',
     fullDesc: 'ระบบบริหารจัดการโปรแกรมสะสมแต้มและ Customer Loyalty สำหรับธุรกิจ พร้อมติดตามพฤติกรรมลูกค้า',
@@ -49,6 +53,7 @@ const projects = [
   },
   {
     id: 'telesales',
+image: 'public/images/bot.png',
     name: 'TeleSales CRM',
     shortDesc: 'ระบบ CRM สำหรับทีม TeleSales พร้อม VoIP',
     fullDesc: 'ระบบ CRM ครบวงจร สำหรับทีม TeleSales มีระบบจัดการ Lead, VoIP/3CX Click-to-call, Call Logging, KPI Dashboard และ Excel Report Export รองรับหลาย Role (Admin/Manager/Agent)',
@@ -60,6 +65,7 @@ const projects = [
   },
   {
     id: 'ai-shop',
+image: 'public/images/bot.png',
     name: 'AI Shop Team',
     shortDesc: 'แพลตฟอร์มจัดการร้านค้าด้วย AI',
     fullDesc: 'ระบบบริหารจัดการร้านค้าที่ขับเคลื่อนด้วย AI ช่วยวิเคราะห์และจัดการทีมงานอย่างมีประสิทธิภาพ',
@@ -71,6 +77,7 @@ const projects = [
   },
   {
     id: 'ai-office',
+image: 'public/images/bot.png',
     name: 'AI Team Office',
     shortDesc: 'ระบบ Multi-Agent AI จัดการงานอัตโนมัติ',
     fullDesc: 'Full-stack web app ที่มี AI Agents หลายตัว (Researcher, Analyst, Developer) ทำงานร่วมกัน ระบบจะ Route งานไปยัง Agent ที่เหมาะสมผ่าน Keyword Matching โดยใช้ Claude API',
@@ -82,6 +89,7 @@ const projects = [
   },
   {
     id: 'mlbb-meta',
+image: 'public/images/mlbb-tier.png',
     name: 'MLBB Meta Analyzer',
     shortDesc: 'เว็บวิเคราะห์ Meta เกม Mobile Legends',
     fullDesc: 'Full-stack Gaming Analytics Web App สำหรับวิเคราะห์ Meta ของเกม Mobile Legends: Bang Bang มี Backend API แยกจาก Frontend',
@@ -93,6 +101,7 @@ const projects = [
   },
   {
     id: 'laos-lottery',
+image: 'public/images/trading-bot.png',
     name: 'Lao Lottery AI',
     shortDesc: 'ระบบ AI ทำนายหวยลาว ด้วย Neural Network',
     fullDesc: 'ระบบทำนายหวยลาวที่ใช้ AI/ML พร้อม Frequency Analysis, Neural Network Model และ Heuristic Validation',
@@ -104,6 +113,7 @@ const projects = [
   },
   {
     id: 'ai-cartoon',
+image: 'public/images/2getr.png',
     name: 'AI Cartoon',
     shortDesc: 'แอปพลิเคชัน AI สำหรับสร้าง Cartoon',
     fullDesc: 'Web application ที่ใช้ AI ในการสร้างและแปลงรูปภาพเป็นสไตล์ Cartoon',
@@ -115,6 +125,7 @@ const projects = [
   },
   {
     id: 'web-schedule',
+image: 'public/images/bot.png',
     name: 'Web Schedule Nara',
     shortDesc: 'ระบบจัดการตารางเวลา',
     fullDesc: 'ระบบจัดการตารางเวลาสำหรับ Nara พร้อมอินเทอร์เฟซที่ใช้งานง่าย',
@@ -127,6 +138,7 @@ const projects = [
   // --- Mobile Apps ---
   {
     id: 'unitask-flutter',
+image: 'public/images/unitask.png',
     name: 'Unitask (Flutter)',
     shortDesc: 'แอปจัดการงาน Cross-Platform ด้วย Flutter',
     fullDesc: 'Task Management App แบบ Cross-platform สร้างด้วย Flutter สำหรับจัดการงานและ To-do list',
@@ -138,6 +150,7 @@ const projects = [
   },
   {
     id: 'unitask-android',
+image: 'public/images/unitask.png',
     name: 'Unitask (Android)',
     shortDesc: 'แอปจัดการงาน Native Android ด้วย Kotlin',
     fullDesc: 'Task Management App แบบ Native Android สร้างด้วย Kotlin และ Android SDK',
@@ -149,6 +162,7 @@ const projects = [
   },
   {
     id: 'flutter-mobile',
+image: 'public/images/unitask.png',
     name: 'Flutter Mobile App',
     shortDesc: 'แอปมือถือ Cross-Platform',
     fullDesc: 'โปรเจกต์แอปมือถือที่พัฒนาด้วย Flutter Framework',
@@ -161,6 +175,7 @@ const projects = [
   // --- Automation & Bots ---
   {
     id: 'music-adblocker',
+image: 'public/images/music-ad.png',
     name: 'Music Ad Blocker',
     shortDesc: 'Chrome Extension บล็อกโฆษณาเว็บเพลง',
     fullDesc: 'Browser Extension สำหรับบล็อกโฆษณาบนเว็บไซต์ Music Streaming ต่างๆ พัฒนาด้วย Manifest V3',
@@ -172,6 +187,7 @@ const projects = [
   },
   {
     id: 'fastwork-scraper',
+image: 'public/images/bot.png',
     name: 'Fastwork Scraper',
     shortDesc: 'Bot scrape ข้อมูลงานจาก Fastwork.co',
     fullDesc: 'Web Scraping Bot สำหรับดึงข้อมูลรายการงานและข้อมูล Freelancer จากเว็บ Fastwork.co ใช้ Puppeteer',
@@ -183,6 +199,7 @@ const projects = [
   },
   {
     id: 'elearning-bot',
+image: 'public/images/bot.png',
     name: 'E-Learning Automator',
     shortDesc: 'Bot เรียน E-Learning อัตโนมัติ',
     fullDesc: 'Automation Bot ที่ช่วยเลื่อนผ่านบทเรียน E-Learning ออนไลน์อัตโนมัติ',
@@ -194,6 +211,7 @@ const projects = [
   },
   {
     id: 'auto-vpn',
+image: 'public/images/network.png',
     name: 'Auto VPN App',
     shortDesc: 'เครื่องมือจัดการ VPN อัตโนมัติ',
     fullDesc: 'Desktop Tool สำหรับจัดการ VPN Connections อัตโนมัติ พร้อม GUI ที่ใช้งานง่าย',
@@ -205,6 +223,7 @@ const projects = [
   },
   {
     id: 'vpn-dashboard',
+image: 'public/images/network.png',
     name: 'Automation Dashboard',
     shortDesc: 'แดชบอร์ดควบคุม VPN และ Window Management',
     fullDesc: 'Desktop Dashboard สำหรับจัดการ Browser Profiles, Windows ผ่าน win32gui และ Automate งานซ้ำๆ',
@@ -216,6 +235,7 @@ const projects = [
   },
   {
     id: 'edge-auto',
+image: 'public/images/network.png',
     name: 'Edge Multi-Profile',
     shortDesc: 'เปิด Browser หลาย Profile พร้อม Hotkey',
     fullDesc: 'Browser Multi-Profile Launcher v9 — เปิดหลาย Edge/Chrome Profiles ด้วย Hotkeys, Auto-click, Logging และ System Tray พร้อม Package เป็น .exe',
@@ -227,6 +247,7 @@ const projects = [
   },
   {
     id: 'auto-hotmail',
+image: 'public/images/music-ad.png',
     name: 'Auto Sub Hotmail',
     shortDesc: 'Chrome Extension สำหรับ Auto-click สมัครอีเมล',
     fullDesc: 'Chrome Extension ที่ Auto-click ปุ่ม Create บนหน้า Microsoft Sign-in/Signup สำหรับการสร้างบัญชี Hotmail อัตโนมัติ',
@@ -238,6 +259,7 @@ const projects = [
   },
   {
     id: 'tiktok-cart',
+image: 'public/images/tiktok-bot.png',
     name: 'TikTok Cart Bot',
     shortDesc: 'Automation สำหรับ TikTok Shopping',
     fullDesc: 'Bot อัตโนมัติสำหรับจัดการตะกร้าสินค้าบน TikTok Shop พร้อม Showcase Management',
@@ -249,6 +271,7 @@ const projects = [
   },
   {
     id: 'video-tinder',
+image: 'public/images/2getr.png',
     name: 'Video Tinder',
     shortDesc: 'จัดการวิดีโอแบบ Swipe — Pass/Fail/Cut',
     fullDesc: 'Desktop App สำหรับจัดการวิดีโอแบบ Swipe ทำได้ทั้ง Pass/Fail/Cut พร้อม Auto-sorting, Video Merging, Smart Cutting, Cartoon Detection และ Audit Reports',
@@ -261,6 +284,7 @@ const projects = [
   // --- Trading ---
   {
     id: 'grid-bot',
+image: 'public/images/trading-bot.png',
     name: 'Grid Trading Bot v3',
     shortDesc: 'Multi-pair Grid Trading Bot สำหรับ Forex',
     fullDesc: 'Automated Grid Trading Bot เวอร์ชัน 3 สำหรับเทรด Forex หลายคู่เงินพร้อมกัน ทำงานบน MetaTrader 5 พร้อม Dashboard แสดงผล',
@@ -272,6 +296,7 @@ const projects = [
   },
   {
     id: 'smart-grid-ea',
+image: 'public/images/trading-bot.png',
     name: 'Smart Grid EA',
     shortDesc: 'Expert Advisor พร้อม News Filter & Radar',
     fullDesc: 'Advanced Expert Advisor ที่ใช้ Grid Trading Logic บน MetaTrader 5 พร้อม News Filter, Market Radar, Regime Detection และ Web Dashboard',
@@ -284,6 +309,7 @@ const projects = [
   // --- AI & ML ---
   {
     id: 'secretary-bot',
+image: 'public/images/bot.png',
     name: 'น้องเลขา Bot',
     shortDesc: 'Telegram Bot ผู้ช่วยจัดตาราง พร้อม AI & OCR',
     fullDesc: 'Telegram Bot ที่ทำหน้าที่เป็นผู้ช่วยจัดตารางส่วนตัว รองรับ Natural Language, OCR จากรูปภาพ, วิเคราะห์เวลาว่าง, แจ้งเตือนอัตโนมัติ (สรุปรายวัน 7AM + แจ้งเตือนก่อนนัด 15 นาที) ขับเคลื่อนด้วย Gemini AI',
@@ -295,6 +321,7 @@ const projects = [
   },
   {
     id: 'tiktok-analytics',
+image: 'public/images/tiktok-bot.png',
     name: 'TikTok Analytics',
     shortDesc: 'แพลตฟอร์มวิเคราะห์ข้อมูล TikTok',
     fullDesc: 'ระบบวิเคราะห์ข้อมูลจาก TikTok พร้อม Dashboard แสดงผลสถิติต่างๆ',
@@ -306,6 +333,7 @@ const projects = [
   },
   {
     id: 'google-apps-script',
+image: 'public/images/bot.png',
     name: 'Google Apps Script',
     shortDesc: 'Automation Scripts สำหรับ Google Workspace',
     fullDesc: 'ชุด Google Apps Script สำหรับ Automate งานต่างๆ บน Google Workspace เช่น Google Sheets, Gmail และ Google Calendar',
@@ -318,6 +346,7 @@ const projects = [
   // --- Academic ---
   {
     id: 'onet-network',
+image: 'public/images/network.png',
     name: 'ONet Network Sim',
     shortDesc: 'จำลอง Bio-SCION Network Architecture',
     fullDesc: 'โปรเจกต์วิชา Computer Networks (CP352005) — จำลอง Bio-SCION Architecture (NDN + SCION ISD + Capability-Based Security) เทียบกับ TCP/IP ด้วย Monte-Carlo Simulations พร้อมกราฟเปรียบเทียบ',
@@ -538,8 +567,8 @@ function renderProjects() {
 
   grid.innerHTML = projects.map((p, i) => `
     <div class="project-card fade-in-up" data-category="${p.category}" data-id="${p.id}" style="animation-delay: ${i * 0.05}s">
-      <div class="project-card-header" style="background: ${p.gradient}">
-        <span class="project-card-icon">${p.icon}</span>
+      <div class="project-card-header" style="background: ${p.image ? `linear-gradient(to bottom, rgba(10, 10, 26, 0.1), rgba(10, 10, 26, 0.6)), url('${p.image}') no-repeat center/cover` : p.gradient}">
+        ${p.image ? '' : `<span class="project-card-icon">${p.icon}</span>`}
         <span class="project-card-category">${categories[p.category]?.icon || ''} ${categories[p.category]?.label || p.category}</span>
       </div>
       <div class="project-card-body">
@@ -649,9 +678,9 @@ function openModal(project) {
   if (!overlay || !content) return;
 
   content.innerHTML = `
-    <div class="modal-header" style="background: ${project.gradient}">
+    <div class="modal-header" style="background: ${project.image ? `linear-gradient(to bottom, rgba(10, 10, 26, 0.2), rgba(10, 10, 26, 0.8)), url('${project.image}') no-repeat center/cover` : project.gradient}">
       <button class="modal-close">&times;</button>
-      <div class="modal-icon">${project.icon}</div>
+      ${project.image ? '' : `<div class="modal-icon">${project.icon}</div>`}
       <h2 class="modal-title">${project.name}</h2>
       <span class="modal-category-badge">${categories[project.category]?.icon || ''} ${categories[project.category]?.label || project.category}</span>
     </div>
