@@ -1552,16 +1552,101 @@ button {
     font-size: 0.75rem;
   }
 
+  /* ---- Project Cards Compact ---- */
+  .project-card {
+    border-radius: 12px;
+  }
+
   .project-card-header {
-    height: 160px;
+    height: 120px;
+  }
+
+  .project-card-icon {
+    font-size: 42px;
+  }
+
+  .project-card-category {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    top: 8px;
+    right: 8px;
   }
 
   .project-card-body {
-    padding: 18px;
+    padding: 14px 16px;
+  }
+
+  .project-card-title {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .project-card-desc {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    -webkit-line-clamp: 2;
+  }
+
+  .project-card-tech {
+    gap: 5px;
+  }
+
+  .tech-tag {
+    font-size: 0.65rem;
+    padding: 3px 8px;
   }
 
   .project-card-footer {
-    padding: 14px 18px;
+    padding: 10px 16px;
+  }
+
+  .view-details-btn {
+    font-size: 0.78rem;
+  }
+
+  /* ---- Modal Compact ---- */
+  .modal-content {
+    width: 92%;
+    max-height: 85vh;
+    border-radius: 14px;
+  }
+
+  .modal-header {
+    padding: 18px 16px 16px;
+    min-height: 80px;
+  }
+
+  .modal-icon {
+    font-size: 40px;
+  }
+
+  .modal-title {
+    font-size: 1.15rem;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .modal-body h3 {
+    font-size: 0.95rem;
+  }
+
+  .modal-body p,
+  .modal-body li {
+    font-size: 0.82rem;
+  }
+
+  .modal-body .tech-tag {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  /* ---- Filter Tabs Compact ---- */
+  .filter-btn {
+    font-size: 0.75rem;
+    padding: 7px 14px;
   }
 
   .contact-link {
