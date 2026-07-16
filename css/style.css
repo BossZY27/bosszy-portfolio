@@ -1322,9 +1322,66 @@ button {
     font-size: 1.75rem;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+  /* ---- About 3D Section ---- */
+  .about-3d-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-timeline {
+    padding-left: 32px;
+  }
+
+  .timeline-dot {
+    left: -26px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-content {
+    padding: 16px 18px;
+  }
+
+  .timeline-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.82rem;
+  }
+
+  .cube-scene {
+    width: 140px;
+    height: 140px;
+  }
+  .cube-face {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+  }
+  .cube-front  { transform: rotateY(0deg) translateZ(70px); }
+  .cube-right  { transform: rotateY(90deg) translateZ(70px); }
+  .cube-back   { transform: rotateY(180deg) translateZ(70px); }
+  .cube-left   { transform: rotateY(-90deg) translateZ(70px); }
+  .cube-top    { transform: rotateX(90deg) translateZ(70px); }
+  .cube-bottom { transform: rotateX(-90deg) translateZ(70px); }
+
+  .cube-stat-number {
+    font-size: 2rem;
+  }
+
+  .cube-stat-label {
+    font-size: 0.75rem;
+  }
+
+  .about-tags {
+    gap: 8px;
+    margin-top: 30px;
+  }
+
+  .about-tag {
+    font-size: 0.75rem;
+    padding: 6px 14px;
   }
 
   .skills-grid {
@@ -1417,6 +1474,49 @@ button {
 
   .hero-name {
     font-size: clamp(1.75rem, 9vw, 2.5rem);
+  }
+
+  /* ---- About 3D Section (small mobile) ---- */
+  .about-timeline {
+    padding-left: 28px;
+  }
+
+  .timeline-item {
+    margin-bottom: 24px;
+  }
+
+  .timeline-content {
+    padding: 14px 16px;
+  }
+
+  .cube-scene {
+    width: 120px;
+    height: 120px;
+  }
+  .cube-face {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+  }
+  .cube-front  { transform: rotateY(0deg) translateZ(60px); }
+  .cube-right  { transform: rotateY(90deg) translateZ(60px); }
+  .cube-back   { transform: rotateY(180deg) translateZ(60px); }
+  .cube-left   { transform: rotateY(-90deg) translateZ(60px); }
+  .cube-top    { transform: rotateX(90deg) translateZ(60px); }
+  .cube-bottom { transform: rotateX(-90deg) translateZ(60px); }
+
+  .cube-stat-number {
+    font-size: 1.6rem;
+  }
+
+  .about-tags {
+    gap: 6px;
+    margin-top: 24px;
+  }
+
+  .about-tag {
+    font-size: 0.7rem;
+    padding: 5px 12px;
   }
 
   .hero-typing {
