@@ -144,37 +144,97 @@
     <div class="container">
       <div class="section-header fade-in-up">
         <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">ภาพรวมความสามารถและประสบการณ์</p>
+        <p class="section-subtitle">เส้นทางจากเด็กเล่นเกม สู่โปรแกรมเมอร์</p>
       </div>
-      <div class="about-content">
-        <div class="about-text fade-in-up">
-          <p>
-            สวัสดีครับ ผม <strong>Phakin Meksuwan (Boss)</strong> — นักศึกษาภาควิชาวิทยาการคอมพิวเตอร์ ม.ขอนแก่น (KKU) ที่หลงใหลในการเขียนโค้ดและสร้างโปรแกรมทุ่นแรง
-            เน้นพัฒนาตั้งแต่ Web Application ขนาดใหญ่, ระบบหลังบ้าน Automation ไปจนถึง Trading Bot ที่ทำงานบน MetaTrader 5 และ AI Integration ต่างๆ
-          </p>
-          <p>
-            ผมชอบเรียนรู้เทคโนโลยีใหม่ๆ และสร้างโปรเจกต์ที่ใช้งานได้จริงในชีวิตประจำวันเพื่อแก้ปัญหาของตัวเองและผู้อื่นเป็นหลักครับ
-          </p>
+
+      <div class="about-3d-layout">
+        <!-- LEFT: Timeline Journey -->
+        <div class="about-timeline">
+          <div class="timeline-line"></div>
+
+          <div class="timeline-item fade-in-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2018</span>
+              <h3>🎮 จุดเริ่มต้น</h3>
+              <p>สนใจเขียนโค้ดครั้งแรกจากการอยากสร้าง Bot ในเกม เริ่มหัดเขียน Python ด้วยตัวเอง</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2021</span>
+              <h3>💻 เขียนโค้ดจริงจัง</h3>
+              <p>เริ่มพัฒนาเครื่องมือ Automation, Browser Extension และโปรแกรม Desktop ใช้งานจริง</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2024</span>
+              <h3>🎓 CS @ KKU</h3>
+              <p>เข้าศึกษาสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น เรียนรู้ทั้ง Full-Stack, AI และ Mobile Dev</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Now</span>
+              <h3>🚀 ปัจจุบัน</h3>
+              <p>สะสมผลงานมากกว่า 29 โปรเจกต์ ครอบคลุม 6 หมวดหมู่ ตั้งแต่ Web App, Trading Bot ไปจนถึง AI Agent</p>
+            </div>
+          </div>
         </div>
-        <div class="stats-grid">
-          <div class="stat-card fade-in-up">
-            <div class="stat-number" data-target="29">0+</div>
-            <div class="stat-label">Projects</div>
+
+        <!-- RIGHT: 3D Glass Cube -->
+        <div class="about-cube-wrapper fade-in-up">
+          <div class="cube-scene">
+            <div class="cube">
+              <div class="cube-face cube-front">
+                <div class="cube-stat-number">29+</div>
+                <div class="cube-stat-label">Projects</div>
+              </div>
+              <div class="cube-face cube-right">
+                <div class="cube-stat-number">20+</div>
+                <div class="cube-stat-label">Technologies</div>
+              </div>
+              <div class="cube-face cube-back">
+                <div class="cube-stat-number">6</div>
+                <div class="cube-stat-label">Categories</div>
+              </div>
+              <div class="cube-face cube-left">
+                <div class="cube-stat-number">5</div>
+                <div class="cube-stat-label">Platforms</div>
+              </div>
+              <div class="cube-face cube-top">
+                <div class="cube-stat-number">2</div>
+                <div class="cube-stat-label">Years Coding</div>
+              </div>
+              <div class="cube-face cube-bottom">
+                <div class="cube-stat-number">∞</div>
+                <div class="cube-stat-label">Curiosity</div>
+              </div>
+            </div>
           </div>
-          <div class="stat-card fade-in-up">
-            <div class="stat-number" data-target="20">0+</div>
-            <div class="stat-label">Technologies</div>
-          </div>
-          <div class="stat-card fade-in-up">
-            <div class="stat-number" data-target="6">0+</div>
-            <div class="stat-label">Categories</div>
-          </div>
-          <div class="stat-card fade-in-up">
-            <div class="stat-number" data-target="5">0+</div>
-            <div class="stat-label">Platforms</div>
-          </div>
+          <p class="cube-hint">* hover เพื่อหยุดหมุน</p>
         </div>
       </div>
+
+      <!-- Tag Cloud -->
+      <div class="about-tags fade-in-up">
+        <span class="about-tag" style="--delay: 0s">CS Student @ KKU</span>
+        <span class="about-tag" style="--delay: 0.3s">Automation Lover</span>
+        <span class="about-tag" style="--delay: 0.6s">Night Owl Coder 🦉</span>
+        <span class="about-tag" style="--delay: 0.9s">Trading Bot Builder</span>
+        <span class="about-tag" style="--delay: 1.2s">Novel Writer ✍️</span>
+        <span class="about-tag" style="--delay: 0.15s">Full-Stack Dev</span>
+        <span class="about-tag" style="--delay: 0.45s">AI Enthusiast</span>
+        <span class="about-tag" style="--delay: 0.75s">Open Source</span>
+      </div>
+
     </div>
   </section>
 
