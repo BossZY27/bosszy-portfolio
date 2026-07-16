@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { projects } from "@/data/projects";
@@ -15,16 +15,76 @@ function ProjectCard({
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
+  // 3D Interactive Tilt & Spotlight Glare State
+  const [tiltStyle, setTiltStyle] = useState<React.CSSProperties>({
+    transform: "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"
+  });
+  const [glareStyle, setGlareStyle] = useState<React.CSSProperties>({
+    opacity: 0,
+    background: ""
+  });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const card = ref.current;
+    const rect = card.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    
+    // Mouse coordinates relative to card
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // Normalize coordinates to range (-0.5 to 0.5)
+    const mouseX = x - width / 2;
+    const mouseY = y - height / 2;
+    
+    // Tilt limit: 8 degrees for clean, premium 3D movement
+    const rX = -(mouseY / (height / 2)) * 8;
+    const rY = (mouseX / (width / 2)) * 8;
+    
+    setTiltStyle({
+      transform: `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale3d(1.02, 1.02, 1.02)`,
+      boxShadow: "0 25px 50px -12px rgba(124, 58, 237, 0.25)"
+    });
+
+    setGlareStyle({
+      opacity: 1,
+      background: `radial-gradient(circle 250px at ${x}px ${y}px, rgba(139, 92, 246, 0.15), transparent)`
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setTiltStyle({
+      transform: "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)",
+      boxShadow: "none"
+    });
+    setGlareStyle({
+      opacity: 0,
+      background: ""
+    });
+  };
+
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-gray-900/60 backdrop-blur-sm"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        ...tiltStyle,
+        transition: "transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.25s ease",
+        transformStyle: "preserve-3d"
+      }}
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-gray-900/60 backdrop-blur-sm cursor-pointer"
     >
       {/* Image */}
-      <div className="relative h-48 w-full overflow-hidden bg-gray-800">
+      <div 
+        className="relative h-48 w-full overflow-hidden bg-gray-800"
+        style={{ transform: "translateZ(20px)", transformStyle: "preserve-3d" }}
+      >
         <Image
           src={project.image}
           alt={project.title}
@@ -33,22 +93,37 @@ function ProjectCard({
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
-        <span className="absolute bottom-3 left-4 rounded-full border border-violet-400/30 bg-violet-500/20 px-3 py-1 text-xs font-medium text-violet-300 backdrop-blur-sm">
+        <span 
+          className="absolute bottom-3 left-4 rounded-full border border-violet-400/30 bg-violet-500/20 px-3 py-1 text-xs font-medium text-violet-300 backdrop-blur-sm"
+          style={{ transform: "translateZ(30px)" }}
+        >
           {project.category}
         </span>
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="text-lg font-semibold text-gray-100 group-hover:text-violet-300 transition-colors">
+      <div 
+        className="flex flex-1 flex-col p-5"
+        style={{ transform: "translateZ(35px)", transformStyle: "preserve-3d" }}
+      >
+        <h3 
+          className="text-lg font-semibold text-gray-100 group-hover:text-violet-300 transition-colors"
+          style={{ transform: "translateZ(40px)" }}
+        >
           {project.title}
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-gray-400">
+        <p 
+          className="mt-2 text-sm leading-relaxed text-gray-400"
+          style={{ transform: "translateZ(25px)" }}
+        >
           {project.description}
         </p>
 
         {/* Tech Stack */}
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div 
+          className="mt-4 flex flex-wrap gap-2"
+          style={{ transform: "translateZ(20px)" }}
+        >
           {project.tech.map((t) => (
             <span
               key={t}
@@ -62,7 +137,10 @@ function ProjectCard({
         {/* Action Buttons */}
         {(project.liveUrl && project.liveUrl !== "#") ||
         (project.githubUrl && project.githubUrl !== "#") ? (
-          <div className="mt-5 flex gap-3 pt-1">
+          <div 
+            className="mt-5 flex gap-3 pt-1"
+            style={{ transform: "translateZ(30px)" }}
+          >
             {project.liveUrl && project.liveUrl !== "#" && (
               <a
                 href={project.liveUrl}
@@ -112,8 +190,14 @@ function ProjectCard({
         ) : null}
       </div>
 
-      {/* Hover glow */}
-      <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 border border-violet-500/20" />
+      {/* Hover border glow */}
+      <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 border border-violet-500/20 z-20" />
+
+      {/* Spotlight Glare layer */}
+      <div 
+        className="pointer-events-none absolute inset-0 z-10 transition-opacity duration-300 rounded-2xl"
+        style={glareStyle}
+      />
     </motion.div>
   );
 }
