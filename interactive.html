@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Phakin Meksuwan (BossZY)'s Interactive 3D Art & Physics Playground page. Explore custom 3D animations, physics simulations, and rotating artwork.">
+  <title>Phakin Meksuwan (BossZY) — 3D Space</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Unique styling for the 3D space page */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #050510;
+    }
+
+    #three-container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .interactive-ui {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Let clicks pass through to Three.js container */
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    /* Make buttons and interactive UI elements clickable */
+    .clickable {
+      pointer-events: auto;
+    }
+
+    .space-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      color: #f1f5f9;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(124, 58, 237, 0.15);
+      border-color: rgba(124, 58, 237, 0.4);
+      transform: translateX(-4px);
+      box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+    }
+
+    .space-title-badge {
+      padding: 6px 14px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(6, 182, 212, 0.15));
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      border-radius: 20px;
+      color: #06b6d4;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+    }
+
+    /* Controls Panel */
+    .controls-panel {
+      align-self: center;
+      margin-bottom: 24px;
+      background: rgba(10, 10, 26, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 16px 24px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .mode-selector {
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 50px;
+      padding: 4px;
+      width: 100%;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 10px 14px;
+      background: none;
+      border: none;
+      border-radius: 50px;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .mode-btn.active {
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    }
+
+    .action-row {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .action-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #f1f5f9;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .action-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .action-btn.primary {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(124, 58, 237, 0.15));
+      border-color: rgba(6, 182, 212, 0.3);
+      color: #06b6d4;
+    }
+
+    .action-btn.primary:hover {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(124, 58, 237, 0.25));
+      border-color: rgba(6, 182, 212, 0.5);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+    }
+
+    .space-hint {
+      font-size: 0.8rem;
+      color: #64748b;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .interactive-ui {
+        padding: 16px;
+      }
+      .controls-panel {
+        padding: 12px 16px;
+        margin-bottom: 12px;
+        gap: 12px;
+      }
+      .mode-btn {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+      }
+      .action-btn {
+        padding: 10px 14px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Three.js Container -->
+  <div id="three-container"></div>
+
+  <!-- Interactive HUD/UI layer -->
+  <div class="interactive-ui">
+    
+    <!-- Top Nav Row -->
+    <div class="space-nav">
+      <a href="index.html" class="back-btn clickable">
+        <span>←</span> Back to Portfolio
+      </a>
+      <div class="space-title-badge">BossZY 3D SPACE</div>
+    </div>
+
+    <!-- Bottom Controls Panel -->
+    <div class="controls-panel clickable">
+      <!-- Mode Selection -->
+      <div class="mode-selector">
+        <button class="mode-btn active" id="btn-galaxy" onclick="switchMode('galaxy')">🌌 Galaxy</button>
+        <button class="mode-btn" id="btn-physics" onclick="switchMode('physics')">🎯 Physics Playground</button>
+        <button class="mode-btn" id="btn-gallery" onclick="switchMode('gallery')">🎡 3D Gallery</button>
+      </div>
+
+      <!-- Contextual Action Buttons -->
+      <div class="action-row" id="physics-actions" style="display: none;">
+        <button class="action-btn primary" onclick="spawnShape()">➕ Spawn 3D Shape</button>
+        <button class="action-btn" onclick="clearShapes()">🗑️ Clear All</button>
+      </div>
+
+      <!-- Hint and Instructions -->
+      <div class="space-hint" id="mode-instructions">
+        เลื่อนเมาส์ไปมาเพื่อหมุนและดึงดูดกลุ่มดาวอนุภาค 3 มิติ
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- Main Interactive JavaScript -->
+  <script src="js/interactive.js"></script>
+</body>
+</html>
