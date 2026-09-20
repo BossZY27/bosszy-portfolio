@@ -376,22 +376,19 @@ const categories = {
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
-  initParticles();
   renderProjects();
+  renderFeaturedProjects();
   initFilterTabs();
   initModal();
   initScrollAnimations();
-  initCounterAnimation();
   initNavbar();
   initSmoothScroll();
   updateProjectCount();
-  initSpotlightEffect();
-  initTiltEffect();
   initScrollProgressBar();
-  initRippleEffect();
-  initLaserTrailCursor();
-  init3DParallaxShapes();
   initChatbot();
+  initInlineChat();
+  const year = document.getElementById('current-year');
+  if (year) year.textContent = new Date().getFullYear();
 });
 
 // ============================================
@@ -561,15 +558,46 @@ function initTypingEffect() {
 // ============================================
 // RENDER PROJECTS
 // ============================================
+function renderFeaturedProjects() {
+  const stage = document.getElementById('featured-stage');
+  if (!stage) return;
+
+  const selectedIds = ['2getr', 'opt-pos', 'grid-bot'];
+  const selected = selectedIds
+    .map(id => projects.find(project => project.id === id))
+    .filter(Boolean);
+
+  stage.innerHTML = selected.map((project, index) => `
+    <article class="featured-case reveal">
+      <div class="featured-visual">
+        <span class="featured-number">CASE 0${index + 1}</span>
+        ${project.image
+          ? `<img src="${project.image}" alt="หน้าจอโปรเจกต์ ${project.name}" loading="lazy">`
+          : `<div class="featured-placeholder" aria-hidden="true">${String(index + 1).padStart(2, '0')}</div>`}
+      </div>
+      <div class="featured-info">
+        <span class="project-type">${categories[project.category]?.label || project.category}</span>
+        <h3>${project.name}</h3>
+        <p>${project.fullDesc}</p>
+        <div class="featured-tech">${project.tech.slice(0, 5).map(tech => `<span>${tech}</span>`).join('')}</div>
+        <button class="case-open view-details-btn" type="button" data-id="${project.id}">Open case</button>
+      </div>
+    </article>
+  `).join('');
+}
+
 function renderProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
 
   grid.innerHTML = projects.map((p, i) => `
-    <div class="project-card fade-in-up" data-category="${p.category}" data-id="${p.id}" style="animation-delay: ${i * 0.05}s">
-      <div class="project-card-header" style="background: ${p.image ? `linear-gradient(to bottom, rgba(10, 10, 26, 0.1), rgba(10, 10, 26, 0.6)), url('${p.image}') no-repeat center/cover` : p.gradient}">
-        ${p.image ? '' : `<span class="project-card-icon">${p.icon}</span>`}
-        <span class="project-card-category">${categories[p.category]?.icon || ''} ${categories[p.category]?.label || p.category}</span>
+    <article class="project-card reveal" data-category="${p.category}" data-id="${p.id}" style="--card-order: ${i}">
+      <div class="project-card-header" tabindex="0" role="button" aria-label="ดูรายละเอียด ${p.name}">
+        ${p.image
+          ? `<img src="${p.image}" alt="ภาพโปรเจกต์ ${p.name}" loading="lazy">`
+          : `<span class="project-card-icon" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>`}
+        <span class="project-card-category">${categories[p.category]?.label || p.category}</span>
+        <span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>
       </div>
       <div class="project-card-body">
         <h3 class="project-card-title">${p.name}</h3>
@@ -580,9 +608,9 @@ function renderProjects() {
         </div>
       </div>
       <div class="project-card-footer">
-        <button class="view-details-btn" data-id="${p.id}">View Details →</button>
+        <button class="view-details-btn" type="button" data-id="${p.id}">View details</button>
       </div>
-    </div>
+    </article>
   `).join('');
 }
 
@@ -639,6 +667,8 @@ function initFilterTabs() {
 // ============================================
 // MODAL
 // ============================================
+let lastFocusedElement = null;
+
 function initModal() {
   const overlay = document.getElementById('project-modal');
   if (!overlay) return;
@@ -661,14 +691,41 @@ function initModal() {
     }
   });
 
+  document.addEventListener('keydown', (e) => {
+    const cardHeader = e.target.closest?.('.project-card-header');
+    if (cardHeader && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      const card = cardHeader.closest('.project-card');
+      const project = projects.find(p => p.id === card?.dataset.id);
+      if (project) openModal(project);
+      return;
+    }
+
+    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+      closeModal();
+      return;
+    }
+
+    if (e.key === 'Tab' && overlay.classList.contains('active')) {
+      const focusable = overlay.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
   // Close modal
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay || e.target.closest('.modal-close')) {
       closeModal();
     }
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
   });
 }
 
@@ -679,19 +736,19 @@ function openModal(project) {
 
   content.innerHTML = `
     <div class="modal-header" style="background: ${project.image ? `linear-gradient(to bottom, rgba(10, 10, 26, 0.2), rgba(10, 10, 26, 0.8)), url('${project.image}') no-repeat center/cover` : project.gradient}">
-      <button class="modal-close">&times;</button>
-      ${project.image ? '' : `<div class="modal-icon">${project.icon}</div>`}
+      <button class="modal-close" type="button" aria-label="ปิดรายละเอียดโปรเจกต์">&times;</button>
+      ${project.image ? '' : `<div class="modal-icon">${project.name.slice(0, 2).toUpperCase()}</div>`}
       <h2 class="modal-title">${project.name}</h2>
-      <span class="modal-category-badge">${categories[project.category]?.icon || ''} ${categories[project.category]?.label || project.category}</span>
+      <span class="modal-category-badge">${categories[project.category]?.label || project.category}</span>
     </div>
     <div class="modal-body">
       <p class="modal-description">${project.fullDesc}</p>
-      <h4 class="modal-section-title">🛠️ Technologies</h4>
+      <h4 class="modal-section-title">Technologies</h4>
       <div class="modal-tech-list">
         ${project.tech.map(t => `<span class="modal-tech-tag">${t}</span>`).join('')}
       </div>
       ${project.features ? `
-        <h4 class="modal-section-title" style="margin-top: 24px">✨ Key Features</h4>
+        <h4 class="modal-section-title" style="margin-top: 30px">Key features</h4>
         <ul class="modal-features">
           ${project.features.map(f => `<li>${f}</li>`).join('')}
         </ul>
@@ -699,15 +756,20 @@ function openModal(project) {
     </div>
   `;
 
+  lastFocusedElement = document.activeElement;
   overlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  requestAnimationFrame(() => content.querySelector('.modal-close')?.focus());
 }
 
 function closeModal() {
   const overlay = document.getElementById('project-modal');
   if (overlay) {
     overlay.classList.remove('active');
-    document.body.style.overflow = '';
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    lastFocusedElement?.focus?.();
   }
 }
 
@@ -723,7 +785,7 @@ function initScrollAnimations() {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.fade-in-up, .section-header, .stat-card, .skill-card, .contact-link').forEach(el => {
+  document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el);
   });
 }
@@ -782,12 +844,14 @@ function initNavbar() {
     toggle.addEventListener('click', () => {
       links.classList.toggle('active');
       toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', String(links.classList.contains('active')));
     });
     // Close on link click
     links.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         links.classList.remove('active');
         toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
@@ -816,7 +880,6 @@ function initSmoothScroll() {
 function updateProjectCount() {
   const countEl = document.getElementById('filter-count');
   if (countEl) countEl.textContent = projects.length;
-  const statEl = document.querySelector('[data-target]');
 }
 
 // ============================================
@@ -1101,6 +1164,17 @@ window.triggerProjectModal = (id) => {
   }
 };
 
+function initInlineChat() {
+  const trigger = document.getElementById('open-chat-inline');
+  const toggle = document.getElementById('chat-toggle-btn');
+  if (!trigger || !toggle) return;
+  trigger.addEventListener('click', () => {
+    if (!document.getElementById('chat-window')?.classList.contains('active')) {
+      toggle.click();
+    }
+  });
+}
+
 function initChatbot() {
   const toggleBtn = document.getElementById('chat-toggle-btn');
   const chatWindow = document.getElementById('chat-window');
@@ -1112,10 +1186,13 @@ function initChatbot() {
 
   if (!toggleBtn || !chatWindow || !chatMessages || !inputForm || !inputEl) return;
 
+  chatMessages.innerHTML = '';
+
   // Toggle chat window
   toggleBtn.addEventListener('click', () => {
     chatWindow.classList.toggle('active');
     toggleBtn.classList.toggle('active');
+    toggleBtn.setAttribute('aria-expanded', String(chatWindow.classList.contains('active')));
     if (chatWindow.classList.contains('active')) {
       inputEl.focus();
       chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -1126,11 +1203,13 @@ function initChatbot() {
     closeBtn.addEventListener('click', () => {
       chatWindow.classList.remove('active');
       toggleBtn.classList.remove('active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.focus();
     });
   }
 
   appendBotMessage(
-    `ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม (บอส - Phakin Meksuwan) ครับ! 🤖<br><br>ผมเขียนบอทตัวนี้ขึ้นมาเพื่อช่วยค้นหาโปรเจกต์และทักษะของผมโดยอัตโนมัติ คุณอยากดูผลงานด้านไหน เลือกกดปุ่มด้านล่างหรือพิมพ์ถามคีย์เวิร์ดได้เลยครับ!`
+    `สวัสดีครับ ผมเป็นดัชนีเล็ก ๆ ของ portfolio นี้ ถามชื่อโปรเจกต์ เทคโนโลยี หรือประเภทงานที่สนใจได้เลย`
   );
   showInitialQuickReplies();
 

@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="พอร์ตโฟลิโอสะสมผลงานของ Phakin Meksuwan (BossZY) นักศึกษาวิทยาการคอมพิวเตอร์ ม.ขอนแก่น รวบรวมโปรเจกต์กว่า 29+ ชิ้น ครอบคลุม Web App, Trading Bot (MT5), AI & ML และระบบ Automation">
-  <meta name="keywords" content="Phakin Meksuwan, ภาคิน เมฆสุวรรณ, BossZY, portfolio, developer, full-stack, AI, trading bot, automation, web development, มข, KKU">
+  <meta name="description" content="พอร์ตโฟลิโอของ Phakin Meksuwan (BossZY) นักศึกษาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น รวมผลงาน Web, Automation, Trading Bot, Mobile และ AI">
+  <meta name="keywords" content="Phakin Meksuwan, ภาคิน เมฆสุวรรณ, BossZY, portfolio, developer, KKU, automation, trading bot, web development">
   <meta name="author" content="Phakin Meksuwan (BossZY)">
+  <meta name="theme-color" content="#0b0c0b">
   <title>Phakin Meksuwan (BossZY) | ภาคิน เมฆสุวรรณ มข — Portfolio</title>
-
-  <!-- Canonical Link -->
   <link rel="canonical" href="https://bosszy-portfolio.vercel.app">
-
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bosszy-portfolio.vercel.app">
   <meta property="og:title" content="Phakin Meksuwan (BossZY) | ภาคิน เมฆสุวรรณ มข — Portfolio">
-  <meta property="og:description" content="พอร์ตโฟลิโอสะสมผลงานของ Phakin Meksuwan (BossZY) นักศึกษาวิทยาการคอมพิวเตอร์ ม.ขอนแก่น รวบรวมโปรเจกต์กว่า 29+ ชิ้น">
+  <meta property="og:description" content="โปรเจกต์ที่ผมทำเพื่อแก้ปัญหา ตั้งแต่เว็บ ระบบอัตโนมัติ ไปจนถึงบอทเทรด">
   <meta property="og:image" content="https://bosszy-portfolio.vercel.app/public/og-preview.png">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://bosszy-portfolio.vercel.app">
-  <meta property="twitter:title" content="Phakin Meksuwan (BossZY) | ภาคิน เมฆสุวรรณ มข — Portfolio">
-  <meta property="twitter:description" content="พอร์ตโฟลิโอสะสมผลงานของ Phakin Meksuwan (BossZY) นักศึกษาวิทยาการคอมพิวเตอร์ ม.ขอนแก่น รวบรวมโปรเจกต์กว่า 29+ ชิ้น">
-  <meta property="twitter:image" content="https://bosszy-portfolio.vercel.app/public/og-preview.png">
-
-  <!-- JSON-LD Schema Markup -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Phakin Meksuwan (BossZY) — Portfolio">
+  <meta name="twitter:description" content="CS @ KKU · Web · Automation · Trading Systems">
+  <meta name="twitter:image" content="https://bosszy-portfolio.vercel.app/public/og-preview.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,433 +26,132 @@
     "alternateName": "BossZY",
     "url": "https://bosszy-portfolio.vercel.app",
     "email": "bossboss27.b3@gmail.com",
-    "jobTitle": "Full-Stack Developer & AI Engineer",
-    "sameAs": [
-      "https://github.com/BossZY27"
-    ],
-    "knowsAbout": [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Python",
-      "Node.js",
-      "Flutter",
-      "Kotlin",
-      "MetaTrader 5",
-      "Express.js",
-      "Automation",
-      "Artificial Intelligence"
-    ]
+    "jobTitle": "Computer Science Student and Developer",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Khon Kaen University" },
+    "sameAs": ["https://github.com/BossZY27"],
+    "knowsAbout": ["Web Development", "Automation", "MetaTrader 5", "Artificial Intelligence", "Mobile Development"]
   }
   </script>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260920">
 </head>
 <body>
-
-  <!-- ====== PRELOADER ====== -->
-  <div class="preloader" id="preloader">
-    <div class="preloader-content">
-      <div class="preloader-logo">
-        <span class="logo-b">B</span><span class="logo-z">Z</span>
-      </div>
-      <div class="preloader-bar-container">
-        <div class="preloader-bar" id="preloader-bar"></div>
-      </div>
-      <p class="preloader-text">Loading BossZY's Portfolio...</p>
-    </div>
+  <a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหา</a>
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-mark">BZ<span>/27</span></div>
+    <div class="preloader-track"><div id="preloader-bar"></div></div>
+    <p>assembling the workspace</p>
   </div>
+  <canvas id="spatial-canvas" aria-hidden="true"></canvas>
+  <div class="page-grain" aria-hidden="true"></div>
 
-  <!-- ====== BACKGROUND BLOBS ====== -->
-  <div class="bg-blobs-container">
-    <div class="bg-blob bg-blob-1"></div>
-    <div class="bg-blob bg-blob-2"></div>
-    <div class="bg-blob bg-blob-3"></div>
-  </div>
-
-  <!-- ====== 3D GLASS SHAPES ====== -->
-  <div class="glass-shapes-container">
-    <div class="glass-shape shape-1" data-speed="0.05"></div>
-    <div class="glass-shape shape-2" data-speed="-0.08"></div>
-    <div class="glass-shape shape-3" data-speed="0.03"></div>
-    <div class="glass-shape shape-4" data-speed="-0.04"></div>
-  </div>
-
-  <!-- ====== LASER TRAIL CURSOR ====== -->
-  <canvas id="cursor-canvas"></canvas>
-
-  <!-- ====== NAVBAR ====== -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" aria-label="เมนูหลัก">
     <div class="scroll-progress" id="scroll-progress"></div>
-    <div class="container nav-container">
-      <a href="#hero" class="nav-logo">Boss<span>ZY</span></a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="interactive.html" style="color: #06b6d4; font-weight: 600; text-shadow: 0 0 10px rgba(6,182,212,0.3);">🔮 3D Space</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
+    <a class="nav-logo" href="#hero" aria-label="BossZY home">BZ<span>—27</span></a>
+    <button class="nav-toggle" type="button" aria-label="เปิดเมนู" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="#about">01 / story</a></li>
+      <li><a href="#skills">02 / tools</a></li>
+      <li><a href="#projects">03 / work</a></li>
+      <li><a href="#contact">04 / contact</a></li>
+    </ul>
+    <div class="nav-status"><i></i> available to build</div>
   </nav>
 
-  <!-- ====== HERO SECTION ====== -->
-  <section class="hero" id="hero">
-    <canvas id="particles-canvas"></canvas>
-    <div class="hero-content">
-      <p class="hero-greeting">Hi there! I'm</p>
-      <h1 class="hero-name">BossZY</h1>
-      <div class="hero-typing-wrapper">
-        <span class="hero-typing-prefix">I'm a </span>
-        <span class="hero-typing" id="typing-text"></span>
-        <span class="hero-cursor">|</span>
-      </div>
-      <p class="hero-subtitle">เขียนโปรแกรมแก้ปัญหาชีวิตประจำวัน เน้นทำเว็บ, บอทเทรด MT5 และระบบอัตโนมัติ (Automation)</p>
-      <div class="hero-cta">
-        <a href="interactive.html" class="btn btn-primary" style="background: linear-gradient(135deg, #7c3aed, #06b6d4); box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);">
-          <span>🔮</span> Enter 3D Space
-        </a>
-        <a href="#projects" class="btn btn-secondary">
-          <span>🚀</span> View Projects
-        </a>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <div class="scroll-arrow"></div>
-    </div>
-  </section>
-
-  <!-- ====== ABOUT SECTION ====== -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">เส้นทางจากเด็กเล่นเกม สู่โปรแกรมเมอร์</p>
-      </div>
-
-      <div class="about-3d-layout">
-        <!-- LEFT: Timeline Journey -->
-        <div class="about-timeline">
-          <div class="timeline-line"></div>
-
-          <div class="timeline-item fade-in-up">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2018</span>
-              <h3>🎮 จุดเริ่มต้น</h3>
-              <p>สนใจเขียนโค้ดครั้งแรกจากการอยากสร้าง Bot ในเกม เริ่มหัดเขียน Python ด้วยตัวเอง</p>
-            </div>
-          </div>
-
-          <div class="timeline-item fade-in-up">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2021</span>
-              <h3>💻 เขียนโค้ดจริงจัง</h3>
-              <p>เริ่มพัฒนาเครื่องมือ Automation, Browser Extension และโปรแกรม Desktop ใช้งานจริง</p>
-            </div>
-          </div>
-
-          <div class="timeline-item fade-in-up">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2024</span>
-              <h3>🎓 CS @ KKU</h3>
-              <p>เข้าศึกษาสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น เรียนรู้ทั้ง Full-Stack, AI และ Mobile Dev</p>
-            </div>
-          </div>
-
-          <div class="timeline-item fade-in-up">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">Now</span>
-              <h3>🚀 ปัจจุบัน</h3>
-              <p>สะสมผลงานมากกว่า 29 โปรเจกต์ ครอบคลุม 6 หมวดหมู่ ตั้งแต่ Web App, Trading Bot ไปจนถึง AI Agent</p>
-            </div>
+  <main id="main-content">
+    <section class="scroll-chapter hero" id="hero" data-chapter="hero">
+      <div class="chapter-pin hero-pin">
+        <div class="chapter-index">00 — INTRO</div>
+        <div class="hero-copy" data-scroll-layer>
+          <p class="hero-kicker">PHAKIN MEKSUWAN · ขอนแก่น, TH</p>
+          <h1><span>ผมเขียนโค้ด</span><span class="hero-outline">ให้เรื่องน่ารำคาญ</span><span>หายไป.</span></h1>
+          <p class="hero-note">เว็บที่คนใช้ได้จริง ระบบอัตโนมัติที่ช่วยประหยัดเวลา และโปรแกรมทดลองที่เริ่มจากคำว่า “ถ้าลองทำเองล่ะ?”</p>
+          <div class="hero-actions">
+            <a class="text-link" href="#projects">ดูงานที่ทำ <span>↘</span></a>
+            <a class="text-link quiet" href="interactive.html">เปิด 3D playground <span>↗</span></a>
           </div>
         </div>
-
-        <!-- RIGHT: 3D Glass Cube -->
-        <div class="about-cube-wrapper fade-in-up">
-          <div class="cube-scene">
-            <div class="cube">
-              <div class="cube-face cube-front">
-                <div class="cube-stat-number">29+</div>
-                <div class="cube-stat-label">Projects</div>
-              </div>
-              <div class="cube-face cube-right">
-                <div class="cube-stat-number">20+</div>
-                <div class="cube-stat-label">Technologies</div>
-              </div>
-              <div class="cube-face cube-back">
-                <div class="cube-stat-number">6</div>
-                <div class="cube-stat-label">Categories</div>
-              </div>
-              <div class="cube-face cube-left">
-                <div class="cube-stat-number">5</div>
-                <div class="cube-stat-label">Platforms</div>
-              </div>
-              <div class="cube-face cube-top">
-                <div class="cube-stat-number">2</div>
-                <div class="cube-stat-label">Years Coding</div>
-              </div>
-              <div class="cube-face cube-bottom">
-                <div class="cube-stat-number">∞</div>
-                <div class="cube-stat-label">Curiosity</div>
-              </div>
-            </div>
-          </div>
-          <p class="cube-hint">* hover เพื่อหยุดหมุน</p>
+        <div class="hero-meta" data-scroll-layer>
+          <div><span>ROLE</span><strong>CS Student / Builder</strong></div>
+          <div><span>FOCUS</span><strong>Web · Automation · Trading</strong></div>
+          <div><span>BASED</span><strong>KKU, Khon Kaen</strong></div>
         </div>
+        <div class="object-label object-label-a" aria-hidden="true"><span>OBJ_01</span> problem solver</div>
+        <div class="object-label object-label-b" aria-hidden="true"><span>STATE</span> always learning</div>
+        <div class="scroll-cue" aria-hidden="true"><span>scroll to inspect</span><i></i></div>
       </div>
+    </section>
 
-      <!-- Tag Cloud -->
-      <div class="about-tags fade-in-up">
-        <span class="about-tag" style="--delay: 0s">CS Student @ KKU</span>
-        <span class="about-tag" style="--delay: 0.3s">Automation Lover</span>
-        <span class="about-tag" style="--delay: 0.6s">Night Owl Coder 🦉</span>
-        <span class="about-tag" style="--delay: 0.9s">Trading Bot Builder</span>
-        <span class="about-tag" style="--delay: 1.2s">Novel Writer ✍️</span>
-        <span class="about-tag" style="--delay: 0.15s">Full-Stack Dev</span>
-        <span class="about-tag" style="--delay: 0.45s">AI Enthusiast</span>
-        <span class="about-tag" style="--delay: 0.75s">Open Source</span>
+    <section class="scroll-chapter story" id="about" data-chapter="story">
+      <div class="chapter-pin story-pin">
+        <div class="chapter-index">01 — HOW I GOT HERE</div>
+        <div class="story-heading"><p>ไม่ได้เริ่มจากอยากมี portfolio</p><h2>เริ่มจากอยากทำ<br>บอทในเกม.</h2></div>
+        <div class="story-frames" aria-live="polite">
+          <article class="story-frame active" data-frame="0"><span class="frame-year">2018</span><h3>อยากให้เกมทำอะไร<br>บางอย่างแทนเรา</h3><p>นั่นเป็นเหตุผลที่เริ่มเปิด Python ครั้งแรก เรียนจากการลองผิด ลองถูก และแก้ทีละ error</p></article>
+          <article class="story-frame" data-frame="1"><span class="frame-year">2021</span><h3>ของทดลองเริ่มกลายเป็น<br>เครื่องมือที่ใช้จริง</h3><p>ทำ browser automation, desktop tools และ workflow เล็ก ๆ เพื่อประหยัดเวลาของตัวเอง</p></article>
+          <article class="story-frame" data-frame="2"><span class="frame-year">2024</span><h3>เข้าเรียน CS ที่<br>มหาวิทยาลัยขอนแก่น</h3><p>ได้เชื่อมสิ่งที่เคยลองเองเข้ากับพื้นฐานระบบ ซอฟต์แวร์ ข้อมูล AI และการทำงานร่วมกับคนอื่น</p></article>
+          <article class="story-frame" data-frame="3"><span class="frame-year">NOW</span><h3>29 โปรเจกต์<br>และยังนับต่อ</h3><p>ยังชอบเริ่มจากปัญหาเล็ก ๆ เหมือนเดิม ต่างแค่ตอนนี้รู้วิธีพามันไปไกลกว่า prototype</p></article>
+        </div>
+        <div class="story-meter" aria-hidden="true"><span>2018</span><div class="meter-line"><i></i></div><span>NOW</span></div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ====== SKILLS SECTION ====== -->
-  <section class="section skills" id="skills">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2 class="section-title">Tech Stack</h2>
-        <p class="section-subtitle">เทคโนโลยีที่ใช้ในการพัฒนา</p>
+    <section class="scroll-chapter toolset" id="skills" data-chapter="tools">
+      <div class="chapter-pin tools-pin">
+        <div class="chapter-index">02 — WORKING SET</div>
+        <div class="tools-intro"><p>ผมไม่ได้สะสมชื่อเทคโนโลยี</p><h2>เลือกเครื่องมือ<br>ตามงาน.</h2><p class="tools-caption">ถ้าสิ่งที่มีอยู่ยังแก้ปัญหาไม่ได้ ค่อยเรียนชิ้นใหม่แล้วเอามาต่อกัน</p></div>
+        <div class="tool-rows">
+          <div class="tool-row" data-tool-row><span>01</span><strong>Product & Web</strong><p>React · Next.js · TypeScript · Node.js · Supabase</p></div>
+          <div class="tool-row" data-tool-row><span>02</span><strong>Automation</strong><p>Python · Puppeteer · Google Apps Script · Tkinter</p></div>
+          <div class="tool-row" data-tool-row><span>03</span><strong>Mobile</strong><p>Flutter · Kotlin · Android</p></div>
+          <div class="tool-row" data-tool-row><span>04</span><strong>AI & Vision</strong><p>FastAPI · OpenCV · LLM workflows</p></div>
+          <div class="tool-row" data-tool-row><span>05</span><strong>Trading Systems</strong><p>MetaTrader 5 · MQL5 · Python</p></div>
+        </div>
+        <div class="tools-readout" aria-hidden="true"><span>TOOLCHAIN_STATUS</span><strong id="tools-readout-text">PRODUCT / WEB</strong></div>
       </div>
-      <div class="skills-grid">
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/react_dark.svg" alt="React"></div>
-          <div class="skill-name">React</div>
-          <div class="skill-level">Frontend</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/nextjs_icon_dark.svg" alt="Next.js"></div>
-          <div class="skill-name">Next.js</div>
-          <div class="skill-level">Full-Stack</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/typescript.svg" alt="TypeScript"></div>
-          <div class="skill-name">TypeScript</div>
-          <div class="skill-level">Language</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/python.svg" alt="Python"></div>
-          <div class="skill-name">Python</div>
-          <div class="skill-level">Backend / AI</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/nodejs.svg" alt="Node.js"></div>
-          <div class="skill-name">Node.js</div>
-          <div class="skill-level">Backend</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/flutter.svg" alt="Flutter"></div>
-          <div class="skill-name">Flutter</div>
-          <div class="skill-level">Mobile</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/kotlin.svg" alt="Kotlin"></div>
-          <div class="skill-name">Kotlin</div>
-          <div class="skill-level">Android</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/prisma_dark.svg" alt="Prisma"></div>
-          <div class="skill-name">Prisma</div>
-          <div class="skill-level">ORM</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/supabase.svg" alt="Supabase"></div>
-          <div class="skill-name">Supabase</div>
-          <div class="skill-level">BaaS</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/fastapi.svg" alt="FastAPI"></div>
-          <div class="skill-name">FastAPI</div>
-          <div class="skill-level">API</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/openai_dark.svg" alt="AI / ML"></div>
-          <div class="skill-name">AI / ML</div>
-          <div class="skill-level">Gemini / Claude</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="8" width="40" height="28" rx="3" stroke="#4ade80" stroke-width="2.5" fill="none"/>
-              <line x1="4" y1="14" x2="44" y2="14" stroke="#4ade80" stroke-width="1.5" opacity="0.5"/>
-              <polyline points="10,22 18,30 26,20 34,28 42,18" stroke="#4ade80" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="14" y="38" width="20" height="3" rx="1.5" fill="#4ade80" opacity="0.6"/>
-            </svg>
-          </div>
-          <div class="skill-name">MetaTrader 5</div>
-          <div class="skill-level">Trading</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.037 1.21a2.128 2.128 0 0 0-2.127 2.128v1.547h4.254V3.338a2.128 2.128 0 0 0-2.127-2.127zm-3.14 3.738v.85h6.28v-.85zm-.85 1.7v2.128h7.98V6.648zm-.85 2.977v2.128H17.71v-2.128zm-.851 2.977v2.127h9.68v-2.127zm-.851 2.978V22.79h11.383V15.58H5.495z" fill="#04D4A4"/>
-            </svg>
-          </div>
-          <div class="skill-name">Puppeteer</div>
-          <div class="skill-level">Automation</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="6" width="36" height="30" rx="3" stroke="#60a5fa" stroke-width="2.5" fill="none"/>
-              <rect x="6" y="6" width="36" height="8" rx="3" fill="#60a5fa" opacity="0.2"/>
-              <circle cx="12" cy="10" r="1.5" fill="#f87171"/>
-              <circle cx="17" cy="10" r="1.5" fill="#fbbf24"/>
-              <circle cx="22" cy="10" r="1.5" fill="#4ade80"/>
-              <rect x="10" y="20" width="12" height="2" rx="1" fill="#60a5fa" opacity="0.6"/>
-              <rect x="10" y="25" width="18" height="2" rx="1" fill="#60a5fa" opacity="0.4"/>
-              <rect x="10" y="30" width="8" height="2" rx="1" fill="#60a5fa" opacity="0.3"/>
-              <rect x="14" y="38" width="20" height="4" rx="2" fill="#60a5fa" opacity="0.3"/>
-            </svg>
-          </div>
-          <div class="skill-name">Tkinter</div>
-          <div class="skill-level">Desktop GUI</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon"><img src="https://svgl.app/library/expressjs_dark.svg" alt="Express.js"></div>
-          <div class="skill-name">Express.js</div>
-          <div class="skill-level">Backend</div>
-        </div>
-        <div class="skill-card fade-in-up">
-          <div class="skill-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#5C3EE8" d="M11.8992.8525C8.735.8525 6.17 3.4175 6.17 6.5817c0 2.102 1.1321 3.9398 2.8198 4.9366l1.6412-2.7849c.0411-.0699.0176-.1593-.0495-.2048-.6233-.4227-1.0328-1.137-1.0328-1.947 0-1.298 1.0524-2.3504 2.3505-2.3504 1.2981 0 2.3505 1.0524 2.3505 2.3505 0 .8098-.4095 1.5242-1.0328 1.947-.0671.0454-.0907.1348-.0495.2047l1.6414 2.785c1.6878-.9969 2.8199-2.8346 2.8199-4.9367 0-3.1642-2.5653-5.7292-5.7295-5.7292zm-6.17 10.8366C2.565 11.6891 0 14.2541 0 17.4183c0 3.1642 2.565 5.7292 5.7292 5.7292 3.1798 0 5.8074-2.6995 5.7275-5.8762H8.2313c-.0847 0-.1513.0717-.1519.1564-.0082 1.266-1.0644 2.3411-2.3502 2.3411-1.2981 0-2.3505-1.0524-2.3505-2.3505 0-1.2982 1.0524-2.3505 2.3505-2.3505.34 0 .663.0724.9547.2022.0713.0318.1566.0077.1962-.0595l1.6464-2.7935c-.8273-.4636-1.7815-.7279-2.7973-.7279zm15.4424.7614l-1.6366 2.7878c-.041.07-.0172.1594.05.2048.624.4217 1.0348 1.1354 1.0363 1.9452.0022 1.298-1.0483 2.352-2.3465 2.3542-1.298.0023-2.3523-1.0482-2.3545-2.3462-.0015-.8098.4068-1.5248 1.0294-1.9486.067-.0457.0905-.1353.0492-.2051l-1.6464-2.7818c-1.6859.9998-2.8146 2.8394-2.811 4.9415.0056 3.1641 2.575 5.7248 5.7393 5.7192 3.1641-.0054 5.7246-2.575 5.7192-5.7392-.0037-2.1022-1.139-3.938-2.8284-4.9318z"/>
-            </svg>
-          </div>
-          <div class="skill-name">OpenCV</div>
-          <div class="skill-level">Computer Vision</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ====== PROJECTS SECTION ====== -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2 class="section-title">My Projects</h2>
-        <p class="section-subtitle">ผลงานทั้งหมด <span id="filter-count">29</span> โปรเจกต์</p>
-      </div>
+    <section class="selected-work" aria-labelledby="selected-title">
+      <div class="section-boundary"><span>SELECTED CASES</span><span>03A / 03</span></div>
+      <div class="selected-heading reveal"><p>สามงานที่เล่าแนวคิดได้ชัดที่สุด</p><h2 id="selected-title">งานที่เลือกมา<br>แกะดูทีละชิ้น.</h2></div>
+      <div class="featured-stage" id="featured-stage"></div>
+    </section>
 
-      <!-- Filter Tabs -->
-      <div class="filter-tabs fade-in-up">
-        <button class="filter-btn active" data-filter="all">🔥 All</button>
-        <button class="filter-btn" data-filter="web">🌐 Web Apps</button>
-        <button class="filter-btn" data-filter="mobile">📱 Mobile</button>
-        <button class="filter-btn" data-filter="automation">🤖 Automation</button>
-        <button class="filter-btn" data-filter="trading">📈 Trading</button>
-        <button class="filter-btn" data-filter="ai">🧠 AI & ML</button>
-        <button class="filter-btn" data-filter="academic">🎓 Academic</button>
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <div class="section-boundary"><span>PROJECT ARCHIVE</span><span><b id="filter-count">29</b> ENTRIES</span></div>
+      <div class="projects-heading reveal"><div><p>ทั้งหมดที่ทำไว้</p><h2 id="projects-title">Archive</h2></div><p class="archive-note">บางงานคือของที่ใช้จริง บางงานคือการทดลอง และบางงานมีไว้เพื่อเรียนรู้ว่าทางไหนไม่ควรไปต่อ</p></div>
+      <div class="filter-tabs reveal" role="group" aria-label="กรองประเภทโปรเจกต์">
+        <button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="web">Web</button><button class="filter-btn" data-filter="mobile">Mobile</button><button class="filter-btn" data-filter="automation">Automation</button><button class="filter-btn" data-filter="trading">Trading</button><button class="filter-btn" data-filter="ai">AI / ML</button><button class="filter-btn" data-filter="academic">Academic</button>
       </div>
-
-      <!-- Projects Grid (Rendered by JS) -->
       <div class="projects-grid" id="projects-grid"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ====== CONTACT SECTION ====== -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">ติดต่อฉันได้เลย</p>
-      </div>
-      <div class="contact-content">
-        <div class="contact-links">
-          <a href="https://github.com/BossZY27" target="_blank" rel="noopener noreferrer" class="contact-link fade-in-up">
-            <span class="contact-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-            </span>
-            <div>
-              <div class="contact-link-label">GitHub</div>
-              <div class="contact-link-value">@BossZY27</div>
-            </div>
-          </a>
-          <a href="mailto:bossboss27.b3@gmail.com" class="contact-link fade-in-up">
-            <span class="contact-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-            </span>
-            <div>
-              <div class="contact-link-label">Email</div>
-              <div class="contact-link-value">bossboss27.b3@gmail.com</div>
-            </div>
-          </a>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-grid">
+        <div class="contact-lead reveal"><span class="chapter-index">04 — CONTACT</span><h2 id="contact-title">มีปัญหาที่คิดว่า<br>โค้ดน่าจะช่วยได้?</h2><p>ส่งรายละเอียดมาได้เลย ผมอ่านเองและตอบเอง ไม่มีฟอร์ม ไม่มี sales funnel</p></div>
+        <div class="contact-actions reveal">
+          <a href="mailto:bossboss27.b3@gmail.com"><span>EMAIL</span><strong>bossboss27.b3@gmail.com</strong><i>↗</i></a>
+          <a href="https://github.com/BossZY27" target="_blank" rel="noopener noreferrer"><span>GITHUB</span><strong>@BossZY27</strong><i>↗</i></a>
+          <button type="button" id="open-chat-inline"><span>QUICK QUESTION</span><strong>ถามผ่าน portfolio bot</strong><i>→</i></button>
         </div>
       </div>
-    </div>
-  </section>
+      <footer><p>Phakin Meksuwan / BossZY</p><p>Designed & built in Khon Kaen · <span id="current-year"></span></p></footer>
+    </section>
+  </main>
 
-  <!-- ====== FOOTER ====== -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Phakin Meksuwan (BossZY). All rights reserved.</p>
-    </div>
-  </footer>
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-label="รายละเอียดโปรเจกต์" aria-hidden="true"><div class="modal-content" id="modal-inner"></div></div>
+  <button class="chat-toggle-btn" id="chat-toggle-btn" type="button" aria-label="เปิด BossZY assistant" aria-expanded="false"><span class="chat-icon-open">ASK</span><span class="chat-icon-close">×</span></button>
+  <aside class="chat-window" id="chat-window" aria-label="BossZY assistant">
+    <div class="chat-header"><div class="chat-avatar">BZ</div><div class="chat-header-info"><h4 class="chat-bot-name">Portfolio index</h4><span class="chat-bot-status"><i></i> local guide</span></div><button class="chat-close-btn" id="chat-close-btn" type="button" aria-label="ปิดแชต">×</button></div>
+    <div class="chat-messages" id="chat-messages"><div class="chat-msg chat-msg-bot">สวัสดีครับ สนใจงานด้านไหนของภาคิน ลองถามผมได้เลย</div></div>
+    <div class="chat-quick-replies" id="chat-quick-replies"></div>
+    <form class="chat-input-area" id="chat-input-form"><label class="sr-only" for="chat-input">พิมพ์คำถาม</label><input type="text" id="chat-input" placeholder="เช่น มีงาน Python อะไรบ้าง" autocomplete="off"><button type="submit" class="chat-send-btn" aria-label="ส่งข้อความ">→</button></form>
+  </aside>
 
-  <!-- ====== PROJECT MODAL ====== -->
-  <div class="modal-overlay" id="project-modal">
-    <div class="modal-content" id="modal-inner">
-      <!-- Populated by JS -->
-    </div>
-  </div>
-
-  <!-- ====== CHATBOT ASSISTANT ====== -->
-  <button class="chat-toggle-btn" id="chat-toggle-btn" aria-label="Open BossZY Assistant">
-    <span class="chat-icon-open">💬</span>
-    <span class="chat-icon-close">&times;</span>
-  </button>
-
-  <div class="chat-window" id="chat-window">
-    <div class="chat-header">
-      <div class="chat-avatar">🤖</div>
-      <div class="chat-header-info">
-        <h4 class="chat-bot-name">Phakin's Assistant</h4>
-        <span class="chat-bot-status"><span class="status-dot"></span> CS @ KKU Bot</span>
-      </div>
-      <button class="chat-close-btn" id="chat-close-btn" aria-label="Close chat">&times;</button>
-    </div>
-    <div class="chat-messages" id="chat-messages">
-      <!-- Generated by JS -->
-    </div>
-    <div class="chat-quick-replies" id="chat-quick-replies">
-      <!-- Generated by JS -->
-    </div>
-    <form class="chat-input-area" id="chat-input-form">
-      <input type="text" id="chat-input" placeholder="พิมพ์คำถาม หรือเลือกปุ่มด้านล่าง..." autocomplete="off">
-      <button type="submit" class="chat-send-btn" aria-label="Send message">➔</button>
-    </form>
-  </div>
-
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="js/main.js?v=20260920" defer></script>
+  <script src="js/spatial.js?v=20260920" defer></script>
 </body>
 </html>

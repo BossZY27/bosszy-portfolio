@@ -3,10 +3,12 @@
 // ============================================================
 
 let scene, camera, renderer;
-let currentMode = 'galaxy'; // 'galaxy', 'physics', 'gallery'
+let currentMode = null; // 'galaxy', 'physics', 'gallery'
 let mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
 let width = window.innerWidth;
 let height = window.innerHeight;
+const isLowPower = (navigator.deviceMemory && navigator.deviceMemory <= 2)
+  || (!navigator.deviceMemory && navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
 
 // Mode-specific variables
 let galaxyPoints;
@@ -22,7 +24,6 @@ let raycastPlane;
 let draggedObject = null;
 let dragOffset = new THREE.Vector3();
 let planeNormal = new THREE.Vector3(0, 0, 1);
-let lastDragPos = new THREE.Vector3();
 let throwVelocity = new THREE.Vector3();
 
 // List of gallery textures
@@ -45,16 +46,17 @@ function init() {
 
   // Scene setup
   scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x050510, 0.015);
+  scene.fog = new THREE.FogExp2(0x0b0c0b, 0.015);
 
   // Camera setup
   camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
   camera.position.z = 15;
 
   // Renderer setup
-  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+  renderer = new THREE.WebGLRenderer({ antialias: !isLowPower, alpha: false });
   renderer.setSize(width, height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isLowPower ? 1 : 1.5));
+  renderer.setClearColor(0x0b0c0b, 1);
   renderer.shadowMap.enabled = true;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.0;
@@ -69,11 +71,11 @@ function init() {
   mainLight.castShadow = true;
   scene.add(mainLight);
 
-  const pointLight1 = new THREE.PointLight(0x7c3aed, 2, 30);
+  const pointLight1 = new THREE.PointLight(0xb8ed3b, 1.8, 30);
   pointLight1.position.set(-8, 5, 5);
   scene.add(pointLight1);
 
-  const pointLight2 = new THREE.PointLight(0x06b6d4, 2, 30);
+  const pointLight2 = new THREE.PointLight(0xf06437, 1.8, 30);
   pointLight2.position.set(8, -5, 5);
   scene.add(pointLight2);
 
@@ -117,6 +119,9 @@ window.switchMode = function(mode) {
   if (mode === currentMode) return;
   currentMode = mode;
 
+  const readout = document.getElementById('mode-readout');
+  if (readout) readout.textContent = mode.toUpperCase();
+
   // Update UI buttons active states
   ['galaxy', 'physics', 'gallery'].forEach(m => {
     const btn = document.getElementById(`btn-${m}`);
@@ -139,13 +144,13 @@ window.switchMode = function(mode) {
   const instructions = document.getElementById('mode-instructions');
   if (mode === 'galaxy') {
     setupGalaxy();
-    if (instructions) instructions.textContent = 'เลื่อนเมาส์ไปมาเพื่อหมุนและดึงดูดกลุ่มดาวอนุภาค 3 มิติ';
+    if (instructions) instructions.textContent = 'ขยับเมาส์เพื่อเปลี่ยนมุมมองของกลุ่มอนุภาค';
   } else if (mode === 'physics') {
     setupPhysics();
-    if (instructions) instructions.textContent = 'คลิกปุ่มเพื่อเสกวัตถุ หรือคลิกลากและสะบัดขว้างวัตถุด้วยเมาส์';
+    if (instructions) instructions.textContent = 'เพิ่มวัตถุ แล้วลากหรือสะบัดเพื่อดูแรงและการชน';
   } else if (mode === 'gallery') {
     setupGallery();
-    if (instructions) instructions.textContent = 'คลิกลากซ้าย-ขวา เพื่อหมุนดูป้ายผลงาน 3D Carousel';
+    if (instructions) instructions.textContent = 'ลากซ้ายหรือขวาเพื่อหมุนดูโปรเจกต์รอบวง';
   }
 };
 
@@ -195,13 +200,13 @@ function gsapCamera(x, y, z) {
 // 1. GALAXY MODE SETUP
 // ============================================
 function setupGalaxy() {
-  const particleCount = 12000;
+  const particleCount = isLowPower ? 3500 : (width < 768 ? 6000 : 12000);
   const geometry = new THREE.BufferGeometry();
   const positions = new Float32Array(particleCount * 3);
   const colors = new Float32Array(particleCount * 3);
 
-  const colorPurple = new THREE.Color('#7c3aed');
-  const colorCyan = new THREE.Color('#06b6d4');
+  const colorPurple = new THREE.Color('#f06437');
+  const colorCyan = new THREE.Color('#b8ed3b');
 
   for (let i = 0; i < particleCount * 3; i += 3) {
     // Spiral formula
@@ -229,15 +234,17 @@ function setupGalaxy() {
 
   // Particle Material
   const material = new THREE.PointsMaterial({
-    size: 0.08,
+    size: 0.055,
     vertexColors: true,
     transparent: true,
-    opacity: 0.85,
-    blending: THREE.AdditiveBlending,
+    opacity: 0.58,
+    blending: THREE.NormalBlending,
     depthWrite: false
   });
 
   galaxyPoints = new THREE.Points(geometry, material);
+  galaxyPoints.rotation.x = Math.PI * 0.34;
+  galaxyPoints.rotation.z = -0.12;
   scene.add(galaxyPoints);
 }
 
@@ -262,7 +269,7 @@ window.spawnShape = function() {
     new THREE.CylinderGeometry(0.6, 0.6, 1.4, 32)
   ];
 
-  const colors = [0x7c3aed, 0x06b6d4, 0x3b82f6, 0xf43f5e, 0x10b981, 0xf59e0b];
+  const colors = [0xb8ed3b, 0xf06437, 0x6faeba, 0xe8e5dc, 0x769f36, 0xc9954b];
   
   const geo = geometries[Math.floor(Math.random() * geometries.length)];
   const color = colors[Math.floor(Math.random() * colors.length)];
@@ -438,7 +445,7 @@ function setupGallery() {
     } else {
       // Fallback
       cardMat = new THREE.MeshBasicMaterial({
-        color: 0x7c3aed,
+        color: 0xb8ed3b,
         side: THREE.DoubleSide,
         transparent: true,
         opacity: 0.5
@@ -545,7 +552,7 @@ function onMouseDown(e) {
   }
 }
 
-function onMouseUp(e) {
+function onMouseUp() {
   isDraggingGallery = false;
 
   // Let go of physics object with a throw velocity
@@ -580,8 +587,8 @@ function onTouchMove(e) {
   });
 }
 
-function onTouchEnd(e) {
-  onMouseUp(e);
+function onTouchEnd() {
+  onMouseUp();
 }
 
 // ============================================
@@ -589,6 +596,7 @@ function onTouchEnd(e) {
 // ============================================
 function animate() {
   requestAnimationFrame(animate);
+  if (document.hidden) return;
 
   // Mouse interpolation for smooth galaxy rotation/tilting
   mouse.x += (mouse.targetX - mouse.x) * 0.08;
