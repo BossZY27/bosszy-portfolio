@@ -355,6 +355,175 @@ image: 'public/images/network.png',
     gradient: 'linear-gradient(135deg, #654ea3, #eaafc8)',
     icon: '🎓',
     features: ['Bio-SCION simulation', 'Monte-Carlo methods', 'TCP/IP comparison', 'Publication-quality graphs']
+  },
+  // --- Verified workspace projects added from local project documentation ---
+  {
+    id: 'ai-limits-widget',
+    name: 'AI Limits Widget',
+    shortDesc: 'วิดเจ็ต Windows สำหรับดูโควตา Claude และ Codex แบบประหยัดแบต',
+    fullDesc: 'วิดเจ็ตที่ฝังอยู่กับ Desktop ของ Windows เพื่อแสดงโควตาการใช้งาน AI แบบสั้น กระชับ และไม่บังหน้าต่างทำงาน โดยอ่านเฉพาะเปอร์เซ็นต์และเวลา reset จากข้อมูลในเครื่อง',
+    category: 'automation',
+    tech: ['PowerShell', 'Windows Script Host', 'JSON', 'Windows Desktop'],
+    gradient: 'linear-gradient(135deg, #1b2a35, #4b6a58)',
+    icon: '▦',
+    status: 'Personal tool',
+    features: ['อัปเดตสถานะทุก 5 นาที', 'รีเฟรชเองได้ด้วยการดับเบิลคลิก', 'ไม่เก็บ token หรือข้อความสนทนา', 'ทำงานแบบไม่มี animation ต่อเนื่อง']
+  },
+  {
+    id: 'routepulse-demo',
+    name: 'RoutePulse Client Demo',
+    shortDesc: 'ต้นแบบติดตามราคาบริการตามเส้นทาง พร้อม pipeline สำหรับรอบตรวจรายชั่วโมง',
+    fullDesc: 'Client demo ภาษาไทยที่จำลองการประมวลผลราคา 560 เส้นทางต่อชั่วโมง มี import/export CSV, สถานะ worker และการส่งรายงาน โดยแยกข้อมูลจำลองออกจาก connector จริงอย่างชัดเจน',
+    category: 'web',
+    tech: ['Next.js', 'React', 'TypeScript', 'AWS S3', 'Drizzle ORM'],
+    gradient: 'linear-gradient(135deg, #183a5a, #278a8c)',
+    icon: '⌁',
+    status: 'Client prototype',
+    features: ['จำลองรอบตรวจ 560 route ต่อชั่วโมง', 'รับและส่งออก CSV', 'เก็บผลรายชั่วโมงแบบ retry ได้', 'มี guard ก่อนเปิดใช้ connector จริง']
+  },
+  {
+    id: 'buildsure',
+    name: 'BuildSure',
+    shortDesc: 'ต้นแบบแดชบอร์ดติดตามงบและความคืบหน้างานก่อสร้าง',
+    fullDesc: 'ต้นแบบแพลตฟอร์มสำหรับมองภาพรวมโครงการก่อสร้าง ทั้งงวดงาน ความคืบหน้า และจุดที่ต้องตรวจรับ เพื่อสื่อสารข้อมูลระหว่างเจ้าของงานและผู้เกี่ยวข้องให้ชัดขึ้น',
+    category: 'web',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    gradient: 'linear-gradient(135deg, #0d2b47, #337194)',
+    icon: '⌂',
+    status: 'Product prototype',
+    features: ['Project overview dashboard', 'ติดตามความคืบหน้าเป็นงวดงาน', 'สรุปตัวเลขสำคัญในหน้าเดียว', 'ออกแบบ responsive สำหรับการอ่านหน้างาน']
+  },
+  {
+    id: 'dmd-sportday-load-test',
+    name: 'DMD Sport Day Load Test',
+    shortDesc: 'ชุดทดสอบโหลด k6 สำหรับระบบจัดงานกีฬา',
+    fullDesc: 'แพ็กเกจทดสอบความพร้อมของ API สำหรับงาน DMD Sport Day 2026 มีหลาย scenario ตั้งแต่ smoke test ถึง full load พร้อม preflight และสรุปผล P95, error rate และ request volume',
+    category: 'academic',
+    tech: ['k6', 'JavaScript', 'JSON', 'Load Testing'],
+    gradient: 'linear-gradient(135deg, #3b2349, #7c3c58)',
+    icon: '↯',
+    status: 'Engineering test suite',
+    features: ['10 test scenarios', 'Preflight ก่อนยิงระบบจริง', 'สรุปผล Markdown และ JSON', 'แยก config ที่ต้องยืนยันจาก endpoint จริง']
+  },
+  {
+    id: 'pulsepoint-alert-demo',
+    name: 'PulsePoint Event Alert',
+    shortDesc: 'ต้นแบบแจ้งเตือนผู้ร่วมงานและจัดการ checkpoint',
+    fullDesc: 'Interactive prototype สำหรับงานสัมมนา 150 คน ที่จำลอง Web Alert, LINE OA, QR checkpoint, หน้าส่งข้อความของแอดมิน และ delivery log โดยเก็บ state สำหรับเดโมไว้ในเบราว์เซอร์',
+    category: 'web',
+    tech: ['Next.js', 'React', 'TypeScript', 'Browser Notifications', 'LINE OA'],
+    gradient: 'linear-gradient(135deg, #51253b, #c24d4d)',
+    icon: '!',
+    status: 'Client prototype',
+    features: ['Guest และ admin flow', 'QR checkpoint simulation', 'ตั้งกลุ่มผู้รับและระดับความสำคัญ', 'ทดสอบการแจ้งเตือนในเบราว์เซอร์']
+  },
+  {
+    id: 'ev-nation',
+    name: 'EV Nation',
+    shortDesc: 'ต้นแบบแพลตฟอร์มบริการรถ EV สำหรับค้นหาสถานีและวางแผนการเดินทาง',
+    fullDesc: 'Next.js demo ที่เล่า flow ของบริการ EV ตั้งแต่ค้นหาสถานี ช่วงเวลาว่าง การจองคิว การวางแผนทริป และรายงานสำหรับ partner โดยใช้ข้อมูลจำลองเพื่อสาธิตประสบการณ์ใช้งาน',
+    category: 'web',
+    tech: ['Next.js', 'React', 'TypeScript', 'Interactive Maps', 'Mock Data'],
+    gradient: 'linear-gradient(135deg, #103e3f, #499879)',
+    icon: '⚡',
+    status: 'Client prototype',
+    features: ['ค้นหาสถานีชาร์จบนแผนที่', 'จำลองการจองคิว', 'City และ road-trip planning', 'Partner metrics dashboard']
+  },
+  {
+    id: 'forex-order-watcher',
+    name: 'Forex Order Watcher',
+    shortDesc: 'เครื่องมือเฝ้าดูออเดอร์ Forex โดยไม่ส่งคำสั่งเทรด',
+    fullDesc: 'โปรแกรมอ่านสถานะออเดอร์ที่เปิดอยู่จาก MetaTrader 5 เปรียบเทียบกับ snapshot ล่าสุด คำนวณข้อมูลพอร์ตเบื้องต้น และแจ้งเตือนเมื่อพบว่า ticket เดิมปิดหรือหายไป โดยมี mock mode สำหรับทดสอบ',
+    category: 'trading',
+    tech: ['Python', 'MetaTrader 5', 'JSON', 'CLI'],
+    gradient: 'linear-gradient(135deg, #17262f, #265b63)',
+    icon: '◉',
+    status: 'Monitoring tool',
+    features: ['อ่าน positions จาก MT5', 'เก็บ snapshot ล่าสุด', 'แจ้งเตือนออเดอร์ที่หายไป', 'มี mock mode โดยไม่ต่อบัญชีจริง']
+  },
+  {
+    id: 'gp-easy',
+    name: 'GP Easy',
+    shortDesc: 'เว็บคำนวณกำไรสุทธิสำหรับร้านค้า',
+    fullDesc: 'เว็บเครื่องมือช่วยคำนวณกำไรสุทธิของร้านค้า เพื่อทำให้ต้นทุน ราคา และค่าใช้จ่ายที่กระจัดกระจาย กลายเป็นตัวเลขที่อ่านและตัดสินใจได้ง่ายขึ้น',
+    category: 'web',
+    tech: ['Next.js', 'React', 'TypeScript', 'Calculation Logic'],
+    gradient: 'linear-gradient(135deg, #453522, #aa7a32)',
+    icon: '%',
+    status: 'Product prototype',
+    features: ['กรอกต้นทุนและรายรับ', 'คำนวณกำไรสุทธิ', 'สรุปผลเพื่อเปรียบเทียบทางเลือก', 'ออกแบบเป็นเครื่องมือใช้งานเร็ว']
+  },
+  {
+    id: 'loongmordek-auto-sheets',
+    name: 'Loongmordek Auto Sheets',
+    shortDesc: 'แปลง content จาก AI เป็นคิวโพสต์ 4 แพลตฟอร์มบน Google Sheets',
+    fullDesc: 'Google Apps Script ที่รับข้อความ content ก้อนเดียว แล้วแตกเป็นแถวสำหรับ Facebook, Instagram, TikTok และ YouTube Shorts โดยตั้งสถานะเป็นรอตรวจก่อนเสมอเพื่อให้คนอนุมัติก่อนโพสต์จริง',
+    category: 'automation',
+    tech: ['Google Apps Script', 'Google Sheets', 'JavaScript', 'Google Drive'],
+    gradient: 'linear-gradient(135deg, #195b48, #4da071)',
+    icon: '↳',
+    status: 'Client automation',
+    features: ['แปลง content เป็น 4 platform rows', 'กำหนดเวลาและ interval การโพสต์', 'บังคับสถานะรอตรวจก่อนส่งต่อ', 'ทดสอบ parser แยกจาก Sheet ได้']
+  },
+  {
+    id: 'thai-rag-api',
+    name: 'Thai RAG API',
+    shortDesc: 'API ต้นแบบสำหรับถามตอบจากฐานความรู้ภาษาไทยบนเครื่อง',
+    fullDesc: 'FastAPI prototype ที่ใช้ Ollama สำหรับตอบคำถามและค้นเอกสารภาษาไทยด้วย embedding model โดยมี SQLite เป็น knowledge store และมีหน้า API docs สำหรับทดลองระบบ',
+    category: 'ai',
+    tech: ['Python', 'FastAPI', 'Ollama', 'bge-m3', 'SQLite'],
+    gradient: 'linear-gradient(135deg, #292447, #6650a4)',
+    icon: '⌘',
+    status: 'Local AI prototype',
+    features: ['ถามตอบจากฐานความรู้ภาษาไทย', 'เพิ่มข้อความเข้าคลังผ่าน API', 'ใช้ embedding เพื่อค้นข้อมูลที่เกี่ยวข้อง', 'รันบนเครื่องโดยไม่ต้องส่งข้อมูลขึ้น cloud']
+  },
+  {
+    id: 'forma-database',
+    name: 'FormA Database System',
+    shortDesc: 'ระบบบันทึกข้อมูล Form A บน Excel พร้อมฟอร์มค้นหาและฐานข้อมูล',
+    fullDesc: 'ระบบ Excel VBA สำหรับบันทึกและค้นหาข้อมูล Form A เช่น เครื่องจักร ประเภท และผู้รับผิดชอบ โดยใช้ Python ช่วยสร้างไฟล์ .xlsm และโมดูล VBA ที่จำเป็น',
+    category: 'automation',
+    tech: ['Excel VBA', 'Python', 'XLSM', 'Windows Forms'],
+    gradient: 'linear-gradient(135deg, #174c34, #2d8d5f)',
+    icon: '▤',
+    status: 'Business tool',
+    features: ['ฟอร์มกรอกข้อมูลพร้อม validation', 'ค้นหาและเรียกดูข้อมูลเดิม', 'บันทึกลงฐานข้อมูลใน workbook', 'สร้างไฟล์ macro-enabled จาก source ได้']
+  },
+  {
+    id: 'irfa-research',
+    name: 'IRFA — Research Fund Assistant',
+    shortDesc: 'ข้อเสนอโครงงานผู้ช่วยอัจฉริยะสำหรับการขอทุนวิจัย มข.',
+    fullDesc: 'โครงงานสัมมนาด้าน Computer Science ที่วางระบบช่วยนักวิจัยรุ่นใหม่ค้นหาทุน ตรวจคุณสมบัติ ถามตอบระเบียบพร้อมอ้างอิง และตรวจความครบของข้อเสนอ โดยผสาน RAG กับข้อมูลเชิงโครงสร้าง',
+    category: 'academic',
+    tech: ['RAG', 'Information Extraction', 'Semantic Matching', 'Knowledge Graph'],
+    gradient: 'linear-gradient(135deg, #2d3551, #687db5)',
+    icon: '∴',
+    status: 'Research proposal — ยังไม่เริ่มพัฒนา',
+    features: ['จับคู่ทุนกับคุณสมบัติผู้สมัคร', 'ตอบคำถามพร้อมอ้างอิงเอกสาร', 'ตรวจ proposal เทียบเงื่อนไขทุน', 'ออกแบบให้วัดผลและตรวจสอบคำตอบได้']
+  },
+  {
+    id: 'morse-code-learning',
+    name: 'Morse Code Learning App',
+    shortDesc: 'เว็บฝึก Morse Code พร้อมบัญชีผู้ใช้และสถิติการฝึก',
+    fullDesc: 'Full-stack learning app สำหรับฝึก Morse Code ที่มีระบบสมัครสมาชิก บันทึกความแม่นยำและความเร็ว ตั้งค่าโหมดฝึก และสุ่มตัวอักษรหรือคำศัพท์ผ่าน API',
+    category: 'web',
+    tech: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'JWT'],
+    gradient: 'linear-gradient(135deg, #20252f, #546271)',
+    icon: '·–',
+    status: 'Full-stack learning app',
+    features: ['สมัครและเข้าสู่ระบบ', 'หลายโหมดฝึก Morse', 'บันทึก accuracy และ WPM', 'สถิติและการตั้งค่าสำหรับแต่ละผู้ใช้']
+  },
+  {
+    id: 'spring-boot-coursework',
+    name: 'Java & Spring Boot Coursework',
+    shortDesc: 'ชุดงานวิชา Software Design: API, MVC, database และ transaction',
+    fullDesc: 'ผลงานรายวิชา CP353002 Principles of Software Design and Development ที่รวมการฝึก Java OOP, Spring Boot REST API, bean scope, Thymeleaf, database relationship และ transactional service ผ่านโจทย์อย่าง Shipment, Coffee Menu, Game Catalog, Product Shop และบัญชีเงินฝาก',
+    category: 'academic',
+    tech: ['Java', 'Spring Boot', 'Maven', 'PostgreSQL', 'Docker'],
+    gradient: 'linear-gradient(135deg, #3b2c28, #8a4e35)',
+    icon: '☕',
+    status: 'Coursework collection',
+    features: ['Java OOP และคำนวณ shipment', 'REST API และ layered architecture', 'Thymeleaf MVC และ database connectivity', 'One-to-many relationship กับ @Transactional และ BigDecimal']
   }
 ];
 
@@ -370,6 +539,92 @@ const categories = {
   ai: { label: 'AI & ML', icon: '🧠' },
   academic: { label: 'Academic', icon: '🎓' }
 };
+
+// คำอธิบาย stack ใช้ร่วมกันทุกงาน เพื่อให้ tag ไม่ใช่แค่รายชื่อเทคโนโลยี
+const techNotes = {
+  'Next.js': 'framework สำหรับสร้างเว็บ React ที่จัดการหน้าเว็บ, routing และงานฝั่ง server ได้ในโปรเจกต์เดียว',
+  React: 'ไลบรารีสำหรับสร้าง UI จาก component ทำให้แยกส่วนหน้าจอและสถานะการใช้งานได้เป็นระบบ',
+  TypeScript: 'JavaScript ที่เพิ่ม type ช่วยจับข้อผิดพลาดของข้อมูลตั้งแต่ตอนพัฒนา',
+  'Tailwind CSS': 'utility CSS สำหรับประกอบหน้าตาและ responsive layout ได้เร็วโดยคุม design token ได้ละเอียด',
+  Supabase: 'backend service ที่มีฐานข้อมูล, authentication และ real-time API พร้อมใช้',
+  Prisma: 'ORM ที่ทำให้โค้ดฝั่งแอปคุยกับฐานข้อมูลผ่าน type-safe model',
+  Zustand: 'state manager ขนาดเล็กสำหรับแชร์สถานะระหว่าง component ของ React',
+  'Express.js': 'web framework บน Node.js สำหรับสร้าง API และจัดการ request จาก frontend',
+  'Node.js': 'runtime สำหรับรัน JavaScript ฝั่ง server หรือทำงานอัตโนมัตินอกเบราว์เซอร์',
+  PostgreSQL: 'ฐานข้อมูลเชิงสัมพันธ์สำหรับเก็บข้อมูลที่ต้องเชื่อมโยงกันและใช้งานหลายผู้ใช้',
+  JWT: 'token ที่ใช้ยืนยันตัวตนระหว่าง frontend และ API โดยไม่ต้องเก็บ session ไว้ในทุก request',
+  Java: 'ภาษาสำหรับพัฒนาระบบฝั่ง server ที่เน้นโครงสร้างและความทนทานของโปรแกรม',
+  'Spring Boot': 'framework Java สำหรับสร้าง web application และ API ด้วยโครงสร้างมาตรฐาน',
+  Maven: 'เครื่องมือ build และจัดการ dependency ของโปรเจกต์ Java',
+  Docker: 'เครื่องมือแยก environment ของแอปและ database ให้เปิดซ้ำได้เหมือนกันทุกเครื่อง',
+  'Claude API': 'API ของโมเดลภาษา ใช้ให้ระบบตีความและตอบงานภาษาอย่างมีบริบท',
+  FastAPI: 'framework Python สำหรับทำ API ที่เร็ว มี validation และเอกสาร endpoint อัตโนมัติ',
+  Python: 'ภาษาหลักสำหรับ automation, data processing, AI prototype และ desktop utility หลายงานในชุดนี้',
+  Flutter: 'framework สำหรับสร้างแอปมือถือจาก codebase เดียวและส่งออกได้หลายแพลตฟอร์ม',
+  Dart: 'ภาษาที่ใช้พัฒนาแอป Flutter',
+  Kotlin: 'ภาษาหลักสำหรับแอป Android แบบ native',
+  'Android SDK': 'ชุดเครื่องมือและ API สำหรับเข้าถึงความสามารถของ Android',
+  Gradle: 'ระบบ build และจัดการ dependency ของโปรเจกต์ Android',
+  'Material Design': 'แนวทางออกแบบ UI ของ Google ที่ช่วยให้หน้าจอมือถือมีรูปแบบคุ้นเคย',
+  'Web Technologies': 'พื้นฐานการทำเว็บทั้งโครงสร้าง เนื้อหา หน้าตา และ interaction บนเบราว์เซอร์',
+  'HTML/CSS': 'HTML กำหนดโครงสร้างเนื้อหา ส่วน CSS กำหนดการจัดวาง หน้าตา และการรองรับหลายขนาดจอ',
+  JavaScript: 'ภาษาหลักของเว็บ ใช้ทำ interaction, automation และ script บนแพลตฟอร์มต่าง ๆ',
+  'Chrome Extension': 'ส่วนขยายเบราว์เซอร์ที่เพิ่มความสามารถเฉพาะหน้าเว็บหรือ workflow การท่องเว็บ',
+  'Manifest V3': 'มาตรฐานส่วนขยาย Chrome รุ่นปัจจุบันที่กำหนดสิทธิ์และ lifecycle ของ extension',
+  Puppeteer: 'เครื่องมือควบคุม Chromium ด้วยโค้ด เหมาะกับงาน browser automation และ scraping ที่ได้รับอนุญาต',
+  Selenium: 'เครื่องมือทดสอบและควบคุมเว็บเบราว์เซอร์ข้ามหลาย browser',
+  'Browser Automation': 'แนวทางให้โปรแกรมทำขั้นตอนบนเว็บที่ทำซ้ำแทนผู้ใช้ภายใต้ขอบเขตที่อนุญาต',
+  'VPN APIs': 'ส่วนเชื่อมต่อสำหรับอ่านหรือควบคุมสถานะการเชื่อมต่อ VPN ผ่านโปรแกรม',
+  win32gui: 'โมดูล Python สำหรับอ่านและควบคุมหน้าต่างของ Windows',
+  pyautogui: 'ไลบรารี Python สำหรับสั่งเมาส์และคีย์บอร์ดตาม workflow บนหน้าจอ',
+  pystray: 'ไลบรารีสำหรับทำ icon และเมนูของโปรแกรมใน system tray',
+  PyInstaller: 'เครื่องมือแพ็กโปรแกรม Python ให้เปิดใช้งานบน Windows ได้โดยไม่ต้องติดตั้ง Python แยก',
+  Tkinter: 'ชุด UI ของ Python สำหรับทำโปรแกรม desktop ขนาดเล็กบน Windows',
+  OpenCV: 'ไลบรารีประมวลผลภาพและวิดีโอ เช่น ตรวจจับหรือวิเคราะห์เฟรม',
+  FFmpeg: 'เครื่องมือจัดการไฟล์วิดีโอและเสียง เช่น ตัด รวม แปลง และเข้ารหัส',
+  moviepy: 'ไลบรารี Python ที่ช่วยประกอบ workflow ตัดต่อวิดีโอด้วยโค้ด',
+  'MetaTrader 5': 'แพลตฟอร์มเทรดและ API สำหรับอ่านข้อมูลตลาดหรือสถานะคำสั่งซื้อขาย',
+  'News API': 'แหล่งข้อมูลข่าวที่ระบบเรียกมาใช้เป็นเงื่อนไขหรือข้อมูลประกอบการตัดสินใจ',
+  Flask: 'web framework Python ขนาดเบาสำหรับทำ dashboard หรือ API',
+  'Telegram Bot API': 'API สำหรับรับส่งข้อความและทำ workflow ผ่าน Telegram bot',
+  'Google Gemini': 'โมเดลภาษา/มัลติโหมดที่ใช้ตีความข้อความและภาพตาม workflow ของระบบ',
+  SQLite: 'ฐานข้อมูลไฟล์เดียว เหมาะกับ prototype และแอปที่อยากติดตั้งง่าย',
+  'Google Apps Script': 'JavaScript บน Google Workspace สำหรับเชื่อม Sheets, Gmail, Drive และงานตามเวลา',
+  'Google Sheets': 'ตารางออนไลน์ที่ใช้เป็นทั้งหน้าจอทำงานและฐานข้อมูลเบื้องต้นใน workflow ทีม',
+  'Google Drive': 'ที่เก็บไฟล์ของ Google สำหรับอ้างอิงหรือจัดการ asset ใน workflow',
+  'AWS S3': 'object storage สำหรับเก็บไฟล์และรายงานที่ต้องทนทานและเรียกดูภายหลังได้',
+  'Drizzle ORM': 'ORM สำหรับ TypeScript ที่ช่วยกำหนด schema และ query ฐานข้อมูลในแบบ type-safe',
+  k6: 'เครื่องมือ load testing สำหรับจำลองผู้ใช้จำนวนมากและวัดความทนของ API',
+  'Browser Notifications': 'Web API สำหรับแสดงการแจ้งเตือนจากเว็บให้ผู้ใช้เห็น',
+  'LINE OA': 'ช่องทาง LINE Official Account สำหรับสื่อสารหรือแจ้งเตือนผู้ใช้ผ่าน LINE',
+  'Interactive Maps': 'ส่วนติดต่อแผนที่ที่ให้ผู้ใช้เลือกตำแหน่งและสำรวจข้อมูลเชิงพื้นที่',
+  'Mock Data': 'ข้อมูลจำลองสำหรับทดสอบ flow และสื่อสารแนวคิดโดยไม่แตะข้อมูลจริง',
+  'Data Analytics': 'กระบวนการสรุปและตีความข้อมูลเพื่อมองแนวโน้มและตัวชี้วัดที่ใช้งานได้',
+  'Google APIs': 'API สำหรับเชื่อมบริการต่าง ๆ ของ Google เข้ากับระบบหรือ automation',
+  'Neural Network': 'โมเดล machine learning ที่เรียนรู้รูปแบบจากข้อมูลตัวอย่าง',
+  ML: 'เทคนิคให้โปรแกรมเรียนรู้ pattern จากข้อมูลเพื่อใช้ทำนายหรือจัดประเภท',
+  'AI/ML': 'งานที่ใช้โมเดล AI หรือ machine learning เป็นส่วนหนึ่งของประสบการณ์ผู้ใช้',
+  JSON: 'รูปแบบข้อมูลน้ำหนักเบาที่ใช้เก็บ config, exchange data และ snapshot ระหว่างระบบ',
+  CLI: 'รูปแบบการใช้งานผ่าน command line เหมาะกับงานที่ต้องสั่งรันหรือ automates เป็นรอบ',
+  'Calculation Logic': 'ตรรกะคำนวณที่แปลงข้อมูลธุรกิจเป็นตัวเลขสำหรับตัดสินใจ',
+  Ollama: 'runtime สำหรับรันโมเดลภาษาและ embedding บนเครื่องของผู้ใช้',
+  'bge-m3': 'embedding model สำหรับแปลงข้อความเป็นเวกเตอร์เพื่อค้นหาความหมายที่ใกล้เคียง',
+  'Excel VBA': 'ภาษา macro ใน Excel สำหรับทำฟอร์ม ปุ่ม และ workflow บน workbook',
+  XLSM: 'รูปแบบไฟล์ Excel ที่บรรจุ macro VBA ได้',
+  'Windows Forms': 'หน้าต่างฟอร์มบน Windows สำหรับรับข้อมูลและค้นหาข้อมูลในเครื่องมือ desktop',
+  RAG: 'วิธีให้โมเดลดึงข้อมูลจากคลังความรู้ก่อนตอบ เพื่อลดการเดาและอ้างอิงแหล่งที่มาได้',
+  'Information Extraction': 'การสกัดข้อมูลสำคัญจากเอกสารให้กลายเป็นฟิลด์ที่ค้นหาและเปรียบเทียบได้',
+  'Semantic Matching': 'การจับคู่สิ่งที่ความหมายใกล้กัน เช่น โปรไฟล์งานวิจัยกับทุนที่เหมาะ',
+  'Knowledge Graph': 'โครงสร้างข้อมูลแบบความสัมพันธ์ ช่วยเชื่อม entity และเงื่อนไขที่เกี่ยวข้อง',
+  matplotlib: 'ไลบรารี Python สำหรับสร้างกราฟและภาพสรุปผลการวิเคราะห์',
+  numpy: 'ไลบรารีคำนวณตัวเลขและ array ของ Python สำหรับงาน simulation และ data analysis',
+  Simulation: 'การสร้างแบบจำลองเพื่อทดลองพฤติกรรมของระบบก่อนนำไปใช้จริง'
+};
+
+function getTechNote(tech) {
+  const key = Object.keys(techNotes).find(name => tech === name || tech.startsWith(`${name} `));
+  return techNotes[key] || 'เทคโนโลยีหรือแนวทางที่ใช้เป็นส่วนหนึ่งของงานนี้';
+}
 
 // ============================================
 // DOM READY
@@ -739,16 +994,17 @@ function openModal(project) {
       <button class="modal-close" type="button" aria-label="ปิดรายละเอียดโปรเจกต์">&times;</button>
       ${project.image ? '' : `<div class="modal-icon">${project.name.slice(0, 2).toUpperCase()}</div>`}
       <h2 class="modal-title">${project.name}</h2>
-      <span class="modal-category-badge">${categories[project.category]?.label || project.category}</span>
+      <div class="modal-meta"><span class="modal-category-badge">${categories[project.category]?.label || project.category}</span>${project.status ? `<span class="modal-status-badge">${project.status}</span>` : ''}</div>
     </div>
     <div class="modal-body">
+      <h4 class="modal-section-title">งานนี้คืออะไร</h4>
       <p class="modal-description">${project.fullDesc}</p>
-      <h4 class="modal-section-title">Technologies</h4>
-      <div class="modal-tech-list">
-        ${project.tech.map(t => `<span class="modal-tech-tag">${t}</span>`).join('')}
+      <h4 class="modal-section-title">Tech stack — ใช้ทำอะไรบ้าง</h4>
+      <div class="modal-tech-explain">
+        ${project.tech.map(t => `<div class="modal-tech-item"><strong>${t}</strong><p>${getTechNote(t)}</p></div>`).join('')}
       </div>
       ${project.features ? `
-        <h4 class="modal-section-title" style="margin-top: 30px">Key features</h4>
+        <h4 class="modal-section-title modal-features-heading">สิ่งที่งานนี้ทำได้</h4>
         <ul class="modal-features">
           ${project.features.map(f => `<li>${f}</li>`).join('')}
         </ul>
@@ -880,6 +1136,8 @@ function initSmoothScroll() {
 function updateProjectCount() {
   const countEl = document.getElementById('filter-count');
   if (countEl) countEl.textContent = projects.length;
+  const storyCountEl = document.getElementById('story-project-total');
+  if (storyCountEl) storyCountEl.textContent = projects.length;
 }
 
 // ============================================
