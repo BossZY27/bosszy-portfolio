@@ -7,379 +7,379 @@ const projects = [
     id: '2getr',
 image: 'public/images/2getr.png',
     name: '2Getr',
-    shortDesc: 'แพลตฟอร์ม Social Community สำหรับเชื่อมต่อผู้คน',
-    fullDesc: 'Full-stack social/community web application ที่มีระบบ Real-time features, User Authentication, Content Sharing และ Community Management ครบวงจร',
+    shortDesc: 'เว็บคอมมูนิตี้สำหรับพูดคุยและแชร์เนื้อหา',
+    fullDesc: 'เว็บคอมมูนิตี้แบบ Full-stack ที่ให้ผู้ใช้สมัครสมาชิก พูดคุยแบบเรียลไทม์ แชร์เนื้อหา และดูแลพื้นที่ของกลุ่มตัวเองได้',
     category: 'web',
     tech: ['Next.js 15', 'React 19', 'Supabase', 'Prisma', 'TypeScript', 'Zustand'],
     gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
     icon: '👥',
-    features: ['Real-time messaging', 'User authentication', 'Content sharing', 'Community management']
+    features: ['แชตแบบเรียลไทม์', 'สมัครและเข้าสู่ระบบ', 'โพสต์และแชร์เนื้อหา', 'จัดการคอมมูนิตี้']
   },
   {
     id: 'opt-pos',
 image: 'public/images/pos.png',
     name: 'Opt-POS',
-    shortDesc: 'ระบบ Point of Sale สำหรับร้านค้าปลีก',
-    fullDesc: 'ระบบ POS ที่ออกแบบมาสำหรับธุรกิจร้านค้าปลีก พร้อมระบบจัดการสินค้าคงคลัง การติดตามยอดขาย และรายงานสรุป',
+    shortDesc: 'ระบบขายหน้าร้านสำหรับร้านค้าปลีก',
+    fullDesc: 'ระบบ POS สำหรับขายสินค้า เช็กสต็อก ติดตามยอดขาย ออกใบเสร็จ และดูรายงานสรุปของร้าน',
     category: 'web',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     gradient: 'linear-gradient(135deg, #f093fb, #f5576c)',
     icon: '🛒',
-    features: ['Inventory management', 'Sales tracking', 'Receipt printing', 'Reports & analytics']
+    features: ['จัดการสต็อกสินค้า', 'ติดตามยอดขาย', 'พิมพ์ใบเสร็จ', 'ดูรายงานสรุป']
   },
   {
     id: 'next2-pos',
 image: 'public/images/pos.png',
     name: 'Next2-POS',
     shortDesc: 'ระบบ POS เวอร์ชัน 2 ที่พัฒนาต่อยอด',
-    fullDesc: 'POS System เวอร์ชันที่ 2 ที่ปรับปรุงประสิทธิภาพและเพิ่มฟีเจอร์ใหม่จากเวอร์ชันแรก',
+    fullDesc: 'ระบบ POS เวอร์ชันที่สองที่ต่อยอดจากของเดิม ปรับหน้าจอให้ใช้ง่ายขึ้น เพิ่มการรองรับหลายสาขา และซิงก์ข้อมูลแบบเรียลไทม์',
     category: 'web',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     gradient: 'linear-gradient(135deg, #4facfe, #00f2fe)',
     icon: '💳',
-    features: ['Enhanced UI/UX', 'Multi-branch support', 'Real-time sync', 'Advanced reporting']
+    features: ['หน้าจอใช้งานง่ายขึ้น', 'รองรับหลายสาขา', 'ซิงก์ข้อมูลแบบเรียลไทม์', 'รายงานละเอียดขึ้น']
   },
   {
     id: 'opt-loyalty',
 image: 'public/images/pos.png',
     name: 'Opt-Loyalty',
-    shortDesc: 'ระบบ CRM จัดการ Loyalty Program',
-    fullDesc: 'ระบบบริหารจัดการโปรแกรมสะสมแต้มและ Customer Loyalty สำหรับธุรกิจ พร้อมติดตามพฤติกรรมลูกค้า',
+    shortDesc: 'ระบบสะสมแต้มและดูแลลูกค้าประจำ',
+    fullDesc: 'ระบบ CRM สำหรับเก็บแต้ม จัดการของรางวัล ทำแคมเปญ และดูว่าลูกค้าแต่ละกลุ่มกลับมาใช้บริการแบบไหน',
     category: 'web',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     gradient: 'linear-gradient(135deg, #43e97b, #38f9d7)',
     icon: '⭐',
-    features: ['Points system', 'Customer analytics', 'Reward management', 'Campaign tools']
+    features: ['ระบบสะสมแต้ม', 'ดูพฤติกรรมลูกค้า', 'จัดการของรางวัล', 'สร้างแคมเปญ']
   },
   {
     id: 'telesales',
 image: 'public/images/bot.png',
     name: 'TeleSales CRM',
-    shortDesc: 'ระบบ CRM สำหรับทีม TeleSales พร้อม VoIP',
-    fullDesc: 'ระบบ CRM ครบวงจร สำหรับทีม TeleSales มีระบบจัดการ Lead, VoIP/3CX Click-to-call, Call Logging, KPI Dashboard และ Excel Report Export รองรับหลาย Role (Admin/Manager/Agent)',
+    shortDesc: 'CRM สำหรับทีมขายทางโทรศัพท์ที่ต่อกับ 3CX',
+    fullDesc: 'ระบบให้ทีมขายเก็บรายชื่อลูกค้า โทรผ่าน 3CX บันทึกประวัติการคุย ดู KPI และส่งออกรายงาน Excel โดยแยกสิทธิ์ Admin, Manager และ Agent',
     category: 'web',
     tech: ['Next.js', 'React', 'TypeScript', '3CX VoIP'],
     gradient: 'linear-gradient(135deg, #fa709a, #fee140)',
     icon: '📞',
-    features: ['Lead management', 'VoIP integration', 'KPI dashboards', 'Multi-role access', 'Excel export']
+    features: ['จัดการรายชื่อลูกค้า', 'โทรผ่าน 3CX', 'ดู KPI ของทีม', 'แยกสิทธิ์ผู้ใช้', 'ส่งออกรายงาน Excel']
   },
   {
     id: 'ai-shop',
 image: 'public/images/bot.png',
     name: 'AI Shop Team',
-    shortDesc: 'แพลตฟอร์มจัดการร้านค้าด้วย AI',
-    fullDesc: 'ระบบบริหารจัดการร้านค้าที่ขับเคลื่อนด้วย AI ช่วยวิเคราะห์และจัดการทีมงานอย่างมีประสิทธิภาพ',
+    shortDesc: 'ระบบช่วยดูภาพรวมร้านค้าและทีมงานด้วย AI',
+    fullDesc: 'เว็บสำหรับรวมข้อมูลร้านค้าไว้ในที่เดียว แล้วใช้ AI ช่วยมองแนวโน้มยอดขาย สต็อก และงานของทีม',
     category: 'web',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     gradient: 'linear-gradient(135deg, #a18cd1, #fbc2eb)',
     icon: '🏪',
-    features: ['AI-powered insights', 'Team management', 'Inventory optimization', 'Sales forecasting']
+    features: ['สรุปข้อมูลร้านด้วย AI', 'จัดการงานของทีม', 'ดูแนวโน้มสต็อก', 'คาดการณ์ยอดขาย']
   },
   {
     id: 'ai-office',
 image: 'public/images/bot.png',
     name: 'AI Team Office',
-    shortDesc: 'ระบบ Multi-Agent AI จัดการงานอัตโนมัติ',
-    fullDesc: 'Full-stack web app ที่มี AI Agents หลายตัว (Researcher, Analyst, Developer) ทำงานร่วมกัน ระบบจะ Route งานไปยัง Agent ที่เหมาะสมผ่าน Keyword Matching โดยใช้ Claude API',
+    shortDesc: 'ระบบส่งงานให้ AI หลายตัวช่วยกันทำ',
+    fullDesc: 'เว็บ Full-stack ที่แบ่ง AI เป็นบทบาท Researcher, Analyst และ Developer แล้วส่งงานไปยังตัวที่เหมาะจากคำสำคัญในโจทย์ โดยใช้ Claude API',
     category: 'ai',
     tech: ['Express.js', 'Node.js', 'Claude API', 'HTML/CSS/JS'],
     gradient: 'linear-gradient(135deg, #8B5CF6, #D946EF)',
     icon: '🤖',
-    features: ['Multi-agent system', 'Task routing', 'Claude AI integration', 'Real-time collaboration']
+    features: ['AI หลายบทบาท', 'แยกงานตามคำสำคัญ', 'เชื่อมต่อ Claude API', 'ติดตามงานระหว่าง Agent']
   },
   {
     id: 'mlbb-meta',
 image: 'public/images/mlbb-tier.png',
     name: 'MLBB Meta Analyzer',
-    shortDesc: 'เว็บวิเคราะห์ Meta เกม Mobile Legends',
-    fullDesc: 'Full-stack Gaming Analytics Web App สำหรับวิเคราะห์ Meta ของเกม Mobile Legends: Bang Bang มี Backend API แยกจาก Frontend',
+    shortDesc: 'เว็บดูเมตาและสถิติของเกม Mobile Legends',
+    fullDesc: 'เว็บ Full-stack สำหรับดู Tier List อัตราชนะ แนวโน้มเมตา และไอเท็มแนะนำของ Mobile Legends โดยแยก Backend API ออกจากหน้าเว็บ',
     category: 'web',
     tech: ['Next.js 16', 'React 19', 'Express.js', 'Prisma', 'SQLite'],
     gradient: 'linear-gradient(135deg, #FF6B6B, #FFE66D)',
     icon: '🎮',
-    features: ['Hero tier lists', 'Win rate analysis', 'Meta tracking', 'Build recommendations']
+    features: ['จัดอันดับฮีโร่', 'วิเคราะห์อัตราชนะ', 'ติดตามเมตา', 'แนะนำชุดไอเท็ม']
   },
   {
     id: 'laos-lottery',
 image: 'public/images/trading-bot.png',
     name: 'Lao Lottery AI',
-    shortDesc: 'ระบบ AI ทำนายหวยลาว ด้วย Neural Network',
-    fullDesc: 'ระบบทำนายหวยลาวที่ใช้ AI/ML พร้อม Frequency Analysis, Neural Network Model และ Heuristic Validation',
+    shortDesc: 'โปรเจกต์ทดลองวิเคราะห์ข้อมูลหวยลาวด้วย AI',
+    fullDesc: 'งานทดลองกับข้อมูลย้อนหลัง โดยเทียบการวิเคราะห์ความถี่ โมเดล Neural Network และกฎตรวจผลแบบ Heuristic',
     category: 'ai',
     tech: ['FastAPI', 'Python', 'Neural Network', 'ML'],
     gradient: 'linear-gradient(135deg, #F7971E, #FFD200)',
     icon: '🎰',
-    features: ['AI prediction model', 'Frequency analysis', 'Neural network', 'Historical data analysis']
+    features: ['ทดลองโมเดลทำนาย', 'วิเคราะห์ความถี่', 'ใช้ Neural Network', 'ดูข้อมูลย้อนหลัง']
   },
   {
     id: 'ai-cartoon',
 image: 'public/images/2getr.png',
     name: 'AI Cartoon',
-    shortDesc: 'แอปพลิเคชัน AI สำหรับสร้าง Cartoon',
-    fullDesc: 'Web application ที่ใช้ AI ในการสร้างและแปลงรูปภาพเป็นสไตล์ Cartoon',
+    shortDesc: 'เว็บแปลงรูปภาพให้เป็นภาพการ์ตูนด้วย AI',
+    fullDesc: 'เว็บสำหรับอัปโหลดรูป เลือกสไตล์ แล้วดูตัวอย่างภาพการ์ตูนที่ AI สร้างให้ก่อนบันทึก',
     category: 'ai',
     tech: ['Next.js', 'React', 'TypeScript', 'AI/ML'],
     gradient: 'linear-gradient(135deg, #E44D26, #F16529)',
     icon: '🎨',
-    features: ['Image to cartoon conversion', 'Multiple art styles', 'Real-time preview', 'High-quality output']
+    features: ['แปลงรูปเป็นภาพการ์ตูน', 'เลือกได้หลายสไตล์', 'ดูตัวอย่างก่อนบันทึก', 'ส่งออกภาพความละเอียดสูง']
   },
   {
     id: 'web-schedule',
 image: 'public/images/bot.png',
     name: 'Web Schedule Nara',
     shortDesc: 'ระบบจัดการตารางเวลา',
-    fullDesc: 'ระบบจัดการตารางเวลาสำหรับ Nara พร้อมอินเทอร์เฟซที่ใช้งานง่าย',
+    fullDesc: 'เว็บสำหรับเพิ่ม แก้ไข และดูตารางเวลาของ Nara ผ่านหน้าปฏิทิน พร้อมระบบแจ้งเตือน',
     category: 'web',
     tech: ['Web Technologies', 'JavaScript', 'HTML/CSS'],
     gradient: 'linear-gradient(135deg, #36D1DC, #5B86E5)',
     icon: '📅',
-    features: ['Schedule management', 'Calendar view', 'Notifications', 'User-friendly interface']
+    features: ['เพิ่มและแก้ไขตาราง', 'ดูแบบปฏิทิน', 'ระบบแจ้งเตือน', 'หน้าจอใช้งานไม่ซับซ้อน']
   },
   // --- Mobile Apps ---
   {
     id: 'unitask-flutter',
 image: 'public/images/unitask.png',
     name: 'Unitask (Flutter)',
-    shortDesc: 'แอปจัดการงาน Cross-Platform ด้วย Flutter',
-    fullDesc: 'Task Management App แบบ Cross-platform สร้างด้วย Flutter สำหรับจัดการงานและ To-do list',
+    shortDesc: 'แอปจดและจัดลำดับงานที่ใช้ได้หลายแพลตฟอร์ม',
+    fullDesc: 'แอป Flutter สำหรับเพิ่ม แก้ไข และจัดหมวดหมู่งาน พร้อมกำหนดระดับความสำคัญใน To-do list',
     category: 'mobile',
     tech: ['Flutter', 'Dart', 'Material Design'],
     gradient: 'linear-gradient(135deg, #00B4DB, #0083B0)',
     icon: '📱',
-    features: ['Task CRUD', 'Categories', 'Priority levels', 'Cross-platform']
+    features: ['เพิ่ม แก้ไข และลบงาน', 'แยกหมวดหมู่', 'กำหนดความสำคัญ', 'ใช้ได้หลายแพลตฟอร์ม']
   },
   {
     id: 'unitask-android',
 image: 'public/images/unitask.png',
     name: 'Unitask (Android)',
-    shortDesc: 'แอปจัดการงาน Native Android ด้วย Kotlin',
-    fullDesc: 'Task Management App แบบ Native Android สร้างด้วย Kotlin และ Android SDK',
+    shortDesc: 'แอปจดงานบน Android ที่เขียนด้วย Kotlin',
+    fullDesc: 'แอป Android สำหรับจดและจัดการงาน เก็บข้อมูลไว้ในเครื่อง และใช้หน้าตาตามแนวทาง Material Design',
     category: 'mobile',
     tech: ['Kotlin', 'Android SDK', 'Gradle'],
     gradient: 'linear-gradient(135deg, #11998e, #38ef7d)',
     icon: '📲',
-    features: ['Native performance', 'Material Design', 'Local storage', 'Task management']
+    features: ['พัฒนาสำหรับ Android โดยตรง', 'ใช้ Material Design', 'เก็บข้อมูลในเครื่อง', 'เพิ่มและจัดการงาน']
   },
   {
     id: 'flutter-mobile',
 image: 'public/images/unitask.png',
     name: 'Flutter Mobile App',
-    shortDesc: 'แอปมือถือ Cross-Platform',
-    fullDesc: 'โปรเจกต์แอปมือถือที่พัฒนาด้วย Flutter Framework',
+    shortDesc: 'โปรเจกต์ทดลองทำแอปมือถือด้วย Flutter',
+    fullDesc: 'งานทดลองสร้างหน้าจอและโครงสร้างแอปมือถือด้วย Flutter จากโค้ดชุดเดียว เพื่อให้ใช้ต่อได้หลายแพลตฟอร์ม',
     category: 'mobile',
     tech: ['Flutter', 'Dart'],
     gradient: 'linear-gradient(135deg, #6a11cb, #2575fc)',
     icon: '✨',
-    features: ['Cross-platform', 'Modern UI', 'Responsive design']
+    features: ['ใช้โค้ดชุดเดียว', 'ออกแบบหน้าจอมือถือ', 'ปรับตามขนาดหน้าจอ']
   },
   // --- Automation & Bots ---
   {
     id: 'music-adblocker',
 image: 'public/images/music-ad.png',
     name: 'Music Ad Blocker',
-    shortDesc: 'Chrome Extension บล็อกโฆษณาเว็บเพลง',
-    fullDesc: 'Browser Extension สำหรับบล็อกโฆษณาบนเว็บไซต์ Music Streaming ต่างๆ พัฒนาด้วย Manifest V3',
+    shortDesc: 'ส่วนขยาย Chrome สำหรับลดโฆษณาบนเว็บฟังเพลง',
+    fullDesc: 'ส่วนขยายเบราว์เซอร์ที่ตรวจและบล็อกส่วนโฆษณาบนเว็บฟังเพลงที่รองรับ เขียนตามมาตรฐาน Manifest V3',
     category: 'automation',
     tech: ['JavaScript', 'Chrome Extension', 'Manifest V3'],
     gradient: 'linear-gradient(135deg, #1DB954, #191414)',
     icon: '🎵',
-    features: ['Ad blocking', 'Multiple platforms', 'Lightweight', 'Manifest V3']
+    features: ['ตรวจและบล็อกโฆษณา', 'รองรับหลายเว็บไซต์', 'ทำงานเบา', 'ใช้ Manifest V3']
   },
   {
     id: 'fastwork-scraper',
 image: 'public/images/bot.png',
     name: 'Fastwork Scraper',
-    shortDesc: 'Bot scrape ข้อมูลงานจาก Fastwork.co',
-    fullDesc: 'Web Scraping Bot สำหรับดึงข้อมูลรายการงานและข้อมูล Freelancer จากเว็บ Fastwork.co ใช้ Puppeteer',
+    shortDesc: 'บอทเก็บข้อมูลงานจาก Fastwork.co',
+    fullDesc: 'สคริปต์ Puppeteer ที่เปิดเว็บอัตโนมัติ ดึงรายการงานและข้อมูลฟรีแลนซ์ แล้วจัดข้อมูลให้นำไปใช้ต่อได้',
     category: 'automation',
     tech: ['Node.js', 'Puppeteer', 'JavaScript'],
     gradient: 'linear-gradient(135deg, #ee0979, #ff6a00)',
     icon: '🕷️',
-    features: ['Job listing scraping', 'Freelancer data extraction', 'Automated browsing', 'Data export']
+    features: ['เก็บรายการงาน', 'ดึงข้อมูลฟรีแลนซ์', 'ควบคุมเบราว์เซอร์อัตโนมัติ', 'ส่งออกข้อมูล']
   },
   {
     id: 'elearning-bot',
 image: 'public/images/bot.png',
     name: 'E-Learning Automator',
-    shortDesc: 'Bot เรียน E-Learning อัตโนมัติ',
-    fullDesc: 'Automation Bot ที่ช่วยเลื่อนผ่านบทเรียน E-Learning ออนไลน์อัตโนมัติ',
+    shortDesc: 'บอทช่วยทำขั้นตอนซ้ำในระบบ E-Learning',
+    fullDesc: 'งานทดลองใช้ Selenium ควบคุมหน้า E-Learning เพื่อเลื่อนบทเรียนและติดตามความคืบหน้าตามขั้นตอนที่ตั้งไว้',
     category: 'automation',
     tech: ['Python', 'Browser Automation', 'Selenium'],
     gradient: 'linear-gradient(135deg, #2196F3, #21CBF3)',
     icon: '📚',
-    features: ['Auto course progression', 'Quiz handling', 'Progress tracking', 'Multi-platform']
+    features: ['เลื่อนบทเรียนตามลำดับ', 'จัดการขั้นตอนในแบบทดสอบ', 'ติดตามความคืบหน้า', 'ใช้กับหลายหน้าเว็บได้']
   },
   {
     id: 'auto-vpn',
 image: 'public/images/network.png',
     name: 'Auto VPN App',
     shortDesc: 'เครื่องมือจัดการ VPN อัตโนมัติ',
-    fullDesc: 'Desktop Tool สำหรับจัดการ VPN Connections อัตโนมัติ พร้อม GUI ที่ใช้งานง่าย',
+    fullDesc: 'โปรแกรมบน Windows สำหรับเพิ่มโปรไฟล์ VPN เชื่อมต่ออัตโนมัติ และดูสถานะผ่านหน้าจอเดียว',
     category: 'automation',
     tech: ['Python', 'Tkinter', 'VPN APIs'],
     gradient: 'linear-gradient(135deg, #0F2027, #2C5364)',
     icon: '🔐',
-    features: ['VPN management', 'Auto-connect', 'GUI interface', 'Profile management']
+    features: ['จัดการ VPN', 'เชื่อมต่ออัตโนมัติ', 'มีหน้าจอควบคุม', 'เก็บหลายโปรไฟล์']
   },
   {
     id: 'vpn-dashboard',
 image: 'public/images/network.png',
     name: 'Automation Dashboard',
-    shortDesc: 'แดชบอร์ดควบคุม VPN และ Window Management',
-    fullDesc: 'Desktop Dashboard สำหรับจัดการ Browser Profiles, Windows ผ่าน win32gui และ Automate งานซ้ำๆ',
+    shortDesc: 'แดชบอร์ดรวมงาน VPN เบราว์เซอร์ และหน้าต่าง Windows',
+    fullDesc: 'โปรแกรมหน้าเดียวสำหรับเปิดโปรไฟล์เบราว์เซอร์ จัดตำแหน่งหน้าต่างผ่าน win32gui และสั่งงานบนหน้าจอที่ต้องทำซ้ำ',
     category: 'automation',
     tech: ['Python', 'Tkinter', 'win32gui', 'pyautogui'],
     gradient: 'linear-gradient(135deg, #3a7bd5, #00d2ff)',
     icon: '🖥️',
-    features: ['Window management', 'Browser profiles', 'Task automation', 'Hotkey support']
+    features: ['จัดตำแหน่งหน้าต่าง', 'เปิดโปรไฟล์เบราว์เซอร์', 'ทำขั้นตอนซ้ำอัตโนมัติ', 'สั่งงานด้วยคีย์ลัด']
   },
   {
     id: 'edge-auto',
 image: 'public/images/network.png',
     name: 'Edge Multi-Profile',
-    shortDesc: 'เปิด Browser หลาย Profile พร้อม Hotkey',
-    fullDesc: 'Browser Multi-Profile Launcher v9 — เปิดหลาย Edge/Chrome Profiles ด้วย Hotkeys, Auto-click, Logging และ System Tray พร้อม Package เป็น .exe',
+    shortDesc: 'เปิดโปรไฟล์ Edge และ Chrome หลายชุดด้วยคีย์ลัด',
+    fullDesc: 'โปรแกรม Windows สำหรับเปิดหลายโปรไฟล์ด้วยคีย์ลัด ตั้งจุดคลิกอัตโนมัติ เก็บ log และย่อไว้ใน System Tray โดยแพ็กเป็นไฟล์ .exe ได้',
     category: 'automation',
     tech: ['Python', 'Tkinter', 'pystray', 'PyInstaller'],
     gradient: 'linear-gradient(135deg, #0078D7, #00BCF2)',
     icon: '🌐',
-    features: ['Multi-profile launch', 'Hotkey support', 'System tray', 'Auto-click', 'Packaged as .exe']
+    features: ['เปิดหลายโปรไฟล์', 'สั่งงานด้วยคีย์ลัด', 'ย่อไว้ใน System Tray', 'ตั้งจุดคลิกอัตโนมัติ', 'แพ็กเป็นไฟล์ .exe']
   },
   {
     id: 'auto-hotmail',
 image: 'public/images/music-ad.png',
     name: 'Auto Sub Hotmail',
-    shortDesc: 'Chrome Extension สำหรับ Auto-click สมัครอีเมล',
-    fullDesc: 'Chrome Extension ที่ Auto-click ปุ่ม Create บนหน้า Microsoft Sign-in/Signup สำหรับการสร้างบัญชี Hotmail อัตโนมัติ',
+    shortDesc: 'ส่วนขยาย Chrome ช่วยคลิกขั้นตอนสมัคร Hotmail',
+    fullDesc: 'ส่วนขยายที่ช่วยกดปุ่ม Create บนหน้า Sign-in และ Sign-up ของ Microsoft ตามขั้นตอนที่กำหนดไว้',
     category: 'automation',
     tech: ['JavaScript', 'Chrome Extension', 'Manifest V3'],
     gradient: 'linear-gradient(135deg, #FFB347, #FFCC33)',
     icon: '📧',
-    features: ['Auto-click', 'Form automation', 'Chrome extension', 'Lightweight']
+    features: ['คลิกปุ่มตามขั้นตอน', 'ช่วยกรอกฟอร์ม', 'ทำงานบน Chrome', 'ติดตั้งขนาดเล็ก']
   },
   {
     id: 'tiktok-cart',
 image: 'public/images/tiktok-bot.png',
     name: 'TikTok Cart Bot',
-    shortDesc: 'Automation สำหรับ TikTok Shopping',
-    fullDesc: 'Bot อัตโนมัติสำหรับจัดการตะกร้าสินค้าบน TikTok Shop พร้อม Showcase Management',
+    shortDesc: 'บอทช่วยจัดการสินค้าใน TikTok Shop',
+    fullDesc: 'เครื่องมืออัตโนมัติสำหรับเพิ่มสินค้าเข้าตะกร้า จัดรายการสินค้า และดูแล Showcase บน TikTok Shop',
     category: 'automation',
     tech: ['Python', 'Selenium', 'Flask'],
     gradient: 'linear-gradient(135deg, #000000, #EE1D52)',
     icon: '🛍️',
-    features: ['Cart automation', 'Showcase management', 'Product listing', 'Auto-add to cart']
+    features: ['จัดการตะกร้า', 'ดูแล Showcase', 'จัดรายการสินค้า', 'เพิ่มสินค้าอัตโนมัติ']
   },
   {
     id: 'video-tinder',
 image: 'public/images/2getr.png',
     name: 'Video Tinder',
-    shortDesc: 'จัดการวิดีโอแบบ Swipe — Pass/Fail/Cut',
-    fullDesc: 'Desktop App สำหรับจัดการวิดีโอแบบ Swipe ทำได้ทั้ง Pass/Fail/Cut พร้อม Auto-sorting, Video Merging, Smart Cutting, Cartoon Detection และ Audit Reports',
+    shortDesc: 'คัด แยก และตัดวิดีโอด้วยการปัด',
+    fullDesc: 'โปรแกรมบนคอมสำหรับปัดเลือกว่าจะเก็บ ตัด หรือไม่ใช้วิดีโอ แล้วช่วยแยกไฟล์ รวมคลิป ตรวจภาพการ์ตูน และทำรายงานย้อนหลัง',
     category: 'automation',
     tech: ['Python', 'Tkinter', 'OpenCV', 'FFmpeg', 'moviepy'],
     gradient: 'linear-gradient(135deg, #FF416C, #FF4B2B)',
     icon: '🎬',
-    features: ['Swipe to sort', 'Video merging', 'Smart cutting', 'Cartoon detection', 'Audit reports']
+    features: ['ปัดเพื่อคัดวิดีโอ', 'รวมหลายคลิป', 'ตัดช่วงที่เลือก', 'ตรวจภาพการ์ตูน', 'เก็บรายงานย้อนหลัง']
   },
   // --- Trading ---
   {
     id: 'grid-bot',
 image: 'public/images/trading-bot.png',
     name: 'Grid Trading Bot v3',
-    shortDesc: 'Multi-pair Grid Trading Bot สำหรับ Forex',
-    fullDesc: 'Automated Grid Trading Bot เวอร์ชัน 3 สำหรับเทรด Forex หลายคู่เงินพร้อมกัน ทำงานบน MetaTrader 5 พร้อม Dashboard แสดงผล',
+    shortDesc: 'บอท Grid Trading ที่ดูแล Forex หลายคู่เงิน',
+    fullDesc: 'บอทเทรดเวอร์ชัน 3 ที่รันกลยุทธ์ Grid กับหลายคู่เงินบน MetaTrader 5 พร้อมหน้าจอดูสถานะและไฟล์ตั้งค่าที่แก้ได้',
     category: 'trading',
     tech: ['Python', 'MetaTrader 5', 'JSON Config', 'Dashboard'],
     gradient: 'linear-gradient(135deg, #00b09b, #96c93d)',
     icon: '📊',
-    features: ['Multi-pair trading', 'Grid strategy', 'Real-time dashboard', 'Configurable settings', 'Auto lot sizing']
+    features: ['ดูแลหลายคู่เงิน', 'ใช้กลยุทธ์ Grid', 'ดูสถานะแบบเรียลไทม์', 'ปรับค่าผ่านไฟล์', 'คำนวณขนาด lot อัตโนมัติ']
   },
   {
     id: 'smart-grid-ea',
 image: 'public/images/trading-bot.png',
     name: 'Smart Grid EA',
-    shortDesc: 'Expert Advisor พร้อม News Filter & Radar',
-    fullDesc: 'Advanced Expert Advisor ที่ใช้ Grid Trading Logic บน MetaTrader 5 พร้อม News Filter, Market Radar, Regime Detection และ Web Dashboard',
+    shortDesc: 'Expert Advisor ที่ดูข่าวและสภาพตลาดก่อนทำงาน',
+    fullDesc: 'EA บน MetaTrader 5 ที่ใช้กลยุทธ์ Grid ร่วมกับตัวกรองข่าว เรดาร์ตลาด การแยกสภาพตลาด และหน้าเว็บดูสถานะ',
     category: 'trading',
     tech: ['Python', 'MetaTrader 5', 'Flask', 'News API'],
     gradient: 'linear-gradient(135deg, #F7971E, #FFD200)',
     icon: '📈',
-    features: ['Grid trading', 'News filter', 'Market radar', 'Regime detection', 'Web dashboard']
+    features: ['กลยุทธ์ Grid', 'กรองช่วงข่าว', 'ดูภาพรวมตลาด', 'แยกสภาพตลาด', 'แดชบอร์ดบนเว็บ']
   },
   // --- AI & ML ---
   {
     id: 'secretary-bot',
 image: 'public/images/bot.png',
     name: 'น้องเลขา Bot',
-    shortDesc: 'Telegram Bot ผู้ช่วยจัดตาราง พร้อม AI & OCR',
-    fullDesc: 'Telegram Bot ที่ทำหน้าที่เป็นผู้ช่วยจัดตารางส่วนตัว รองรับ Natural Language, OCR จากรูปภาพ, วิเคราะห์เวลาว่าง, แจ้งเตือนอัตโนมัติ (สรุปรายวัน 7AM + แจ้งเตือนก่อนนัด 15 นาที) ขับเคลื่อนด้วย Gemini AI',
+    shortDesc: 'บอท Telegram ช่วยอ่านตารางและเตือนนัด',
+    fullDesc: 'บอทผู้ช่วยส่วนตัวที่รับข้อความภาษาคน อ่านตารางจากรูปด้วย OCR หาเวลาว่าง และแจ้งเตือนก่อนนัด โดยใช้ Gemini ช่วยตีความข้อมูล',
     category: 'ai',
     tech: ['Python', 'Telegram Bot API', 'Google Gemini', 'SQLite'],
     gradient: 'linear-gradient(135deg, #0088cc, #29b6f6)',
     icon: '🤖',
-    features: ['Natural language input', 'OCR schedule extraction', 'Free time analysis', 'Auto notifications', 'Gemini AI powered']
+    features: ['รับคำสั่งเป็นภาษาคน', 'อ่านตารางจากรูป', 'ช่วยหาเวลาว่าง', 'แจ้งเตือนอัตโนมัติ', 'ใช้ Gemini ช่วยตีความ']
   },
   {
     id: 'tiktok-analytics',
 image: 'public/images/tiktok-bot.png',
     name: 'TikTok Analytics',
     shortDesc: 'แพลตฟอร์มวิเคราะห์ข้อมูล TikTok',
-    fullDesc: 'ระบบวิเคราะห์ข้อมูลจาก TikTok พร้อม Dashboard แสดงผลสถิติต่างๆ',
+    fullDesc: 'เว็บรวมสถิติจาก TikTok เพื่อดูแนวโน้มของคอนเทนต์และติดตามผลผ่านแดชบอร์ด',
     category: 'ai',
     tech: ['Next.js', 'React', 'Data Analytics', 'Python'],
     gradient: 'linear-gradient(135deg, #000000, #25F4EE)',
     icon: '📱',
-    features: ['Data analytics', 'Statistics dashboard', 'Trend analysis', 'Performance tracking']
+    features: ['สรุปข้อมูล', 'ดูสถิติบนแดชบอร์ด', 'วิเคราะห์แนวโน้ม', 'ติดตามผลของคอนเทนต์']
   },
   {
     id: 'google-apps-script',
 image: 'public/images/bot.png',
     name: 'Google Apps Script',
-    shortDesc: 'Automation Scripts สำหรับ Google Workspace',
-    fullDesc: 'ชุด Google Apps Script สำหรับ Automate งานต่างๆ บน Google Workspace เช่น Google Sheets, Gmail และ Google Calendar',
+    shortDesc: 'ชุดสคริปต์ช่วยลดงานซ้ำใน Google Workspace',
+    fullDesc: 'รวม Google Apps Script ที่เชื่อม Sheets, Gmail และ Calendar เพื่อให้ขั้นตอนที่ต้องทำซ้ำทำงานเองตามเงื่อนไข',
     category: 'automation',
     tech: ['Google Apps Script', 'JavaScript', 'Google APIs'],
     gradient: 'linear-gradient(135deg, #4285F4, #34A853)',
     icon: '📋',
-    features: ['Sheet automation', 'Email automation', 'Calendar integration', 'Custom functions']
+    features: ['จัดการข้อมูลใน Sheets', 'ส่งอีเมลอัตโนมัติ', 'เชื่อม Google Calendar', 'สร้างฟังก์ชันใช้เอง']
   },
   // --- Academic ---
   {
     id: 'onet-network',
 image: 'public/images/network.png',
     name: 'ONet Network Sim',
-    shortDesc: 'จำลอง Bio-SCION Network Architecture',
-    fullDesc: 'โปรเจกต์วิชา Computer Networks (CP352005) — จำลอง Bio-SCION Architecture (NDN + SCION ISD + Capability-Based Security) เทียบกับ TCP/IP ด้วย Monte-Carlo Simulations พร้อมกราฟเปรียบเทียบ',
+    shortDesc: 'งานจำลองเครือข่าย Bio-SCION เทียบกับ TCP/IP',
+    fullDesc: 'งานวิชา Computer Networks (CP352005) ที่จำลอง Bio-SCION ซึ่งรวม NDN, SCION ISD และ Capability-Based Security แล้วเทียบผลกับ TCP/IP ด้วยวิธี Monte Carlo',
     category: 'academic',
     tech: ['Python', 'matplotlib', 'numpy', 'Simulation'],
     gradient: 'linear-gradient(135deg, #654ea3, #eaafc8)',
     icon: '🎓',
-    features: ['Bio-SCION simulation', 'Monte-Carlo methods', 'TCP/IP comparison', 'Publication-quality graphs']
+    features: ['จำลอง Bio-SCION', 'ทดลองด้วยวิธี Monte Carlo', 'เทียบผลกับ TCP/IP', 'สร้างกราฟสรุปผล']
   },
   // --- Verified workspace projects added from local project documentation ---
   {
     id: 'ai-limits-widget',
     name: 'AI Limits Widget',
     shortDesc: 'วิดเจ็ต Windows สำหรับดูโควตา Claude และ Codex แบบประหยัดแบต',
-    fullDesc: 'วิดเจ็ตที่ฝังอยู่กับ Desktop ของ Windows เพื่อแสดงโควตาการใช้งาน AI แบบสั้น กระชับ และไม่บังหน้าต่างทำงาน โดยอ่านเฉพาะเปอร์เซ็นต์และเวลา reset จากข้อมูลในเครื่อง',
+    fullDesc: 'วิดเจ็ตบนหน้า Desktop ของ Windows สำหรับดูโควตา Claude และ Codex โดยอ่านเฉพาะเปอร์เซ็นต์กับเวลารีเซ็ตจากข้อมูลในเครื่อง และไม่บังหน้าต่างที่กำลังใช้',
     category: 'automation',
     tech: ['PowerShell', 'Windows Script Host', 'JSON', 'Windows Desktop'],
     gradient: 'linear-gradient(135deg, #1b2a35, #4b6a58)',
     icon: '▦',
-    status: 'Personal tool',
-    features: ['อัปเดตสถานะทุก 5 นาที', 'รีเฟรชเองได้ด้วยการดับเบิลคลิก', 'ไม่เก็บ token หรือข้อความสนทนา', 'ทำงานแบบไม่มี animation ต่อเนื่อง']
+    status: 'เครื่องมือที่ทำไว้ใช้เอง',
+    features: ['อัปเดตทุก 5 นาที', 'ดับเบิลคลิกเพื่อรีเฟรช', 'ไม่เก็บ token หรือข้อความสนทนา', 'ไม่มีแอนิเมชันที่ทำงานค้างไว้']
   },
   {
     id: 'routepulse-demo',
     name: 'RoutePulse Client Demo',
-    shortDesc: 'ต้นแบบติดตามราคาบริการตามเส้นทาง พร้อม pipeline สำหรับรอบตรวจรายชั่วโมง',
-    fullDesc: 'Client demo ภาษาไทยที่จำลองการประมวลผลราคา 560 เส้นทางต่อชั่วโมง มี import/export CSV, สถานะ worker และการส่งรายงาน โดยแยกข้อมูลจำลองออกจาก connector จริงอย่างชัดเจน',
+    shortDesc: 'ต้นแบบติดตามราคาตามเส้นทางและตรวจข้อมูลทุกชั่วโมง',
+    fullDesc: 'เดโมภาษาไทยที่จำลองการเช็กราคา 560 เส้นทางต่อชั่วโมง รับและส่งออกไฟล์ CSV ดูสถานะตัวประมวลผล และส่งรายงาน โดยแยกข้อมูลทดลองออกจากระบบจริง',
     category: 'web',
     tech: ['Next.js', 'React', 'TypeScript', 'AWS S3', 'Drizzle ORM'],
     gradient: 'linear-gradient(135deg, #183a5a, #278a8c)',
     icon: '⌁',
-    status: 'Client prototype',
-    features: ['จำลองรอบตรวจ 560 route ต่อชั่วโมง', 'รับและส่งออก CSV', 'เก็บผลรายชั่วโมงแบบ retry ได้', 'มี guard ก่อนเปิดใช้ connector จริง']
+    status: 'ต้นแบบสำหรับลูกค้า',
+    features: ['จำลองการตรวจ 560 เส้นทางต่อชั่วโมง', 'รับและส่งออก CSV', 'ลองประมวลผลซ้ำได้เมื่อมีปัญหา', 'มีขั้นตอนยืนยันก่อนต่อระบบจริง']
   },
   {
     id: 'buildsure',
@@ -390,56 +390,56 @@ image: 'public/images/network.png',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     gradient: 'linear-gradient(135deg, #0d2b47, #337194)',
     icon: '⌂',
-    status: 'Product prototype',
-    features: ['Project overview dashboard', 'ติดตามความคืบหน้าเป็นงวดงาน', 'สรุปตัวเลขสำคัญในหน้าเดียว', 'ออกแบบ responsive สำหรับการอ่านหน้างาน']
+    status: 'ต้นแบบผลิตภัณฑ์',
+    features: ['ดูภาพรวมโครงการ', 'ติดตามความคืบหน้าเป็นงวดงาน', 'สรุปตัวเลขสำคัญในหน้าเดียว', 'เปิดอ่านหน้างานได้หลายขนาดจอ']
   },
   {
     id: 'dmd-sportday-load-test',
     name: 'DMD Sport Day Load Test',
     shortDesc: 'ชุดทดสอบโหลด k6 สำหรับระบบจัดงานกีฬา',
-    fullDesc: 'แพ็กเกจทดสอบความพร้อมของ API สำหรับงาน DMD Sport Day 2026 มีหลาย scenario ตั้งแต่ smoke test ถึง full load พร้อม preflight และสรุปผล P95, error rate และ request volume',
+    fullDesc: 'ชุดทดสอบความพร้อมของ API สำหรับงาน DMD Sport Day 2026 มีตั้งแต่การเช็กเบื้องต้นไปจนถึงจำลองโหลดเต็ม พร้อมตรวจค่าก่อนเริ่มและสรุป P95, error rate กับจำนวน request',
     category: 'academic',
     tech: ['k6', 'JavaScript', 'JSON', 'Load Testing'],
     gradient: 'linear-gradient(135deg, #3b2349, #7c3c58)',
     icon: '↯',
-    status: 'Engineering test suite',
-    features: ['10 test scenarios', 'Preflight ก่อนยิงระบบจริง', 'สรุปผล Markdown และ JSON', 'แยก config ที่ต้องยืนยันจาก endpoint จริง']
+    status: 'ชุดทดสอบระบบ',
+    features: ['10 รูปแบบการทดสอบ', 'ตรวจความพร้อมก่อนยิงระบบจริง', 'สรุปผลเป็น Markdown และ JSON', 'แยกค่าที่ต้องยืนยันจาก endpoint จริง']
   },
   {
     id: 'pulsepoint-alert-demo',
     name: 'PulsePoint Event Alert',
-    shortDesc: 'ต้นแบบแจ้งเตือนผู้ร่วมงานและจัดการ checkpoint',
-    fullDesc: 'Interactive prototype สำหรับงานสัมมนา 150 คน ที่จำลอง Web Alert, LINE OA, QR checkpoint, หน้าส่งข้อความของแอดมิน และ delivery log โดยเก็บ state สำหรับเดโมไว้ในเบราว์เซอร์',
+    shortDesc: 'ต้นแบบแจ้งเตือนผู้ร่วมงานและเช็กอินด้วย QR',
+    fullDesc: 'ต้นแบบสำหรับงานสัมมนา 150 คน มีการแจ้งเตือนบนเว็บและ LINE OA จุดเช็กอินด้วย QR หน้าส่งข้อความของแอดมิน และประวัติการส่ง โดยเก็บข้อมูลเดโมไว้ในเบราว์เซอร์',
     category: 'web',
     tech: ['Next.js', 'React', 'TypeScript', 'Browser Notifications', 'LINE OA'],
     gradient: 'linear-gradient(135deg, #51253b, #c24d4d)',
     icon: '!',
-    status: 'Client prototype',
-    features: ['Guest และ admin flow', 'QR checkpoint simulation', 'ตั้งกลุ่มผู้รับและระดับความสำคัญ', 'ทดสอบการแจ้งเตือนในเบราว์เซอร์']
+    status: 'ต้นแบบสำหรับลูกค้า',
+    features: ['แยกหน้าผู้ร่วมงานกับแอดมิน', 'จำลองจุดเช็กอินด้วย QR', 'เลือกกลุ่มผู้รับและระดับความสำคัญ', 'ทดสอบแจ้งเตือนในเบราว์เซอร์']
   },
   {
     id: 'ev-nation',
     name: 'EV Nation',
     shortDesc: 'ต้นแบบแพลตฟอร์มบริการรถ EV สำหรับค้นหาสถานีและวางแผนการเดินทาง',
-    fullDesc: 'Next.js demo ที่เล่า flow ของบริการ EV ตั้งแต่ค้นหาสถานี ช่วงเวลาว่าง การจองคิว การวางแผนทริป และรายงานสำหรับ partner โดยใช้ข้อมูลจำลองเพื่อสาธิตประสบการณ์ใช้งาน',
+    fullDesc: 'เดโมบริการรถ EV ตั้งแต่ค้นหาสถานี ดูช่วงเวลาว่าง จองคิว วางแผนทริป ไปจนถึงหน้ารายงานของพาร์ตเนอร์ โดยใช้ข้อมูลจำลองเพื่อให้ลองใช้งานได้ครบขั้นตอน',
     category: 'web',
     tech: ['Next.js', 'React', 'TypeScript', 'Interactive Maps', 'Mock Data'],
     gradient: 'linear-gradient(135deg, #103e3f, #499879)',
     icon: '⚡',
-    status: 'Client prototype',
-    features: ['ค้นหาสถานีชาร์จบนแผนที่', 'จำลองการจองคิว', 'City และ road-trip planning', 'Partner metrics dashboard']
+    status: 'ต้นแบบสำหรับลูกค้า',
+    features: ['ค้นหาสถานีชาร์จบนแผนที่', 'จำลองการจองคิว', 'วางแผนทริปในเมืองและทางไกล', 'แดชบอร์ดสำหรับพาร์ตเนอร์']
   },
   {
     id: 'forex-order-watcher',
     name: 'Forex Order Watcher',
     shortDesc: 'เครื่องมือเฝ้าดูออเดอร์ Forex โดยไม่ส่งคำสั่งเทรด',
-    fullDesc: 'โปรแกรมอ่านสถานะออเดอร์ที่เปิดอยู่จาก MetaTrader 5 เปรียบเทียบกับ snapshot ล่าสุด คำนวณข้อมูลพอร์ตเบื้องต้น และแจ้งเตือนเมื่อพบว่า ticket เดิมปิดหรือหายไป โดยมี mock mode สำหรับทดสอบ',
+    fullDesc: 'โปรแกรมอ่านออเดอร์ที่เปิดอยู่จาก MetaTrader 5 เทียบกับข้อมูลรอบก่อน คำนวณภาพรวมพอร์ต และแจ้งเมื่อออเดอร์เดิมปิดหรือหายไป พร้อมโหมดทดลองที่ไม่ต้องต่อบัญชีจริง',
     category: 'trading',
     tech: ['Python', 'MetaTrader 5', 'JSON', 'CLI'],
     gradient: 'linear-gradient(135deg, #17262f, #265b63)',
     icon: '◉',
-    status: 'Monitoring tool',
-    features: ['อ่าน positions จาก MT5', 'เก็บ snapshot ล่าสุด', 'แจ้งเตือนออเดอร์ที่หายไป', 'มี mock mode โดยไม่ต่อบัญชีจริง']
+    status: 'เครื่องมือเฝ้าดูสถานะ',
+    features: ['อ่านออเดอร์จาก MT5', 'เก็บข้อมูลรอบล่าสุด', 'แจ้งเตือนออเดอร์ที่หายไป', 'ทดลองได้โดยไม่ต่อบัญชีจริง']
   },
   {
     id: 'gp-easy',
@@ -450,32 +450,32 @@ image: 'public/images/network.png',
     tech: ['Next.js', 'React', 'TypeScript', 'Calculation Logic'],
     gradient: 'linear-gradient(135deg, #453522, #aa7a32)',
     icon: '%',
-    status: 'Product prototype',
+    status: 'ต้นแบบผลิตภัณฑ์',
     features: ['กรอกต้นทุนและรายรับ', 'คำนวณกำไรสุทธิ', 'สรุปผลเพื่อเปรียบเทียบทางเลือก', 'ออกแบบเป็นเครื่องมือใช้งานเร็ว']
   },
   {
     id: 'loongmordek-auto-sheets',
     name: 'Loongmordek Auto Sheets',
-    shortDesc: 'แปลง content จาก AI เป็นคิวโพสต์ 4 แพลตฟอร์มบน Google Sheets',
-    fullDesc: 'Google Apps Script ที่รับข้อความ content ก้อนเดียว แล้วแตกเป็นแถวสำหรับ Facebook, Instagram, TikTok และ YouTube Shorts โดยตั้งสถานะเป็นรอตรวจก่อนเสมอเพื่อให้คนอนุมัติก่อนโพสต์จริง',
+    shortDesc: 'แปลงคอนเทนต์จาก AI เป็นคิวโพสต์ 4 แพลตฟอร์มใน Google Sheets',
+    fullDesc: 'Google Apps Script ที่รับคอนเทนต์หนึ่งชุดแล้วแยกเป็นแถวสำหรับ Facebook, Instagram, TikTok และ YouTube Shorts โดยทุกโพสต์ต้องรอคนตรวจและอนุมัติก่อน',
     category: 'automation',
     tech: ['Google Apps Script', 'Google Sheets', 'JavaScript', 'Google Drive'],
     gradient: 'linear-gradient(135deg, #195b48, #4da071)',
     icon: '↳',
-    status: 'Client automation',
-    features: ['แปลง content เป็น 4 platform rows', 'กำหนดเวลาและ interval การโพสต์', 'บังคับสถานะรอตรวจก่อนส่งต่อ', 'ทดสอบ parser แยกจาก Sheet ได้']
+    status: 'ระบบอัตโนมัติสำหรับลูกค้า',
+    features: ['แยกคอนเทนต์เป็น 4 แพลตฟอร์ม', 'กำหนดเวลาและช่วงห่างของโพสต์', 'ต้องตรวจงานก่อนส่งต่อ', 'ทดสอบตัวแยกข้อความแยกจาก Sheet ได้']
   },
   {
     id: 'thai-rag-api',
     name: 'Thai RAG API',
     shortDesc: 'API ต้นแบบสำหรับถามตอบจากฐานความรู้ภาษาไทยบนเครื่อง',
-    fullDesc: 'FastAPI prototype ที่ใช้ Ollama สำหรับตอบคำถามและค้นเอกสารภาษาไทยด้วย embedding model โดยมี SQLite เป็น knowledge store และมีหน้า API docs สำหรับทดลองระบบ',
+    fullDesc: 'ต้นแบบ FastAPI ที่ใช้ Ollama ตอบคำถามจากเอกสารภาษาไทย ค้นข้อความที่เกี่ยวข้องด้วย embedding และเก็บคลังความรู้ใน SQLite พร้อมหน้าทดลอง API',
     category: 'ai',
     tech: ['Python', 'FastAPI', 'Ollama', 'bge-m3', 'SQLite'],
     gradient: 'linear-gradient(135deg, #292447, #6650a4)',
     icon: '⌘',
-    status: 'Local AI prototype',
-    features: ['ถามตอบจากฐานความรู้ภาษาไทย', 'เพิ่มข้อความเข้าคลังผ่าน API', 'ใช้ embedding เพื่อค้นข้อมูลที่เกี่ยวข้อง', 'รันบนเครื่องโดยไม่ต้องส่งข้อมูลขึ้น cloud']
+    status: 'ต้นแบบ AI ที่รันในเครื่อง',
+    features: ['ถามตอบจากฐานความรู้ภาษาไทย', 'เพิ่มข้อความเข้าคลังผ่าน API', 'ค้นข้อมูลที่ความหมายใกล้กัน', 'รันในเครื่องโดยไม่ส่งข้อมูลขึ้น Cloud']
   },
   {
     id: 'forma-database',
@@ -486,8 +486,8 @@ image: 'public/images/network.png',
     tech: ['Excel VBA', 'Python', 'XLSM', 'Windows Forms'],
     gradient: 'linear-gradient(135deg, #174c34, #2d8d5f)',
     icon: '▤',
-    status: 'Business tool',
-    features: ['ฟอร์มกรอกข้อมูลพร้อม validation', 'ค้นหาและเรียกดูข้อมูลเดิม', 'บันทึกลงฐานข้อมูลใน workbook', 'สร้างไฟล์ macro-enabled จาก source ได้']
+    status: 'เครื่องมือใช้งานในธุรกิจ',
+    features: ['ฟอร์มกรอกข้อมูลพร้อมตรวจความถูกต้อง', 'ค้นหาและเรียกดูข้อมูลเดิม', 'บันทึกข้อมูลไว้ใน Workbook', 'สร้างไฟล์ที่เปิดใช้ Macro ได้จาก Source']
   },
   {
     id: 'irfa-research',
@@ -498,32 +498,32 @@ image: 'public/images/network.png',
     tech: ['RAG', 'Information Extraction', 'Semantic Matching', 'Knowledge Graph'],
     gradient: 'linear-gradient(135deg, #2d3551, #687db5)',
     icon: '∴',
-    status: 'Research proposal — ยังไม่เริ่มพัฒนา',
-    features: ['จับคู่ทุนกับคุณสมบัติผู้สมัคร', 'ตอบคำถามพร้อมอ้างอิงเอกสาร', 'ตรวจ proposal เทียบเงื่อนไขทุน', 'ออกแบบให้วัดผลและตรวจสอบคำตอบได้']
+    status: 'แนวคิดโครงงาน — ยังไม่เริ่มพัฒนา',
+    features: ['จับคู่ทุนกับคุณสมบัติผู้สมัคร', 'ตอบคำถามพร้อมอ้างอิงเอกสาร', 'ตรวจข้อเสนอเทียบเงื่อนไขทุน', 'วางวิธีวัดผลและตรวจคำตอบ']
   },
   {
     id: 'morse-code-learning',
     name: 'Morse Code Learning App',
     shortDesc: 'เว็บฝึก Morse Code พร้อมบัญชีผู้ใช้และสถิติการฝึก',
-    fullDesc: 'Full-stack learning app สำหรับฝึก Morse Code ที่มีระบบสมัครสมาชิก บันทึกความแม่นยำและความเร็ว ตั้งค่าโหมดฝึก และสุ่มตัวอักษรหรือคำศัพท์ผ่าน API',
+    fullDesc: 'เว็บฝึก Morse Code ที่สมัครสมาชิกได้ เลือกโหมดฝึก สุ่มตัวอักษรหรือคำผ่าน API และเก็บทั้งความแม่นยำกับความเร็วของแต่ละคน',
     category: 'web',
     tech: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'JWT'],
     gradient: 'linear-gradient(135deg, #20252f, #546271)',
     icon: '·–',
-    status: 'Full-stack learning app',
-    features: ['สมัครและเข้าสู่ระบบ', 'หลายโหมดฝึก Morse', 'บันทึก accuracy และ WPM', 'สถิติและการตั้งค่าสำหรับแต่ละผู้ใช้']
+    status: 'เว็บฝึกเรียนรู้แบบ Full-stack',
+    features: ['สมัครและเข้าสู่ระบบ', 'เลือกโหมดฝึก Morse', 'บันทึกความแม่นยำและ WPM', 'เก็บสถิติและค่าของแต่ละคน']
   },
   {
     id: 'spring-boot-coursework',
     name: 'Java & Spring Boot Coursework',
-    shortDesc: 'ชุดงานวิชา Software Design: API, MVC, database และ transaction',
-    fullDesc: 'ผลงานรายวิชา CP353002 Principles of Software Design and Development ที่รวมการฝึก Java OOP, Spring Boot REST API, bean scope, Thymeleaf, database relationship และ transactional service ผ่านโจทย์อย่าง Shipment, Coffee Menu, Game Catalog, Product Shop และบัญชีเงินฝาก',
+    shortDesc: 'รวมงานวิชา Software Design ตั้งแต่ OOP ไปจนถึงฐานข้อมูล',
+    fullDesc: 'งานจากวิชา CP353002 ที่ฝึก Java OOP, Spring Boot REST API, Bean Scope, Thymeleaf, ความสัมพันธ์ในฐานข้อมูล และ Transaction ผ่านโจทย์ย่อยหลายแบบ',
     category: 'academic',
     tech: ['Java', 'Spring Boot', 'Maven', 'PostgreSQL', 'Docker'],
     gradient: 'linear-gradient(135deg, #3b2c28, #8a4e35)',
     icon: '☕',
-    status: 'Coursework collection',
-    features: ['Java OOP และคำนวณ shipment', 'REST API และ layered architecture', 'Thymeleaf MVC และ database connectivity', 'One-to-many relationship กับ @Transactional และ BigDecimal']
+    status: 'รวมงานรายวิชา',
+    features: ['Java OOP และคำนวณค่าขนส่ง', 'REST API และการแบ่งชั้นของระบบ', 'Thymeleaf MVC และเชื่อมฐานข้อมูล', 'ความสัมพันธ์ One-to-many กับ @Transactional และ BigDecimal']
   }
 ];
 
@@ -605,7 +605,7 @@ const techNotes = {
   ML: 'เทคนิคให้โปรแกรมเรียนรู้ pattern จากข้อมูลเพื่อใช้ทำนายหรือจัดประเภท',
   'AI/ML': 'งานที่ใช้โมเดล AI หรือ machine learning เป็นส่วนหนึ่งของประสบการณ์ผู้ใช้',
   JSON: 'รูปแบบข้อมูลน้ำหนักเบาที่ใช้เก็บ config, exchange data และ snapshot ระหว่างระบบ',
-  CLI: 'รูปแบบการใช้งานผ่าน command line เหมาะกับงานที่ต้องสั่งรันหรือ automates เป็นรอบ',
+  CLI: 'รูปแบบการใช้งานผ่าน Command Line เหมาะกับงานที่ต้องสั่งรันเองหรือตั้งให้ทำงานเป็นรอบ',
   'Calculation Logic': 'ตรรกะคำนวณที่แปลงข้อมูลธุรกิจเป็นตัวเลขสำหรับตัดสินใจ',
   Ollama: 'runtime สำหรับรันโมเดลภาษาและ embedding บนเครื่องของผู้ใช้',
   'bge-m3': 'embedding model สำหรับแปลงข้อความเป็นเวกเตอร์เพื่อค้นหาความหมายที่ใกล้เคียง',
@@ -623,7 +623,7 @@ const techNotes = {
 
 function getTechNote(tech) {
   const key = Object.keys(techNotes).find(name => tech === name || tech.startsWith(`${name} `));
-  return techNotes[key] || 'เทคโนโลยีหรือแนวทางที่ใช้เป็นส่วนหนึ่งของงานนี้';
+  return techNotes[key] || 'เครื่องมือหรือแนวทางที่ใช้ทำงานส่วนนี้';
 }
 
 // ============================================
@@ -1467,7 +1467,7 @@ function initChatbot() {
   }
 
   appendBotMessage(
-    `สวัสดีครับ ผมเป็นดัชนีเล็ก ๆ ของ portfolio นี้ ถามชื่อโปรเจกต์ เทคโนโลยี หรือประเภทงานที่สนใจได้เลย`
+    `อยากดูงานแบบไหน พิมพ์ชื่อโปรเจกต์ เทคที่สนใจ หรือกดปุ่มด้านล่างได้เลยครับ`
   );
   showInitialQuickReplies();
 
@@ -1575,7 +1575,7 @@ function initChatbot() {
     // Greetings
     if (q === 'hello' || q === 'hi' || q === 'hey' || q.includes('สวัสดี') || q.includes('ดีครับ') || q.includes('ดีค่ะ') || q.includes('หวัดดี')) {
       return {
-        text: `สวัสดีครับ! พิมพ์คำค้นหาภาษาที่อยากดูได้เลย เช่น Python, React, Automation หรือคลิกเลือกปุ่มด้านล่างเพื่อสืบค้นข้อมูลได้เลยครับ 😊`,
+        text: `สวัสดีครับ อยากดูงานที่ใช้ Python, React หรือเทคอื่น ๆ พิมพ์ชื่อมาได้เลย หรือเลือกจากปุ่มด้านล่างครับ`,
         replies: []
       };
     }
@@ -1583,7 +1583,7 @@ function initChatbot() {
     // Contacts
     if (q.includes('contact') || q.includes('ติดต่อ') || q.includes('email') || q.includes('อีเมล') || q.includes('gmail') || q.includes('github')) {
       return {
-        text: `คุณสามารถติดต่อผมได้ผ่านช่องทางเหล่านี้เลยครับ:<br><br>📧 **Email:** <a href="mailto:bossboss27.b3@gmail.com" style="color: #06b6d4; text-decoration: underline; font-weight: 500;">bossboss27.b3@gmail.com</a><br>💻 **GitHub:** <a href="https://github.com/BossZY27" target="_blank" style="color: #06b6d4; text-decoration: underline; font-weight: 500;">github.com/BossZY27</a>`,
+        text: `ติดต่อภาคินได้ทางนี้ครับ<br><br>📧 <strong>Email:</strong> <a href="mailto:bossboss27.b3@gmail.com" style="color: #06b6d4; text-decoration: underline; font-weight: 500;">bossboss27.b3@gmail.com</a><br>💻 <strong>GitHub:</strong> <a href="https://github.com/BossZY27" target="_blank" rel="noopener noreferrer" style="color: #06b6d4; text-decoration: underline; font-weight: 500;">github.com/BossZY27</a>`,
         replies: [
           { label: '🔥 ดูผลงานทั้งหมด', query: 'all_projects' },
           { label: '🤖 แนะนำโปรเจกต์ AI', query: 'ai' }
@@ -1608,10 +1608,10 @@ function initChatbot() {
       
       const catTitle = selectedCategory === 'all' ? 'ผลงานทั้งหมด' : categories[selectedCategory]?.label || selectedCategory;
       
-      let html = `นี่คือผลงานเด่นในหมวดหมู่ **${catTitle}** (${filtered.length} โปรเจกต์) ครับ:<br><br>`;
+      let html = `เจอ ${filtered.length} งานในหมวด <strong>${catTitle}</strong><br><br>`;
       filtered.forEach(p => {
-        html += `• **${p.name}** - ${p.shortDesc}<br>`;
-        html += `<button class="chat-project-btn" onclick="triggerProjectModal('${p.id}')">🔍 ดูรายละเอียดโปรเจกต์ ${p.name}</button><br>`;
+        html += `• <strong>${p.name}</strong> — ${p.shortDesc}<br>`;
+        html += `<button class="chat-project-btn" onclick="triggerProjectModal('${p.id}')">เปิดรายละเอียด ${p.name}</button><br>`;
       });
 
       return {
@@ -1641,10 +1641,10 @@ function initChatbot() {
       );
 
       if (filtered.length > 0) {
-        let html = `นี่คือผลงานที่พัฒนาด้วย **${primaryTech.toUpperCase()}** (${filtered.length} โปรเจกต์) ครับ:<br><br>`;
+        let html = `เจอ ${filtered.length} งานที่ใช้ <strong>${primaryTech.toUpperCase()}</strong><br><br>`;
         filtered.forEach(p => {
-          html += `• **${p.name}** - ${p.shortDesc}<br>`;
-          html += `<button class="chat-project-btn" onclick="triggerProjectModal('${p.id}')">🔍 ดูรายละเอียดโปรเจกต์ ${p.name}</button><br>`;
+          html += `• <strong>${p.name}</strong> — ${p.shortDesc}<br>`;
+          html += `<button class="chat-project-btn" onclick="triggerProjectModal('${p.id}')">เปิดรายละเอียด ${p.name}</button><br>`;
         });
 
         return {
@@ -1661,10 +1661,10 @@ function initChatbot() {
       const pId = p.id.toLowerCase();
       
       if (q.includes(pId) || q.includes(pName) || (p.name.includes(' ') && q.includes(pName.replace(/\s+/g, "")))) {
-        let html = `**โปรเจกต์: ${p.name}** (${categories[p.category]?.label || p.category})<br><br>`;
-        html += `📝 **คำอธิบาย:** ${p.fullDesc}<br><br>`;
-        html += `🛠️ **เทคโนโลยี:** ${p.tech.join(', ')}<br><br>`;
-        html += `<button class="chat-project-btn" onclick="triggerProjectModal('${p.id}')">🔍 เปิดหน้าต่างดูรายละเอียดโปรเจกต์</button>`;
+        let html = `<strong>${p.name}</strong> · ${categories[p.category]?.label || p.category}<br><br>`;
+        html += `${p.fullDesc}<br><br>`;
+        html += `<strong>เทคที่ใช้:</strong> ${p.tech.join(', ')}<br><br>`;
+        html += `<button class="chat-project-btn" onclick="triggerProjectModal('${p.id}')">เปิดรายละเอียดทั้งหมด</button>`;
         
         return {
           text: html,
@@ -1675,7 +1675,7 @@ function initChatbot() {
 
     // Fallback
     return {
-      text: `ขออภัยด้วยครับ ผมยังไม่พบโปรเจกต์ที่สอดคล้องกับคำค้นหาของคุณ 😅<br><br>ลองพิมพ์คำค้นหาประเภท:<br>• **หมวดหมู่:** Web, Mobile, Automation, Trading, AI<br>• **เทคโนโลยี:** Python, React, Next.js, Flutter, OpenCV, MT5<br>• **ชื่อโปรเจกต์:** น้องเลขา, 2getr, opt-pos, video tinder<br><br>หรือกดเลือกปุ่มด่วนยอดนิยมด้านล่างนี้ได้เลยนะครับ 👇`,
+      text: `ยังหาไม่เจอครับ ลองค้นด้วยคำสั้น ๆ แบบนี้ได้เลย<br><br>• หมวดงาน: Web, Mobile, Automation, Trading, AI<br>• เทคที่ใช้: Python, React, Next.js, Flutter, OpenCV, MT5<br>• ชื่อโปรเจกต์: น้องเลขา, 2Getr, Opt-POS, Video Tinder`,
       replies: []
     };
   }
