@@ -1,0 +1,415 @@
+/* Plates: ต่อภาษาภาพ "แผ่นแบบช่าง" จากหน้าแรกไปยัง Selected Cases, Archive, modal และ Contact
+   หลักที่ยึด: ให้เนื้อหานำ เส้นและมาร์กเป็นตัวบอกลำดับ ไม่ใส่เอฟเฟกต์ซ้ำทุกการ์ด */
+
+:root {
+  --plate-accent: var(--signal);
+  --mark: 11px;
+}
+
+/* ---------- เครื่องหมายมุม ใช้ซ้ำได้ทั้ง plate และ modal ---------- */
+.corner-marks { position: absolute; z-index: 2; inset: 9px; pointer-events: none; }
+.corner-marks i {
+  position: absolute; width: var(--mark); height: var(--mark);
+  border: 0 solid var(--plate-accent); opacity: .72;
+  transition: width .45s var(--ease), height .45s var(--ease), opacity .3s ease;
+}
+.corner-marks i:nth-child(1) { top: 0; left: 0; border-top-width: 1px; border-left-width: 1px; }
+.corner-marks i:nth-child(2) { top: 0; right: 0; border-top-width: 1px; border-right-width: 1px; }
+.corner-marks i:nth-child(3) { bottom: 0; left: 0; border-bottom-width: 1px; border-left-width: 1px; }
+.corner-marks i:nth-child(4) { bottom: 0; right: 0; border-bottom-width: 1px; border-right-width: 1px; }
+
+/* ---------- Selected Cases: สามแผ่นที่ไม่ซ้ำกัน ---------- */
+.selected-heading { position: relative; }
+.sheet-tick { position: absolute; right: 0; bottom: 8px; display: flex; align-items: flex-end; gap: 7px; height: 26px; }
+.sheet-tick i { width: 1px; height: 9px; background: var(--line-strong); }
+.sheet-tick i:nth-child(3) { height: 22px; background: var(--rust); }
+
+.featured-case[data-plate="1"] { --plate-accent: var(--signal); }
+.featured-case[data-plate="2"] { --plate-accent: var(--rust); }
+.featured-case[data-plate="3"] { --plate-accent: var(--blue); }
+
+/* ยกภาพขึ้นจากแผ่นรอง ให้มีความลึกแทนการใส่เงาเท่ากันทุกใบ */
+.featured-visual { box-shadow: 14px 16px 0 -1px rgba(232, 229, 220, .07); }
+.featured-case[data-plate="2"] .featured-visual { box-shadow: -14px 16px 0 -1px rgba(232, 229, 220, .07); }
+
+.featured-number {
+  top: auto; bottom: 14px; left: -1px;
+  color: var(--ink); background: var(--plate-accent);
+  letter-spacing: .1em;
+}
+.featured-case[data-plate="3"] .featured-number { color: var(--ink); }
+
+/* เส้นบอกระยะที่วิ่งตามทิศอ่าน เปิดเผยตอน hover หรือ focus ของทั้งแผ่น */
+.featured-rule {
+  position: absolute; z-index: 2; right: 16px; bottom: 16px; left: 16px; height: 1px;
+  background: var(--plate-accent); transform: scaleX(0); transform-origin: left;
+  transition: transform .6s var(--ease);
+}
+.featured-case:hover .featured-rule,
+.featured-case:focus-within .featured-rule { transform: scaleX(1); }
+.featured-case:hover .corner-marks i,
+.featured-case:focus-within .corner-marks i { width: 20px; height: 20px; opacity: 1; }
+
+.featured-placeholder { color: var(--plate-accent); }
+.featured-info .project-type { color: var(--plate-accent); }
+
+/* ภาพในชุดนี้เป็นภาพประกอบที่วาดขึ้น ไม่ใช่ภาพหน้าจอจริง จึงกำกับไว้บนแผ่น */
+.visual-note {
+  position: absolute; z-index: 3; top: 16px; right: 16px;
+  padding: 5px 8px; border: 1px solid rgba(232, 229, 220, .3);
+  background: rgba(11, 12, 11, .78); color: var(--paper-dim);
+  font: 400 8px/1 "IBM Plex Sans Thai", sans-serif; letter-spacing: .02em;
+}
+
+/* บล็อกสเปกแบบหัวกระดาษแบบ อ่านได้เร็วโดยไม่ต้องเปิด modal */
+.featured-spec {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0; margin: 26px 0 0; padding: 0;
+  border-top: 1px solid var(--line); border-left: 1px solid var(--line);
+}
+.featured-spec > div { padding: 12px 13px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.featured-spec dt { color: var(--paper-dim); font: 400 8px/1 "IBM Plex Mono", monospace; letter-spacing: .13em; }
+.featured-spec dd { margin: 9px 0 0; font-size: 12px; line-height: 1.35; }
+
+.featured-tech { margin-top: 20px; }
+.case-open {
+  padding: 13px 0 9px; border: 0; border-bottom: 1px solid var(--plate-accent);
+  color: var(--plate-accent); background: none; cursor: pointer;
+  font: 400 13px/1 "IBM Plex Sans Thai", sans-serif;
+  transition: letter-spacing .3s var(--ease), color .2s ease;
+}
+.case-open:hover, .case-open:focus-visible { letter-spacing: .04em; color: var(--paper); }
+.case-open:focus-visible { outline: 2px solid var(--plate-accent); outline-offset: 6px; }
+
+/* ---------- Archive: กระดาษกราฟจาง ๆ และมาร์กประจำการ์ด ---------- */
+.projects-grid {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(232, 229, 220, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 229, 220, .035) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+.project-card { background: transparent; }
+.project-card:hover, .project-card:focus-within { background: rgba(17, 19, 16, .86); }
+
+/* เส้นบอกตำแหน่งที่ขอบบนของการ์ด ทำหน้าที่เดียวกับเส้นในแผ่น Selected */
+.project-card::before {
+  content: ""; position: absolute; z-index: 2; top: 0; right: 0; left: 0; height: 2px;
+  background: var(--signal); transform: scaleX(0); transform-origin: left;
+  transition: transform .45s var(--ease);
+}
+.project-card:hover::before, .project-card:focus-within::before { transform: scaleX(1); }
+.project-card[data-category="automation"]::before { background: var(--rust); }
+.project-card[data-category="trading"]::before { background: #f59e0b; }
+.project-card[data-category="ai"]::before { background: var(--blue); }
+.project-card[data-category="academic"]::before { background: var(--paper-dim); }
+
+.project-card-header:focus-visible { outline: 2px solid var(--signal); outline-offset: -3px; }
+.project-card-category { z-index: 3; transform: rotate(-1.2deg); transform-origin: left center; }
+
+/* หัวการ์ดวาดด้วย CSS ตามหมวดงาน แทนการใช้ภาพชุดเดียวซ้ำกันหลายงานที่ไม่เกี่ยวข้องกัน */
+.card-plate {
+  position: absolute; inset: 0; display: block; overflow: hidden;
+  background:
+    linear-gradient(rgba(232, 229, 220, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 229, 220, .05) 1px, transparent 1px),
+    #131511;
+  background-size: 22px 22px, 22px 22px, auto;
+}
+.card-plate-no {
+  position: absolute; right: 14px; bottom: 4px;
+  color: rgba(232, 229, 220, .1);
+  font: 500 96px/1 "IBM Plex Mono", monospace; letter-spacing: -.06em;
+  transition: color .35s ease;
+}
+.project-card:hover .card-plate-no, .project-card:focus-within .card-plate-no { color: rgba(232, 229, 220, .17); }
+.card-plate-motif {
+  position: absolute; top: 50%; left: 26px; width: 88px; height: 88px;
+  display: block; transform: translateY(-50%);
+  transition: transform .5s var(--ease);
+}
+.card-plate-motif::before, .card-plate-motif::after { content: ""; position: absolute; }
+.project-card:hover .card-plate-motif { transform: translateY(-50%) rotate(-4deg); }
+
+/* สลับผังหัวการ์ดเป็นจังหวะ เพื่อไม่ให้แถวยาว ๆ ของหมวดเดียวกันดูเหมือนกันหมด */
+.project-card:nth-child(3n + 2) .card-plate-motif { right: 26px; left: auto; }
+.project-card:nth-child(3n + 2) .card-plate-no { right: auto; left: 16px; }
+.project-card:nth-child(4n) .card-plate-motif { width: 104px; height: 104px; }
+.project-card:nth-child(5n + 3) .card-plate { background-position: 11px 11px, 11px 11px, 0 0; }
+
+/* web: กรอบหน้าต่างซ้อนกัน */
+[data-category="web"] .card-plate-motif::before {
+  inset: 12% 22% 26% 0; border: 1px solid var(--signal);
+  box-shadow: 14px 14px 0 -1px rgba(184, 237, 59, .22);
+}
+[data-category="web"] .card-plate-motif::after {
+  top: 12%; left: 0; width: 78%; height: 12px;
+  border-bottom: 1px solid var(--signal);
+}
+
+/* mobile: กรอบจอมือถือกับปุ่ม */
+[data-category="mobile"] .card-plate-motif::before {
+  inset: 2% 40% 2% 8%; border: 1px solid #38ef7d; border-radius: 9px;
+}
+[data-category="mobile"] .card-plate-motif::after {
+  bottom: 12%; left: 24%; width: 16px; height: 16px;
+  border: 1px solid #38ef7d; border-radius: 50%;
+}
+
+/* automation: ฟันเฟืองแบบเส้นไขว้ */
+[data-category="automation"] .card-plate-motif::before {
+  inset: 14%; border: 1px solid var(--rust); border-radius: 50%;
+  box-shadow: inset 0 0 0 9px rgba(240, 100, 55, .1);
+}
+[data-category="automation"] .card-plate-motif::after {
+  top: 50%; left: -6%; width: 112%; height: 1px; background: var(--rust);
+  transform: rotate(-32deg);
+}
+
+/* trading: แท่งกราฟ */
+[data-category="trading"] .card-plate-motif::before {
+  bottom: 16%; left: 0; width: 82%; height: 46%;
+  background:
+    linear-gradient(#f59e0b, #f59e0b) 0 100% / 13px 42% no-repeat,
+    linear-gradient(#f59e0b, #f59e0b) 24% 100% / 13px 78% no-repeat,
+    linear-gradient(#f59e0b, #f59e0b) 48% 100% / 13px 54% no-repeat,
+    linear-gradient(#f59e0b, #f59e0b) 72% 100% / 13px 100% no-repeat;
+  opacity: .55;
+}
+[data-category="trading"] .card-plate-motif::after {
+  top: 30%; left: 0; width: 88%; height: 1px; background: #fbbf24; transform: rotate(-14deg);
+}
+
+/* ai: จุดกับเส้นเชื่อม */
+[data-category="ai"] .card-plate-motif::before {
+  inset: 18% 30% 44% 4%; border: 1px solid var(--blue); border-radius: 50%;
+}
+[data-category="ai"] .card-plate-motif::after {
+  right: 12%; bottom: 14%; width: 26px; height: 26px;
+  border: 1px solid var(--blue); border-radius: 50%;
+  box-shadow: -22px -20px 0 -12px var(--blue);
+}
+
+/* academic: สันหนังสือกับเส้นบรรทัด */
+[data-category="academic"] .card-plate-motif::before {
+  inset: 10% 34% 10% 4%; border: 1px solid var(--paper-dim);
+}
+[data-category="academic"] .card-plate-motif::after {
+  top: 26%; right: 20%; width: 34%; height: 34%;
+  border-top: 1px solid var(--paper-dim); border-bottom: 1px solid var(--paper-dim);
+}
+
+/* ป้ายสถานะ บอกตั้งแต่หน้า Archive ว่างานไหนเป็นต้นแบบ งานไหนใช้จริง */
+.project-card-status {
+  display: inline-block; margin-bottom: 12px; padding: 4px 7px;
+  border: 1px solid var(--line-strong); color: var(--paper-dim);
+  font: 400 8px/1.15 "IBM Plex Mono", monospace; letter-spacing: .06em;
+}
+[data-category="web"] .project-card-status { border-color: rgba(184, 237, 59, .42); color: var(--signal); }
+[data-category="automation"] .project-card-status { border-color: rgba(240, 100, 55, .42); color: var(--rust); }
+[data-category="trading"] .project-card-status { border-color: rgba(245, 158, 11, .45); color: #f7c35c; }
+[data-category="ai"] .project-card-status { border-color: rgba(111, 174, 186, .45); color: var(--blue); }
+
+.view-details-btn::after { display: inline-block; transition: transform .25s var(--ease); }
+.project-card:hover .view-details-btn::after,
+.view-details-btn:focus-visible::after { transform: translate(3px, -3px); }
+.view-details-btn:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
+
+/* งานที่ยังไม่มีภาพ ใช้แผ่นวาดชุดเดียวกับคลังงาน แทนการปล่อยกรอบว่าง
+   วางไว้หลังนิยามลวดลาย เพราะต้องเขียนทับค่าของ .card-plate และของแต่ละหมวด */
+.featured-visual .featured-plate {
+  background:
+    linear-gradient(rgba(232, 229, 220, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 229, 220, .07) 1px, transparent 1px),
+    radial-gradient(circle at 28% 42%, rgba(232, 229, 220, .07), transparent 60%),
+    #15170f;
+  background-size: 34px 34px, 34px 34px, auto, auto;
+}
+.featured-visual .featured-plate::after {
+  content: ""; position: absolute; top: 58%; right: 0; left: 0; height: 1px;
+  background: var(--plate-accent); opacity: .32;
+}
+.featured-visual .card-plate-motif {
+  left: 10%; width: clamp(120px, 17vw, 200px); height: clamp(120px, 17vw, 200px);
+  filter: drop-shadow(0 0 24px rgba(0, 0, 0, .55));
+}
+.featured-visual .card-plate-no {
+  right: 5%; bottom: -5%; font-size: clamp(130px, 20vw, 270px);
+  color: rgba(232, 229, 220, .17);
+}
+.featured-case:hover .card-plate-no { color: rgba(232, 229, 220, .26); }
+.featured-case:hover .card-plate-motif { transform: translateY(-50%) rotate(-4deg); }
+
+/* บนแผ่นใหญ่ เส้น 1px จะจางเกินไป และสีลวดลายควรตามสีประจำแผ่น */
+.featured-visual .card-plate-motif::before,
+.featured-visual .card-plate-motif::after {
+  border-width: 2px; border-color: var(--plate-accent);
+}
+.featured-visual [data-category] .card-plate-motif::before { border-color: var(--plate-accent); }
+.featured-case[data-category="web"] .card-plate-motif::before {
+  box-shadow: 26px 26px 0 -2px color-mix(in srgb, var(--plate-accent) 26%, transparent);
+}
+.featured-case[data-category="web"] .card-plate-motif::after { height: 24px; }
+.featured-case[data-category="trading"] .card-plate-motif::before {
+  background:
+    linear-gradient(var(--plate-accent), var(--plate-accent)) 0 100% / 22px 42% no-repeat,
+    linear-gradient(var(--plate-accent), var(--plate-accent)) 24% 100% / 22px 78% no-repeat,
+    linear-gradient(var(--plate-accent), var(--plate-accent)) 48% 100% / 22px 54% no-repeat,
+    linear-gradient(var(--plate-accent), var(--plate-accent)) 72% 100% / 22px 100% no-repeat;
+  opacity: .6;
+}
+.featured-case[data-category="trading"] .card-plate-motif::after { height: 2px; background: var(--plate-accent); }
+.featured-case[data-category="automation"] .card-plate-motif::after { height: 2px; background: var(--plate-accent); }
+
+/* แถบบอกตำแหน่งในคลังงาน ใช้ภาษาเดียวกับ readout ของช่วง Tools */
+.archive-readout {
+  position: sticky; z-index: 4; bottom: 20px;
+  display: flex; gap: 14px; align-items: baseline; width: max-content;
+  margin: 26px 0 0; padding: 9px 13px;
+  border: 1px solid var(--line-strong); background: rgba(11, 12, 11, .88);
+  color: var(--paper-dim); font: 400 8px/1 "IBM Plex Mono", monospace; letter-spacing: .12em;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .35s ease, transform .35s var(--ease);
+  pointer-events: none;
+}
+.archive-readout.is-on { opacity: 1; transform: translateY(0); }
+.archive-readout strong { color: var(--signal); font-weight: 500; letter-spacing: .06em; }
+
+/* แท็บกรองให้เหมือนแท็บดัชนีของแฟ้มงาน */
+.filter-btn { position: relative; }
+.filter-btn.active::after {
+  content: ""; position: absolute; top: 100%; left: 13px;
+  border: 4px solid transparent; border-top-color: var(--signal);
+}
+
+/* ---------- modal: หมายเหตุและลิงก์ ---------- */
+.modal-header .corner-marks i { border-color: var(--paper); opacity: .55; }
+.modal-team-note {
+  display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline;
+  margin: -18px 0 34px; padding: 14px 16px;
+  border-left: 2px solid var(--rust); background: rgba(240, 100, 55, .07);
+  color: #4a4d45; font-size: 14px; line-height: 1.6;
+}
+.modal-team-note span {
+  color: var(--rust); font: 500 8px/1 "IBM Plex Mono", monospace;
+  letter-spacing: .13em; text-transform: uppercase;
+}
+.modal-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.modal-links a {
+  display: inline-flex; align-items: center; gap: 10px; padding: 13px 16px;
+  border: 1px solid rgba(11, 12, 11, .24); color: var(--ink);
+  font-size: 13px; transition: background .2s ease, border-color .2s ease;
+}
+.modal-links a:hover, .modal-links a:focus-visible { background: var(--signal); border-color: var(--signal); }
+.modal-links a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.modal-links i { font-style: normal; }
+
+/* ---------- Contact: แผ่นปิดท้าย ใช้วงโคจรชุดเดียวกับหน้าแรก ---------- */
+.contact { position: relative; }
+.contact-plate {
+  position: absolute; z-index: 0; top: 7%; right: max(var(--gutter), 4vw);
+  width: min(26vw, 320px); aspect-ratio: 1; pointer-events: none;
+}
+.contact-orbit {
+  position: absolute; inset: 0; display: block;
+  border: 1px solid rgba(232, 229, 220, .14); border-radius: 50%;
+  transform: rotate(-16deg);
+}
+.contact-orbit::before { content: ""; position: absolute; inset: 17%; border: 1px dashed rgba(232, 229, 220, .12); border-radius: 50%; }
+.contact-orbit::after { content: ""; position: absolute; inset: 46%; border-radius: 50%; background: var(--signal); }
+.contact-orbit i { position: absolute; width: 9px; height: 9px; border: 1px solid var(--signal); background: var(--ink); transform: rotate(45deg); }
+.contact-orbit i:first-child { top: 14%; left: 12%; }
+.contact-orbit i:last-child { right: 6%; bottom: 22%; }
+.contact-stamp {
+  position: absolute; top: 4%; right: 2%; width: 76px; height: 76px;
+  display: grid; place-content: center;
+  border: 1px solid var(--rust); border-radius: 50%; color: var(--rust);
+  transform: rotate(-12deg); text-align: center;
+  font: 500 8px/1.2 "IBM Plex Mono", monospace; letter-spacing: .09em;
+}
+.contact-plate-label {
+  position: absolute; top: -4%; left: -6%; padding: 5px 8px;
+  color: var(--ink); background: var(--signal);
+  font: 500 9px/1 "IBM Plex Sans Thai", sans-serif;
+}
+.contact-grid, .contact .section-boundary, .contact footer { position: relative; z-index: 1; }
+
+/* แถวติดต่อ: เส้นวิ่งตามทิศอ่าน แทนการเปลี่ยนสีพื้นทั้งแถว */
+.contact-actions a, .contact-actions button { position: relative; }
+.contact-actions a::after, .contact-actions button::after {
+  content: ""; position: absolute; right: 0; bottom: -1px; left: 0; height: 1px;
+  background: var(--signal); transform: scaleX(0); transform-origin: left;
+  transition: transform .45s var(--ease);
+}
+.contact-actions a:hover::after, .contact-actions button:hover::after,
+.contact-actions a:focus-visible::after, .contact-actions button:focus-visible::after { transform: scaleX(1); }
+.contact-actions a:focus-visible, .contact-actions button:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1120px) {
+  .contact-plate { width: min(34vw, 250px); top: 5%; }
+  .contact-stamp { width: 62px; height: 62px; font-size: 7px; }
+  .featured-visual, .featured-case[data-plate="2"] .featured-visual { box-shadow: none; }
+}
+
+@media (max-width: 860px) {
+  .featured-spec { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .featured-spec > div:last-child { grid-column: span 2; }
+}
+
+@media (max-width: 760px) {
+  .corner-marks { inset: 7px; }
+  .featured-number { bottom: 10px; }
+  .sheet-tick { position: static; margin-top: 22px; }
+  .featured-spec { margin-top: 20px; }
+  .featured-spec dd { font-size: 11.5px; }
+  .projects-grid { background-size: 20px 20px; }
+  .project-card-status { font-size: 7.5px; margin-bottom: 10px; }
+  /* บนมือถือการ์ดเรียงคอลัมน์เดียว ความสูงขั้นต่ำเดิมทำให้เกิดช่องว่างกลางการ์ด */
+  .project-card { min-height: 0; }
+  .project-card-body { padding: 20px 20px 12px; }
+  .project-card-desc { min-height: 0; }
+  .project-card-tech { margin-top: 16px; }
+  .project-card-footer { padding: 0 20px 18px; }
+  .project-card-header { height: 170px; }
+  .card-plate-motif { width: 92px; height: 92px; left: 24px; }
+  .project-card:nth-child(3n + 2) .card-plate-motif { right: 24px; }
+  .project-card:nth-child(4n) .card-plate-motif { width: 108px; height: 108px; }
+  .card-plate-no { font-size: 92px; right: 18px; bottom: 0; }
+  .project-card:nth-child(3n + 2) .card-plate-no { left: 18px; }
+  .contact-plate { position: relative; top: auto; right: auto; width: min(58vw, 210px); margin: 40px 0 10px auto; }
+  .contact-plate-label { top: -13%; left: 0; }
+  .modal-team-note { margin-top: -10px; font-size: 13px; }
+  .modal-links a { width: 100%; justify-content: space-between; }
+}
+
+@media (max-width: 430px) {
+  .featured-spec { grid-template-columns: 1fr; }
+  .featured-spec > div:last-child { grid-column: auto; }
+  .contact-plate { width: 64vw; }
+  .contact-stamp { width: 54px; height: 54px; }
+}
+
+/* ---------- ลดการเคลื่อนไหว ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .corner-marks i, .featured-rule, .project-card::before,
+  .contact-actions a::after, .contact-actions button::after,
+  .case-open, .project-card-footer .view-details-btn i, .archive-readout,
+  .card-plate-motif, .card-plate-no { transition: none; }
+  .archive-readout { transform: none; }
+  .project-card:hover .card-plate-motif { transform: translateY(-50%); }
+}
+body.motion-off .corner-marks i,
+body.motion-off .featured-rule,
+body.motion-off .project-card::before,
+body.motion-off .contact-actions a::after,
+body.motion-off .contact-actions button::after { transition: none !important; }
+/* เมื่อปิดการเคลื่อนไหว ให้เส้นบอกระยะแสดงค้างไว้แทนการวิ่งเข้ามา */
+body.motion-off .featured-rule,
+body.motion-off .project-card:hover::before,
+body.motion-off .project-card:focus-within::before { transform: scaleX(1); }
+body.motion-off .case-open:hover, body.motion-off .case-open:focus-visible { letter-spacing: normal; }
+body.motion-off .project-card:hover .view-details-btn i { transform: none; }
+body.motion-off .archive-readout { transition: none !important; transform: none; }
+body.motion-off .card-plate-motif, body.motion-off .card-plate-no { transition: none !important; }
+body.motion-off .project-card:hover .card-plate-motif { transform: translateY(-50%); }

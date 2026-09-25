@@ -2,529 +2,573 @@
 // PROJECT DATA
 // ============================================
 const projects = [
-  // --- Web Applications ---
+  // --- Web & product work ---
   {
     id: '2getr',
-image: 'public/images/2getr.png',
+    image: 'public/images/2getr.png',
     name: '2Getr',
-    shortDesc: 'เว็บคอมมูนิตี้สำหรับพูดคุยและแชร์เนื้อหา',
-    fullDesc: 'เว็บคอมมูนิตี้แบบ Full-stack ที่ให้ผู้ใช้สมัครสมาชิก พูดคุยแบบเรียลไทม์ แชร์เนื้อหา และดูแลพื้นที่ของกลุ่มตัวเองได้',
+    shortDesc: 'เว็บสั่งอาหารแบบรวมออเดอร์ของคนในตึกเดียวกัน',
+    fullDesc: 'คนที่อยู่อพาร์ตเมนต์เดียวกันเปิด “batch” สั่งอาหารจากร้านเดียวกันพร้อมกัน แล้วหารค่าส่ง ยิ่งมีคนร่วมมาก ค่าส่งต่อหัวยิ่งถูก ถ้ามีคนอาสาไปรับของเองก็ได้ค่าส่งฟรีและได้แต้มเพิ่ม ในระบบมีหน้าเลือกร้าน หน้าติดตามออเดอร์ แชตของตึก กระเป๋าเงิน รีวิว ของรางวัล และฝั่งแอดมินสำหรับดูแลตึกกับร้านพาร์ตเนอร์',
     category: 'web',
-    tech: ['Next.js 15', 'React 19', 'Supabase', 'Prisma', 'TypeScript', 'Zustand'],
+    tech: ['Next.js 16', 'React 19', 'Supabase', 'Stripe', 'Leaflet', 'TypeScript'],
     gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
-    icon: '👥',
-    features: ['แชตแบบเรียลไทม์', 'สมัครและเข้าสู่ระบบ', 'โพสต์และแชร์เนื้อหา', 'จัดการคอมมูนิตี้']
+    icon: '🍱',
+    status: 'งานที่ทำต่อเนื่อง',
+    features: ['รวมออเดอร์เป็น batch แล้วหารค่าส่ง', 'โหมดอาสาไปรับของแทนเพื่อนบ้าน', 'แชตและแจ้งเตือนภายในตึก', 'กระเป๋าเงินและระบบของรางวัล', 'หลังบ้านสำหรับแอดมินตึกและร้านพาร์ตเนอร์']
   },
   {
     id: 'opt-pos',
-image: 'public/images/pos.png',
+    image: 'public/images/pos.png',
     name: 'Opt-POS',
-    shortDesc: 'ระบบขายหน้าร้านสำหรับร้านค้าปลีก',
-    fullDesc: 'ระบบ POS สำหรับขายสินค้า เช็กสต็อก ติดตามยอดขาย ออกใบเสร็จ และดูรายงานสรุปของร้าน',
+    shortDesc: 'หน้าจอขายหน้าร้านแบบหน้าเดียว จบในจอเดียว',
+    fullDesc: 'หน้าจอ POS ที่รวมรายการสินค้า ตะกร้า และการคิดเงินไว้ในหน้าเดียว ตั้งใจให้คนขายกดได้เร็วโดยไม่ต้องสลับหน้า เป็นตัวตั้งต้นที่เอาไปต่อยอดเป็นรุ่นถัดไป',
     category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS'],
     gradient: 'linear-gradient(135deg, #f093fb, #f5576c)',
     icon: '🛒',
-    features: ['จัดการสต็อกสินค้า', 'ติดตามยอดขาย', 'พิมพ์ใบเสร็จ', 'ดูรายงานสรุป']
+    status: 'รุ่นแรก',
+    features: ['เลือกสินค้าและคิดเงินในหน้าเดียว', 'สรุปยอดในตะกร้าแบบทันที', 'หน้าจอปรับตามขนาดจอหน้าร้าน']
   },
   {
     id: 'next2-pos',
-image: 'public/images/pos.png',
+    image: 'public/images/pos.png',
     name: 'Next2-POS',
-    shortDesc: 'ระบบ POS เวอร์ชัน 2 ที่พัฒนาต่อยอด',
-    fullDesc: 'ระบบ POS เวอร์ชันที่สองที่ต่อยอดจากของเดิม ปรับหน้าจอให้ใช้ง่ายขึ้น เพิ่มการรองรับหลายสาขา และซิงก์ข้อมูลแบบเรียลไทม์',
+    shortDesc: 'POS รุ่นสอง ที่เพิ่มระบบแต้มสมาชิกเข้าไป',
+    fullDesc: 'รุ่นต่อจาก Opt-POS โดยรื้อหน้าขายใหม่ให้กดง่ายขึ้น และเพิ่มส่วนสะสมแต้มของลูกค้าเข้ามาในจังหวะคิดเงิน เพื่อให้ร้านผูกลูกค้าประจำไว้ได้ตั้งแต่หน้าจอเดียวกัน',
     category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS'],
     gradient: 'linear-gradient(135deg, #4facfe, #00f2fe)',
     icon: '💳',
-    features: ['หน้าจอใช้งานง่ายขึ้น', 'รองรับหลายสาขา', 'ซิงก์ข้อมูลแบบเรียลไทม์', 'รายงานละเอียดขึ้น']
+    status: 'รุ่นต่อยอด',
+    features: ['หน้าขายที่กดน้อยขั้นตอนลง', 'สะสมแต้มให้ลูกค้าตอนคิดเงิน', 'แยกส่วนแสดงผลให้อ่านง่ายขึ้น']
   },
   {
     id: 'opt-loyalty',
-image: 'public/images/pos.png',
+    image: 'public/images/pos.png',
     name: 'Opt-Loyalty',
-    shortDesc: 'ระบบสะสมแต้มและดูแลลูกค้าประจำ',
-    fullDesc: 'ระบบ CRM สำหรับเก็บแต้ม จัดการของรางวัล ทำแคมเปญ และดูว่าลูกค้าแต่ละกลุ่มกลับมาใช้บริการแบบไหน',
+    shortDesc: 'ระบบจองร้านและสะสมแต้มที่ต่อกับร้านค้าพาร์ตเนอร์',
+    fullDesc: 'ระบบที่ให้ลูกค้าหาร้านบนแผนที่ จองคิว สะสมแต้ม และแลกคูปองด้วยการสแกน QR หรือบาร์โค้ด ฝั่งร้านมีหน้าจัดการโปรโมชัน ดูกราฟยอดใช้งาน และส่งข้อความหาลูกค้าได้ ติดตั้งเป็น PWA บนมือถือได้ และมีชุดทดสอบ Playwright ครอบ flow หลักอย่างการจอง การแลกคูปอง และการค้นหาบนแผนที่',
     category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    tech: ['Next.js 16', 'NextAuth.js', 'Google Sheets API', 'Leaflet', 'Recharts', 'Playwright'],
     gradient: 'linear-gradient(135deg, #43e97b, #38f9d7)',
     icon: '⭐',
-    features: ['ระบบสะสมแต้ม', 'ดูพฤติกรรมลูกค้า', 'จัดการของรางวัล', 'สร้างแคมเปญ']
+    status: 'งานที่ทำต่อเนื่อง',
+    features: ['หาร้านบนแผนที่แล้วจองคิว', 'แลกคูปองด้วย QR และบาร์โค้ด', 'หลังบ้านจัดการโปรโมชันและของรางวัล', 'กราฟสรุปการใช้งานของร้าน', 'ติดตั้งเป็นแอปบนมือถือได้ (PWA)']
+  },
+  {
+    id: 'franchise-os',
+    image: null,
+    name: 'Franchise OS',
+    shortDesc: 'ระบบบริหารแฟรนไชส์และครัวกลางของร้านทองม้วน',
+    fullDesc: 'ระบบหลังบ้านให้เจ้าของแฟรนไชส์ทองม้วนคุมสาขาและครัวกลางจากที่เดียว ทั้งการสั่งของเข้าสาขา การผลิตของครัวกลาง และการดูยอดรายสาขา ออกแบบให้ใช้คนเดียวจริง ๆ จึงไม่ทำระบบหลายสิทธิ์หรือพอร์ทัลแยกให้สาขา ตอนนี้ลูกค้าเริ่มป้อนข้อมูลจริงเข้าระบบแล้ว',
+    category: 'web',
+    tech: ['Next.js 16', 'React 19', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+    gradient: 'linear-gradient(135deg, #d97706, #b45309)',
+    icon: '🏭',
+    status: 'ใช้งานจริงกับลูกค้า',
+    features: ['คุมสาขาและครัวกลางในที่เดียว', 'ติดตามการสั่งของเข้าสาขา', 'ดูยอดแยกรายสาขา', 'ออกแบบให้ผู้ใช้คนเดียวใช้ได้จบ']
   },
   {
     id: 'telesales',
-image: 'public/images/bot.png',
+    image: 'public/images/bot.png',
     name: 'TeleSales CRM',
-    shortDesc: 'CRM สำหรับทีมขายทางโทรศัพท์ที่ต่อกับ 3CX',
-    fullDesc: 'ระบบให้ทีมขายเก็บรายชื่อลูกค้า โทรผ่าน 3CX บันทึกประวัติการคุย ดู KPI และส่งออกรายงาน Excel โดยแยกสิทธิ์ Admin, Manager และ Agent',
+    shortDesc: 'CRM ของทีมขายทางโทรศัพท์ที่ต่อกับระบบโทร 3CX',
+    fullDesc: 'ระบบให้ทีมขายเก็บรายชื่อลูกค้า โทรออกผ่าน 3CX แล้วดึงบันทึกการโทรกลับเข้าระบบ มีหน้าติดตามงานต่ออายุ หน้าลูกค้าที่ต้องกลับไปคุยใหม่ หน้ารายงาน KPI และส่งออกเป็น Excel ได้ โดยแยกสิทธิ์ Admin, Manager และ Agent ออกจากกัน',
     category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', '3CX VoIP'],
+    tech: ['Next.js 16', '3CX VoIP', 'Supabase', 'NextAuth.js', 'SheetJS (xlsx)'],
     gradient: 'linear-gradient(135deg, #fa709a, #fee140)',
     icon: '📞',
-    features: ['จัดการรายชื่อลูกค้า', 'โทรผ่าน 3CX', 'ดู KPI ของทีม', 'แยกสิทธิ์ผู้ใช้', 'ส่งออกรายงาน Excel']
+    features: ['จัดการรายชื่อและสถานะลูกค้า', 'โทรออกและดึงบันทึกการโทรจาก 3CX', 'ติดตามงานต่ออายุและลูกค้าเก่า', 'รายงาน KPI ของทีม', 'ส่งออกรายงานเป็น Excel']
   },
   {
     id: 'ai-shop',
-image: 'public/images/bot.png',
+    image: 'public/images/bot.png',
     name: 'AI Shop Team',
-    shortDesc: 'ระบบช่วยดูภาพรวมร้านค้าและทีมงานด้วย AI',
-    fullDesc: 'เว็บสำหรับรวมข้อมูลร้านค้าไว้ในที่เดียว แล้วใช้ AI ช่วยมองแนวโน้มยอดขาย สต็อก และงานของทีม',
+    shortDesc: 'โต๊ะทำงานที่จัดคิวงานให้ผู้ช่วย AI หลายตัว',
+    fullDesc: 'หน้าเว็บที่รวมงานประจำวันไว้บนบอร์ด Kanban แล้วมอบงานให้ “พนักงาน AI” แต่ละตัวที่ตั้งบทบาทไว้ มีคลังพรอมป์ที่หยิบมาใช้ซ้ำได้ กล่องรับข้อความจากคลิปบอร์ด และแถบเปิดเครื่องมือที่ใช้บ่อย',
     category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    tech: ['React 19', 'Vite', 'TypeScript'],
     gradient: 'linear-gradient(135deg, #a18cd1, #fbc2eb)',
-    icon: '🏪',
-    features: ['สรุปข้อมูลร้านด้วย AI', 'จัดการงานของทีม', 'ดูแนวโน้มสต็อก', 'คาดการณ์ยอดขาย']
+    icon: '🗂️',
+    features: ['บอร์ด Kanban สำหรับคิวงาน', 'ตั้งบทบาทให้ผู้ช่วย AI แต่ละตัว', 'คลังพรอมป์ที่ใช้ซ้ำได้', 'กล่องรับข้อความจากคลิปบอร์ด']
   },
   {
     id: 'ai-office',
-image: 'public/images/bot.png',
+    image: 'public/images/bot.png',
     name: 'AI Team Office',
-    shortDesc: 'ระบบส่งงานให้ AI หลายตัวช่วยกันทำ',
-    fullDesc: 'เว็บ Full-stack ที่แบ่ง AI เป็นบทบาท Researcher, Analyst และ Developer แล้วส่งงานไปยังตัวที่เหมาะจากคำสำคัญในโจทย์ โดยใช้ Claude API',
+    shortDesc: 'ระบบกระจายงานให้ AI สามบทบาทช่วยกันทำ',
+    fullDesc: 'เว็บที่แบ่ง AI ออกเป็นสามบทบาทคือ Researcher, Analyst และ Developer แล้วอ่านคำสำคัญจากโจทย์เพื่อส่งงานไปยังตัวที่เหมาะที่สุด ฝั่งเซิร์ฟเวอร์เป็น Express ที่เรียก Claude API แล้วส่งผลกลับมาแสดงบนหน้าเว็บ',
     category: 'ai',
-    tech: ['Express.js', 'Node.js', 'Claude API', 'HTML/CSS/JS'],
+    tech: ['Express.js', 'Node.js', 'Claude API', 'HTML/CSS'],
     gradient: 'linear-gradient(135deg, #8B5CF6, #D946EF)',
     icon: '🤖',
-    features: ['AI หลายบทบาท', 'แยกงานตามคำสำคัญ', 'เชื่อมต่อ Claude API', 'ติดตามงานระหว่าง Agent']
+    features: ['แบ่ง AI เป็นสามบทบาท', 'ส่งงานตามคำสำคัญในโจทย์', 'เรียก Claude API จากฝั่งเซิร์ฟเวอร์', 'ดูผลของแต่ละบทบาทบนหน้าเดียว']
   },
   {
     id: 'mlbb-meta',
-image: 'public/images/mlbb-tier.png',
+    image: 'public/images/mlbb-tier.png',
     name: 'MLBB Meta Analyzer',
-    shortDesc: 'เว็บดูเมตาและสถิติของเกม Mobile Legends',
-    fullDesc: 'เว็บ Full-stack สำหรับดู Tier List อัตราชนะ แนวโน้มเมตา และไอเท็มแนะนำของ Mobile Legends โดยแยก Backend API ออกจากหน้าเว็บ',
+    shortDesc: 'เว็บดูเมตาและอัตราชนะของเกม Mobile Legends',
+    fullDesc: 'เว็บที่แยก Backend กับ Frontend ออกจากกัน ฝั่ง API เป็น Express ที่อ่านข้อมูลฮีโร่จากฐานข้อมูลผ่าน Prisma ส่วนหน้าเว็บเป็น Next.js ที่เอาข้อมูลมาเรียงเป็น Tier List อัตราชนะ และชุดไอเท็มแนะนำ',
     category: 'web',
-    tech: ['Next.js 16', 'React 19', 'Express.js', 'Prisma', 'SQLite'],
+    tech: ['Next.js', 'Express.js', 'Prisma', 'SQLite', 'TypeScript'],
     gradient: 'linear-gradient(135deg, #FF6B6B, #FFE66D)',
     icon: '🎮',
-    features: ['จัดอันดับฮีโร่', 'วิเคราะห์อัตราชนะ', 'ติดตามเมตา', 'แนะนำชุดไอเท็ม']
+    features: ['จัดอันดับฮีโร่เป็น Tier List', 'ดูอัตราชนะของแต่ละตัว', 'แยก API ออกจากหน้าเว็บ', 'แนะนำชุดไอเท็ม']
   },
   {
-    id: 'laos-lottery',
-image: 'public/images/trading-bot.png',
-    name: 'Lao Lottery AI',
-    shortDesc: 'โปรเจกต์ทดลองวิเคราะห์ข้อมูลหวยลาวด้วย AI',
-    fullDesc: 'งานทดลองกับข้อมูลย้อนหลัง โดยเทียบการวิเคราะห์ความถี่ โมเดล Neural Network และกฎตรวจผลแบบ Heuristic',
-    category: 'ai',
-    tech: ['FastAPI', 'Python', 'Neural Network', 'ML'],
-    gradient: 'linear-gradient(135deg, #F7971E, #FFD200)',
-    icon: '🎰',
-    features: ['ทดลองโมเดลทำนาย', 'วิเคราะห์ความถี่', 'ใช้ Neural Network', 'ดูข้อมูลย้อนหลัง']
-  },
-  {
-    id: 'ai-cartoon',
-image: 'public/images/2getr.png',
-    name: 'AI Cartoon',
-    shortDesc: 'เว็บแปลงรูปภาพให้เป็นภาพการ์ตูนด้วย AI',
-    fullDesc: 'เว็บสำหรับอัปโหลดรูป เลือกสไตล์ แล้วดูตัวอย่างภาพการ์ตูนที่ AI สร้างให้ก่อนบันทึก',
-    category: 'ai',
-    tech: ['Next.js', 'React', 'TypeScript', 'AI/ML'],
-    gradient: 'linear-gradient(135deg, #E44D26, #F16529)',
-    icon: '🎨',
-    features: ['แปลงรูปเป็นภาพการ์ตูน', 'เลือกได้หลายสไตล์', 'ดูตัวอย่างก่อนบันทึก', 'ส่งออกภาพความละเอียดสูง']
+    id: 'morse-code-learning',
+    image: 'public/images/morse-code.png',
+    name: 'Morse Code Learning App',
+    shortDesc: 'เว็บฝึกรหัสมอร์สที่มีระบบสมาชิกและกระดานคะแนน',
+    fullDesc: 'เว็บฝึกแปลงรหัสมอร์สที่แยกเป็นสองส่วน ฝั่งหน้าเว็บเป็น Next.js ส่วน API เป็น Express ที่ต่อ PostgreSQL ผ่าน Prisma มีสมัครสมาชิก เข้าสู่ระบบด้วย JWT เก็บสถิติที่ตอบผิดบ่อย และมีกระดานคะแนนให้ไล่กัน งานนี้ทำพร้อมเอกสาร ER Diagram และ Data Dictionary',
+    category: 'web',
+    tech: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'JWT'],
+    gradient: 'linear-gradient(135deg, #1f4037, #99f2c8)',
+    icon: '📡',
+    status: 'เว็บฝึกเรียนรู้แบบ Full-stack',
+    features: ['ฝึกแปลงรหัสมอร์สเป็นรอบ', 'สมัครและเข้าสู่ระบบด้วย JWT', 'เก็บสถิติข้อที่ผิดบ่อย', 'กระดานคะแนนผู้เล่น', 'มีเอกสาร ER Diagram ประกอบ']
   },
   {
     id: 'web-schedule',
-image: 'public/images/bot.png',
+    image: 'public/images/bot.png',
     name: 'Web Schedule Nara',
-    shortDesc: 'ระบบจัดการตารางเวลา',
-    fullDesc: 'เว็บสำหรับเพิ่ม แก้ไข และดูตารางเวลาของ Nara ผ่านหน้าปฏิทิน พร้อมระบบแจ้งเตือน',
+    shortDesc: 'เว็บจัดตารางงานที่มี API เก็บและรีเซ็ตข้อมูล',
+    fullDesc: 'เว็บหน้าเดียวสำหรับเพิ่มและแก้ตารางงาน โดยมี Express เป็นตัวรับส่งข้อมูลผ่าน endpoint สองเส้นคือเส้นอ่าน/บันทึกตาราง และเส้นล้างข้อมูลเมื่อต้องเริ่มรอบใหม่',
     category: 'web',
-    tech: ['Web Technologies', 'JavaScript', 'HTML/CSS'],
+    tech: ['Node.js', 'Express.js', 'JavaScript', 'HTML/CSS'],
     gradient: 'linear-gradient(135deg, #36D1DC, #5B86E5)',
     icon: '📅',
-    features: ['เพิ่มและแก้ไขตาราง', 'ดูแบบปฏิทิน', 'ระบบแจ้งเตือน', 'หน้าจอใช้งานไม่ซับซ้อน']
+    features: ['เพิ่มและแก้ตารางงาน', 'API สำหรับบันทึกตาราง', 'ล้างข้อมูลเพื่อเริ่มรอบใหม่', 'หน้าจอเรียบ ใช้ไม่กี่ขั้นตอน']
   },
-  // --- Mobile Apps ---
+  // --- Client prototypes (mock data, clearly labelled) ---
+  {
+    id: 'routepulse-demo',
+    image: null,
+    name: 'RoutePulse Client Demo',
+    shortDesc: 'ต้นแบบระบบติดตามราคาค่าเดินทางรายชั่วโมง',
+    fullDesc: 'ต้นแบบภาษาไทยที่ใช้เล่าให้ลูกค้าเห็นว่าระบบเก็บราคาค่าเดินทางจะทำงานยังไง หน้าจอจำลองการรัน 560 เส้นทางต่อชั่วโมง แสดงราคาของแต่ละช่วงบริการ นำเข้าจุดสนใจจากไฟล์ CSV ส่งออกข้อมูลกลับเป็น CSV และแสดงสถานะการส่งไฟล์ขึ้น S3 กับสุขภาพของ worker ตัวเว็บบอกไว้ชัดเจนว่ายังไม่ได้ต่อกับแพลตฟอร์มจริง',
+    category: 'web',
+    tech: ['Next.js 16', 'TypeScript', 'AWS S3', 'Drizzle ORM', 'Cloudflare Workers'],
+    gradient: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+    icon: '🛣️',
+    status: 'ต้นแบบ · ข้อมูลจำลอง',
+    features: ['จำลองการรัน 560 เส้นทางต่อชั่วโมง', 'นำเข้าจุดสนใจจากไฟล์ CSV', 'ส่งออกข้อมูลกลับเป็น CSV', 'แสดงสถานะ worker และการส่งไฟล์ขึ้น S3', 'ระบุชัดว่าไม่ได้ต่อข้อมูลจริง']
+  },
+  {
+    id: 'pulsepoint-alert-demo',
+    image: null,
+    name: 'PulsePoint Event Alert',
+    shortDesc: 'ต้นแบบระบบแจ้งเตือนหน้างานอีเวนต์ 150 คน',
+    fullDesc: 'ต้นแบบหน้าเดียวสำหรับงานสัมมนาขนาด 150 คน ฝั่งผู้ร่วมงานมีหน้าแจ้งเตือนบนเว็บ ขอสิทธิ์แจ้งเตือนของเบราว์เซอร์ และสแกน QR ตามจุดเช็กพอยต์ ฝั่งแอดมินมีหน้าร่างข้อความ เลือกกลุ่มผู้รับกับระดับความเร่งด่วน จัดการเช็กพอยต์ และดูบันทึกการส่ง ส่วนข้อความผ่าน LINE OA เป็นการจำลองให้ลูกค้าเห็นรูปแบบ ยังไม่ได้ต่อบัญชีจริง',
+    category: 'web',
+    tech: ['Next.js 16', 'TypeScript', 'Browser Notifications', 'Drizzle ORM'],
+    gradient: 'linear-gradient(135deg, #f43f5e, #f97316)',
+    icon: '📣',
+    status: 'ต้นแบบ · ข้อมูลจำลอง',
+    features: ['แจ้งเตือนผ่านเบราว์เซอร์', 'จุดเช็กพอยต์แบบสแกน QR', 'หน้าร่างข้อความของแอดมิน', 'เลือกกลุ่มผู้รับและระดับความเร่งด่วน', 'บันทึกการส่งย้อนหลัง']
+  },
+  {
+    id: 'ev-nation',
+    image: null,
+    name: 'EV Nation',
+    shortDesc: 'ต้นแบบแพลตฟอร์มบริการรถ EV สำหรับนำเสนอลูกค้า',
+    fullDesc: 'ต้นแบบที่ใช้เล่าภาพรวมบริการรถไฟฟ้าให้ลูกค้าเห็นก่อนลงมือทำจริง มีหน้าหาสถานีชาร์จ จองคิว วางแผนเส้นทาง และรายงานสำหรับพาร์ตเนอร์ เปิดดูได้โดยไม่ต้องมีคีย์ Supabase หรือระบบจ่ายเงินจริง เพราะข้อมูลทั้งหมดเตรียมไว้เป็นชุดตัวอย่าง',
+    category: 'web',
+    tech: ['Next.js 16', 'React 19', 'Supabase', 'TypeScript', 'Tailwind CSS'],
+    gradient: 'linear-gradient(135deg, #22c55e, #0ea5e9)',
+    icon: '⚡',
+    status: 'ต้นแบบ · ข้อมูลจำลอง',
+    features: ['หาสถานีชาร์จและจองคิว', 'วางแผนเส้นทางการเดินทาง', 'รายงานสำหรับพาร์ตเนอร์', 'เปิดดูได้โดยไม่ต้องตั้งค่าเซิร์ฟเวอร์']
+  },
+  {
+    id: 'gp-easy',
+    image: null,
+    name: 'GP Easy',
+    shortDesc: 'เครื่องคิดกำไรสุทธิของแม่ค้าออนไลน์',
+    fullDesc: 'เครื่องมือคิดว่าขายของหนึ่งชิ้นแล้วเหลือกำไรเท่าไหร่จริง ๆ โดยหักทั้งค่าคอมมิชชัน ค่าธรรมเนียมธุรกรรม ค่าบริการที่มีเพดานต่อชิ้น ค่าธรรมเนียมคงที่ ค่าแอฟฟิลิเอต ส่วนลดร้าน ค่าส่งที่ร้านออกเอง ค่าแพ็ก ค่าโฆษณา และต้นทุนอื่น แล้วส่งออกเป็นไฟล์ Excel ได้โดยไม่ต้องพึ่งเซิร์ฟเวอร์',
+    category: 'web',
+    tech: ['Next.js 16', 'TypeScript', 'Tailwind CSS', 'Cloudflare Workers'],
+    gradient: 'linear-gradient(135deg, #14b8a6, #84cc16)',
+    icon: '🧮',
+    status: 'เครื่องมือใช้งานในธุรกิจ',
+    features: ['คิดกำไรสุทธิต่อชิ้น', 'รองรับค่าบริการแบบมีเพดาน', 'รวมค่าโฆษณาและค่าแพ็กเข้าไปด้วย', 'ส่งออกเป็นไฟล์ Excel ในเครื่อง']
+  },
+  {
+    id: 'buildsure',
+    image: null,
+    name: 'BuildSure',
+    shortDesc: 'งานวางโครงระบบงานก่อสร้างที่ยังอยู่ช่วงเตรียมงาน',
+    fullDesc: 'งานที่กำลังวางแผนอยู่ โดยตอนนี้มีเอกสารแผนพัฒนาฉบับภาษาไทยกับโครงโปรเจกต์ที่ตั้งไว้รอ ยังไม่ได้ลงมือเขียนฟีเจอร์จริง จึงยังไม่มีหน้าจอให้ดู',
+    category: 'web',
+    tech: ['Next.js 16', 'TypeScript', 'Drizzle ORM', 'Cloudflare Workers'],
+    gradient: 'linear-gradient(135deg, #64748b, #334155)',
+    icon: '🏗️',
+    status: 'ยังอยู่ขั้นวางแผน',
+    features: ['เอกสารแผนพัฒนาภาษาไทย', 'โครงโปรเจกต์ที่ตั้งไว้รอเริ่มงาน']
+  },
+
+  // --- Mobile ---
   {
     id: 'unitask-flutter',
-image: 'public/images/unitask.png',
+    image: 'public/images/unitask.png',
     name: 'Unitask (Flutter)',
-    shortDesc: 'แอปจดและจัดลำดับงานที่ใช้ได้หลายแพลตฟอร์ม',
-    fullDesc: 'แอป Flutter สำหรับเพิ่ม แก้ไข และจัดหมวดหมู่งาน พร้อมกำหนดระดับความสำคัญใน To-do list',
+    shortDesc: 'แอปจัดการงานกลุ่มที่งานจะปิดเมื่อทุกคนกดเสร็จ',
+    fullDesc: 'แอปจัดการงานของทีมที่ทำด้วย Flutter ต่อกับ Firebase จุดที่ต่างจากแอป to-do ทั่วไปคืองานหนึ่งชิ้นจะถือว่าเสร็จก็ต่อเมื่อผู้รับผิดชอบทุกคนกดเสร็จแล้ว มีการเชิญคนเข้าโปรเจกต์ แยกสิทธิ์ตามบทบาท แจ้งเตือนเมื่อบทบาทหรือสถานะงานเปลี่ยน และสลับภาษากับธีมได้',
     category: 'mobile',
-    tech: ['Flutter', 'Dart', 'Material Design'],
+    tech: ['Flutter', 'Dart', 'Firebase', 'Material Design'],
     gradient: 'linear-gradient(135deg, #00B4DB, #0083B0)',
     icon: '📱',
-    features: ['เพิ่ม แก้ไข และลบงาน', 'แยกหมวดหมู่', 'กำหนดความสำคัญ', 'ใช้ได้หลายแพลตฟอร์ม']
+    status: 'งานกลุ่ม',
+    teamNote: 'ทำร่วมกับเพื่อนในทีม repo หลักอยู่ที่บัญชีของเพื่อนร่วมทีม',
+    links: [{ label: 'GitHub (repo ของทีม)', url: 'https://github.com/lillianxhub/Unitask-flutter' }],
+    features: ['งานปิดเมื่อผู้รับผิดชอบครบทุกคนกดเสร็จ', 'เชิญสมาชิกเข้าโปรเจกต์', 'แยกสิทธิ์ตามบทบาท', 'แจ้งเตือนเมื่อสถานะเปลี่ยน', 'สลับภาษาและธีมได้']
   },
   {
     id: 'unitask-android',
-image: 'public/images/unitask.png',
+    image: 'public/images/unitask.png',
     name: 'Unitask (Android)',
-    shortDesc: 'แอปจดงานบน Android ที่เขียนด้วย Kotlin',
-    fullDesc: 'แอป Android สำหรับจดและจัดการงาน เก็บข้อมูลไว้ในเครื่อง และใช้หน้าตาตามแนวทาง Material Design',
+    shortDesc: 'Unitask เวอร์ชัน Android แท้ ที่เขียนด้วย Kotlin',
+    fullDesc: 'เวอร์ชันที่เขียนด้วย Kotlin ตรง ๆ บน Android เพื่อลองเทียบกับฝั่ง Flutter ว่าทำแบบ native แล้วต่างกันยังไง หน้าสมัครและเข้าสู่ระบบทำเป็น bottom sheet ส่วนข้อมูลโปรเจกต์จัดการอยู่ในเครื่อง ไม่ได้ต่อเซิร์ฟเวอร์',
     category: 'mobile',
-    tech: ['Kotlin', 'Android SDK', 'Gradle'],
+    tech: ['Kotlin', 'Android SDK', 'Gradle', 'Material Design'],
     gradient: 'linear-gradient(135deg, #11998e, #38ef7d)',
     icon: '📲',
-    features: ['พัฒนาสำหรับ Android โดยตรง', 'ใช้ Material Design', 'เก็บข้อมูลในเครื่อง', 'เพิ่มและจัดการงาน']
+    features: ['เขียนด้วย Kotlin บน Android โดยตรง', 'หน้าเข้าสู่ระบบแบบ bottom sheet', 'จัดการข้อมูลโปรเจกต์ในเครื่อง', 'ใช้คอมโพเนนต์ตาม Material Design']
+  },
+
+  // --- Automation, bots, desktop tools ---
+  {
+    id: 'nara-flow-ai',
+    image: 'public/images/bot.png',
+    name: 'Nara Flow AI',
+    shortDesc: 'ส่วนขยาย Chrome ที่คุมงานสร้างวิดีโอจากแผงข้าง',
+    fullDesc: 'ส่วนขยายที่เปิดเป็นแผงข้างของ Chrome แล้วใช้คุมงานสร้างวิดีโอเป็นชุด ตั้งพรอมป์ตามสไตล์ที่ใช้บ่อย แก้พรอมป์แล้วสั่งทำใหม่ ดาวน์โหลดไฟล์ที่ได้ และตั้งเวลาให้ทำงานต่อเองผ่าน alarms เป็นงานที่แก้ต่อเนื่องมาหลายรุ่นจนหน้าแผงข้างยาวกว่าหมื่นบรรทัด',
+    category: 'automation',
+    tech: ['Chrome Extension', 'Manifest V3', 'Side Panel API', 'Service Worker', 'JavaScript'],
+    gradient: 'linear-gradient(135deg, #7c3aed, #ec4899)',
+    icon: '🎬',
+    status: 'เครื่องมือที่ทำไว้ใช้เอง',
+    features: ['คุมงานจากแผงข้างของ Chrome', 'พรอมป์สำเร็จรูปตามสไตล์ที่ใช้บ่อย', 'แก้พรอมป์แล้วสั่งทำใหม่', 'ดาวน์โหลดไฟล์ที่ได้อัตโนมัติ', 'ตั้งเวลาให้ทำงานต่อเอง']
   },
   {
-    id: 'flutter-mobile',
-image: 'public/images/unitask.png',
-    name: 'Flutter Mobile App',
-    shortDesc: 'โปรเจกต์ทดลองทำแอปมือถือด้วย Flutter',
-    fullDesc: 'งานทดลองสร้างหน้าจอและโครงสร้างแอปมือถือด้วย Flutter จากโค้ดชุดเดียว เพื่อให้ใช้ต่อได้หลายแพลตฟอร์ม',
-    category: 'mobile',
-    tech: ['Flutter', 'Dart'],
-    gradient: 'linear-gradient(135deg, #6a11cb, #2575fc)',
-    icon: '✨',
-    features: ['ใช้โค้ดชุดเดียว', 'ออกแบบหน้าจอมือถือ', 'ปรับตามขนาดหน้าจอ']
+    id: 'ereceipt-reconcile',
+    image: 'public/images/bot.png',
+    name: 'E-Receipt Reconciliation Bot',
+    shortDesc: 'บอทกระทบยอดใบเสร็จจากอีเมลลง Google Sheets',
+    fullDesc: 'บอทที่ตั้งให้ทำงานเองทุกวัน โดยอ่านยอดเงินจากอีเมลสองทางคือระบบภายในบริษัทกับผู้ให้บริการภายนอก แล้วเอามาเทียบกันก่อนเขียนผลลงชีตติดตาม ถ้ายอดไม่ตรงหรือหาอีเมลไม่เจอ จะแจ้งเตือนเข้า LINE และส่งอีเมลบอกผู้ดูแล งานนี้ส่งพร้อมคู่มือติดตั้งแบบทีละขั้นให้ลูกค้าทำเองได้',
+    category: 'automation',
+    tech: ['Google Apps Script', 'Gmail API', 'Google Sheets', 'LINE Notify'],
+    gradient: 'linear-gradient(135deg, #4285F4, #34A853)',
+    icon: '📋',
+    status: 'ระบบอัตโนมัติสำหรับลูกค้า',
+    features: ['อ่านยอดจากอีเมลสองแหล่ง', 'กระทบยอดแล้วเขียนลงชีตติดตาม', 'แจ้งเตือนเข้า LINE เมื่อยอดไม่ตรง', 'ตั้งเวลาให้ทำงานเองทุกวัน', 'มีคู่มือติดตั้งให้ลูกค้าทำเอง']
   },
-  // --- Automation & Bots ---
+  {
+    id: 'loongmordek-auto-sheets',
+    image: 'public/images/bot.png',
+    name: 'Loongmordek Auto Sheets',
+    shortDesc: 'สคริปต์แปลงข้อความ AI ก้อนเดียวเป็นคิวโพสต์ 4 แพลตฟอร์ม',
+    fullDesc: 'สคริปต์ใน Google Sheets ที่ให้ลูกค้าวางข้อความจาก AI ยาว ๆ ก้อนเดียว แล้วระบบแยกออกเป็นสี่แถวสำหรับ Facebook, Instagram, TikTok และ YouTube Shorts ทุกแถวจะตั้งสถานะเป็น “รอตรวจ” ไว้ก่อนเสมอ ให้คนตรวจแล้วค่อยเปลี่ยนเป็น “รอคิว” เอง ระบบจึงไม่โพสต์อะไรออกไปเองโดยไม่มีคนดู',
+    category: 'automation',
+    tech: ['Google Apps Script', 'Google Sheets', 'JavaScript'],
+    gradient: 'linear-gradient(135deg, #16a34a, #65a30d)',
+    icon: '🗒️',
+    status: 'ระบบอัตโนมัติสำหรับลูกค้า',
+    features: ['แยกข้อความก้อนเดียวเป็น 4 แถว', 'ตั้งสถานะรอตรวจก่อนเสมอ', 'มีไฟล์ทดสอบตัวแปลงข้อความ', 'ติดตั้งในชีตของลูกค้าได้โดยตรง']
+  },
   {
     id: 'music-adblocker',
-image: 'public/images/music-ad.png',
+    image: 'public/images/music-ad.png',
     name: 'Music Ad Blocker',
-    shortDesc: 'ส่วนขยาย Chrome สำหรับลดโฆษณาบนเว็บฟังเพลง',
-    fullDesc: 'ส่วนขยายเบราว์เซอร์ที่ตรวจและบล็อกส่วนโฆษณาบนเว็บฟังเพลงที่รองรับ เขียนตามมาตรฐาน Manifest V3',
+    shortDesc: 'ส่วนขยาย Chrome ที่ข้ามโฆษณาบน YouTube',
+    fullDesc: 'ส่วนขยายเล็ก ๆ ที่เขียนไว้ใช้ตอนเปิดเพลงบน YouTube โดยคอยตรวจว่าช่วงนี้เป็นโฆษณาไหม แล้วข้ามให้อัตโนมัติ ขอสิทธิ์แค่ storage กับหน้า YouTube เท่านั้น ไม่ได้ขอสิทธิ์ทั้งเบราว์เซอร์',
     category: 'automation',
     tech: ['JavaScript', 'Chrome Extension', 'Manifest V3'],
     gradient: 'linear-gradient(135deg, #1DB954, #191414)',
     icon: '🎵',
-    features: ['ตรวจและบล็อกโฆษณา', 'รองรับหลายเว็บไซต์', 'ทำงานเบา', 'ใช้ Manifest V3']
-  },
-  {
-    id: 'fastwork-scraper',
-image: 'public/images/bot.png',
-    name: 'Fastwork Scraper',
-    shortDesc: 'บอทเก็บข้อมูลงานจาก Fastwork.co',
-    fullDesc: 'สคริปต์ Puppeteer ที่เปิดเว็บอัตโนมัติ ดึงรายการงานและข้อมูลฟรีแลนซ์ แล้วจัดข้อมูลให้นำไปใช้ต่อได้',
-    category: 'automation',
-    tech: ['Node.js', 'Puppeteer', 'JavaScript'],
-    gradient: 'linear-gradient(135deg, #ee0979, #ff6a00)',
-    icon: '🕷️',
-    features: ['เก็บรายการงาน', 'ดึงข้อมูลฟรีแลนซ์', 'ควบคุมเบราว์เซอร์อัตโนมัติ', 'ส่งออกข้อมูล']
+    status: 'เครื่องมือที่ทำไว้ใช้เอง',
+    features: ['ตรวจและข้ามช่วงโฆษณา', 'ทำงานเฉพาะหน้า YouTube', 'ขอสิทธิ์เท่าที่จำเป็น', 'มีหน้าป๊อปอัปสำหรับเปิดปิด']
   },
   {
     id: 'elearning-bot',
-image: 'public/images/bot.png',
+    image: 'public/images/bot.png',
     name: 'E-Learning Automator',
-    shortDesc: 'บอทช่วยทำขั้นตอนซ้ำในระบบ E-Learning',
-    fullDesc: 'งานทดลองใช้ Selenium ควบคุมหน้า E-Learning เพื่อเลื่อนบทเรียนและติดตามความคืบหน้าตามขั้นตอนที่ตั้งไว้',
-    category: 'automation',
-    tech: ['Python', 'Browser Automation', 'Selenium'],
-    gradient: 'linear-gradient(135deg, #2196F3, #21CBF3)',
-    icon: '📚',
-    features: ['เลื่อนบทเรียนตามลำดับ', 'จัดการขั้นตอนในแบบทดสอบ', 'ติดตามความคืบหน้า', 'ใช้กับหลายหน้าเว็บได้']
-  },
-  {
-    id: 'auto-vpn',
-image: 'public/images/network.png',
-    name: 'Auto VPN App',
-    shortDesc: 'เครื่องมือจัดการ VPN อัตโนมัติ',
-    fullDesc: 'โปรแกรมบน Windows สำหรับเพิ่มโปรไฟล์ VPN เชื่อมต่ออัตโนมัติ และดูสถานะผ่านหน้าจอเดียว',
-    category: 'automation',
-    tech: ['Python', 'Tkinter', 'VPN APIs'],
-    gradient: 'linear-gradient(135deg, #0F2027, #2C5364)',
-    icon: '🔐',
-    features: ['จัดการ VPN', 'เชื่อมต่ออัตโนมัติ', 'มีหน้าจอควบคุม', 'เก็บหลายโปรไฟล์']
-  },
-  {
-    id: 'vpn-dashboard',
-image: 'public/images/network.png',
-    name: 'Automation Dashboard',
-    shortDesc: 'แดชบอร์ดรวมงาน VPN เบราว์เซอร์ และหน้าต่าง Windows',
-    fullDesc: 'โปรแกรมหน้าเดียวสำหรับเปิดโปรไฟล์เบราว์เซอร์ จัดตำแหน่งหน้าต่างผ่าน win32gui และสั่งงานบนหน้าจอที่ต้องทำซ้ำ',
-    category: 'automation',
-    tech: ['Python', 'Tkinter', 'win32gui', 'pyautogui'],
-    gradient: 'linear-gradient(135deg, #3a7bd5, #00d2ff)',
-    icon: '🖥️',
-    features: ['จัดตำแหน่งหน้าต่าง', 'เปิดโปรไฟล์เบราว์เซอร์', 'ทำขั้นตอนซ้ำอัตโนมัติ', 'สั่งงานด้วยคีย์ลัด']
-  },
-  {
-    id: 'edge-auto',
-image: 'public/images/network.png',
-    name: 'Edge Multi-Profile',
-    shortDesc: 'เปิดโปรไฟล์ Edge และ Chrome หลายชุดด้วยคีย์ลัด',
-    fullDesc: 'โปรแกรม Windows สำหรับเปิดหลายโปรไฟล์ด้วยคีย์ลัด ตั้งจุดคลิกอัตโนมัติ เก็บ log และย่อไว้ใน System Tray โดยแพ็กเป็นไฟล์ .exe ได้',
-    category: 'automation',
-    tech: ['Python', 'Tkinter', 'pystray', 'PyInstaller'],
-    gradient: 'linear-gradient(135deg, #0078D7, #00BCF2)',
-    icon: '🌐',
-    features: ['เปิดหลายโปรไฟล์', 'สั่งงานด้วยคีย์ลัด', 'ย่อไว้ใน System Tray', 'ตั้งจุดคลิกอัตโนมัติ', 'แพ็กเป็นไฟล์ .exe']
-  },
-  {
-    id: 'auto-hotmail',
-image: 'public/images/music-ad.png',
-    name: 'Auto Sub Hotmail',
-    shortDesc: 'ส่วนขยาย Chrome ช่วยคลิกขั้นตอนสมัคร Hotmail',
-    fullDesc: 'ส่วนขยายที่ช่วยกดปุ่ม Create บนหน้า Sign-in และ Sign-up ของ Microsoft ตามขั้นตอนที่กำหนดไว้',
+    shortDesc: 'ส่วนขยายช่วยเร่งวิดีโอและไล่ขั้นตอนในระบบเรียนออนไลน์',
+    fullDesc: 'ส่วนขยาย Chrome ที่ทำงานบนหน้าเรียนออนไลน์ โดยตั้งความเร็ววิดีโอเป็น 2 เท่า และช่วยไล่ขั้นตอนของแบบทดสอบแบบสองชั้นให้ไม่ต้องมานั่งกดซ้ำเอง เขียนเป็นงานทดลองว่าจะแทรกสคริปต์เข้าไปคุมหน้าเว็บที่มีอยู่แล้วได้แค่ไหน',
     category: 'automation',
     tech: ['JavaScript', 'Chrome Extension', 'Manifest V3'],
-    gradient: 'linear-gradient(135deg, #FFB347, #FFCC33)',
-    icon: '📧',
-    features: ['คลิกปุ่มตามขั้นตอน', 'ช่วยกรอกฟอร์ม', 'ทำงานบน Chrome', 'ติดตั้งขนาดเล็ก']
+    gradient: 'linear-gradient(135deg, #2196F3, #21CBF3)',
+    icon: '📚',
+    status: 'งานทดลอง',
+    features: ['ตั้งความเร็ววิดีโออัตโนมัติ', 'ไล่ขั้นตอนแบบทดสอบสองชั้น', 'แทรกสคริปต์ลงหน้าเว็บที่เปิดอยู่', 'เปิดปิดได้จากหน้าป๊อปอัป']
+  },
+  {
+    id: 'fastwork-scraper',
+    image: 'public/images/bot.png',
+    name: 'Fastwork Scraper',
+    shortDesc: 'ตัวเก็บรายการงานฟรีแลนซ์ที่มีหน้าเว็บดูผลในตัว',
+    fullDesc: 'สคริปต์ที่ใช้ Puppeteer เปิดเบราว์เซอร์อัตโนมัติเพื่อไล่เก็บรายการงานและหมวดหมู่จากเว็บหางานฟรีแลนซ์ แล้วมี Express คอยรับคำสั่งจากหน้าเว็บที่ทำด้วย Vite ให้กดสั่งเก็บและดูผลได้จากหน้าจอ ไม่ต้องรันจากเทอร์มินัลอย่างเดียว',
+    category: 'automation',
+    tech: ['Node.js', 'Puppeteer', 'Express.js', 'Vite'],
+    gradient: 'linear-gradient(135deg, #ee0979, #ff6a00)',
+    icon: '🕷️',
+    status: 'งานทดลอง',
+    features: ['ควบคุมเบราว์เซอร์ด้วย Puppeteer', 'เก็บรายการงานและหมวดหมู่', 'สั่งงานผ่านหน้าเว็บ', 'ดูผลที่เก็บได้จากหน้าจอ']
   },
   {
     id: 'tiktok-cart',
-image: 'public/images/tiktok-bot.png',
+    image: 'public/images/tiktok-bot.png',
     name: 'TikTok Cart Bot',
-    shortDesc: 'บอทช่วยจัดการสินค้าใน TikTok Shop',
-    fullDesc: 'เครื่องมืออัตโนมัติสำหรับเพิ่มสินค้าเข้าตะกร้า จัดรายการสินค้า และดูแล Showcase บน TikTok Shop',
+    shortDesc: 'บอทเพิ่มสินค้าเข้าตะกร้าโชว์ผ่านอีมูเลเตอร์ Android',
+    fullDesc: 'บอทที่สั่งงานแอปบนอีมูเลเตอร์ Android ผ่าน ADB แล้วใช้ uiautomator2 กดตามหน้าจอเพื่อเพิ่มสินค้าเข้าตะกร้าโชว์ทีละรายการ มี Flask เป็นหน้าควบคุมเล็ก ๆ ให้สั่งรันและดูสถานะ และเว้นจังหวะกดแบบสุ่มเพื่อไม่ให้ยิงรัวเกินไป',
     category: 'automation',
-    tech: ['Python', 'Selenium', 'Flask'],
-    gradient: 'linear-gradient(135deg, #000000, #EE1D52)',
+    tech: ['Python', 'uiautomator2', 'ADB', 'Flask'],
+    gradient: 'linear-gradient(135deg, #010101, #ff0050)',
     icon: '🛍️',
-    features: ['จัดการตะกร้า', 'ดูแล Showcase', 'จัดรายการสินค้า', 'เพิ่มสินค้าอัตโนมัติ']
+    status: 'งานทดลอง',
+    features: ['สั่งงานอีมูเลเตอร์ผ่าน ADB', 'กดหน้าจอด้วย uiautomator2', 'หน้าควบคุมด้วย Flask', 'เว้นจังหวะกดแบบสุ่ม']
   },
   {
     id: 'video-tinder',
-image: 'public/images/2getr.png',
+    image: 'public/images/bot.png',
     name: 'Video Tinder',
-    shortDesc: 'คัด แยก และตัดวิดีโอด้วยการปัด',
-    fullDesc: 'โปรแกรมบนคอมสำหรับปัดเลือกว่าจะเก็บ ตัด หรือไม่ใช้วิดีโอ แล้วช่วยแยกไฟล์ รวมคลิป ตรวจภาพการ์ตูน และทำรายงานย้อนหลัง',
+    shortDesc: 'โปรแกรมคัดคลิปแบบปัดซ้ายขวาบนเดสก์ท็อป',
+    fullDesc: 'โปรแกรมบน Windows ที่เปิดคลิปในโฟลเดอร์ขึ้นมาให้ดูทีละไฟล์ แล้วกดเก็บหรือกดทิ้งแบบเดียวกับการปัดซ้ายขวา เพื่อคัดคลิปจำนวนมากให้จบเร็ว ตัวโปรแกรมทำหน้าจอด้วย Tkinter แยกงานประมวลผลวิดีโอไว้คนละเธรด และแพ็กเป็นไฟล์ .exe ให้เปิดใช้ได้โดยไม่ต้องติดตั้ง Python',
     category: 'automation',
-    tech: ['Python', 'Tkinter', 'OpenCV', 'FFmpeg', 'moviepy'],
-    gradient: 'linear-gradient(135deg, #FF416C, #FF4B2B)',
-    icon: '🎬',
-    features: ['ปัดเพื่อคัดวิดีโอ', 'รวมหลายคลิป', 'ตัดช่วงที่เลือก', 'ตรวจภาพการ์ตูน', 'เก็บรายงานย้อนหลัง']
-  },
-  // --- Trading ---
-  {
-    id: 'grid-bot',
-image: 'public/images/trading-bot.png',
-    name: 'Grid Trading Bot v3',
-    shortDesc: 'บอท Grid Trading ที่ดูแล Forex หลายคู่เงิน',
-    fullDesc: 'บอทเทรดเวอร์ชัน 3 ที่รันกลยุทธ์ Grid กับหลายคู่เงินบน MetaTrader 5 พร้อมหน้าจอดูสถานะและไฟล์ตั้งค่าที่แก้ได้',
-    category: 'trading',
-    tech: ['Python', 'MetaTrader 5', 'JSON Config', 'Dashboard'],
-    gradient: 'linear-gradient(135deg, #00b09b, #96c93d)',
-    icon: '📊',
-    features: ['ดูแลหลายคู่เงิน', 'ใช้กลยุทธ์ Grid', 'ดูสถานะแบบเรียลไทม์', 'ปรับค่าผ่านไฟล์', 'คำนวณขนาด lot อัตโนมัติ']
+    tech: ['Python', 'Tkinter', 'OpenCV', 'moviepy', 'PyInstaller'],
+    gradient: 'linear-gradient(135deg, #f43f5e, #8b5cf6)',
+    icon: '🎞️',
+    status: 'เครื่องมือที่ทำไว้ใช้เอง',
+    features: ['ดูคลิปทีละไฟล์แล้วกดเก็บหรือทิ้ง', 'แยกงานประมวลผลออกจากหน้าจอ', 'จัดไฟล์ที่คัดแล้วเข้าโฟลเดอร์', 'แพ็กเป็น .exe ใช้ได้เลย']
   },
   {
-    id: 'smart-grid-ea',
-image: 'public/images/trading-bot.png',
-    name: 'Smart Grid EA',
-    shortDesc: 'Expert Advisor ที่ดูข่าวและสภาพตลาดก่อนทำงาน',
-    fullDesc: 'EA บน MetaTrader 5 ที่ใช้กลยุทธ์ Grid ร่วมกับตัวกรองข่าว เรดาร์ตลาด การแยกสภาพตลาด และหน้าเว็บดูสถานะ',
-    category: 'trading',
-    tech: ['Python', 'MetaTrader 5', 'Flask', 'News API'],
-    gradient: 'linear-gradient(135deg, #F7971E, #FFD200)',
-    icon: '📈',
-    features: ['กลยุทธ์ Grid', 'กรองช่วงข่าว', 'ดูภาพรวมตลาด', 'แยกสภาพตลาด', 'แดชบอร์ดบนเว็บ']
-  },
-  // --- AI & ML ---
-  {
-    id: 'secretary-bot',
-image: 'public/images/bot.png',
-    name: 'น้องเลขา Bot',
-    shortDesc: 'บอท Telegram ช่วยอ่านตารางและเตือนนัด',
-    fullDesc: 'บอทผู้ช่วยส่วนตัวที่รับข้อความภาษาคน อ่านตารางจากรูปด้วย OCR หาเวลาว่าง และแจ้งเตือนก่อนนัด โดยใช้ Gemini ช่วยตีความข้อมูล',
-    category: 'ai',
-    tech: ['Python', 'Telegram Bot API', 'Google Gemini', 'SQLite'],
-    gradient: 'linear-gradient(135deg, #0088cc, #29b6f6)',
-    icon: '🤖',
-    features: ['รับคำสั่งเป็นภาษาคน', 'อ่านตารางจากรูป', 'ช่วยหาเวลาว่าง', 'แจ้งเตือนอัตโนมัติ', 'ใช้ Gemini ช่วยตีความ']
-  },
-  {
-    id: 'tiktok-analytics',
-image: 'public/images/tiktok-bot.png',
-    name: 'TikTok Analytics',
-    shortDesc: 'แพลตฟอร์มวิเคราะห์ข้อมูล TikTok',
-    fullDesc: 'เว็บรวมสถิติจาก TikTok เพื่อดูแนวโน้มของคอนเทนต์และติดตามผลผ่านแดชบอร์ด',
-    category: 'ai',
-    tech: ['Next.js', 'React', 'Data Analytics', 'Python'],
-    gradient: 'linear-gradient(135deg, #000000, #25F4EE)',
-    icon: '📱',
-    features: ['สรุปข้อมูล', 'ดูสถิติบนแดชบอร์ด', 'วิเคราะห์แนวโน้ม', 'ติดตามผลของคอนเทนต์']
-  },
-  {
-    id: 'google-apps-script',
-image: 'public/images/bot.png',
-    name: 'Google Apps Script',
-    shortDesc: 'ชุดสคริปต์ช่วยลดงานซ้ำใน Google Workspace',
-    fullDesc: 'รวม Google Apps Script ที่เชื่อม Sheets, Gmail และ Calendar เพื่อให้ขั้นตอนที่ต้องทำซ้ำทำงานเองตามเงื่อนไข',
+    id: 'auto-vpn',
+    image: 'public/images/network.png',
+    name: 'Auto VPN Bot',
+    shortDesc: 'โปรแกรมสลับประเทศ VPN ให้อัตโนมัติ',
+    fullDesc: 'โปรแกรมบน Windows ที่คุมหน้าต่างของ ProtonVPN ให้สลับประเทศตามลำดับหรือสุ่มก็ได้ โดยอ่านตำแหน่งปุ่มจากไฟล์ตั้งค่า แล้วสั่งเมาส์กดผ่าน pyautogui และจัดตำแหน่งหน้าต่างด้วย win32gui มีหน้าจอ Tkinter ให้ดูสถานะและเก็บ log ไว้ตรวจย้อนหลัง',
     category: 'automation',
-    tech: ['Google Apps Script', 'JavaScript', 'Google APIs'],
-    gradient: 'linear-gradient(135deg, #4285F4, #34A853)',
-    icon: '📋',
-    features: ['จัดการข้อมูลใน Sheets', 'ส่งอีเมลอัตโนมัติ', 'เชื่อม Google Calendar', 'สร้างฟังก์ชันใช้เอง']
+    tech: ['Python', 'Tkinter', 'pyautogui', 'win32gui'],
+    gradient: 'linear-gradient(135deg, #0F2027, #2C5364)',
+    icon: '🔐',
+    status: 'รุ่นแรก',
+    features: ['สลับประเทศตามลำดับหรือสุ่ม', 'อ่านตำแหน่งปุ่มจากไฟล์ตั้งค่า', 'จัดตำแหน่งหน้าต่างอัตโนมัติ', 'เก็บ log ไว้ตรวจย้อนหลัง']
   },
-  // --- Academic ---
   {
-    id: 'onet-network',
-image: 'public/images/network.png',
-    name: 'ONet Network Sim',
-    shortDesc: 'งานจำลองเครือข่าย Bio-SCION เทียบกับ TCP/IP',
-    fullDesc: 'งานวิชา Computer Networks (CP352005) ที่จำลอง Bio-SCION ซึ่งรวม NDN, SCION ISD และ Capability-Based Security แล้วเทียบผลกับ TCP/IP ด้วยวิธี Monte Carlo',
-    category: 'academic',
-    tech: ['Python', 'matplotlib', 'numpy', 'Simulation'],
-    gradient: 'linear-gradient(135deg, #654ea3, #eaafc8)',
-    icon: '🎓',
-    features: ['จำลอง Bio-SCION', 'ทดลองด้วยวิธี Monte Carlo', 'เทียบผลกับ TCP/IP', 'สร้างกราฟสรุปผล']
+    id: 'vpn-dashboard',
+    image: 'public/images/network.png',
+    name: 'Auto VPN Bot v2',
+    shortDesc: 'รุ่นต่อยอดที่แยกส่วนคุม VPN กับคุม Chrome ออกจากกัน',
+    fullDesc: 'รุ่นสองของ Auto VPN Bot ที่รื้อโค้ดจากไฟล์เดียวออกเป็นส่วนคุม VPN กับส่วนคุมโปรไฟล์ Chrome แยกกัน เพิ่มคีย์ลัดสำหรับสั่งงานระหว่างทำอย่างอื่น และแพ็กเป็น .exe ให้เปิดใช้ได้โดยไม่ต้องติดตั้ง Python',
+    category: 'automation',
+    tech: ['Python', 'Tkinter', 'win32gui', 'pyautogui', 'PyInstaller'],
+    gradient: 'linear-gradient(135deg, #3a7bd5, #00d2ff)',
+    icon: '🖥️',
+    status: 'รุ่นต่อยอด',
+    features: ['แยกส่วนคุม VPN กับคุม Chrome', 'เปิดโปรไฟล์เบราว์เซอร์ตามที่ตั้งไว้', 'สั่งงานด้วยคีย์ลัด', 'แพ็กเป็น .exe ใช้ได้เลย']
   },
-  // --- Verified workspace projects added from local project documentation ---
+  {
+    id: 'edge-auto',
+    image: 'public/images/network.png',
+    name: 'Edge Multi-Profile',
+    shortDesc: 'ตัวเปิดโปรไฟล์ Edge หลายชุดพร้อมกันด้วยคีย์ลัด',
+    fullDesc: 'โปรแกรม Windows ที่เปิดหลายโปรไฟล์ของเบราว์เซอร์พร้อมกันด้วยคีย์ลัด โดยอ่านรายชื่อโปรไฟล์จาก registry ของเครื่อง จัดตำแหน่งหน้าต่างให้ไม่ทับกัน เก็บ log ไว้ตรวจย้อนหลัง และย่อเก็บไว้ที่ system tray ได้เพื่อไม่ให้เกะกะ',
+    category: 'automation',
+    tech: ['Python', 'Tkinter', 'pystray', 'PyInstaller'],
+    gradient: 'linear-gradient(135deg, #1f4e79, #2e75b6)',
+    icon: '🪟',
+    status: 'เครื่องมือที่ทำไว้ใช้เอง',
+    features: ['เปิดหลายโปรไฟล์ด้วยคีย์ลัด', 'อ่านรายชื่อโปรไฟล์จาก registry', 'ย่อเก็บที่ system tray', 'แพ็กเป็น .exe ใช้ได้เลย']
+  },
+  {
+    id: 'auto-hotmail',
+    image: 'public/images/music-ad.png',
+    name: 'Auto Sub Hotmail',
+    shortDesc: 'ส่วนขยายที่กดปุ่มซ้ำ ๆ บนหน้าเว็บแทนเรา',
+    fullDesc: 'ส่วนขยายเบราว์เซอร์ขนาดเล็กที่ทำหน้าที่กดปุ่มตามจุดที่ตั้งไว้บนหน้าเว็บ เพื่อไม่ต้องนั่งกดเองซ้ำ ๆ เปิดปิดได้จากหน้าป๊อปอัป เขียนเป็นงานทดลองเรื่องการแทรกสคริปต์ลงหน้าเว็บ',
+    category: 'automation',
+    tech: ['JavaScript', 'Chrome Extension', 'Manifest V3'],
+    gradient: 'linear-gradient(135deg, #0078D4, #50e6ff)',
+    icon: '✉️',
+    status: 'งานทดลอง',
+    features: ['กดปุ่มตามจุดที่ตั้งไว้', 'เปิดปิดจากหน้าป๊อปอัป', 'แทรกสคริปต์ลงหน้าเว็บที่เปิดอยู่']
+  },
   {
     id: 'ai-limits-widget',
+    image: null,
     name: 'AI Limits Widget',
-    shortDesc: 'วิดเจ็ต Windows สำหรับดูโควตา Claude และ Codex แบบประหยัดแบต',
-    fullDesc: 'วิดเจ็ตบนหน้า Desktop ของ Windows สำหรับดูโควตา Claude และ Codex โดยอ่านเฉพาะเปอร์เซ็นต์กับเวลารีเซ็ตจากข้อมูลในเครื่อง และไม่บังหน้าต่างที่กำลังใช้',
+    shortDesc: 'วิดเจ็ตบนเดสก์ท็อปที่บอกโควตา AI ที่เหลือ',
+    fullDesc: 'วิดเจ็ตแถบเล็ก ๆ บน Windows ที่บอกว่าโควตาของ Claude และ Codex เหลือกี่เปอร์เซ็นต์ และจะรีเซ็ตเมื่อไหร่ ฝังอยู่ชั้นเดียวกับวอลเปเปอร์จึงไม่ลอยทับโปรแกรมอื่น อัปเดตทุก 5 นาที ไม่มีแอนิเมชันต่อเนื่อง และไม่ใช้การแคปหน้าจอหรือ OCR เพื่อให้กินแบตน้อย ตัววิดเจ็ตอ่านเฉพาะตัวเลขเปอร์เซ็นต์ ไม่อ่านหรือเก็บ token กับข้อความสนทนา',
     category: 'automation',
-    tech: ['PowerShell', 'Windows Script Host', 'JSON', 'Windows Desktop'],
-    gradient: 'linear-gradient(135deg, #1b2a35, #4b6a58)',
-    icon: '▦',
+    tech: ['PowerShell', 'Windows Script Host', 'JSON'],
+    gradient: 'linear-gradient(135deg, #475569, #0f172a)',
+    icon: '🔋',
     status: 'เครื่องมือที่ทำไว้ใช้เอง',
-    features: ['อัปเดตทุก 5 นาที', 'ดับเบิลคลิกเพื่อรีเฟรช', 'ไม่เก็บ token หรือข้อความสนทนา', 'ไม่มีแอนิเมชันที่ทำงานค้างไว้']
-  },
-  {
-    id: 'routepulse-demo',
-    name: 'RoutePulse Client Demo',
-    shortDesc: 'ต้นแบบติดตามราคาตามเส้นทางและตรวจข้อมูลทุกชั่วโมง',
-    fullDesc: 'เดโมภาษาไทยที่จำลองการเช็กราคา 560 เส้นทางต่อชั่วโมง รับและส่งออกไฟล์ CSV ดูสถานะตัวประมวลผล และส่งรายงาน โดยแยกข้อมูลทดลองออกจากระบบจริง',
-    category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', 'AWS S3', 'Drizzle ORM'],
-    gradient: 'linear-gradient(135deg, #183a5a, #278a8c)',
-    icon: '⌁',
-    status: 'ต้นแบบสำหรับลูกค้า',
-    features: ['จำลองการตรวจ 560 เส้นทางต่อชั่วโมง', 'รับและส่งออก CSV', 'ลองประมวลผลซ้ำได้เมื่อมีปัญหา', 'มีขั้นตอนยืนยันก่อนต่อระบบจริง']
-  },
-  {
-    id: 'buildsure',
-    name: 'BuildSure',
-    shortDesc: 'ต้นแบบแดชบอร์ดติดตามงบและความคืบหน้างานก่อสร้าง',
-    fullDesc: 'ต้นแบบแพลตฟอร์มสำหรับมองภาพรวมโครงการก่อสร้าง ทั้งงวดงาน ความคืบหน้า และจุดที่ต้องตรวจรับ เพื่อสื่อสารข้อมูลระหว่างเจ้าของงานและผู้เกี่ยวข้องให้ชัดขึ้น',
-    category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    gradient: 'linear-gradient(135deg, #0d2b47, #337194)',
-    icon: '⌂',
-    status: 'ต้นแบบผลิตภัณฑ์',
-    features: ['ดูภาพรวมโครงการ', 'ติดตามความคืบหน้าเป็นงวดงาน', 'สรุปตัวเลขสำคัญในหน้าเดียว', 'เปิดอ่านหน้างานได้หลายขนาดจอ']
-  },
-  {
-    id: 'dmd-sportday-load-test',
-    name: 'DMD Sport Day Load Test',
-    shortDesc: 'ชุดทดสอบโหลด k6 สำหรับระบบจัดงานกีฬา',
-    fullDesc: 'ชุดทดสอบความพร้อมของ API สำหรับงาน DMD Sport Day 2026 มีตั้งแต่การเช็กเบื้องต้นไปจนถึงจำลองโหลดเต็ม พร้อมตรวจค่าก่อนเริ่มและสรุป P95, error rate กับจำนวน request',
-    category: 'academic',
-    tech: ['k6', 'JavaScript', 'JSON', 'Load Testing'],
-    gradient: 'linear-gradient(135deg, #3b2349, #7c3c58)',
-    icon: '↯',
-    status: 'ชุดทดสอบระบบ',
-    features: ['10 รูปแบบการทดสอบ', 'ตรวจความพร้อมก่อนยิงระบบจริง', 'สรุปผลเป็น Markdown และ JSON', 'แยกค่าที่ต้องยืนยันจาก endpoint จริง']
-  },
-  {
-    id: 'pulsepoint-alert-demo',
-    name: 'PulsePoint Event Alert',
-    shortDesc: 'ต้นแบบแจ้งเตือนผู้ร่วมงานและเช็กอินด้วย QR',
-    fullDesc: 'ต้นแบบสำหรับงานสัมมนา 150 คน มีการแจ้งเตือนบนเว็บและ LINE OA จุดเช็กอินด้วย QR หน้าส่งข้อความของแอดมิน และประวัติการส่ง โดยเก็บข้อมูลเดโมไว้ในเบราว์เซอร์',
-    category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', 'Browser Notifications', 'LINE OA'],
-    gradient: 'linear-gradient(135deg, #51253b, #c24d4d)',
-    icon: '!',
-    status: 'ต้นแบบสำหรับลูกค้า',
-    features: ['แยกหน้าผู้ร่วมงานกับแอดมิน', 'จำลองจุดเช็กอินด้วย QR', 'เลือกกลุ่มผู้รับและระดับความสำคัญ', 'ทดสอบแจ้งเตือนในเบราว์เซอร์']
-  },
-  {
-    id: 'ev-nation',
-    name: 'EV Nation',
-    shortDesc: 'ต้นแบบแพลตฟอร์มบริการรถ EV สำหรับค้นหาสถานีและวางแผนการเดินทาง',
-    fullDesc: 'เดโมบริการรถ EV ตั้งแต่ค้นหาสถานี ดูช่วงเวลาว่าง จองคิว วางแผนทริป ไปจนถึงหน้ารายงานของพาร์ตเนอร์ โดยใช้ข้อมูลจำลองเพื่อให้ลองใช้งานได้ครบขั้นตอน',
-    category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', 'Interactive Maps', 'Mock Data'],
-    gradient: 'linear-gradient(135deg, #103e3f, #499879)',
-    icon: '⚡',
-    status: 'ต้นแบบสำหรับลูกค้า',
-    features: ['ค้นหาสถานีชาร์จบนแผนที่', 'จำลองการจองคิว', 'วางแผนทริปในเมืองและทางไกล', 'แดชบอร์ดสำหรับพาร์ตเนอร์']
-  },
-  {
-    id: 'forex-order-watcher',
-    name: 'Forex Order Watcher',
-    shortDesc: 'เครื่องมือเฝ้าดูออเดอร์ Forex โดยไม่ส่งคำสั่งเทรด',
-    fullDesc: 'โปรแกรมอ่านออเดอร์ที่เปิดอยู่จาก MetaTrader 5 เทียบกับข้อมูลรอบก่อน คำนวณภาพรวมพอร์ต และแจ้งเมื่อออเดอร์เดิมปิดหรือหายไป พร้อมโหมดทดลองที่ไม่ต้องต่อบัญชีจริง',
-    category: 'trading',
-    tech: ['Python', 'MetaTrader 5', 'JSON', 'CLI'],
-    gradient: 'linear-gradient(135deg, #17262f, #265b63)',
-    icon: '◉',
-    status: 'เครื่องมือเฝ้าดูสถานะ',
-    features: ['อ่านออเดอร์จาก MT5', 'เก็บข้อมูลรอบล่าสุด', 'แจ้งเตือนออเดอร์ที่หายไป', 'ทดลองได้โดยไม่ต่อบัญชีจริง']
-  },
-  {
-    id: 'gp-easy',
-    name: 'GP Easy',
-    shortDesc: 'เว็บคำนวณกำไรสุทธิสำหรับร้านค้า',
-    fullDesc: 'เว็บเครื่องมือช่วยคำนวณกำไรสุทธิของร้านค้า เพื่อทำให้ต้นทุน ราคา และค่าใช้จ่ายที่กระจัดกระจาย กลายเป็นตัวเลขที่อ่านและตัดสินใจได้ง่ายขึ้น',
-    category: 'web',
-    tech: ['Next.js', 'React', 'TypeScript', 'Calculation Logic'],
-    gradient: 'linear-gradient(135deg, #453522, #aa7a32)',
-    icon: '%',
-    status: 'ต้นแบบผลิตภัณฑ์',
-    features: ['กรอกต้นทุนและรายรับ', 'คำนวณกำไรสุทธิ', 'สรุปผลเพื่อเปรียบเทียบทางเลือก', 'ออกแบบเป็นเครื่องมือใช้งานเร็ว']
-  },
-  {
-    id: 'loongmordek-auto-sheets',
-    name: 'Loongmordek Auto Sheets',
-    shortDesc: 'แปลงคอนเทนต์จาก AI เป็นคิวโพสต์ 4 แพลตฟอร์มใน Google Sheets',
-    fullDesc: 'Google Apps Script ที่รับคอนเทนต์หนึ่งชุดแล้วแยกเป็นแถวสำหรับ Facebook, Instagram, TikTok และ YouTube Shorts โดยทุกโพสต์ต้องรอคนตรวจและอนุมัติก่อน',
-    category: 'automation',
-    tech: ['Google Apps Script', 'Google Sheets', 'JavaScript', 'Google Drive'],
-    gradient: 'linear-gradient(135deg, #195b48, #4da071)',
-    icon: '↳',
-    status: 'ระบบอัตโนมัติสำหรับลูกค้า',
-    features: ['แยกคอนเทนต์เป็น 4 แพลตฟอร์ม', 'กำหนดเวลาและช่วงห่างของโพสต์', 'ต้องตรวจงานก่อนส่งต่อ', 'ทดสอบตัวแยกข้อความแยกจาก Sheet ได้']
-  },
-  {
-    id: 'thai-rag-api',
-    name: 'Thai RAG API',
-    shortDesc: 'API ต้นแบบสำหรับถามตอบจากฐานความรู้ภาษาไทยบนเครื่อง',
-    fullDesc: 'ต้นแบบ FastAPI ที่ใช้ Ollama ตอบคำถามจากเอกสารภาษาไทย ค้นข้อความที่เกี่ยวข้องด้วย embedding และเก็บคลังความรู้ใน SQLite พร้อมหน้าทดลอง API',
-    category: 'ai',
-    tech: ['Python', 'FastAPI', 'Ollama', 'bge-m3', 'SQLite'],
-    gradient: 'linear-gradient(135deg, #292447, #6650a4)',
-    icon: '⌘',
-    status: 'ต้นแบบ AI ที่รันในเครื่อง',
-    features: ['ถามตอบจากฐานความรู้ภาษาไทย', 'เพิ่มข้อความเข้าคลังผ่าน API', 'ค้นข้อมูลที่ความหมายใกล้กัน', 'รันในเครื่องโดยไม่ส่งข้อมูลขึ้น Cloud']
+    features: ['บอกโควตาที่เหลือและเวลารีเซ็ต', 'ฝังกับชั้นวอลเปเปอร์ ไม่ลอยทับ', 'อัปเดตทุก 5 นาทีเพื่อประหยัดแบต', 'ไม่อ่านหรือเก็บ token และข้อความ']
   },
   {
     id: 'forma-database',
+    image: null,
     name: 'FormA Database System',
-    shortDesc: 'ระบบบันทึกข้อมูล Form A บน Excel พร้อมฟอร์มค้นหาและฐานข้อมูล',
-    fullDesc: 'ระบบ Excel VBA สำหรับบันทึกและค้นหาข้อมูล Form A เช่น เครื่องจักร ประเภท และผู้รับผิดชอบ โดยใช้ Python ช่วยสร้างไฟล์ .xlsm และโมดูล VBA ที่จำเป็น',
+    shortDesc: 'ไฟล์ Excel ที่ทำเป็นฟอร์มกรอกและฐานข้อมูลในตัว',
+    fullDesc: 'งานที่แปลงแบบฟอร์ม Excel ของลูกค้าให้กลายเป็นระบบที่กรอกผ่าน UserForm แล้วบันทึกลงชีตฐานข้อมูลในไฟล์เดียวกัน ค้นหาและเรียกข้อมูลเก่ากลับมาแก้ได้ ตัวไฟล์ .xlsm ทั้งไฟล์สร้างจากสคริปต์ Python ที่สั่ง Excel ผ่าน win32com จึงสร้างใหม่ซ้ำได้เหมือนเดิมทุกครั้ง',
     category: 'automation',
-    tech: ['Excel VBA', 'Python', 'XLSM', 'Windows Forms'],
-    gradient: 'linear-gradient(135deg, #174c34, #2d8d5f)',
-    icon: '▤',
+    tech: ['Excel VBA', 'UserForm (VBA)', 'Python', 'win32com', 'XLSM'],
+    gradient: 'linear-gradient(135deg, #1D6F42, #A9D08E)',
+    icon: '📑',
     status: 'เครื่องมือใช้งานในธุรกิจ',
-    features: ['ฟอร์มกรอกข้อมูลพร้อมตรวจความถูกต้อง', 'ค้นหาและเรียกดูข้อมูลเดิม', 'บันทึกข้อมูลไว้ใน Workbook', 'สร้างไฟล์ที่เปิดใช้ Macro ได้จาก Source']
+    features: ['กรอกข้อมูลผ่าน UserForm', 'บันทึกลงชีตฐานข้อมูลในไฟล์เดียว', 'ค้นหาและแก้ข้อมูลเก่าได้', 'สร้างไฟล์ใหม่ซ้ำได้จากสคริปต์']
+  },
+  // --- Trading systems ---
+  {
+    id: 'grid-bot',
+    image: 'public/images/trading-bot.png',
+    name: 'Grid Trading Bot v3',
+    shortDesc: 'บอทวางไม้เป็นตารางที่ต่อกับ MetaTrader 5',
+    fullDesc: 'บอทที่ต่อเข้า MetaTrader 5 เพื่อวางไม้เป็นตารางตามระยะที่ตั้งไว้ อ่านค่าทั้งหมดจากไฟล์ตั้งค่า JSON จึงเปลี่ยนคู่เงินหรือระยะห่างได้โดยไม่ต้องแก้โค้ด เขียน log แยกไฟล์ตามคู่เงินและตามวัน ปิดโปรแกรมด้วยสัญญาณหยุดอย่างเป็นระเบียบ และมีหน้า dashboard ไว้ดูสถานะระหว่างรัน เป็นรุ่นที่สามหลังจากลองแก้มาแล้วสองรอบ',
+    category: 'trading',
+    tech: ['Python', 'MetaTrader 5', 'JSON', 'Dashboard'],
+    gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)',
+    icon: '📈',
+    status: 'งานทดลองของตัวเอง',
+    features: ['วางไม้เป็นตารางตามระยะที่ตั้งไว้', 'ตั้งค่าทั้งหมดผ่านไฟล์ JSON', 'แยก log ตามคู่เงินและวันที่', 'ปิดโปรแกรมอย่างเป็นระเบียบ', 'หน้า dashboard ดูสถานะระหว่างรัน']
+  },
+  {
+    id: 'smart-grid-ea',
+    image: 'public/images/trading-bot.png',
+    name: 'Smart Grid EA',
+    shortDesc: 'บอทเทรดที่ดูสภาพตลาดและข่าวก่อนตัดสินใจ',
+    fullDesc: 'รุ่นที่ต่อยอดจากบอทตาราง โดยเพิ่มตัวอ่านสภาพตลาดเพื่อดูว่าช่วงนี้ราคาเป็นเทรนด์หรือออกข้าง และมีตัวกรองข่าวที่ดึงตารางข่าวเข้ามาเว้นช่วงเวลาที่ราคามักเหวี่ยง ส่วนการดูผลทำเป็นหน้าเว็บที่รับข้อมูลสดผ่าน Socket.IO จึงเห็นสถานะเปลี่ยนโดยไม่ต้องรีเฟรช',
+    category: 'trading',
+    tech: ['Python', 'MetaTrader 5', 'Flask', 'Socket.IO', 'pandas'],
+    gradient: 'linear-gradient(135deg, #8b5cf6, #06b6d4)',
+    icon: '🧭',
+    status: 'งานทดลองของตัวเอง',
+    features: ['อ่านสภาพตลาดก่อนเข้าไม้', 'กรองช่วงเวลาที่มีข่าว', 'หน้าเว็บดูผลแบบสด', 'คำนวณตัวชี้วัดด้วย pandas']
+  },
+  {
+    id: 'forex-order-watcher',
+    image: 'public/images/trading-bot.png',
+    name: 'Forex Order Watcher',
+    shortDesc: 'ตัวเฝ้าดูสถานะไม้ที่เปิดอยู่ โดยไม่ส่งคำสั่งเอง',
+    fullDesc: 'โปรแกรมที่อ่านไม้ที่เปิดอยู่จาก MetaTrader 5 แล้วแสดงยอดพอร์ตอย่าง balance, equity, กำไรลอยตัว และ margin เก็บ snapshot ล่าสุดไว้ในไฟล์เพื่อเทียบว่าไม้ไหนหายไปจากรายการ แล้วแจ้งเตือนเมื่อพบว่ามีไม้ถูกปิด ตั้งใจให้เป็นตัวเฝ้าดูอย่างเดียว จึงไม่มีส่วนส่งคำสั่งเปิดหรือปิดไม้ และมีโหมดจำลองให้ทดสอบได้โดยไม่ต้องต่อบัญชีจริง',
+    category: 'trading',
+    tech: ['Python', 'MetaTrader 5', 'Tkinter', 'JSON', 'pytest'],
+    gradient: 'linear-gradient(135deg, #0ea5e9, #1e293b)',
+    icon: '👁️',
+    status: 'เครื่องมือเฝ้าดูสถานะ',
+    features: ['อ่านไม้ที่เปิดอยู่จาก MetaTrader 5', 'สรุปยอดพอร์ตในหน้าเดียว', 'เทียบ snapshot เพื่อหาไม้ที่หายไป', 'มีโหมดจำลองสำหรับทดสอบ', 'ไม่มีส่วนส่งคำสั่งซื้อขาย']
+  },
+
+  // --- AI & data ---
+  {
+    id: 'secretary-bot',
+    image: 'public/images/bot.png',
+    name: 'น้องเลขา Bot',
+    shortDesc: 'บอท Telegram ที่จดงานให้แล้วเตือนตามเวลา',
+    fullDesc: 'บอทบน Telegram ที่รับข้อความหรือรูปแล้วให้ Gemini ช่วยตีความว่าเป็นงานอะไร กำหนดส่งเมื่อไหร่ จากนั้นเก็บลงฐานข้อมูลในเครื่องและส่งเตือนกลับมาตามเวลาที่ถึงกำหนด',
+    category: 'ai',
+    tech: ['Python', 'Telegram Bot API', 'Google Gemini', 'SQLite'],
+    gradient: 'linear-gradient(135deg, #2AABEE, #229ED9)',
+    icon: '🗓️',
+    status: 'เครื่องมือที่ทำไว้ใช้เอง',
+    features: ['รับงานจากข้อความและรูป', 'ให้ Gemini ตีความรายละเอียดงาน', 'เก็บงานลงฐานข้อมูลในเครื่อง', 'ส่งเตือนกลับตามเวลาที่ตั้ง']
+  },
+  {
+    id: 'thai-rag-api',
+    image: null,
+    name: 'Thai RAG API',
+    shortDesc: 'API ถามตอบภาษาไทยจากเอกสาร ที่รันในเครื่องทั้งหมด',
+    fullDesc: 'API ต้นแบบที่ให้ถามคำถามภาษาไทยแล้วตอบจากเอกสารที่ใส่เข้าไป โดยแปลง PDF เป็นข้อความ ตัดเป็นท่อน แล้วทำเป็นเวกเตอร์ด้วยโมเดล bge-m3 เก็บไว้ใน SQLite เวลาถามจะค้นท่อนที่ใกล้เคียงที่สุดก่อนส่งให้โมเดลภาษาเขียนคำตอบ ทุกอย่างรันผ่าน Ollama บนเครื่องตัวเอง ข้อมูลจึงไม่ออกไปไหน',
+    category: 'ai',
+    tech: ['Python', 'FastAPI', 'Ollama', 'bge-m3', 'SQLite'],
+    gradient: 'linear-gradient(135deg, #059669, #065f46)',
+    icon: '📚',
+    status: 'ต้นแบบ AI ที่รันในเครื่อง',
+    features: ['แปลง PDF เป็นคลังความรู้', 'ค้นเอกสารด้วยความหมาย ไม่ใช่คำตรง', 'ตอบคำถามภาษาไทยจากเอกสารที่ใส่', 'รันในเครื่องทั้งหมด ข้อมูลไม่ออกนอก']
+  },
+  {
+    id: 'laos-lottery',
+    image: 'public/images/trading-bot.png',
+    name: 'Lao Lottery Data Lab',
+    shortDesc: 'งานทดลองหาแพตเทิร์นจากข้อมูลย้อนหลัง',
+    fullDesc: 'งานทดลองที่ดึงผลย้อนหลังจากหน้าเว็บ แล้วลองสามวิธีเทียบกันคือการนับความถี่ โมเดล Neural Network ของ scikit-learn และกฎแบบเขียนเงื่อนไขเอง จุดประสงค์คือดูว่าวิธีไหนอธิบายข้อมูลได้ดีกว่ากัน ไม่ใช่เครื่องมือทำนายที่เชื่อถือได้ เพราะผลรางวัลเป็นการสุ่ม',
+    category: 'ai',
+    tech: ['Python', 'FastAPI', 'scikit-learn', 'pandas', 'BeautifulSoup'],
+    gradient: 'linear-gradient(135deg, #F7971E, #FFD200)',
+    icon: '🎲',
+    status: 'งานทดลอง ไม่ใช่เครื่องมือทำนาย',
+    features: ['ดึงข้อมูลย้อนหลังจากหน้าเว็บ', 'เทียบสามวิธีวิเคราะห์', 'เปิดผลผ่าน API', 'สรุปความถี่ของเลขที่ออก']
+  },
+  {
+    id: 'tiktok-analytics',
+    image: 'public/images/tiktok-bot.png',
+    name: 'TikTok Analytics',
+    shortDesc: 'ระบบรวมข้อมูลคลิปและสรุปเป็นรายงานให้ทีม',
+    fullDesc: 'ระบบที่ใช้ Playwright ไล่เก็บข้อมูลคลิปเข้าฐานข้อมูล PostgreSQL ผ่าน Prisma แล้วสรุปเป็นกราฟบนหน้าเว็บ Next.js มีระบบเข้าสู่ระบบ นำเข้าและส่งออกไฟล์ CSV กับ Excel และสคริปต์ตรวจความถูกต้องของข้อมูลก่อนเอาไปใช้',
+    category: 'ai',
+    tech: ['Next.js 16', 'Prisma', 'PostgreSQL', 'Playwright', 'Recharts'],
+    gradient: 'linear-gradient(135deg, #010101, #25F4EE)',
+    icon: '📊',
+    status: 'ต้นแบบสำหรับลูกค้า',
+    features: ['เก็บข้อมูลคลิปอัตโนมัติ', 'สรุปเป็นกราฟบนหน้าเว็บ', 'นำเข้าและส่งออก CSV กับ Excel', 'ตรวจความถูกต้องของข้อมูลก่อนใช้']
+  },
+
+  // --- Academic & coursework ---
+  {
+    id: 'dmd-sportday-load-test',
+    image: null,
+    name: 'DMD Sport Day Load Test',
+    shortDesc: 'ชุดทดสอบว่าระบบงานกีฬารับคนพร้อมกันได้แค่ไหน',
+    fullDesc: 'ชุดทดสอบภาระงานด้วย k6 ที่แบ่งเป็นสิบโหมด ตั้งแต่ทดสอบเบา ๆ ไปจนถึงโหมดเต็มที่จำลองผู้ใช้หมื่นคนค้างไว้ยี่สิบนาที ทุกครั้งที่รันจะได้ไฟล์สรุปทั้งตาราง p95 อัตราข้อผิดพลาด และข้อมูลดิบแบบบีบอัด ในชุดเขียนกำกับไว้ว่ารายการ endpoint ยังเป็นฉบับร่างที่ต้องให้ลูกค้ายืนยันก่อน และให้รันจากเครื่องบนคลาวด์เท่านั้น ไม่ยิงจากเครื่องที่ออฟฟิศ',
+    category: 'academic',
+    tech: ['k6', 'JavaScript', 'JSON', 'Load Testing'],
+    gradient: 'linear-gradient(135deg, #7d64ff, #bf40bf)',
+    icon: '🏟️',
+    status: 'ชุดทดสอบระบบ',
+    features: ['ทดสอบสิบโหมดตามลักษณะงาน', 'จำลองผู้ใช้หมื่นคนพร้อมกัน', 'สรุป p95 และอัตราข้อผิดพลาด', 'กำกับให้ยืนยัน endpoint ก่อนรัน']
+  },
+  {
+    id: 'onet-network',
+    image: 'public/images/network.png',
+    name: 'ONet Network Sim',
+    shortDesc: 'แบบจำลองพฤติกรรมเครือข่ายพร้อมกราฟสรุปผล',
+    fullDesc: 'งานวิชาเครือข่ายที่เขียนแบบจำลองการส่งข้อมูลด้วย Python แล้ววัดผลออกมาเป็นสถิติ พร้อมวาดกราฟด้วย matplotlib เพื่อเทียบว่าเงื่อนไขแต่ละแบบให้ผลต่างกันยังไง',
+    category: 'academic',
+    tech: ['Python', 'matplotlib', 'numpy', 'Simulation'],
+    gradient: 'linear-gradient(135deg, #4b6cb7, #182848)',
+    icon: '🛰️',
+    status: 'งานรายวิชา',
+    features: ['จำลองการส่งข้อมูลในเครือข่าย', 'วัดผลเป็นค่าสถิติ', 'วาดกราฟเทียบแต่ละเงื่อนไข']
   },
   {
     id: 'irfa-research',
+    image: null,
     name: 'IRFA — Research Fund Assistant',
-    shortDesc: 'ข้อเสนอโครงงานผู้ช่วยอัจฉริยะสำหรับการขอทุนวิจัย มข.',
-    fullDesc: 'โครงงานสัมมนาด้าน Computer Science ที่วางระบบช่วยนักวิจัยรุ่นใหม่ค้นหาทุน ตรวจคุณสมบัติ ถามตอบระเบียบพร้อมอ้างอิง และตรวจความครบของข้อเสนอ โดยผสาน RAG กับข้อมูลเชิงโครงสร้าง',
+    shortDesc: 'โครงงานสัมมนาเรื่องผู้ช่วยหาทุนวิจัย',
+    fullDesc: 'โครงงานรายวิชาสัมมนาที่เสนอระบบช่วยนักวิจัยรุ่นใหม่หาทุนที่ตรงกับงานของตัวเอง โดยวางแนวทางเป็น Hybrid RAG คือดึงข้อมูลจากเอกสารทุนมาประกอบคำตอบร่วมกับฐานความรู้ที่จัดโครงสร้างไว้ ตอนนี้อยู่ขั้นข้อเสนอโครงงาน ยังไม่ได้เริ่มเขียนโค้ด ทำร่วมกับเพื่อนอีกหนึ่งคนภายใต้อาจารย์ที่ปรึกษา',
     category: 'academic',
     tech: ['RAG', 'Information Extraction', 'Semantic Matching', 'Knowledge Graph'],
-    gradient: 'linear-gradient(135deg, #2d3551, #687db5)',
-    icon: '∴',
-    status: 'แนวคิดโครงงาน — ยังไม่เริ่มพัฒนา',
-    features: ['จับคู่ทุนกับคุณสมบัติผู้สมัคร', 'ตอบคำถามพร้อมอ้างอิงเอกสาร', 'ตรวจข้อเสนอเทียบเงื่อนไขทุน', 'วางวิธีวัดผลและตรวจคำตอบ']
-  },
-  {
-    id: 'morse-code-learning',
-    name: 'Morse Code Learning App',
-    shortDesc: 'เว็บฝึก Morse Code พร้อมบัญชีผู้ใช้และสถิติการฝึก',
-    fullDesc: 'เว็บฝึก Morse Code ที่สมัครสมาชิกได้ เลือกโหมดฝึก สุ่มตัวอักษรหรือคำผ่าน API และเก็บทั้งความแม่นยำกับความเร็วของแต่ละคน',
-    category: 'web',
-    tech: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'JWT'],
-    gradient: 'linear-gradient(135deg, #20252f, #546271)',
-    icon: '·–',
-    status: 'เว็บฝึกเรียนรู้แบบ Full-stack',
-    features: ['สมัครและเข้าสู่ระบบ', 'เลือกโหมดฝึก Morse', 'บันทึกความแม่นยำและ WPM', 'เก็บสถิติและค่าของแต่ละคน']
+    gradient: 'linear-gradient(135deg, #a3a3a3, #525252)',
+    icon: '🔬',
+    status: 'ข้อเสนอโครงงาน — ยังไม่เริ่มพัฒนา',
+    teamNote: 'โครงงานรายวิชาสัมมนา ทำร่วมกับเพื่อนอีกหนึ่งคน',
+    features: ['วางแนวทางระบบช่วยหาทุนวิจัย', 'ออกแบบการดึงข้อมูลจากเอกสารทุน', 'จับคู่งานวิจัยกับทุนที่เหมาะ']
   },
   {
     id: 'spring-boot-coursework',
+    image: null,
     name: 'Java & Spring Boot Coursework',
-    shortDesc: 'รวมงานวิชา Software Design ตั้งแต่ OOP ไปจนถึงฐานข้อมูล',
-    fullDesc: 'งานจากวิชา CP353002 ที่ฝึก Java OOP, Spring Boot REST API, Bean Scope, Thymeleaf, ความสัมพันธ์ในฐานข้อมูล และ Transaction ผ่านโจทย์ย่อยหลายแบบ',
+    shortDesc: 'ชุดแล็บวิชา Java ที่ไล่ตั้งแต่ bean ไปจนถึง transaction',
+    fullDesc: 'รวมงานแล็บรายวิชาที่ไล่ทีละเรื่อง ตั้งแต่ขอบเขตของ bean การทำหน้าเว็บด้วย Thymeleaf การจัดการ transaction ไปจนถึงการเรียก API ด้วย WebClient แต่ละแล็บใช้ Maven จัดการ dependency และบางตัวยก PostgreSQL ขึ้นด้วย Docker Compose เพื่อให้ทุกคนรันได้เหมือนกัน',
     category: 'academic',
     tech: ['Java', 'Spring Boot', 'Maven', 'PostgreSQL', 'Docker'],
-    gradient: 'linear-gradient(135deg, #3b2c28, #8a4e35)',
-    icon: '☕',
+    gradient: 'linear-gradient(135deg, #6DB33F, #1B1F23)',
+    icon: '🎓',
     status: 'รวมงานรายวิชา',
-    features: ['Java OOP และคำนวณค่าขนส่ง', 'REST API และการแบ่งชั้นของระบบ', 'Thymeleaf MVC และเชื่อมฐานข้อมูล', 'ความสัมพันธ์ One-to-many กับ @Transactional และ BigDecimal']
-  }
+    features: ['ไล่เรื่อง bean scope และ transaction', 'ทำหน้าเว็บด้วย Thymeleaf', 'เรียก API ด้วย WebClient', 'ยกฐานข้อมูลด้วย Docker Compose']
+  },
 ];
 
 // ============================================
@@ -546,78 +590,87 @@ const techNotes = {
   React: 'ไลบรารีสำหรับสร้าง UI จาก component ทำให้แยกส่วนหน้าจอและสถานะการใช้งานได้เป็นระบบ',
   TypeScript: 'JavaScript ที่เพิ่ม type ช่วยจับข้อผิดพลาดของข้อมูลตั้งแต่ตอนพัฒนา',
   'Tailwind CSS': 'utility CSS สำหรับประกอบหน้าตาและ responsive layout ได้เร็วโดยคุม design token ได้ละเอียด',
-  Supabase: 'backend service ที่มีฐานข้อมูล, authentication และ real-time API พร้อมใช้',
+  Vite: 'ตัว build และ dev server ที่เปิดหน้าเว็บระหว่างพัฒนาได้ไว เหมาะกับงาน React ที่ไม่ต้องใช้ฝั่ง server',
+  Supabase: 'บริการหลังบ้านที่ให้ทั้งฐานข้อมูล Postgres, ระบบล็อกอิน และ API แบบเรียลไทม์มาพร้อมกัน',
+  Firebase: 'บริการหลังบ้านของ Google ที่ใช้เก็บข้อมูลแบบซิงก์สดและจัดการผู้ใช้ในแอปมือถือ',
+  'NextAuth.js': 'ไลบรารีจัดการล็อกอินและ session ของเว็บ Next.js โดยไม่ต้องเขียนระบบยืนยันตัวตนเอง',
   Prisma: 'ORM ที่ทำให้โค้ดฝั่งแอปคุยกับฐานข้อมูลผ่าน type-safe model',
-  Zustand: 'state manager ขนาดเล็กสำหรับแชร์สถานะระหว่าง component ของ React',
+  'Drizzle ORM': 'ORM สำหรับ TypeScript ที่ช่วยกำหนด schema และ query ฐานข้อมูลในแบบ type-safe',
   'Express.js': 'web framework บน Node.js สำหรับสร้าง API และจัดการ request จาก frontend',
   'Node.js': 'runtime สำหรับรัน JavaScript ฝั่ง server หรือทำงานอัตโนมัตินอกเบราว์เซอร์',
+  'Socket.IO': 'ช่องทางส่งข้อมูลสองทางแบบต่อเนื่อง ใช้ให้หน้าเว็บเห็นค่าที่เปลี่ยนโดยไม่ต้องรีเฟรช',
   PostgreSQL: 'ฐานข้อมูลเชิงสัมพันธ์สำหรับเก็บข้อมูลที่ต้องเชื่อมโยงกันและใช้งานหลายผู้ใช้',
+  SQLite: 'ฐานข้อมูลไฟล์เดียว เหมาะกับ prototype และแอปที่อยากติดตั้งง่าย',
   JWT: 'token ที่ใช้ยืนยันตัวตนระหว่าง frontend และ API โดยไม่ต้องเก็บ session ไว้ในทุก request',
+  Stripe: 'บริการรับชำระเงินที่รับหน้าที่จัดการบัตรและธุรกรรม ทำให้เว็บไม่ต้องเก็บข้อมูลบัตรเอง',
+  Leaflet: 'ไลบรารีแผนที่บนเว็บ ใช้ปักหมุดตำแหน่งและให้ผู้ใช้เลื่อนดูพื้นที่รอบตัว',
+  Recharts: 'ไลบรารีวาดกราฟสำหรับ React ใช้แปลงตัวเลขสรุปให้กลายเป็นภาพที่อ่านเร็ว',
+  Playwright: 'เครื่องมือสั่งงานเบราว์เซอร์ด้วยโค้ด ใช้ได้ทั้งเขียนเทสต์อัตโนมัติและไล่เก็บข้อมูลจากหน้าเว็บ',
+  'Cloudflare Workers': 'ที่รันโค้ดฝั่ง server แบบกระจายตามภูมิภาค เหมาะกับเว็บเล็กที่ไม่อยากดูแลเซิร์ฟเวอร์เอง',
+  'AWS S3': 'object storage สำหรับเก็บไฟล์และรายงานที่ต้องทนทานและเรียกดูภายหลังได้',
+  '3CX VoIP': 'ระบบโทรศัพท์ผ่านอินเทอร์เน็ตขององค์กร ใช้สั่งโทรออกและดึงบันทึกการโทรกลับเข้าระบบ',
+  'SheetJS (xlsx)': 'ไลบรารีอ่านและเขียนไฟล์ Excel จากโค้ด ใช้ตอนนำเข้าหรือส่งออกรายงาน',
+  'Claude API': 'API ของโมเดลภาษา ใช้ให้ระบบตีความและตอบงานภาษาอย่างมีบริบท',
+  'Google Gemini': 'โมเดลภาษาและภาพของ Google ใช้ตีความข้อความหรือรูปที่ผู้ใช้ส่งเข้ามา',
+  Ollama: 'runtime สำหรับรันโมเดลภาษาและ embedding บนเครื่องของผู้ใช้',
+  'bge-m3': 'โมเดลที่แปลงข้อความเป็นเวกเตอร์ เพื่อค้นหาเอกสารที่ความหมายใกล้เคียงกับคำถาม',
+  FastAPI: 'framework Python สำหรับทำ API ที่เร็ว มี validation และเอกสาร endpoint อัตโนมัติ',
+  Flask: 'web framework Python ขนาดเบาสำหรับทำ dashboard หรือหน้าควบคุมเล็ก ๆ',
+  Python: 'ภาษาหลักสำหรับ automation, งานข้อมูล, ต้นแบบ AI และเครื่องมือเดสก์ท็อปหลายชิ้นในชุดนี้',
+  pandas: 'ไลบรารี Python สำหรับจัดตารางข้อมูลและคำนวณค่าสรุปหรือตัวชี้วัด',
+  numpy: 'ไลบรารีคำนวณตัวเลขและ array ของ Python สำหรับงาน simulation และ data analysis',
+  'scikit-learn': 'ชุดโมเดล machine learning มาตรฐานของ Python ใช้เทรนและเทียบผลของหลายวิธี',
+  matplotlib: 'ไลบรารี Python สำหรับสร้างกราฟและภาพสรุปผลการวิเคราะห์',
+  BeautifulSoup: 'ไลบรารี Python สำหรับอ่านโครงสร้าง HTML แล้วดึงค่าที่ต้องการออกมา',
+  pytest: 'framework เขียนเทสต์ของ Python ใช้ยืนยันว่าตรรกะยังทำงานถูกหลังแก้โค้ด',
   Java: 'ภาษาสำหรับพัฒนาระบบฝั่ง server ที่เน้นโครงสร้างและความทนทานของโปรแกรม',
   'Spring Boot': 'framework Java สำหรับสร้าง web application และ API ด้วยโครงสร้างมาตรฐาน',
   Maven: 'เครื่องมือ build และจัดการ dependency ของโปรเจกต์ Java',
   Docker: 'เครื่องมือแยก environment ของแอปและ database ให้เปิดซ้ำได้เหมือนกันทุกเครื่อง',
-  'Claude API': 'API ของโมเดลภาษา ใช้ให้ระบบตีความและตอบงานภาษาอย่างมีบริบท',
-  FastAPI: 'framework Python สำหรับทำ API ที่เร็ว มี validation และเอกสาร endpoint อัตโนมัติ',
-  Python: 'ภาษาหลักสำหรับ automation, data processing, AI prototype และ desktop utility หลายงานในชุดนี้',
   Flutter: 'framework สำหรับสร้างแอปมือถือจาก codebase เดียวและส่งออกได้หลายแพลตฟอร์ม',
   Dart: 'ภาษาที่ใช้พัฒนาแอป Flutter',
   Kotlin: 'ภาษาหลักสำหรับแอป Android แบบ native',
   'Android SDK': 'ชุดเครื่องมือและ API สำหรับเข้าถึงความสามารถของ Android',
   Gradle: 'ระบบ build และจัดการ dependency ของโปรเจกต์ Android',
   'Material Design': 'แนวทางออกแบบ UI ของ Google ที่ช่วยให้หน้าจอมือถือมีรูปแบบคุ้นเคย',
-  'Web Technologies': 'พื้นฐานการทำเว็บทั้งโครงสร้าง เนื้อหา หน้าตา และ interaction บนเบราว์เซอร์',
   'HTML/CSS': 'HTML กำหนดโครงสร้างเนื้อหา ส่วน CSS กำหนดการจัดวาง หน้าตา และการรองรับหลายขนาดจอ',
   JavaScript: 'ภาษาหลักของเว็บ ใช้ทำ interaction, automation และ script บนแพลตฟอร์มต่าง ๆ',
   'Chrome Extension': 'ส่วนขยายเบราว์เซอร์ที่เพิ่มความสามารถเฉพาะหน้าเว็บหรือ workflow การท่องเว็บ',
   'Manifest V3': 'มาตรฐานส่วนขยาย Chrome รุ่นปัจจุบันที่กำหนดสิทธิ์และ lifecycle ของ extension',
+  'Side Panel API': 'ส่วนที่ทำให้ extension เปิดแผงควบคุมค้างไว้ข้างหน้าเว็บ แทนที่จะเป็นป๊อปอัปที่ปิดเมื่อคลิกออก',
+  'Service Worker': 'สคริปต์เบื้องหลังของ extension ที่ทำงานต่อแม้ไม่ได้เปิดหน้าไหนอยู่ ใช้รับงานตามเวลาหรือเหตุการณ์',
+  'Browser Notifications': 'Web API สำหรับแสดงการแจ้งเตือนจากเว็บให้ผู้ใช้เห็น',
   Puppeteer: 'เครื่องมือควบคุม Chromium ด้วยโค้ด เหมาะกับงาน browser automation และ scraping ที่ได้รับอนุญาต',
-  Selenium: 'เครื่องมือทดสอบและควบคุมเว็บเบราว์เซอร์ข้ามหลาย browser',
-  'Browser Automation': 'แนวทางให้โปรแกรมทำขั้นตอนบนเว็บที่ทำซ้ำแทนผู้ใช้ภายใต้ขอบเขตที่อนุญาต',
-  'VPN APIs': 'ส่วนเชื่อมต่อสำหรับอ่านหรือควบคุมสถานะการเชื่อมต่อ VPN ผ่านโปรแกรม',
+  uiautomator2: 'ไลบรารีที่สั่งแตะและกดหน้าจอ Android จากโค้ด Python เหมือนมีคนกดเอง',
+  ADB: 'เครื่องมือสื่อสารกับเครื่อง Android หรืออีมูเลเตอร์จากคอมพิวเตอร์ ใช้สั่งเปิดแอปและส่งคำสั่งเข้าไป',
+  Tkinter: 'ชุด UI ของ Python สำหรับทำโปรแกรม desktop ขนาดเล็กบน Windows',
   win32gui: 'โมดูล Python สำหรับอ่านและควบคุมหน้าต่างของ Windows',
+  win32com: 'โมดูล Python ที่สั่งงานโปรแกรม Windows อย่าง Excel ได้โดยตรง ใช้สร้างไฟล์ซ้ำได้เหมือนเดิมทุกครั้ง',
   pyautogui: 'ไลบรารี Python สำหรับสั่งเมาส์และคีย์บอร์ดตาม workflow บนหน้าจอ',
   pystray: 'ไลบรารีสำหรับทำ icon และเมนูของโปรแกรมใน system tray',
   PyInstaller: 'เครื่องมือแพ็กโปรแกรม Python ให้เปิดใช้งานบน Windows ได้โดยไม่ต้องติดตั้ง Python แยก',
-  Tkinter: 'ชุด UI ของ Python สำหรับทำโปรแกรม desktop ขนาดเล็กบน Windows',
-  OpenCV: 'ไลบรารีประมวลผลภาพและวิดีโอ เช่น ตรวจจับหรือวิเคราะห์เฟรม',
-  FFmpeg: 'เครื่องมือจัดการไฟล์วิดีโอและเสียง เช่น ตัด รวม แปลง และเข้ารหัส',
+  OpenCV: 'ไลบรารีประมวลผลภาพและวิดีโอ เช่น อ่านเฟรมออกมาทำภาพตัวอย่าง',
   moviepy: 'ไลบรารี Python ที่ช่วยประกอบ workflow ตัดต่อวิดีโอด้วยโค้ด',
+  PowerShell: 'ภาษาสคริปต์ของ Windows สำหรับอ่านค่าในเครื่องและสั่งงานระบบ',
+  'Windows Script Host': 'ตัวรันสคริปต์ของ Windows ใช้เปิดโปรแกรมแบบไม่มีหน้าต่างดำโผล่',
   'MetaTrader 5': 'แพลตฟอร์มเทรดและ API สำหรับอ่านข้อมูลตลาดหรือสถานะคำสั่งซื้อขาย',
-  'News API': 'แหล่งข้อมูลข่าวที่ระบบเรียกมาใช้เป็นเงื่อนไขหรือข้อมูลประกอบการตัดสินใจ',
-  Flask: 'web framework Python ขนาดเบาสำหรับทำ dashboard หรือ API',
+  Dashboard: 'หน้าจอสรุปสถานะระหว่างที่ระบบกำลังทำงาน ใช้ดูว่าตอนนี้เกิดอะไรขึ้นบ้าง',
   'Telegram Bot API': 'API สำหรับรับส่งข้อความและทำ workflow ผ่าน Telegram bot',
-  'Google Gemini': 'โมเดลภาษา/มัลติโหมดที่ใช้ตีความข้อความและภาพตาม workflow ของระบบ',
-  SQLite: 'ฐานข้อมูลไฟล์เดียว เหมาะกับ prototype และแอปที่อยากติดตั้งง่าย',
-  'Google Apps Script': 'JavaScript บน Google Workspace สำหรับเชื่อม Sheets, Gmail, Drive และงานตามเวลา',
+  'Google Apps Script': 'JavaScript ที่รันอยู่ใน Google Workspace ใช้เชื่อม Sheets กับ Gmail และตั้งให้ทำงานตามเวลา',
+  'Google Sheets API': 'ส่วนที่ให้ระบบภายนอกอ่านและเขียนข้อมูลในชีตได้ ใช้แทนฐานข้อมูลในงานที่ทีมยังทำงานบนชีต',
   'Google Sheets': 'ตารางออนไลน์ที่ใช้เป็นทั้งหน้าจอทำงานและฐานข้อมูลเบื้องต้นใน workflow ทีม',
-  'Google Drive': 'ที่เก็บไฟล์ของ Google สำหรับอ้างอิงหรือจัดการ asset ใน workflow',
-  'AWS S3': 'object storage สำหรับเก็บไฟล์และรายงานที่ต้องทนทานและเรียกดูภายหลังได้',
-  'Drizzle ORM': 'ORM สำหรับ TypeScript ที่ช่วยกำหนด schema และ query ฐานข้อมูลในแบบ type-safe',
+  'Gmail API': 'ส่วนที่ให้สคริปต์ค้นและอ่านอีเมลตามเงื่อนไข เพื่อดึงข้อมูลออกมาใช้ต่อ',
+  'LINE Notify': 'ช่องทางส่งข้อความแจ้งเตือนเข้า LINE จากระบบอัตโนมัติ',
   k6: 'เครื่องมือ load testing สำหรับจำลองผู้ใช้จำนวนมากและวัดความทนของ API',
-  'Browser Notifications': 'Web API สำหรับแสดงการแจ้งเตือนจากเว็บให้ผู้ใช้เห็น',
-  'LINE OA': 'ช่องทาง LINE Official Account สำหรับสื่อสารหรือแจ้งเตือนผู้ใช้ผ่าน LINE',
-  'Interactive Maps': 'ส่วนติดต่อแผนที่ที่ให้ผู้ใช้เลือกตำแหน่งและสำรวจข้อมูลเชิงพื้นที่',
-  'Mock Data': 'ข้อมูลจำลองสำหรับทดสอบ flow และสื่อสารแนวคิดโดยไม่แตะข้อมูลจริง',
-  'Data Analytics': 'กระบวนการสรุปและตีความข้อมูลเพื่อมองแนวโน้มและตัวชี้วัดที่ใช้งานได้',
-  'Google APIs': 'API สำหรับเชื่อมบริการต่าง ๆ ของ Google เข้ากับระบบหรือ automation',
-  'Neural Network': 'โมเดล machine learning ที่เรียนรู้รูปแบบจากข้อมูลตัวอย่าง',
-  ML: 'เทคนิคให้โปรแกรมเรียนรู้ pattern จากข้อมูลเพื่อใช้ทำนายหรือจัดประเภท',
-  'AI/ML': 'งานที่ใช้โมเดล AI หรือ machine learning เป็นส่วนหนึ่งของประสบการณ์ผู้ใช้',
-  JSON: 'รูปแบบข้อมูลน้ำหนักเบาที่ใช้เก็บ config, exchange data และ snapshot ระหว่างระบบ',
-  CLI: 'รูปแบบการใช้งานผ่าน Command Line เหมาะกับงานที่ต้องสั่งรันเองหรือตั้งให้ทำงานเป็นรอบ',
-  'Calculation Logic': 'ตรรกะคำนวณที่แปลงข้อมูลธุรกิจเป็นตัวเลขสำหรับตัดสินใจ',
-  Ollama: 'runtime สำหรับรันโมเดลภาษาและ embedding บนเครื่องของผู้ใช้',
-  'bge-m3': 'embedding model สำหรับแปลงข้อความเป็นเวกเตอร์เพื่อค้นหาความหมายที่ใกล้เคียง',
+  'Load Testing': 'การจำลองผู้ใช้จำนวนมากเข้าระบบพร้อมกัน เพื่อดูว่าจะช้าหรือพังตรงจุดไหนก่อนใช้งานจริง',
   'Excel VBA': 'ภาษา macro ใน Excel สำหรับทำฟอร์ม ปุ่ม และ workflow บน workbook',
+  'UserForm (VBA)': 'หน้าต่างกรอกข้อมูลที่สร้างใน Excel ใช้แทนการพิมพ์ลงช่องตารางตรง ๆ',
   XLSM: 'รูปแบบไฟล์ Excel ที่บรรจุ macro VBA ได้',
-  'Windows Forms': 'หน้าต่างฟอร์มบน Windows สำหรับรับข้อมูลและค้นหาข้อมูลในเครื่องมือ desktop',
+  JSON: 'รูปแบบข้อมูลน้ำหนักเบาที่ใช้เก็บ config, แลกเปลี่ยนข้อมูล และบันทึก snapshot ระหว่างระบบ',
   RAG: 'วิธีให้โมเดลดึงข้อมูลจากคลังความรู้ก่อนตอบ เพื่อลดการเดาและอ้างอิงแหล่งที่มาได้',
   'Information Extraction': 'การสกัดข้อมูลสำคัญจากเอกสารให้กลายเป็นฟิลด์ที่ค้นหาและเปรียบเทียบได้',
   'Semantic Matching': 'การจับคู่สิ่งที่ความหมายใกล้กัน เช่น โปรไฟล์งานวิจัยกับทุนที่เหมาะ',
   'Knowledge Graph': 'โครงสร้างข้อมูลแบบความสัมพันธ์ ช่วยเชื่อม entity และเงื่อนไขที่เกี่ยวข้อง',
-  matplotlib: 'ไลบรารี Python สำหรับสร้างกราฟและภาพสรุปผลการวิเคราะห์',
-  numpy: 'ไลบรารีคำนวณตัวเลขและ array ของ Python สำหรับงาน simulation และ data analysis',
   Simulation: 'การสร้างแบบจำลองเพื่อทดลองพฤติกรรมของระบบก่อนนำไปใช้จริง'
 };
 
@@ -817,28 +870,41 @@ function renderFeaturedProjects() {
   const stage = document.getElementById('featured-stage');
   if (!stage) return;
 
-  const selectedIds = ['2getr', 'opt-pos', 'grid-bot'];
+  const selectedIds = ['2getr', 'franchise-os', 'grid-bot'];
   const selected = selectedIds
     .map(id => projects.find(project => project.id === id))
     .filter(Boolean);
 
+  // ต่อเลข FIG. จากภาพประกอบช่วง Story ที่เป็น FIG. 01
   stage.innerHTML = selected.map((project, index) => `
-    <article class="featured-case reveal">
+    <article class="featured-case reveal" data-plate="${index + 1}" data-category="${project.category}">
       <div class="featured-visual">
-        <span class="featured-number">CASE 0${index + 1}</span>
+        ${cornerMarks()}
+        <span class="featured-number">FIG. 0${index + 2}</span>
         ${project.image
-          ? `<img src="${project.image}" alt="หน้าจอโปรเจกต์ ${project.name}" loading="lazy">`
-          : `<div class="featured-placeholder" aria-hidden="true">${String(index + 1).padStart(2, '0')}</div>`}
+          ? `<img src="${project.image}" alt="ภาพประกอบของ ${project.name}" loading="lazy"><span class="visual-note">ภาพประกอบ ไม่ใช่ภาพหน้าจอจริง</span>`
+          : `<span class="card-plate featured-plate" aria-hidden="true"><span class="card-plate-motif"></span><span class="card-plate-no">${String(index + 2).padStart(2, '0')}</span></span>`}
+        <span class="featured-rule" aria-hidden="true"></span>
       </div>
       <div class="featured-info">
         <span class="project-type">${categories[project.category]?.label || project.category}</span>
         <h3>${project.name}</h3>
         <p>${project.fullDesc}</p>
+        <dl class="featured-spec">
+          <div><dt>STACK</dt><dd>${project.tech.length} ตัว</dd></div>
+          <div><dt>SCOPE</dt><dd>${project.status || 'งานส่วนตัว'}</dd></div>
+          <div><dt>DOES</dt><dd>${project.features.length} อย่าง</dd></div>
+        </dl>
         <div class="featured-tech">${project.tech.slice(0, 5).map(tech => `<span>${tech}</span>`).join('')}</div>
-        <button class="case-open view-details-btn" type="button" data-id="${project.id}">Open case</button>
+        <button class="case-open view-details-btn" type="button" data-id="${project.id}">แกะดูงานนี้</button>
       </div>
     </article>
   `).join('');
+}
+
+// เครื่องหมายมุมแบบแผ่นแบบช่าง ใช้ซ้ำทั้ง Selected Cases และ modal
+function cornerMarks() {
+  return '<span class="corner-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
 }
 
 function renderProjects() {
@@ -848,13 +914,14 @@ function renderProjects() {
   grid.innerHTML = projects.map((p, i) => `
     <article class="project-card reveal" data-category="${p.category}" data-id="${p.id}" style="--card-order: ${i}">
       <div class="project-card-header" tabindex="0" role="button" aria-label="ดูรายละเอียด ${p.name}">
-        ${p.image
-          ? `<img src="${p.image}" alt="ภาพโปรเจกต์ ${p.name}" loading="lazy">`
-          : `<span class="project-card-icon" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>`}
+        <span class="card-plate" aria-hidden="true">
+          <span class="card-plate-motif"></span>
+          <span class="card-plate-no">${String(i + 1).padStart(2, '0')}</span>
+        </span>
         <span class="project-card-category">${categories[p.category]?.label || p.category}</span>
-        <span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>
       </div>
       <div class="project-card-body">
+        ${p.status ? `<span class="project-card-status">${p.status}</span>` : ''}
         <h3 class="project-card-title">${p.name}</h3>
         <p class="project-card-desc">${p.shortDesc}</p>
         <div class="project-card-tech">
@@ -863,7 +930,7 @@ function renderProjects() {
         </div>
       </div>
       <div class="project-card-footer">
-        <button class="view-details-btn" type="button" data-id="${p.id}">View details</button>
+        <button class="view-details-btn" type="button" data-id="${p.id}">ดูรายละเอียด</button>
       </div>
     </article>
   `).join('');
@@ -966,6 +1033,12 @@ function initModal() {
       if (!focusable.length) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
+      // ถ้าโฟกัสหลุดออกไปนอก modal ให้ดึงกลับเข้ามาก่อน ไม่อย่างนั้น Tab จะวิ่งไปหาเนื้อหาข้างหลัง
+      if (!overlay.contains(document.activeElement)) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+        return;
+      }
       if (e.shiftKey && document.activeElement === first) {
         e.preventDefault();
         last.focus();
@@ -989,8 +1062,11 @@ function openModal(project) {
   const content = document.getElementById('modal-inner');
   if (!overlay || !content) return;
 
+  const safeLinks = (project.links || []).filter(link => /^https:\/\//.test(link.url));
+
   content.innerHTML = `
     <div class="modal-header" style="background: ${project.image ? `linear-gradient(to bottom, rgba(10, 10, 26, 0.2), rgba(10, 10, 26, 0.8)), url('${project.image}') no-repeat center/cover` : project.gradient}">
+      ${cornerMarks()}
       <button class="modal-close" type="button" aria-label="ปิดรายละเอียดโปรเจกต์">&times;</button>
       ${project.image ? '' : `<div class="modal-icon">${project.name.slice(0, 2).toUpperCase()}</div>`}
       <h2 class="modal-title">${project.name}</h2>
@@ -999,6 +1075,7 @@ function openModal(project) {
     <div class="modal-body">
       <h4 class="modal-section-title">งานนี้คืออะไร</h4>
       <p class="modal-description">${project.fullDesc}</p>
+      ${project.teamNote ? `<p class="modal-team-note"><span>หมายเหตุ</span>${project.teamNote}</p>` : ''}
       <h4 class="modal-section-title">Tech stack — ใช้ทำอะไรบ้าง</h4>
       <div class="modal-tech-explain">
         ${project.tech.map(t => `<div class="modal-tech-item"><strong>${t}</strong><p>${getTechNote(t)}</p></div>`).join('')}
@@ -1009,6 +1086,12 @@ function openModal(project) {
           ${project.features.map(f => `<li>${f}</li>`).join('')}
         </ul>
       ` : ''}
+      ${safeLinks.length ? `
+        <h4 class="modal-section-title modal-features-heading">ลิงก์</h4>
+        <div class="modal-links">
+          ${safeLinks.map(link => `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label}<i aria-hidden="true">↗</i></a>`).join('')}
+        </div>
+      ` : ''}
     </div>
   `;
 
@@ -1016,7 +1099,20 @@ function openModal(project) {
   overlay.classList.add('active');
   overlay.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-open');
-  requestAnimationFrame(() => content.querySelector('.modal-close')?.focus());
+  focusCloseButton(content);
+}
+
+// ระหว่างที่ overlay ยังอยู่ในช่วง transition ปุ่มปิดอาจยังรับโฟกัสไม่ได้
+// ใช้ setTimeout แทน requestAnimationFrame เพราะ rAF จะถูกหยุดเมื่อแท็บไม่ได้แสดงผลอยู่
+function focusCloseButton(content) {
+  const target = content.querySelector('.modal-close');
+  if (!target) return;
+  target.focus();
+  [0, 60, 180].forEach(delay => {
+    window.setTimeout(() => {
+      if (document.activeElement !== target) target.focus();
+    }, delay);
+  });
 }
 
 function closeModal() {
