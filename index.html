@@ -36,6 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20260920">
+  <link rel="stylesheet" href="css/art.css?v=20260925">
 </head>
 <body>
   <a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหา</a>
@@ -57,7 +58,7 @@
       <li><a href="#projects">03 / work</a></li>
       <li><a href="#contact">04 / contact</a></li>
     </ul>
-    <div class="nav-status"><i></i> available to build</div>
+    <div class="nav-actions"><div class="nav-status"><i></i> available to build</div><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false">ลดการเคลื่อนไหว</button></div>
   </nav>
 
   <main id="main-content">
@@ -73,6 +74,22 @@
             <a class="text-link quiet" href="interactive.html">เปิด 3D playground <span>↗</span></a>
           </div>
         </div>
+        <div class="hero-art" id="hero-art" aria-label="ตัวอย่างผลงานที่เลือกดูได้">
+          <div class="hero-art-orbit" aria-hidden="true"><span></span><span></span></div>
+          <div class="hero-art-stamp" aria-hidden="true">BUILT<br>TO TRY<br>THINGS</div>
+          <div class="hero-art-stack" role="group" aria-label="เลือกดูตัวอย่างผลงาน">
+            <button class="art-card is-active" type="button" data-art-card="0" aria-pressed="true" aria-label="ดูตัวอย่าง 2Getr">
+              <span class="art-card-top"><span>01 / WEB</span><span>↗</span></span><span class="art-preview art-preview-community" aria-hidden="true"><i class="community-node node-a">P</i><i class="community-node node-b">B</i><i class="community-node node-c">Z</i><i class="community-link link-a"></i><i class="community-link link-b"></i><b>people,<br>together.</b><small>IDEA → COMMUNITY</small></span><span class="art-card-bottom">2Getr <small>community space</small></span>
+            </button>
+            <button class="art-card" type="button" data-art-card="1" aria-pressed="false" aria-label="ดูตัวอย่าง Opt-POS">
+              <span class="art-card-top"><span>02 / SYSTEM</span><span>↗</span></span><span class="art-preview art-preview-pos" aria-hidden="true"><span class="pos-receipt"><b>SHOP / 0027</b><i>coffee × 2 <em>120</em></i><i>bread × 1 <em>45</em></i><strong>TOTAL <em>165</em></strong></span><small>EVERYDAY TOOLS / 02</small></span><span class="art-card-bottom">Opt-POS <small>retail tools</small></span>
+            </button>
+            <button class="art-card" type="button" data-art-card="2" aria-pressed="false" aria-label="ดูตัวอย่าง Grid Trading Bot">
+              <span class="art-card-top"><span>03 / AUTOMATION</span><span>↗</span></span><span class="art-preview art-preview-grid" aria-hidden="true"><b>GRID / 03</b><span class="grid-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="grid-line"></span><small>OBSERVE · ADJUST · REPEAT</small></span><span class="art-card-bottom">Grid Bot <small>trading systems</small></span>
+            </button>
+          </div>
+          <div class="hero-art-foot"><div class="art-switch" role="group" aria-label="เลือกงานที่แสดง"><button type="button" data-art-select="0" aria-label="เลือก 2Getr" aria-pressed="true">01</button><button type="button" data-art-select="1" aria-label="เลือก Opt-POS" aria-pressed="false">02</button><button type="button" data-art-select="2" aria-label="เลือก Grid Trading Bot" aria-pressed="false">03</button></div><button class="art-open" id="art-open" type="button">ดูรายละเอียด 2Getr ↗</button></div>
+        </div>
         <div class="hero-meta" data-scroll-layer>
           <div><span>ROLE</span><strong>CS Student / Builder</strong></div>
           <div><span>FOCUS</span><strong>Web · Automation · Trading</strong></div>
@@ -84,10 +101,11 @@
       </div>
     </section>
 
-    <section class="scroll-chapter story" id="about" data-chapter="story">
+    <section class="scroll-chapter story" id="about" data-chapter="story" data-art="0">
       <div class="chapter-pin story-pin">
         <div class="chapter-index">01 — HOW I GOT HERE</div>
         <div class="story-heading"><p>ไม่ได้เริ่มจากอยากมี portfolio</p><h2>เริ่มจากอยากทำ<br>บอทในเกม.</h2></div>
+        <div class="story-art" aria-hidden="true"><div class="story-art-grid"></div><span class="story-art-cross story-art-cross-a">+</span><span class="story-art-cross story-art-cross-b">+</span><div class="story-art-piece story-art-piece-0"><span class="story-art-dot"></span><span class="story-art-pixel p1"></span><span class="story-art-pixel p2"></span><span class="story-art-pixel p3"></span><span class="story-art-pixel p4"></span></div><div class="story-art-piece story-art-piece-1"><span class="story-art-window"><i></i><i></i><i></i><b>&gt;_</b></span></div><div class="story-art-piece story-art-piece-2"><span class="story-art-book book-back"></span><span class="story-art-book book-front">CS<br><i>KKU / 2024</i></span></div><div class="story-art-piece story-art-piece-3"><span class="story-art-now">43<i>+</i></span></div><span class="story-art-label">FIG. 01 — จุดเริ่มต้น</span></div>
         <div class="story-frames" aria-live="polite">
           <article class="story-frame active" data-frame="0"><span class="frame-year">2018</span><h3>อยากให้เกมทำอะไร<br>บางอย่างแทนเรา</h3><p>นั่นเป็นเหตุผลที่เริ่มเปิด Python ครั้งแรก เรียนจากการลองผิด ลองถูก และแก้ทีละ error</p></article>
           <article class="story-frame" data-frame="1"><span class="frame-year">2021</span><h3>ของทดลองเริ่มกลายเป็น<br>เครื่องมือที่ใช้จริง</h3><p>ทำ browser automation, desktop tools และ workflow เล็ก ๆ เพื่อประหยัดเวลาของตัวเอง</p></article>
@@ -152,6 +170,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
   <script src="js/main.js?v=20260920" defer></script>
-  <script src="js/spatial.js?v=20260920" defer></script>
+  <script src="js/art.js?v=20260925" defer></script>
+  <script src="js/spatial.js?v=20260925" defer></script>
 </body>
 </html>

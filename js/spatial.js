@@ -3,7 +3,7 @@
 
   const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
   const lerp = (from, to, amount) => from + (to - from) * amount;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionOff = () => document.body.classList.contains('motion-off') || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const lowPower = (navigator.deviceMemory && navigator.deviceMemory <= 2)
     || (!navigator.deviceMemory && navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
 
@@ -14,6 +14,9 @@
   const heroCopy = document.querySelector('.hero-copy');
   const heroMeta = document.querySelector('.hero-meta');
   const storyPin = document.querySelector('.story-pin');
+  const storySection = document.querySelector('[data-chapter="story"]');
+  const storyArtLabel = document.querySelector('.story-art-label');
+  const storyArtLabels = ['FIG. 01 — จุดเริ่มต้น', 'FIG. 02 — เริ่มใช้จริง', 'FIG. 03 — เรียนต่อ', 'FIG. 04 — ยังไปกันต่อ'];
 
   const state = {
     hero: 0,
@@ -42,7 +45,7 @@
     state.tools = chapterProgress(tools);
     state.scroll = window.scrollY;
 
-    if (!reducedMotion) {
+    if (!motionOff()) {
       const heroExit = clamp((state.hero - .48) / .42);
       if (heroCopy) {
         heroCopy.style.opacity = String(1 - heroExit);
@@ -52,10 +55,15 @@
         heroMeta.style.opacity = String(1 - clamp((state.hero - .62) / .3));
         heroMeta.style.transform = `translate3d(0, ${state.hero * 28}px, 0)`;
       }
+    } else {
+      if (heroCopy) { heroCopy.style.opacity = '1'; heroCopy.style.transform = 'none'; }
+      if (heroMeta) { heroMeta.style.opacity = '1'; heroMeta.style.transform = 'none'; }
     }
 
     const frameIndex = Math.min(storyFrames.length - 1, Math.floor(state.story * storyFrames.length));
     storyFrames.forEach((frame, index) => frame.classList.toggle('active', index === frameIndex));
+    if (storySection) storySection.dataset.art = String(frameIndex);
+    if (storyArtLabel) storyArtLabel.textContent = storyArtLabels[frameIndex];
     storyPin?.style.setProperty('--story-progress', state.story.toFixed(4));
 
     const activeToolIndex = Math.min(toolRows.length - 1, Math.floor(state.tools * toolRows.length));
@@ -203,42 +211,54 @@
   resize();
 
   const clock = new THREE.Clock();
-  function renderScene() {
+  let frameQueued = false;
+  function scheduleFrame() {
+    if (frameQueued) return;
+    frameQueued = true;
     requestAnimationFrame(renderScene);
+  }
+  function renderScene() {
+    frameQueued = false;
     if (document.hidden || state.story >= 1) return;
 
     const elapsed = clock.getElapsedTime();
     const mobile = window.innerWidth < 760;
+    const still = motionOff();
     state.pointerX = lerp(state.pointerX, state.targetPointerX, .045);
     state.pointerY = lerp(state.pointerY, state.targetPointerY, .045);
 
-    const heroToStory = clamp(state.story * 1.4);
-    const exitStory = clamp((state.story - .82) / .18);
+    const heroToStory = still ? 0 : clamp(state.story * 1.4);
+    const exitStory = still ? 0 : clamp((state.story - .82) / .18);
     const targetX = mobile ? 0 : lerp(2.05, -2.35, heroToStory);
     const targetY = mobile ? lerp(-1.55, .72, heroToStory) : lerp(.15, -.18, heroToStory);
-    objectRoot.position.x = lerp(objectRoot.position.x, targetX + state.pointerX * .11, .055);
-    objectRoot.position.y = lerp(objectRoot.position.y, targetY - state.pointerY * .09, .055);
-    objectRoot.position.z = lerp(objectRoot.position.z, lerp(0, -1.15, state.story), .055);
+    objectRoot.position.x = lerp(objectRoot.position.x, targetX + (still ? 0 : state.pointerX * .11), still ? 1 : .055);
+    objectRoot.position.y = lerp(objectRoot.position.y, targetY - (still ? 0 : state.pointerY * .09), still ? 1 : .055);
+    objectRoot.position.z = lerp(objectRoot.position.z, still ? 0 : lerp(0, -1.15, state.story), still ? 1 : .055);
 
     const scale = lerp(mobile ? .58 : 1, mobile ? .5 : .72, heroToStory) * (1 - exitStory * .42);
     objectRoot.scale.setScalar(scale);
-    objectRoot.rotation.y = (reducedMotion ? .25 : elapsed * .075) + state.hero * 1.6 + state.story * 3.2 + state.pointerX * .08;
-    objectRoot.rotation.x = -.08 + state.story * .38 + state.pointerY * .06;
-    coreRoot.rotation.z = (reducedMotion ? .1 : elapsed * -.055) + state.story * 1.8;
-    knot.rotation.y = (reducedMotion ? .35 : elapsed * .18) + state.hero * 2.2;
-    rings.rotation.x = state.story * 1.2;
-    rings.rotation.z = (reducedMotion ? 0 : elapsed * .025) - state.hero * .7;
-    points.rotation.y = reducedMotion ? 0 : elapsed * -.012;
+    objectRoot.rotation.y = still ? .25 : elapsed * .075 + state.hero * 1.6 + state.story * 3.2 + state.pointerX * .08;
+    objectRoot.rotation.x = still ? -.08 : -.08 + state.story * .38 + state.pointerY * .06;
+    coreRoot.rotation.z = still ? .1 : elapsed * -.055 + state.story * 1.8;
+    knot.rotation.y = still ? .35 : elapsed * .18 + state.hero * 2.2;
+    rings.rotation.x = still ? 0 : state.story * 1.2;
+    rings.rotation.z = still ? 0 : elapsed * .025 - state.hero * .7;
+    points.rotation.y = still ? 0 : elapsed * -.012;
     pointMaterial.opacity = .58 * (1 - exitStory);
     shellMaterial.opacity = .3 * (1 - exitStory);
     knotMaterial.opacity = .66 * (1 - exitStory);
 
-    camera.position.x = state.pointerX * .08;
-    camera.position.y = -state.pointerY * .08;
+    camera.position.x = still ? 0 : state.pointerX * .08;
+    camera.position.y = still ? 0 : -state.pointerY * .08;
     camera.lookAt(0, 0, 0);
     renderer.render(scene, camera);
+    if (!still) scheduleFrame();
   }
 
+  window.addEventListener('scroll', scheduleFrame, { passive: true });
+  window.addEventListener('pointermove', scheduleFrame, { passive: true });
+  window.addEventListener('portfolio:motionchange', () => { updateScrollState(); scheduleFrame(); });
+  document.addEventListener('visibilitychange', scheduleFrame);
   document.body.classList.add('scene-ready');
-  renderScene();
+  scheduleFrame();
 })();
