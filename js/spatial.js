@@ -14,9 +14,6 @@
   const heroCopy = document.querySelector('.hero-copy');
   const heroMeta = document.querySelector('.hero-meta');
   const storyPin = document.querySelector('.story-pin');
-  const storySection = document.querySelector('[data-chapter="story"]');
-  const storyArtLabel = document.querySelector('.story-art-label');
-  const storyArtLabels = ['FIG. 01 — จุดเริ่มต้น', 'FIG. 02 — เริ่มใช้จริง', 'FIG. 03 — เรียนต่อ', 'FIG. 04 — ยังไปกันต่อ'];
 
   const state = {
     hero: 0,
@@ -62,9 +59,12 @@
 
     const frameIndex = Math.min(storyFrames.length - 1, Math.floor(state.story * storyFrames.length));
     storyFrames.forEach((frame, index) => frame.classList.toggle('active', index === frameIndex));
-    if (storySection) storySection.dataset.art = String(frameIndex);
-    if (storyArtLabel) storyArtLabel.textContent = storyArtLabels[frameIndex];
-    storyPin?.style.setProperty('--story-progress', state.story.toFixed(4));
+    if (storyPin) {
+      storyPin.style.setProperty('--story-progress', state.story.toFixed(4));
+      storyPin.style.setProperty('--zip-y', `${(state.story * 90).toFixed(2)}%`);
+      storyPin.style.setProperty('--zip-gap', `${(state.story * 32).toFixed(2)}%`);
+      storyPin.style.setProperty('--zip-spark-opacity', (state.story * .8).toFixed(3));
+    }
 
     const activeToolIndex = Math.min(toolRows.length - 1, Math.floor(state.tools * toolRows.length));
     toolRows.forEach((row, index) => row.classList.toggle('active', index <= activeToolIndex));
