@@ -1,0 +1,180 @@
+/* Original comic-stage illustration: an illustrated hand frames a real CSS 3D object. */
+.hero-pin { isolation: isolate; }
+.hero-copy { z-index: 5; }
+.hero-copy h1, .hero-note { text-shadow: 0 3px 28px rgba(11, 12, 11, .78); }
+.hero-meta { display: none; }
+.hero-relic {
+  --cube-size: clamp(230px, 24vw, 360px);
+  position: absolute;
+  z-index: 2;
+  top: 7%;
+  right: max(-3vw, calc((100vw - 1600px) / 2));
+  width: min(63vw, 920px);
+  height: 92%;
+  overflow: visible;
+  pointer-events: none;
+  transform: translate3d(var(--relic-x, 0px), var(--relic-y, 0px), 0);
+  transition: transform .5s cubic-bezier(.22, 1, .36, 1), opacity .4s ease;
+}
+.hero-relic::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 7% -9% 0 11%;
+  background: radial-gradient(ellipse at 56% 37%, rgba(255, 193, 79, .22), transparent 34%), radial-gradient(ellipse at 75% 62%, rgba(154, 113, 255, .16), transparent 45%);
+  filter: blur(25px);
+}
+.relic-rays {
+  position: absolute;
+  inset: -15% -15% -10% -15%;
+  opacity: .38;
+  background: repeating-conic-gradient(from 4deg at 60% 39%, transparent 0deg 9deg, rgba(255, 208, 124, .12) 9.1deg 9.5deg, transparent 9.7deg 17deg);
+  mask-image: radial-gradient(ellipse at 60% 39%, #000 7%, transparent 69%);
+  animation: relic-rays-breathe 7s ease-in-out infinite alternate;
+}
+.relic-halo {
+  position: absolute;
+  left: 60%;
+  top: 40%;
+  width: min(61vw, 690px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 210, 126, .38);
+  border-radius: 50%;
+  box-shadow: inset 0 0 30px rgba(236, 173, 70, .08), 0 0 28px rgba(255, 193, 79, .13);
+  transform: translate(-50%, -50%) rotate(-22deg) scaleY(.59);
+}
+.relic-halo::before, .relic-halo::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border: 1px dashed rgba(255, 217, 153, .28);
+  border-radius: 50%;
+}
+.relic-halo::after { inset: 19%; border-style: solid; opacity: .6; }
+.relic-halo-inner { width: min(48vw, 540px); transform: translate(-50%, -50%) rotate(34deg) scaleY(.73); opacity: .6; }
+.relic-aura {
+  position: absolute;
+  left: 60%;
+  top: 39%;
+  width: calc(var(--cube-size) * 2.1);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 220, 143, .46) 0%, rgba(244, 175, 54, .17) 32%, rgba(150, 95, 245, .09) 52%, transparent 72%);
+  filter: blur(22px);
+  transform: translate(-50%, -50%);
+  animation: relic-glow 4.8s ease-in-out infinite alternate;
+}
+.relic-cube-position {
+  position: absolute;
+  z-index: 3;
+  left: 60%;
+  top: 38%;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  perspective: 1050px;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 25px rgba(255, 204, 94, .45)) drop-shadow(0 28px 60px rgba(0, 0, 0, .65));
+}
+.relic-cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: relic-turn 13s linear infinite;
+}
+.relic-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 2px solid #fff3bd;
+  backface-visibility: visible;
+  background:
+    linear-gradient(145deg, rgba(255, 249, 210, .79) 0%, transparent 14%, transparent 74%, rgba(71, 28, 3, .45) 100%),
+    repeating-linear-gradient(135deg, transparent 0 16px, rgba(100, 43, 4, .12) 17px 18px),
+    linear-gradient(135deg, #ffe49a 0%, #f9b93e 28%, #ad5e16 70%, #6e360e 100%);
+  box-shadow: inset 0 0 0 9px rgba(255, 218, 122, .38), inset 0 0 0 11px rgba(99, 48, 6, .55), inset 0 0 40px rgba(94, 39, 0, .46), 0 0 18px rgba(255, 222, 137, .75);
+}
+.relic-face i {
+  width: 52%;
+  height: 52%;
+  display: block;
+  border: 4px double rgba(100, 43, 6, .7);
+  border-radius: 9%;
+  background: linear-gradient(135deg, rgba(255, 246, 198, .4), rgba(145, 67, 6, .14));
+  box-shadow: 0 0 0 10px rgba(255, 228, 157, .18), inset 0 0 22px rgba(255, 237, 173, .5);
+  transform: rotate(45deg);
+}
+.relic-face i::after {
+  content: "";
+  display: block;
+  width: 38%;
+  height: 38%;
+  margin: 31%;
+  border: 2px solid rgba(103, 42, 2, .66);
+  background: rgba(255, 246, 192, .3);
+}
+.relic-front { transform: rotateY(0deg) translateZ(calc(var(--cube-size) / 2)); }
+.relic-back { transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2)); }
+.relic-right { transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2)); }
+.relic-left { transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2)); }
+.relic-top { transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2)); }
+.relic-bottom { transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2)); }
+.relic-flare { position: absolute; z-index: 5; width: 9px; height: 9px; background: #fff9cf; border-radius: 50%; box-shadow: 0 0 13px 6px rgba(255, 219, 114, .8), 0 0 48px 24px rgba(255, 168, 51, .28); }
+.relic-flare::before, .relic-flare::after { content: ""; position: absolute; left: 50%; top: 50%; background: linear-gradient(90deg, transparent, #fff4ba, transparent); transform: translate(-50%, -50%); }
+.relic-flare::before { width: 96px; height: 2px; }.relic-flare::after { width: 2px; height: 96px; }
+.relic-flare-one { left: 37%; top: 18%; animation: relic-twinkle 3.2s ease-in-out infinite alternate; }
+.relic-flare-two { left: 82%; top: 55%; transform: scale(.55); animation: relic-twinkle 4.2s ease-in-out 1s infinite alternate; }
+.relic-hand {
+  position: absolute;
+  z-index: 4;
+  right: -11%;
+  bottom: -34%;
+  width: min(65%, 580px);
+  height: auto;
+  filter: drop-shadow(-12px 0 32px rgba(10, 5, 19, .67));
+  transform: rotate(-4deg);
+  transform-origin: 55% 80%;
+  animation: relic-hand-rise 5.5s ease-in-out infinite alternate;
+}
+.relic-caption { position: absolute; z-index: 5; right: 8%; top: 3%; color: #ffe2a0; font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing: .16em; text-shadow: 0 2px 8px #0b0c0b; }
+@keyframes relic-turn { from { transform: rotateX(-20deg) rotateY(24deg) rotateZ(-6deg); } to { transform: rotateX(340deg) rotateY(384deg) rotateZ(354deg); } }
+@keyframes relic-glow { to { opacity: .62; transform: translate(-50%, -50%) scale(1.13); } }
+@keyframes relic-twinkle { to { opacity: .4; } }
+@keyframes relic-hand-rise { to { transform: translateY(-10px) rotate(-3deg); } }
+@keyframes relic-rays-breathe { to { opacity: .18; transform: rotate(3deg); } }
+@media (max-width: 1120px) {
+  .hero-relic { --cube-size: clamp(205px, 27vw, 310px); top: 24%; right: 2%; width: 58vw; height: 76%; }
+  .relic-cube-position { top: 47%; }
+  .relic-aura { top: 47%; }
+  .relic-hand { width: 70%; bottom: -10%; }
+  .hero-copy { width: min(680px, 75vw); }
+}
+@media (max-width: 760px) {
+  .hero-relic { --cube-size: clamp(180px, 43vw, 270px); top: 46%; right: 50%; width: min(100vw, 560px); height: 51%; transform: translateX(50%) translate3d(var(--relic-x, 0px), var(--relic-y, 0px), 0); }
+  .relic-halo { width: 95%; }
+  .relic-halo-inner { width: 76%; }
+  .relic-cube-position { left: 54%; top: 34%; }
+  .relic-aura { left: 54%; top: 34%; }
+  .relic-hand { width: 66%; right: -5%; bottom: -47%; }
+  .relic-caption { right: 12%; top: 2%; }
+  .relic-flare-one { left: 21%; }
+  .relic-flare-two { left: 83%; top: 50%; }
+  .hero-copy { z-index: 6; }
+}
+@media (max-width: 430px) {
+  .hero-relic { top: 51%; height: 47%; }
+  .relic-hand { width: 75%; right: -9%; bottom: -45%; }
+  .relic-caption { top: 1%; font-size: 8px; }
+}
+@media (max-width: 360px) {
+  .hero .chapter-index { display: none; }
+  .hero-relic { --cube-size: 155px; top: 63%; height: 37%; }
+  .relic-hand { width: 70%; bottom: -62%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-relic, .relic-cube, .relic-aura, .relic-hand, .relic-rays, .relic-flare { animation: none !important; transition: none !important; }
+  .relic-cube { transform: rotateX(-22deg) rotateY(32deg) rotateZ(-5deg); }
+}
+body.motion-off .hero-relic, body.motion-off .relic-cube, body.motion-off .relic-aura, body.motion-off .relic-hand, body.motion-off .relic-rays, body.motion-off .relic-flare { animation: none !important; transition: none !important; }
+body.motion-off .relic-cube { transform: rotateX(-22deg) rotateY(32deg) rotateZ(-5deg); }

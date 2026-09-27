@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="css/art.css?v=20260925b">
   <link rel="stylesheet" href="css/plates.css?v=20260925b">
   <link rel="stylesheet" href="css/comic.css?v=20260927">
+  <link rel="stylesheet" href="css/hero-relic.css?v=20260927">
 </head>
 <body>
   <a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหา</a>
@@ -76,21 +77,25 @@
             <a class="text-link quiet" href="interactive.html">เปิด 3D playground <span>↗</span></a>
           </div>
         </div>
-        <div class="hero-art" id="hero-art" aria-label="ตัวอย่างผลงานที่เลือกดูได้">
-          <div class="hero-art-orbit" aria-hidden="true"><span></span><span></span></div>
-          <div class="hero-art-stamp" aria-hidden="true">BUILT<br>TO TRY<br>THINGS</div>
-          <div class="hero-art-stack" role="group" aria-label="เลือกดูตัวอย่างผลงาน">
-            <button class="art-card is-active" type="button" data-art-card="0" aria-pressed="true" aria-label="ดูตัวอย่าง 2Getr">
-              <span class="art-card-top"><span>01 / WEB</span><span>↗</span></span><span class="art-preview art-preview-community" aria-hidden="true"><i class="community-node node-a">P</i><i class="community-node node-b">B</i><i class="community-node node-c">Z</i><i class="community-link link-a"></i><i class="community-link link-b"></i><b>people,<br>together.</b><small>IDEA → COMMUNITY</small></span><span class="art-card-bottom">2Getr <small>community space</small></span>
-            </button>
-            <button class="art-card" type="button" data-art-card="1" aria-pressed="false" aria-label="ดูตัวอย่าง Opt-POS">
-              <span class="art-card-top"><span>02 / SYSTEM</span><span>↗</span></span><span class="art-preview art-preview-pos" aria-hidden="true"><span class="pos-receipt"><b>SHOP / 0027</b><i>coffee × 2 <em>120</em></i><i>bread × 1 <em>45</em></i><strong>TOTAL <em>165</em></strong></span><small>EVERYDAY TOOLS / 02</small></span><span class="art-card-bottom">Opt-POS <small>retail tools</small></span>
-            </button>
-            <button class="art-card" type="button" data-art-card="2" aria-pressed="false" aria-label="ดูตัวอย่าง Grid Trading Bot">
-              <span class="art-card-top"><span>03 / AUTOMATION</span><span>↗</span></span><span class="art-preview art-preview-grid" aria-hidden="true"><b>GRID / 03</b><span class="grid-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="grid-line"></span><small>OBSERVE · ADJUST · REPEAT</small></span><span class="art-card-bottom">Grid Bot <small>trading systems</small></span>
-            </button>
+        <div class="hero-relic" id="hero-relic" aria-hidden="true">
+          <div class="relic-rays"></div>
+          <div class="relic-halo relic-halo-outer"></div>
+          <div class="relic-halo relic-halo-inner"></div>
+          <div class="relic-aura"></div>
+          <div class="relic-cube-position">
+            <div class="relic-cube">
+              <div class="relic-face relic-front"><i></i></div>
+              <div class="relic-face relic-back"><i></i></div>
+              <div class="relic-face relic-right"><i></i></div>
+              <div class="relic-face relic-left"><i></i></div>
+              <div class="relic-face relic-top"><i></i></div>
+              <div class="relic-face relic-bottom"><i></i></div>
+            </div>
           </div>
-          <div class="hero-art-foot"><div class="art-switch" role="group" aria-label="เลือกงานที่แสดง"><button type="button" data-art-select="0" aria-label="เลือก 2Getr" aria-pressed="true">01</button><button type="button" data-art-select="1" aria-label="เลือก Opt-POS" aria-pressed="false">02</button><button type="button" data-art-select="2" aria-label="เลือก Grid Trading Bot" aria-pressed="false">03</button></div><button class="art-open" id="art-open" type="button">ดูรายละเอียด 2Getr ↗</button></div>
+          <div class="relic-flare relic-flare-one"></div>
+          <div class="relic-flare relic-flare-two"></div>
+          <img class="relic-hand" src="public/images/bosszy-hand.webp" width="1024" height="1536" alt="" fetchpriority="high" decoding="async">
+          <span class="relic-caption">BZ / THE MAKER</span>
         </div>
         <div class="hero-meta" data-scroll-layer>
           <div><span>ROLE</span><strong>CS Student / Builder</strong></div>
@@ -198,6 +203,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
   <script src="js/main.js?v=20260925b" defer></script>
   <script src="js/art.js?v=20260925b" defer></script>
+  <script src="js/hero-relic.js?v=20260927" defer></script>
   <script src="js/spatial.js?v=20260925b" defer></script>
   <script src="js/plates.js?v=20260925b" defer></script>
 </body>

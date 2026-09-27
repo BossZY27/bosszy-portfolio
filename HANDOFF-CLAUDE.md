@@ -1,6 +1,6 @@
 # ส่งต่องานเว็บไซต์ Portfolio ให้ Claude
 
-อัปเดตล่าสุด: 27 กันยายน 2569 หลังเพิ่มกราฟิกมังงะต้นฉบับก่อนส่วน Selected Cases
+อัปเดตล่าสุด: 27 กันยายน 2569 หลังปรับ Hero เป็นมือกับลูกบาศก์ทอง 3D
 
 ## เป้าหมายของเจ้าของเว็บ
 
@@ -15,19 +15,23 @@ Phakin Meksuwan (BossZY) อยากให้ portfolio เป็นเว็�
 - การ์ดในคลังงานเลิกใช้ภาพ mockup แล้ว เปลี่ยนเป็นลวดลายที่วาดด้วย CSS ตามหมวดงาน เพราะภาพชุดเดิมถูกใช้ซ้ำข้ามงานที่ไม่เกี่ยวกัน และไฟล์ภาพรวมกันหนักราว 4.7 MB
 - งานที่เป็นต้นแบบหรือใช้ข้อมูลจำลองติดป้ายสถานะไว้บนการ์ดตั้งแต่หน้าคลัง ไม่ต้องเปิด modal ก็เห็น
 - เพิ่มหน้าคั่นแบบภาพพิมพ์มังงะก่อน Selected Cases ใน `index.html` และ `css/comic.css` พร้อมภาพต้นฉบับ `public/images/manga-maker.webp` เป็นภาพประกอบ ไม่ใช่รูปเจ้าของเว็บหรือ screenshot งานจริง ใช้ลาย halftone/เส้นสปีดเฉพาะจุด เพื่อไม่บดบังข้อมูลผลงาน
+- Hero หน้าแรกเปลี่ยนจากการ์ดตัวอย่างสามใบเป็นมือที่ยื่นเข้าหาลูกบาศก์ทองขนาดใหญ่ ภาพมือเป็นตัวละครสมมติ ไม่ใช่รูปหรือ likeness ของ Phakin และไม่ได้คัดลอกตัวละคร/วัตถุจาก JoJo โดยตรง ลูกบาศก์สร้างด้วย CSS 3D หกด้านใน `css/hero-relic.css`, ตอบสนองเมาส์และการเลื่อนเล็กน้อยผ่าน `js/hero-relic.js`; ปุ่มลดการเคลื่อนไหวหยุดการหมุน
 
 ## ไฟล์ที่ควรรู้จัก
 
 | ไฟล์ | หน้าที่ |
 | --- | --- |
-| `index.html` | โครงหน้า, ข้อความหลัก, SEO, การ์ด art และ Story |
+| `index.html` | โครงหน้า, ข้อความหลัก, SEO, Hero relic และ Story |
 | `css/style.css` | Design system และ responsive เดิม |
-| `css/art.css` | ภาพประกอบหน้าแรก, การ์ด interactive และโหมด motion-off |
+| `css/art.css` | สไตล์ art เดิมและโหมด motion-off; CSS ของการ์ด Hero เก่ายังอยู่แต่ไม่ได้ใช้งาน |
+| `css/hero-relic.css` | ลูกบาศก์ทอง CSS 3D, แสง, มือ และ responsive/reduced motion ของ Hero ใหม่ |
 | `css/plates.css` | แผ่นของ Selected Cases, ลวดลายการ์ดในคลังงาน, แถบตำแหน่ง, modal และ Contact |
 | `css/comic.css` | หน้าคั่นมังงะ, ลายหมึก/halftone และรายละเอียดของ hero กับการ์ดที่สัมพันธ์กัน |
 | `public/images/manga-maker.webp` | ภาพประกอบต้นฉบับที่สร้างด้วย imagegen และบีบอัดเป็น WebP (ไม่ใช่ภาพบุคคลจริง) |
+| `public/images/bosszy-hand.webp` | ภาพมือสมมติที่สร้างด้วย imagegen พื้นหลังโปร่งใส ไม่ใช่ภาพมือจริงของเจ้าของเว็บ |
 | `js/main.js` | รายการ 43 โปรเจกต์, `techNotes`, archive, modal, chatbot; `window.triggerProjectModal(id)` ใช้เปิดรายละเอียด |
-| `js/art.js` | ปุ่มเลือกการ์ด, touch/keyboard, motion preference; เก็บค่าที่ `localStorage` key `bosszy-motion` |
+| `js/art.js` | motion preference; เก็บค่าที่ `localStorage` key `bosszy-motion` (ยังมีโค้ดรองรับการ์ด Hero เก่าที่ไม่ได้แสดง) |
+| `js/hero-relic.js` | parallax แบบเบาและ fade-out ระหว่างเลื่อน Hero; หยุดเมื่อเปิด reduced motion |
 | `js/plates.js` | แถบ `ARCHIVE_POS` และการใช้ลูกศรกับแท็บกรอง รันหลัง `DOMContentLoaded` เพราะ `main.js` วาดการ์ดในจังหวะนั้น |
 | `js/spatial.js` | Three.js และสถานะของ sticky-scroll scene |
 | `interactive.html`, `js/interactive.js` | หน้า 3D playground แยกจากหน้าแรก |
@@ -66,6 +70,7 @@ Phakin Meksuwan (BossZY) อยากให้ portfolio เป็นเว็�
 2. **ลิงก์ของงานลูกค้า** Franchise OS ขึ้นใช้งานจริงแล้วและมี URL production แต่เป็นของลูกค้า ยังไม่ได้ใส่ลิงก์ในเว็บ ต้องขออนุญาตก่อน
 3. **ไฟล์ภาพเก่า** `public/images/` ยังมีไฟล์ที่ไม่ได้ใช้แล้วอีกแปดไฟล์ ลบได้เมื่อแน่ใจว่าไม่ย้อนกลับไปใช้ดีไซน์เดิม
 4. **Unitask (Flutter)** ใส่ลิงก์ repo ของทีมไว้แล้วพร้อมป้าย "งานกลุ่ม" ถ้าจะเพิ่มลิงก์งานอื่น ต้องเป็นลิงก์ที่เปิดดูได้จริงเท่านั้น
+5. **ทำความสะอาดโค้ดการ์ด Hero เก่า** `css/art.css` และ `js/art.js` ยังมีส่วนรองรับการ์ดเก่าที่ถูกถอดออกจาก `index.html` แล้ว เก็บไว้ก่อนเผื่อจะย้อนดีไซน์; ถ้าตัดสินใจใช้ Hero ใหม่ถาวรค่อยลบแบบแยกงาน
 
 ## กติกาที่ต้องรักษา
 
