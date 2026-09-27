@@ -63,10 +63,31 @@
   width: calc(var(--orb-size) * 1.8);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 220, 143, .46) 0%, rgba(244, 175, 54, .17) 32%, rgba(150, 95, 245, .09) 52%, transparent 72%);
-  filter: blur(22px);
+  background: radial-gradient(circle, rgba(235, 255, 148, .3) 0%, rgba(123, 239, 61, .15) 28%, rgba(255, 204, 87, .1) 47%, transparent 73%);
+  filter: blur(18px);
   transform: translate(-50%, -50%);
-  animation: relic-glow 4.8s ease-in-out infinite alternate;
+  animation: relic-glow 3.4s ease-in-out infinite alternate;
+}
+.relic-wind {
+  position: absolute;
+  z-index: 5;
+  left: 60%;
+  top: 38%;
+  width: calc(var(--orb-size) * 1.42);
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  border-top-color: rgba(239, 255, 173, .58);
+  border-left-color: rgba(172, 246, 116, .32);
+  border-radius: 50%;
+  box-shadow: 0 -3px 17px rgba(196, 255, 125, .18), inset 0 3px 12px rgba(255, 228, 143, .1);
+  filter: drop-shadow(0 0 5px rgba(198, 255, 141, .4));
+  animation: relic-wind-spin 2.8s linear infinite;
+}
+.relic-wind-b {
+  width: calc(var(--orb-size) * 1.66);
+  opacity: .45;
+  animation-duration: 3.7s;
+  animation-direction: reverse;
 }
 .relic-orb-position {
   position: absolute;
@@ -77,14 +98,14 @@
   height: var(--orb-size);
   perspective: 1000px;
   transform: translate(-50%, -50%);
-  filter: drop-shadow(0 0 18px rgba(215, 255, 83, .55)) drop-shadow(0 0 56px rgba(255, 198, 76, .28)) drop-shadow(0 28px 65px rgba(0, 0, 0, .65));
+  filter: drop-shadow(0 0 12px rgba(245, 255, 165, .82)) drop-shadow(0 0 34px rgba(139, 255, 75, .42)) drop-shadow(0 0 64px rgba(255, 197, 71, .2)) drop-shadow(0 28px 65px rgba(0, 0, 0, .65));
 }
 .relic-orb {
   position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  animation: relic-gyro 9s linear infinite;
+  animation: relic-gyro 4.4s linear infinite;
 }
 .relic-orb-core {
   position: absolute;
@@ -96,7 +117,7 @@
     radial-gradient(circle at 29% 23%, rgba(250, 255, 171, .98) 0 3%, transparent 20%),
     repeating-conic-gradient(from 25deg, rgba(235, 255, 88, .7) 0deg 8deg, rgba(25, 86, 13, .28) 10deg 18deg, transparent 20deg 28deg),
     radial-gradient(circle at 36% 32%, #c5fd3f, #55bd1f 40%, #126330 72%, #041f14 100%);
-  box-shadow: inset -23px -30px 48px rgba(0, 26, 12, .78), inset 12px 13px 34px rgba(245, 255, 140, .65), 0 0 25px rgba(161, 253, 38, .74), 0 0 75px rgba(78, 204, 43, .32);
+  box-shadow: inset -23px -30px 48px rgba(0, 26, 12, .78), inset 12px 13px 34px rgba(245, 255, 140, .78), 0 0 31px rgba(201, 255, 96, .87), 0 0 82px rgba(105, 218, 61, .42);
   transform: translateZ(4px);
 }
 .relic-orb-core::before {
@@ -126,10 +147,10 @@
   box-shadow: inset 0 0 13px rgba(255, 245, 164, .6), 0 0 11px rgba(255, 226, 134, .82), 0 0 34px rgba(232, 173, 36, .3);
   backface-visibility: visible;
 }
-.relic-orb-ring-a { transform: rotateY(68deg) rotateX(16deg); animation: relic-ring-a 5.6s linear infinite; }
-.relic-orb-ring-b { inset: 10%; transform: rotateY(-64deg) rotateX(30deg); border-width: clamp(3px, .4vw, 6px); animation: relic-ring-b 7.2s linear infinite reverse; }
-.relic-orb-ring-c { inset: 1%; transform: rotateX(73deg) rotateZ(-24deg); border-width: clamp(3px, .45vw, 7px); animation: relic-ring-c 8.5s linear infinite; }
-.relic-orb-ring-d { inset: -7%; transform: rotateX(-67deg) rotateZ(41deg); border-width: clamp(2px, .3vw, 5px); opacity: .83; animation: relic-ring-d 10s linear infinite reverse; }
+.relic-orb-ring-a { transform: rotateY(68deg) rotateX(16deg); animation: relic-ring-a 2.8s linear infinite; }
+.relic-orb-ring-b { inset: 10%; transform: rotateY(-64deg) rotateX(30deg); border-width: clamp(3px, .4vw, 6px); animation: relic-ring-b 3.5s linear infinite reverse; }
+.relic-orb-ring-c { inset: 1%; transform: rotateX(73deg) rotateZ(-24deg); border-width: clamp(3px, .45vw, 7px); animation: relic-ring-c 4.2s linear infinite; }
+.relic-orb-ring-d { inset: -7%; transform: rotateX(-67deg) rotateZ(41deg); border-width: clamp(2px, .3vw, 5px); opacity: .83; animation: relic-ring-d 5.1s linear infinite reverse; }
 .relic-orb-axis {
   position: absolute;
   z-index: 2;
@@ -186,6 +207,7 @@
 @keyframes relic-ring-b { to { transform: rotateY(296deg) rotateX(30deg); } }
 @keyframes relic-ring-c { to { transform: rotateX(433deg) rotateZ(-24deg); } }
 @keyframes relic-ring-d { to { transform: rotateX(293deg) rotateZ(41deg); } }
+@keyframes relic-wind-spin { from { transform: translate(-50%, -50%) rotate(0deg) scaleY(.68); } to { transform: translate(-50%, -50%) rotate(360deg) scaleY(.68); } }
 @keyframes relic-glow { to { opacity: .62; transform: translate(-50%, -50%) scale(1.13); } }
 @keyframes relic-twinkle { to { opacity: .4; } }
 @keyframes relic-hand-rise { to { transform: translateY(-10px) rotate(-3deg); } }
@@ -196,6 +218,7 @@
   .hero-relic { --orb-size: clamp(240px, 36vw, 390px); top: 24%; right: 2%; width: 58vw; height: 76%; }
   .relic-orb-position { top: 47%; }
   .relic-aura { top: 47%; }
+  .relic-wind { top: 47%; }
   .relic-hand { width: 70%; bottom: -10%; }
   .hero-copy { width: min(680px, 75vw); }
 }
@@ -205,6 +228,8 @@
   .relic-halo-inner { width: 76%; }
   .relic-orb-position { left: 54%; top: 34%; }
   .relic-aura { left: 54%; top: 34%; }
+  .relic-wind { left: 54%; top: 34%; opacity: .55; animation-duration: 4s; }
+  .relic-wind-b { display: none; }
   .relic-hand { width: 66%; right: -5%; bottom: -47%; }
   .relic-caption { right: 12%; top: 2%; }
   .relic-flare-one { left: 21%; }
@@ -222,8 +247,10 @@
   .relic-hand { width: 70%; bottom: -62%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-relic, .relic-orb, .relic-orb-ring, .relic-aura, .relic-hand, .relic-rays, .relic-flare, .relic-orb-core::before, .relic-spark { animation: none !important; transition: none !important; }
+  .hero-relic, .relic-orb, .relic-orb-ring, .relic-aura, .relic-wind, .relic-hand, .relic-rays, .relic-flare, .relic-orb-core::before, .relic-spark { animation: none !important; transition: none !important; }
+  .relic-wind { transform: translate(-50%, -50%) scaleY(.68); }
   .relic-orb { transform: rotateX(-22deg) rotateY(32deg) rotateZ(-5deg); }
 }
-body.motion-off .hero-relic, body.motion-off .relic-orb, body.motion-off .relic-orb-ring, body.motion-off .relic-aura, body.motion-off .relic-hand, body.motion-off .relic-rays, body.motion-off .relic-flare, body.motion-off .relic-orb-core::before, body.motion-off .relic-spark { animation: none !important; transition: none !important; }
+body.motion-off .hero-relic, body.motion-off .relic-orb, body.motion-off .relic-orb-ring, body.motion-off .relic-aura, body.motion-off .relic-wind, body.motion-off .relic-hand, body.motion-off .relic-rays, body.motion-off .relic-flare, body.motion-off .relic-orb-core::before, body.motion-off .relic-spark { animation: none !important; transition: none !important; }
+body.motion-off .relic-wind { transform: translate(-50%, -50%) scaleY(.68); }
 body.motion-off .relic-orb { transform: rotateX(-22deg) rotateY(32deg) rotateZ(-5deg); }
