@@ -1,0 +1,69 @@
+/* Original ink-and-halftone interlude: one expressive pause before the project evidence. */
+:root { --comic-gold: #ffd66e; --comic-violet: #a88bff; }
+
+.hero-pin::before {
+  content: ""; position: absolute; z-index: 0; inset: 6% -12% 4% 47%; pointer-events: none;
+  background: repeating-conic-gradient(from -18deg at 52% 49%, transparent 0deg 7deg, rgba(255,214,110,.085) 7.2deg 7.55deg, transparent 7.8deg 15deg);
+  mask-image: radial-gradient(ellipse at center, #000 9%, transparent 68%);
+}
+.hero-art::before {
+  content: ""; position: absolute; inset: 13% -4%; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,214,110,.38) 1px, transparent 1.5px);
+  background-size: 12px 12px; transform: rotate(-12deg);
+  mask-image: radial-gradient(ellipse at center, transparent 22%, #000 43%, transparent 70%);
+}
+.hero-art-stamp { border-color: var(--comic-gold); color: var(--comic-gold); background: var(--ink); }
+.hero-outline { text-shadow: 3px 3px 0 rgba(168,139,255,.25); }
+
+.comic-break { position: relative; z-index: 3; padding: 88px var(--gutter) 34px; overflow: hidden; background: var(--ink); }
+.comic-break-panel { position: relative; display: grid; grid-template-columns: .78fr 1.22fr; min-height: min(650px,80svh); max-width: 1540px; margin-inline: auto; overflow: hidden; border: 2px solid var(--paper); background: #191612; box-shadow: 15px 15px 0 -2px var(--comic-violet); }
+.comic-break-panel::before { content: ""; position: absolute; z-index: 2; inset: 0; pointer-events: none; border: 12px solid rgba(11,12,11,.35); }
+.comic-break-copy { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(34px,5.5vw,90px); background: linear-gradient(103deg, #191612 65%, rgba(25,22,18,.94)); }
+.comic-break-copy::before { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .14; background-image: radial-gradient(circle, var(--comic-gold) 1px, transparent 1.5px); background-size: 13px 13px; mask-image: linear-gradient(90deg, #000, transparent); }
+.comic-issue { display: inline-block; padding: 8px 10px 6px; transform: rotate(-3deg); background: var(--comic-gold); color: var(--ink); font: 500 11px/1 "IBM Plex Mono", monospace; letter-spacing: .08em; }
+.comic-eyebrow { margin: 36px 0 14px; color: var(--comic-gold); font-size: 14px; }
+.comic-break h2 { margin: 0; font-size: clamp(58px,7.5vw,128px); line-height: .9; font-weight: 700; letter-spacing: -.085em; text-shadow: 6px 7px 0 #402f4a; }
+.comic-break h2 em { color: var(--comic-gold); font-style: normal; }
+.comic-break-note { max-width: 420px; margin: 30px 0 0; color: var(--paper); font-size: clamp(15px,1.3vw,19px); line-height: 1.55; }
+.comic-break-link { display: inline-flex; align-items: center; gap: 18px; margin-top: 34px; padding: 12px 0 7px; border-bottom: 2px solid var(--comic-gold); color: var(--comic-gold); font-size: 15px; }
+.comic-break-link:hover, .comic-break-link:focus-visible { color: var(--paper); border-color: var(--paper); }
+.comic-break-link:focus-visible { outline: 2px solid var(--comic-gold); outline-offset: 6px; }
+.comic-break-visual { position: relative; min-width: 0; overflow: hidden; background: #231e1c; clip-path: polygon(10% 0,100% 0,100% 100%,0 100%); margin-left: -9%; }
+.comic-break-visual::before { content: ""; position: absolute; z-index: 2; inset: 0; pointer-events: none; background: linear-gradient(90deg,rgba(25,22,18,.32),transparent 25%), radial-gradient(circle at 55% 55%,transparent 32%,rgba(11,12,11,.5) 100%); }
+.comic-break-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 54% 50%; filter: contrast(1.09) saturate(.9); }
+.comic-speedlines { position: absolute; z-index: 1; inset: -15%; pointer-events: none; background: repeating-conic-gradient(from -8deg at 60% 42%, transparent 0deg 8deg, rgba(255,214,110,.18) 8.2deg 8.55deg, transparent 8.8deg 16deg); mix-blend-mode: screen; }
+.comic-panel-no { position: absolute; z-index: 3; top: 15px; right: 26px; color: transparent; -webkit-text-stroke: 2px var(--comic-gold); font: 700 clamp(64px,10vw,150px)/1 "IBM Plex Mono", monospace; letter-spacing: -.12em; }
+.comic-panel-mark { position: absolute; z-index: 3; right: 22px; bottom: 18px; padding: 7px 9px 5px; background: var(--comic-gold); color: var(--ink); font: 500 9px/1 "IBM Plex Mono", monospace; letter-spacing: .08em; }
+.comic-break-footer { display: flex; justify-content: space-between; max-width: 1540px; margin: 15px auto 0; color: var(--paper-dim); font: 400 9px/1 "IBM Plex Mono", monospace; letter-spacing: .13em; }
+
+.selected-heading h2 { text-shadow: 4px 4px 0 rgba(168,139,255,.18); }
+.featured-case:hover .featured-visual, .featured-case:focus-within .featured-visual { filter: contrast(1.05); }
+.project-card:hover .card-plate, .project-card:focus-within .card-plate { background-image: radial-gradient(rgba(255,214,110,.13) 1px, transparent 1.5px), linear-gradient(rgba(232,229,220,.05) 1px,transparent 1px), linear-gradient(90deg,rgba(232,229,220,.05) 1px,transparent 1px); background-size: 11px 11px,22px 22px,22px 22px; }
+
+@media (max-width: 1050px) {
+  .comic-break-panel { grid-template-columns: .9fr 1.1fr; min-height: 530px; }
+  .comic-break-copy { padding: 40px; }
+  .comic-break h2 { font-size: clamp(54px,7vw,88px); }
+}
+@media (max-width: 760px) {
+  .hero-pin::before { inset: 26% -40% 8% 0; }
+  .comic-break { padding-top: 50px; }
+  .comic-break-panel { display: flex; flex-direction: column; min-height: 0; box-shadow: 8px 8px 0 -2px var(--comic-violet); }
+  .comic-break-copy { padding: 36px 27px 31px; }
+  .comic-eyebrow { margin-top: 24px; }
+  .comic-break h2 { font-size: clamp(58px,12vw,94px); }
+  .comic-break-note { margin-top: 20px; font-size: 15px; }
+  .comic-break-link { margin-top: 22px; }
+  .comic-break-visual { height: clamp(280px,69vw,470px); clip-path: polygon(0 8%,100% 0,100% 100%,0 100%); margin: -16px 0 0; }
+  .comic-break-visual img { object-position: 53% 42%; }
+  .comic-panel-no { top: 16px; right: auto; left: 22px; font-size: 62px; }
+  .comic-break-footer { font-size: 7px; }
+}
+@media (max-width: 430px) {
+  .comic-break-copy { padding: 31px 21px 28px; }
+  .comic-break h2 { font-size: clamp(54px,13vw,70px); }
+  .comic-break-visual { height: 310px; }
+  .comic-panel-mark { right: auto; left: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .comic-break .reveal { opacity: 1; transform: none; } }
+body.motion-off .comic-break .reveal { opacity: 1; transform: none; transition: none; }

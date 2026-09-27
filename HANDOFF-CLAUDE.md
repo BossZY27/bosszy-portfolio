@@ -1,6 +1,6 @@
 # ส่งต่องานเว็บไซต์ Portfolio ให้ Claude
 
-อัปเดตล่าสุด: 25 กันยายน 2569 หลังรอบตรวจข้อมูล 43 งาน และทำ art direction ต่อไปยัง Selected Cases, คลังงาน และ Contact
+อัปเดตล่าสุด: 27 กันยายน 2569 หลังเพิ่มกราฟิกมังงะต้นฉบับก่อนส่วน Selected Cases
 
 ## เป้าหมายของเจ้าของเว็บ
 
@@ -14,6 +14,7 @@ Phakin Meksuwan (BossZY) อยากให้ portfolio เป็นเว็�
 - ภาษาภาพชุด "แผ่นแบบช่าง" เดินต่อเนื่องด้วยเลข FIG. คือ FIG. 01 ที่ช่วง Story, FIG. 02 ถึง 04 ที่ Selected Cases และ FIG. 05 ที่ Contact
 - การ์ดในคลังงานเลิกใช้ภาพ mockup แล้ว เปลี่ยนเป็นลวดลายที่วาดด้วย CSS ตามหมวดงาน เพราะภาพชุดเดิมถูกใช้ซ้ำข้ามงานที่ไม่เกี่ยวกัน และไฟล์ภาพรวมกันหนักราว 4.7 MB
 - งานที่เป็นต้นแบบหรือใช้ข้อมูลจำลองติดป้ายสถานะไว้บนการ์ดตั้งแต่หน้าคลัง ไม่ต้องเปิด modal ก็เห็น
+- เพิ่มหน้าคั่นแบบภาพพิมพ์มังงะก่อน Selected Cases ใน `index.html` และ `css/comic.css` พร้อมภาพต้นฉบับ `public/images/manga-maker.webp` เป็นภาพประกอบ ไม่ใช่รูปเจ้าของเว็บหรือ screenshot งานจริง ใช้ลาย halftone/เส้นสปีดเฉพาะจุด เพื่อไม่บดบังข้อมูลผลงาน
 
 ## ไฟล์ที่ควรรู้จัก
 
@@ -23,6 +24,8 @@ Phakin Meksuwan (BossZY) อยากให้ portfolio เป็นเว็�
 | `css/style.css` | Design system และ responsive เดิม |
 | `css/art.css` | ภาพประกอบหน้าแรก, การ์ด interactive และโหมด motion-off |
 | `css/plates.css` | แผ่นของ Selected Cases, ลวดลายการ์ดในคลังงาน, แถบตำแหน่ง, modal และ Contact |
+| `css/comic.css` | หน้าคั่นมังงะ, ลายหมึก/halftone และรายละเอียดของ hero กับการ์ดที่สัมพันธ์กัน |
+| `public/images/manga-maker.webp` | ภาพประกอบต้นฉบับที่สร้างด้วย imagegen และบีบอัดเป็น WebP (ไม่ใช่ภาพบุคคลจริง) |
 | `js/main.js` | รายการ 43 โปรเจกต์, `techNotes`, archive, modal, chatbot; `window.triggerProjectModal(id)` ใช้เปิดรายละเอียด |
 | `js/art.js` | ปุ่มเลือกการ์ด, touch/keyboard, motion preference; เก็บค่าที่ `localStorage` key `bosszy-motion` |
 | `js/plates.js` | แถบ `ARCHIVE_POS` และการใช้ลูกศรกับแท็บกรอง รันหลัง `DOMContentLoaded` เพราะ `main.js` วาดการ์ดในจังหวะนั้น |
