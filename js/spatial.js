@@ -14,6 +14,16 @@
   const heroCopy = document.querySelector('.hero-copy');
   const heroMeta = document.querySelector('.hero-meta');
   const storyPin = document.querySelector('.story-pin');
+  const arrowPin = document.querySelector('.arrow-pin');
+  const heroSection = document.querySelector('[data-chapter="hero"]');
+  const storySection = document.querySelector('[data-chapter="story"]');
+  const arrowSection = document.querySelector('[data-chapter="arrow"]');
+  const toolsSection = document.querySelector('[data-chapter="tools"]');
+  const navSections = ['about', 'skills', 'projects', 'contact'].map(id => document.getElementById(id));
+  let currentStoryFrame = -1;
+  let currentToolRow = -1;
+  let lastStoryProgress = -1;
+  let lastArrowProgress = -1;
 
   const state = {
     hero: 0,
@@ -34,12 +44,9 @@
   }
 
   function updateScrollState() {
-    const hero = document.querySelector('[data-chapter="hero"]');
-    const story = document.querySelector('[data-chapter="story"]');
-    const tools = document.querySelector('[data-chapter="tools"]');
-    state.hero = chapterProgress(hero);
-    state.story = chapterProgress(story);
-    state.tools = chapterProgress(tools);
+    state.hero = chapterProgress(heroSection);
+    state.story = chapterProgress(storySection);
+    state.tools = chapterProgress(toolsSection);
     state.scroll = window.scrollY;
 
     if (!motionOff()) {
@@ -58,18 +65,37 @@
     }
 
     const frameIndex = Math.min(storyFrames.length - 1, Math.floor(state.story * storyFrames.length));
-    storyFrames.forEach((frame, index) => frame.classList.toggle('active', index === frameIndex));
-    if (storyPin) {
+    if (frameIndex !== currentStoryFrame) {
+      storyFrames.forEach((frame, index) => frame.classList.toggle('active', index === frameIndex));
+      currentStoryFrame = frameIndex;
+    }
+    if (storyPin && state.story !== lastStoryProgress) {
       storyPin.style.setProperty('--story-progress', state.story.toFixed(4));
       storyPin.style.setProperty('--zip-y', `${(state.story * 90).toFixed(2)}%`);
       storyPin.style.setProperty('--zip-gap', `${(state.story * 32).toFixed(2)}%`);
       storyPin.style.setProperty('--zip-spark-opacity', (state.story * .8).toFixed(3));
+      lastStoryProgress = state.story;
+    }
+
+    const arrowProgress = chapterProgress(arrowSection);
+    if (arrowPin && arrowProgress !== lastArrowProgress) {
+      const flight = clamp((arrowProgress - .12) / .42);
+      const easedFlight = 1 - Math.pow(1 - flight, 3);
+      const impact = clamp((arrowProgress - .52) / .12);
+      arrowPin.style.setProperty('--arrow-x', `${(-Math.max(window.innerWidth * .82, 520) * (1 - easedFlight)).toFixed(1)}px`);
+      arrowPin.style.setProperty('--arrow-visible', clamp((arrowProgress - .08) / .08).toFixed(3));
+      arrowPin.style.setProperty('--arrow-impact', impact.toFixed(3));
+      arrowPin.style.setProperty('--arrow-impact-scale', (.65 + impact * .35).toFixed(3));
+      lastArrowProgress = arrowProgress;
     }
 
     const activeToolIndex = Math.min(toolRows.length - 1, Math.floor(state.tools * toolRows.length));
-    toolRows.forEach((row, index) => row.classList.toggle('active', index <= activeToolIndex));
-    if (toolsReadout && toolRows[activeToolIndex]) {
-      toolsReadout.textContent = toolRows[activeToolIndex].querySelector('strong')?.textContent.toUpperCase() || '';
+    if (activeToolIndex !== currentToolRow) {
+      toolRows.forEach((row, index) => row.classList.toggle('active', index <= activeToolIndex));
+      if (toolsReadout && toolRows[activeToolIndex]) {
+        toolsReadout.textContent = toolRows[activeToolIndex].querySelector('strong')?.textContent.toUpperCase() || '';
+      }
+      currentToolRow = activeToolIndex;
     }
 
     updateActiveNavigation();
@@ -77,10 +103,8 @@
 
   function updateActiveNavigation() {
     let activeId = '';
-    const anchors = ['about', 'skills', 'projects', 'contact'];
-    anchors.forEach(id => {
-      const section = document.getElementById(id);
-      if (section && section.getBoundingClientRect().top <= window.innerHeight * .42) activeId = id;
+    navSections.forEach(section => {
+      if (section && section.getBoundingClientRect().top <= window.innerHeight * .42) activeId = section.id;
     });
     navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`));
   }
@@ -93,6 +117,10 @@
       updateScrollState();
       scrollTicking = false;
     });
+  }, { passive: true });
+  window.addEventListener('resize', () => {
+    lastArrowProgress = -1;
+    updateScrollState();
   }, { passive: true });
 
   window.addEventListener('pointermove', event => {
@@ -212,14 +240,15 @@
 
   const clock = new THREE.Clock();
   let frameQueued = false;
+  let sceneInView = false;
   function scheduleFrame() {
-    if (frameQueued) return;
+    if (frameQueued || !sceneInView || document.hidden) return;
     frameQueued = true;
     requestAnimationFrame(renderScene);
   }
   function renderScene() {
     frameQueued = false;
-    if (document.hidden || state.story >= 1) return;
+    if (document.hidden || !sceneInView) return;
 
     const elapsed = clock.getElapsedTime();
     const mobile = window.innerWidth < 760;
@@ -255,10 +284,17 @@
     if (!still) scheduleFrame();
   }
 
+  if (heroSection) {
+    const sceneObserver = new IntersectionObserver(entries => {
+      sceneInView = entries[0].isIntersecting;
+      document.body.classList.toggle('scene-in-view', sceneInView);
+      if (sceneInView) scheduleFrame();
+    });
+    sceneObserver.observe(heroSection);
+  }
   window.addEventListener('scroll', scheduleFrame, { passive: true });
   window.addEventListener('pointermove', scheduleFrame, { passive: true });
   window.addEventListener('portfolio:motionchange', () => { updateScrollState(); scheduleFrame(); });
   document.addEventListener('visibilitychange', scheduleFrame);
   document.body.classList.add('scene-ready');
-  scheduleFrame();
 })();

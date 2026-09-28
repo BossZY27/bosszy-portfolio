@@ -252,5 +252,10 @@
   .relic-orb { transform: rotateX(-22deg) rotateY(32deg) rotateZ(-5deg); }
 }
 body.motion-off .hero-relic, body.motion-off .relic-orb, body.motion-off .relic-orb-ring, body.motion-off .relic-aura, body.motion-off .relic-wind, body.motion-off .relic-hand, body.motion-off .relic-rays, body.motion-off .relic-flare, body.motion-off .relic-orb-core::before, body.motion-off .relic-spark { animation: none !important; transition: none !important; }
+.hero-relic.is-paused,
+.hero-relic.is-paused *,
+.hero-relic.is-paused::before,
+.hero-relic.is-paused *::before,
+.hero-relic.is-paused *::after { animation-play-state: paused !important; }
 body.motion-off .relic-wind { transform: translate(-50%, -50%) scaleY(.68); }
 body.motion-off .relic-orb { transform: rotateX(-22deg) rotateY(32deg) rotateZ(-5deg); }

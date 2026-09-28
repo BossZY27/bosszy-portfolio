@@ -18,9 +18,8 @@
   width: min(70vw, 900px);
   height: 79%;
   background:
-    radial-gradient(ellipse at 50% 25%, rgba(255, 226, 188, .4), transparent 52%),
-    radial-gradient(ellipse at 50% 53%, rgba(236, 175, 134, .2), transparent 48%);
-  filter: blur(56px);
+    radial-gradient(ellipse at 50% 25%, rgba(255, 226, 188, .38), transparent 70%),
+    radial-gradient(ellipse at 50% 53%, rgba(236, 175, 134, .18), transparent 65%);
   opacity: var(--story-progress, 0);
   pointer-events: none;
 }
@@ -69,11 +68,10 @@
   top: 0;
   left: 50%;
   width: 118%;
-  height: calc(var(--zip-y, 0%) + 20%);
+  height: 100%;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 52%, rgba(255, 248, 229, .42), rgba(255, 211, 166, .26) 42%, transparent 76%);
-  filter: blur(72px);
+  background: radial-gradient(ellipse at 50% 42%, rgba(255, 248, 229, .4), rgba(255, 211, 166, .23) 36%, transparent 78%);
   opacity: var(--story-progress, 0);
   pointer-events: none;
 }

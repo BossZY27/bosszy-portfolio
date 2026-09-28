@@ -9,6 +9,7 @@
   let frame = 0;
   let pointerX = 0;
   let pointerY = 0;
+  let heroVisible = true;
 
   function still() {
     return reducedMotion.matches || document.body.classList.contains('motion-off');
@@ -25,8 +26,17 @@
   }
 
   function queuePaint() {
+    if (!heroVisible) return;
     if (!frame) frame = requestAnimationFrame(paint);
   }
+
+  const heroObserver = new IntersectionObserver(entries => {
+    heroVisible = entries[0].isIntersecting;
+    relic.classList.toggle('is-paused', !heroVisible);
+    if (heroVisible) queuePaint();
+    else paint();
+  });
+  heroObserver.observe(hero);
 
   window.addEventListener('pointermove', event => {
     if (event.pointerType === 'touch' || still()) return;
