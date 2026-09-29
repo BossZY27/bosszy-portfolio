@@ -14,16 +14,14 @@
   const heroCopy = document.querySelector('.hero-copy');
   const heroMeta = document.querySelector('.hero-meta');
   const storyPin = document.querySelector('.story-pin');
-  const arrowPin = document.querySelector('.arrow-pin');
+  const momentumVideo = document.querySelector('.momentum-video');
   const heroSection = document.querySelector('[data-chapter="hero"]');
   const storySection = document.querySelector('[data-chapter="story"]');
-  const arrowSection = document.querySelector('[data-chapter="arrow"]');
   const toolsSection = document.querySelector('[data-chapter="tools"]');
   const navSections = ['about', 'skills', 'projects', 'contact'].map(id => document.getElementById(id));
   let currentStoryFrame = -1;
   let currentToolRow = -1;
   let lastStoryProgress = -1;
-  let lastArrowProgress = -1;
 
   const state = {
     hero: 0,
@@ -77,18 +75,6 @@
       lastStoryProgress = state.story;
     }
 
-    const arrowProgress = chapterProgress(arrowSection);
-    if (arrowPin && arrowProgress !== lastArrowProgress) {
-      const flight = clamp((arrowProgress - .12) / .42);
-      const easedFlight = 1 - Math.pow(1 - flight, 3);
-      const impact = clamp((arrowProgress - .52) / .12);
-      arrowPin.style.setProperty('--arrow-x', `${(-Math.max(window.innerWidth * .82, 520) * (1 - easedFlight)).toFixed(1)}px`);
-      arrowPin.style.setProperty('--arrow-visible', clamp((arrowProgress - .08) / .08).toFixed(3));
-      arrowPin.style.setProperty('--arrow-impact', impact.toFixed(3));
-      arrowPin.style.setProperty('--arrow-impact-scale', (.65 + impact * .35).toFixed(3));
-      lastArrowProgress = arrowProgress;
-    }
-
     const activeToolIndex = Math.min(toolRows.length - 1, Math.floor(state.tools * toolRows.length));
     if (activeToolIndex !== currentToolRow) {
       toolRows.forEach((row, index) => row.classList.toggle('active', index <= activeToolIndex));
@@ -119,7 +105,6 @@
     });
   }, { passive: true });
   window.addEventListener('resize', () => {
-    lastArrowProgress = -1;
     updateScrollState();
   }, { passive: true });
 
@@ -129,6 +114,26 @@
   }, { passive: true });
 
   updateScrollState();
+
+  if (momentumVideo) {
+    let videoInView = false;
+    const syncVideo = () => {
+      if (motionOff() || !videoInView || document.hidden) {
+        momentumVideo.pause();
+        if (motionOff()) momentumVideo.currentTime = 0;
+        return;
+      }
+      if (momentumVideo.ended) momentumVideo.currentTime = 0;
+      momentumVideo.play().catch(() => {});
+    };
+    const videoObserver = new IntersectionObserver(entries => {
+      videoInView = entries[0].isIntersecting;
+      syncVideo();
+    }, { rootMargin: '100px 0px' });
+    videoObserver.observe(momentumVideo);
+    document.addEventListener('visibilitychange', syncVideo);
+    window.addEventListener('portfolio:motionchange', syncVideo);
+  }
 
   if (!window.THREE) return;
   const canvas = document.getElementById('spatial-canvas');
