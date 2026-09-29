@@ -137,7 +137,7 @@
 .arrow-footer {
   position: absolute;
   z-index: 3;
-  right: var(--gutter);
+  right: calc(var(--gutter) + 64px);
   bottom: 28px;
   left: var(--gutter);
   display: flex;
@@ -167,7 +167,7 @@
   .arrow-figure { top: 1%; width: min(57vw, 300px); height: 94%; }
   .arrow-projectile { width: min(58vw, 330px); }
   .arrow-impact { width: 150px; height: 150px; }
-  .arrow-mark { right: 12%; bottom: 6%; font-size: 8px; }
+  .arrow-mark { display: none; }
 }
 @media (max-width: 390px) {
   .arrow-copy h2 { font-size: 44px; }
