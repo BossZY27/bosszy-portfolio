@@ -1,0 +1,258 @@
+/* The rack scene: tabs, rail, garments and the caption under the one facing front. */
+.stage {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: calc(var(--header-h) + 2px) 0 calc(var(--marquee-h) + 22px);
+}
+
+.rack-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 6px;
+  padding: 0 var(--gutter);
+}
+
+.rack-tab {
+  flex: none;
+  padding: 9px 13px 8px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font: 600 var(--text-xs) / 1 var(--font-display);
+  letter-spacing: 0.12em;
+  transition: background-color var(--dur-fast), color var(--dur-fast);
+}
+
+.rack-tab sup {
+  margin-left: 3px;
+  font-size: 0.72em;
+  color: var(--muted);
+}
+
+.rack-tab:hover {
+  background: rgb(0 0 0 / 0.06);
+}
+
+.rack-tab[aria-selected="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.rack-tab[aria-selected="true"] sup {
+  color: var(--neon);
+}
+
+.rack {
+  position: relative;
+  width: min(100% - 2 * var(--gutter), 1240px);
+  height: calc(var(--rail-y) + var(--garment-h) + 92px);
+  margin: 0 auto;
+}
+
+.rack-rail {
+  position: absolute;
+  top: var(--rail-y);
+  left: 2%;
+  right: 2%;
+  height: 7px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #fbfbf9 0%, #d3d2ce 40%, #8e8d89 85%, #b4b3af 100%);
+  box-shadow: 0 3px 4px rgb(0 0 0 / 0.16);
+}
+
+.rack-rail::before,
+.rack-rail::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  width: 8px;
+  height: 26px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #9c9b97, #e9e8e4 45%, #8a8985);
+  box-shadow: 0 2px 3px rgb(0 0 0 / 0.2);
+}
+
+.rack-rail::before {
+  left: -2px;
+}
+
+.rack-rail::after {
+  right: -2px;
+}
+
+.rack-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--rail-y) - var(--garment-h) * 0.03);
+  height: var(--garment-h);
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.garment {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: var(--slot-w, 40px);
+  height: 100%;
+  transform: translateX(var(--shift, 0px));
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.garment.is-active {
+  z-index: 3;
+}
+
+.garment-btn {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  transform-origin: 50% 2%;
+}
+
+.garment-btn:focus-visible {
+  outline: none;
+}
+
+.garment .garment-svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  overflow: visible;
+}
+
+.garment .is-side {
+  width: calc(var(--garment-h) * 70 / 300);
+  transform: translateX(-50%);
+  filter: var(--shadow-side);
+  transition: opacity var(--dur-fast) linear;
+}
+
+.garment .is-front {
+  width: calc(var(--garment-h) * 0.8);
+  opacity: 0;
+  pointer-events: none;
+  filter: var(--shadow-garment);
+  transform: translateX(-50%) scaleX(0.2);
+  transition: transform var(--dur) var(--ease-out), opacity var(--dur-fast) linear;
+}
+
+.garment.is-active .is-side {
+  opacity: 0;
+}
+
+.garment.is-active .is-front {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) scaleX(1);
+  animation: turn-blur var(--dur) ease-out;
+}
+
+.garment-btn:focus-visible .is-front {
+  outline: 2px dashed var(--ink);
+  outline-offset: 6px;
+}
+
+.garment.is-lifted .is-front {
+  visibility: hidden;
+}
+
+@keyframes turn-blur {
+  from {
+    filter: blur(3px) drop-shadow(0 22px 18px rgb(30 28 22 / 0.16)) drop-shadow(0 4px 4px rgb(30 28 22 / 0.1));
+  }
+
+  to {
+    filter: blur(0) drop-shadow(0 22px 18px rgb(30 28 22 / 0.16)) drop-shadow(0 4px 4px rgb(30 28 22 / 0.1));
+  }
+}
+
+.rack-caption {
+  position: absolute;
+  top: calc(var(--rail-y) + var(--garment-h) + 18px);
+  left: 0;
+  width: max-content;
+  max-width: min(320px, 86vw);
+  margin: 0;
+  text-align: center;
+  font-size: var(--text-sm);
+  line-height: 1.45;
+  color: var(--muted);
+  transform: translateX(calc(var(--cap-x, 50%) - 50%));
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.rack-caption strong {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.rack-caption span {
+  display: block;
+  margin-top: 2px;
+}
+
+.rack-caption .cap-can {
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+}
+
+.rack-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* Touch screens and narrow windows: the rail scrolls and the middle piece faces front. */
+.rack.is-carousel .rack-track {
+  justify-content: flex-start;
+  height: calc(var(--garment-h) + 36px);
+  padding: 0 calc(50% - var(--slot-w, 54px) / 2) 36px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.rack.is-carousel .rack-track::-webkit-scrollbar {
+  display: none;
+}
+
+.rack.is-carousel .garment {
+  height: var(--garment-h);
+  scroll-snap-align: center;
+}
+
+.rack.is-carousel .rack-caption {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 640px) {
+  .rack-tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .rack {
+    width: 100%;
+  }
+
+  .rack-rail {
+    left: -4px;
+    right: -4px;
+  }
+}
